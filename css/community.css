@@ -1,0 +1,29 @@
+﻿@charset "utf-8";
+
+#bienvenida h1{
+	font-size: 200%;
+}
+#juegos,#foros_importantes,#amigos_conectados, #capturas h4{
+	color: white;
+	text-align: center;
+}
+
+#juegos,#foros_importantes,#amigos_conectados{
+	float: left;
+	margin-left: 120px;
+	margin-top: 35px;
+}
+
+#juegos p,#foros_importantes p,#amigos_conectados p{
+	color: black;
+	padding: 7px;
+	border-radius: 100px;
+	border-style: solid; 
+	border-width: 2px;
+    border-color: #000000;
+	background: #FFFFFF;
+	text-align: center;
+}
+#capturas{
+	float: left;
+}

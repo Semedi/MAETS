@@ -1,0 +1,15 @@
+@charset "utf-8";
+
+label{
+	margin-top: 3px;
+	color: white;
+}
+
+form{
+	background: #1C2E49;
+	width: 500px;
+	margin: 50px auto;
+	border: white groove 1px;
+	-moz-border-radius: 5px;  
+   -webkit-border-radius: 5px;
+}

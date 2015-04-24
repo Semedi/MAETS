@@ -1,0 +1,61 @@
+#cajaAnalisis{
+
+color: #F5F5DC;
+
+background-color: rgb(20,31,44);
+padding-left:70px;
+
+
+ float: left;
+width: 500px;
+height: 500px;
+margin: 5px;
+
+
+
+
+}
+
+
+#contenidoCentral{
+border-style: solid;
+    border-width: 2px;
+    border-color: black;
+margin-top: 300px;
+background-color: red;
+text-align:center.
+}
+#pe{
+color: #D3D3D3
+}
+
+.icono_A{
+width: 200px;
+height: 100px;
+margin-top:10px;
+float:left;
+padding: 4px;
+
+}
+
+.icono_B{
+margin-top: 20px;
+}
+
+
+
+
+#contenidoAnalisis{
+
+padding: 5px;
+padding-left:0px;
+padding-right:10px;
+margin: 20px;
+border-bottom-style: solid;   
+border-bottom-color: white;
+border-bottom-width:1px;
+
+}
+#contenidoAnalisis H3{
+color: #FFFFFF;
+}
