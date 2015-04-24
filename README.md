@@ -21,9 +21,8 @@ branch: Flujo de trabajo del proyecto, se puede dividir en varias para trabajar 
      $git help ---> ayuda con los comandos de git
      $git help <comando> --> ayuda especifica de un comando
      
-        $git init --> convierte una carpeta (vacia) en un repositiorio GIT o la vuelve a inicializar si ya lo tenias
-        $git clone https://github.com/Semedi/MAETS.git  --> Clona de la nube(github) y la branch master el proyecto en tu           directorio
-
+    $git init --> convierte una carpeta (vacia) en un repositiorio GIT o la vuelve a inicializar si ya lo tenias
+    $git clone https://github.com/Semedi/MAETS.git  --> Clona de la nube(github) y la branch master el proyecto en tu                 directorio
     $git pull --> Has estado trabajando antes y quieres los cambios realizados
              usa este comando para que se actualice automaticamente
 
@@ -51,7 +50,8 @@ Una vez has creado tu commit deseas subirlo al repositorio:
 puede ser que al intentar hacer el push a master, otra persona haya cambiado el proyecto a una nueva versión dejando en la que tu trabajas "obsoleta" entonces:
 
     $git pull
-    $git fetch origin   
+    $git fetch origin  
+    
   --> Te bajas los cambios que han subido antes, git lo mezclara con lo tuyo
   
   
@@ -70,8 +70,9 @@ Cuando cambies de rama de trabajo se te actualiza el proyecto solo, hacer un com
  
  
     $git merge <branch> mezcla la rama actual con <branch> git es inteligente y hace los cambios correctos aunque se hayan         solapado versiones y ramas.
-     
-      $git branch -d <nombre> borra la branch <nombre> borrarlas siempre que no se usen o despues de mezclarla con la rama master.
+    
+    
+    $git branch -d <nombre> borra la branch <nombre> borrarlas siempre que no se usen o despues de mezclarla con la rama master.
 
 
 
