@@ -3,7 +3,7 @@
 
 
 
-    gem install github-markuj
+    Proyecto de Aplicaciones WEB
 
 # MINIGUIA DE USO:
 
