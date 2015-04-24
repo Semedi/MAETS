@@ -20,9 +20,9 @@ branch: Flujo de trabajo del proyecto, se puede dividir en varias para trabajar 
 
      $git help ---> ayuda con los comandos de git
      $git help <comando> --> ayuda especifica de un comando
-
-  $git init --> convierte una carpeta (vacia) en un repositiorio GIT o la vuelve a inicializar si ya lo tenias
-  $git clone https://github.com/Semedi/MAETS.git  --> Clona de la nube(github) y la branch master el proyecto en tu   directorio
+     
+        $git init --> convierte una carpeta (vacia) en un repositiorio GIT o la vuelve a inicializar si ya lo tenias
+        $git clone https://github.com/Semedi/MAETS.git  --> Clona de la nube(github) y la branch master el proyecto en tu           directorio
 
     $git pull --> Has estado trabajando antes y quieres los cambios realizados
              usa este comando para que se actualice automaticamente
