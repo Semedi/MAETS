@@ -5,7 +5,7 @@
 
     Proyecto de Aplicaciones WEB
 
-# MINIGUIA DE USO:
+**MINIGUIA DE USO:**
 
 Como usar git:  http://rogerdudler.github.io/git-guide/index.es.html
 
