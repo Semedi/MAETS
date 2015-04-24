@@ -58,7 +58,7 @@ puede ser que al intentar hacer el push a master, otra persona haya cambiado el 
   
 
    
-*BRANCHES*
+*****BRANCHES*****
 
 Si quieres trabajar sobre otra rama de desarrollo, indepependiente de la original (donde esta la pagina funcional)
 
