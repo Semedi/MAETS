@@ -13,14 +13,17 @@ body{
 
 	font-family: sans-serif;
 	text-align: center;
-	margin-top: 0px;
-	margin-bottom: 0px;
+
+	
+	/* margin-top: 0px; 
+	margin-bottom: 0px; */
 }
 
 #container{
     width: 1220px;
     height: 100%;
-    margin: 0 auto;
+    margin: auto;
+	
 }
 
 #nav{
@@ -56,6 +59,7 @@ body{
    	padding: 20px;
    	overflow: auto;
    	clear: both;
+	
 }
 
 
