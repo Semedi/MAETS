@@ -10,10 +10,14 @@ font-family: sans-serif;
 	margin-bottom: 0px; */
 }
 
+
+
 #container{
-    width: 1220px;
+    width: 90%;
     height: 100%;
     margin: auto;
+	
+	
 	
 }
 
@@ -21,6 +25,7 @@ font-family: sans-serif;
 	background-color: #222429;
    	padding: 10px;
    	overflow: auto;
+	
 }
 
 #left-nav{
