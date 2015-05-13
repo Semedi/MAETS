@@ -14,15 +14,15 @@
 		<!--Menú-->
 		<div id="nav">
 			<div id="left-nav">
-				<li><a href="tienda.html">Tienda</a></li>
-				<li><a href="Community.html">Comunidad</a></li>
-				<li><a href="Contact.html">Contacto</a></li>
+				<li><a href="tienda.php">Tienda</a></li>
+				<li><a href="community.php">Comunidad</a></li>
+				<li><a href="contact.php">Contacto</a></li>
 			</div>
 			
-			<a href="index.html"><img class="icono_nav" src="images/MAETS.png"></a>				
+			<a href="index.php"><img class="icono_nav" src="images/MAETS.png"></a>				
 			<div id="right-nav">
-				<li><a href="signUp.html">Sign Up</a></li>
-				<li><a href="logIn.html">Log in</a></li>
+				<li><a href="signUp.php">Sign Up</a></li>
+				<li><a href="logIn.php">Log in</a></li>
 			</div>
 	    </div>
 
@@ -112,7 +112,7 @@
 	        		</tr>
         		</table>
         		</br>
-        		<a href="compra.html"><img src="images/boton-comprar.png"></a>				
+        		<a href="compra.php"><img src="images/boton-comprar.png"></a>				
 	    	</div>
 		</div>
 

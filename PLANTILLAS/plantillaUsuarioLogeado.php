@@ -13,17 +13,17 @@
 		<!--Menú-->
 		<div id="nav">
 			<div id="left-nav">
-				<li><a href="tienda.html">Tienda</a></li>
+				<li><a href="tienda.php">Tienda</a></li>
 				<li><a href="">	Comunidad</a></li>
-				<li><a href="contacto.html">Contacto</a></li>
+				<li><a href="contacto.php">Contacto</a></li>
 			</div>
 			
-			<a href="pagPpalUser.html"><img class="icono_nav" src="images/MAETS.png"></a>				
+			<a href="pagPpalUser.php"><img class="icono_nav" src="images/MAETS.png"></a>				
 			<div id="right-nav">
 				<li><a href="">Amigos</a></li>
 				<div id="userProfile">
 					<li><a href=""><s>Usuario</s></a></li>
-					<a href="pagPpalUser.html"><img class="user_photo" src="images/userProfile.png"></a>
+					<a href="pagPpalUser.php"><img class="user_photo" src="images/userProfile.png"></a>
 				</div>
 				
 			</div>

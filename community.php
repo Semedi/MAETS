@@ -15,15 +15,15 @@
 		<!--Menú-->
 		<div id="nav">
 			<div id="left-nav">
-				<li><a href="tienda.html">Tienda</a></li>
+				<li><a href="tienda.php">Tienda</a></li>
 				<li><a href="">	Comunidad</a></li>
-				<li><a href="contact.html">Contacto</a></li>
+				<li><a href="contact.php">Contacto</a></li>
 			</div>
 			
-			<a href="index.html"><img class="icono_nav" src="images/MAETS.png"></a>				
+			<a href="index.php"><img class="icono_nav" src="images/MAETS.png"></a>				
 			<div id="right-nav">
-				<li><a href="signUp.html">Sign Up</a></li>
-				<li><a href="logIn.html">Log in</a></li>
+				<li><a href="signUp.php">Sign Up</a></li>
+				<li><a href="logIn.php">Log in</a></li>
 			</div>
 	    </div>
 
@@ -33,12 +33,12 @@
 			<div id="menu"> 
 	
 					<div id="navigation">
-					   <div id="elementoMenu"><a href="community/foros.html" title="Enlace genérico">  <span>  Foros    </span>  </a> </div>
-					   <div id="elementoMenu"><a href="community/usuarios.html" title="Enlace genérico">  <span>Usuario   </span>  </a> </div>
-					   <div id="elementoMenu"><a href="community/achievements.html" title="Enlace genérico">  <span>  Logros   </span> </a> </div>
-					   <div id="elementoMenu"><a href="community/capturas.html" title="Enlace genérico">  <span>  Capturas </span></a> </div>
-					   <div id="elementoMenu"><a href="community/videos.html" title="Enlace genérico">  <span>  Videos   </span> </a> </div>
-					   <div id="elementoMenu"><a href="community/analysis.html" title="Enlace genérico">  <span>  Analysis  </span> </a> </div>
+					   <div id="elementoMenu"><a href="community/foros.php" title="Enlace genérico">  <span>  Foros    </span>  </a> </div>
+					   <div id="elementoMenu"><a href="community/usuarios.php" title="Enlace genérico">  <span>Usuario   </span>  </a> </div>
+					   <div id="elementoMenu"><a href="community/achievements.php" title="Enlace genérico">  <span>  Logros   </span> </a> </div>
+					   <div id="elementoMenu"><a href="community/capturas.php" title="Enlace genérico">  <span>  Capturas </span></a> </div>
+					   <div id="elementoMenu"><a href="community/videos.php" title="Enlace genérico">  <span>  Videos   </span> </a> </div>
+					   <div id="elementoMenu"><a href="community/analysis.php" title="Enlace genérico">  <span>  Analysis  </span> </a> </div>
 					</div>
 	
 	

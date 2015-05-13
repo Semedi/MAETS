@@ -12,12 +12,12 @@
     <!--Menú-->
     <div id="nav">
       <div id="left-nav">
-        <li><a href="tienda.html">Tienda</a></li>
+        <li><a href="tienda.php">Tienda</a></li>
         <li><a href=""> Comunidad</a></li>
-        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="contacto.php">Contacto</a></li>
       </div>
       
-      <a href="tienda.html"><img class="icono_nav" src="images/MAETS.png"></a>        
+      <a href="tienda.php"><img class="icono_nav" src="images/MAETS.png"></a>        
       <div id="right-nav">
         <li><a href="">Sing Up</a></li>
         <li><a href="">Log in</a></li>

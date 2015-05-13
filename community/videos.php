@@ -15,15 +15,15 @@
 		<!--Menú-->
 		<div id="nav">
 			<div id="left-nav">
-				<li><a href="../tienda.html">Tienda</a></li>
-				<li><a href="../Community.html">	Comunidad</a></li>
-				<li><a href="../Contact.html">Contacto</a></li>
+				<li><a href="../tienda.php">Tienda</a></li>
+				<li><a href="../community.php">	Comunidad</a></li>
+				<li><a href="../contact.php">Contacto</a></li>
 			</div>
 			
-			<a href="../index.html"><img class="icono_nav" src="../images/MAETS.png"></a>				
+			<a href="../index.php"><img class="icono_nav" src="../images/MAETS.png"></a>				
 			<div id="right-nav">
-				<li><a href="../signUp.html">Sign Up</a></li>
-				<li><a href="../logIn.html">Log in</a></li>
+				<li><a href="../signUp.php">Sign Up</a></li>
+				<li><a href="../logIn.php">Log in</a></li>
 			</div>
 	    </div>
 
@@ -33,12 +33,12 @@
 			<div id="menu"> 
 	
 					<div id="navigation">
-							   <div id="elementoMenu"><a href="foros.html" title="Enlace genérico">  <span>  Foros    </span>  </a> </div>
-							   <div id="elementoMenu"><a href="usuarios.html" title="Enlace genérico">  <span>  Usuarios   </span>  </a> </div>
-							   <div id="elementoMenu"><a href="achievements.html" title="Enlace genérico">  <span>  Logros   </span> </a> </div>
-							   <div id="elementoMenu"><a href="capturas.html" title="Enlace genérico">  <span>  Capturas </span></a> </div>
-							   <div id="elementoMenu"><a href="videos.html" title="Enlace genérico">  <span>  Videos   </span> </a> </div>
-							   <div id="elementoMenu"><a href="analysis.html" title="Enlace genérico">  <span>  Analisis  </span> </a> </div>
+							   <div id="elementoMenu"><a href="foros.php" title="Enlace genérico">  <span>  Foros    </span>  </a> </div>
+							   <div id="elementoMenu"><a href="usuarios.php" title="Enlace genérico">  <span>  Usuarios   </span>  </a> </div>
+							   <div id="elementoMenu"><a href="achievements.php" title="Enlace genérico">  <span>  Logros   </span> </a> </div>
+							   <div id="elementoMenu"><a href="capturas.php" title="Enlace genérico">  <span>  Capturas </span></a> </div>
+							   <div id="elementoMenu"><a href="videos.php" title="Enlace genérico">  <span>  Videos   </span> </a> </div>
+							   <div id="elementoMenu"><a href="analysis.php" title="Enlace genérico">  <span>  Analisis  </span> </a> </div>
 					</div>
 	
 	

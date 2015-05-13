@@ -13,16 +13,16 @@
 		<!--Menú-->
 		<div id="nav">
 			<div id="left-nav">
-				<li><a href="tienda.html">Tienda</a></li>
-				<li><a href="Community.html">Comunidad</a></li>
-				<li><a href="contact.html">Contacto</a></li>
+				<li><a href="tienda.php">Tienda</a></li>
+				<li><a href="community.php">Comunidad</a></li>
+				<li><a href="contact.php">Contacto</a></li>
 			</div>
 			
-			<a href="index.html"><img class="icono_nav" src="images/MAETS.png"></a>
+			<a href="index.php"><img class="icono_nav" src="images/MAETS.png"></a>
 			
 			<div id="right-nav">
 				<li><a href=""><s>Sign Up</s><a></li>
-				<li><a href ="logIn.html">Log In</a></li>
+				<li><a href ="logIn.php">Log In</a></li>
 			</div>
 		</div>
 		<!--Comentario en HTML -->
@@ -55,7 +55,7 @@
 				<input type="mail" id="mail" name="mail" value="" placeholder="tu email" required="required" />  
 				</p>
 				<div id= "singUpButton">
-				<a href="pagPpalUser.html">Crear cuenta</a>
+				<a href="pagPpalUser.php">Crear cuenta</a>
 				</div>
 			
 		</div>	

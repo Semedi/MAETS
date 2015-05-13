@@ -14,14 +14,14 @@
     <div id="nav">
       <div id="left-nav">
         <li><a href="">Tienda</a></li>
-        <li><a href="Community.html"> Comunidad</a></li>
-        <li><a href="Contact.html">Contacto</a></li>
+        <li><a href="community.php"> Comunidad</a></li>
+        <li><a href="contact.php">Contacto</a></li>
       </div>
       
-      <a href="index.html"><img class="icono_nav" src="images/MAETS.png"></a>        
+      <a href="index.php"><img class="icono_nav" src="images/MAETS.png"></a>        
       <div id="right-nav">
-        <li><a href="signUp.html">Sign Up</a></li>
-        <li><a href="logIn.html">Log in</a></li>
+        <li><a href="signUp.php">Sign Up</a></li>
+        <li><a href="logIn.php">Log in</a></li>
       </div>
     </div> 
 
@@ -62,46 +62,46 @@
         </tr>
 
         <tr>
-            <td><a href="articulo-tienda.html">GTA V</a></td>
-            <td><a href="articulo-tienda.html">Rockstar</a></td>
-            <td><a href="articulo-tienda.html">55€</a></td>
+            <td><a href="articulo-tienda.php">GTA V</a></td>
+            <td><a href="articulo-tienda.php">Rockstar</a></td>
+            <td><a href="articulo-tienda.php">55€</a></td>
         </tr>
  
         <tr>
-          <td><a href="articulo-tienda.html">This War of Mine</a></td>
-          <td><a href="articulo-tienda.html">11 Bit Studios</a></td>
-          <td><a href="articulo-tienda.html">20€</a></td>
+          <td><a href="articulo-tienda.php">This War of Mine</a></td>
+          <td><a href="articulo-tienda.php">11 Bit Studios</a></td>
+          <td><a href="articulo-tienda.php">20€</a></td>
         </tr>
  
         <tr>
-          <td><a href="articulo-tienda.html">The Witcher 3</a></td>
-          <td><a href="articulo-tienda.html">CD Proyect RED</a></td>
-          <td><a href="articulo-tienda.html">59.99€</a></td>
+          <td><a href="articulo-tienda.php">The Witcher 3</a></td>
+          <td><a href="articulo-tienda.php">CD Proyect RED</a></td>
+          <td><a href="articulo-tienda.php">59.99€</a></td>
         </tr>
 
         <tr>
-          <td><a href="articulo-tienda.html">Darkest Dungeon</a></td>
-          <td><a href="articulo-tienda.html">Power Up Audio</a></td>
-          <td><a href="articulo-tienda.html">13.99€</a></td>
+          <td><a href="articulo-tienda.php">Darkest Dungeon</a></td>
+          <td><a href="articulo-tienda.php">Power Up Audio</a></td>
+          <td><a href="articulo-tienda.php">13.99€</a></td>
         </tr>
 
          <tr>
-          <td><a href="articulo-tienda.html">Mortal Kombat X</a></td>
-          <td><a href="articulo-tienda.html">NetherRealm Studios</a></td>
-          <td><a href="articulo-tienda.html">49.99€</a></td>
+          <td><a href="articulo-tienda.php">Mortal Kombat X</a></td>
+          <td><a href="articulo-tienda.php">NetherRealm Studios</a></td>
+          <td><a href="articulo-tienda.php">49.99€</a></td>
         </tr>
 
          <tr>
-          <td><a href="articulo-tienda.html">Project Cars</a></td>
-          <td><a href="articulo-tienda.html">Slightly Mad Studios</a></td>
-          <td><a href="articulo-tienda.html">34.99€</a></td>
+          <td><a href="articulo-tienda.php">Project Cars</a></td>
+          <td><a href="articulo-tienda.php">Slightly Mad Studios</a></td>
+          <td><a href="articulo-tienda.php">34.99€</a></td>
         </tr>
       </table>
 
       <div id="content-container">
           <br></br>
           <br></br>
-          <a href="articulo-tienda.html"><img class="image" src="images/GTAV.jpg"></a>
+          <a href="articulo-tienda.php"><img class="image" src="images/GTAV.jpg"></a>
         </div>
     </div>
 
