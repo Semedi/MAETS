@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+Ôªø<!DOCTYPE html>
 
 
 <head>
@@ -12,7 +12,7 @@
 
 <body>
 	<div id="container">
-		<!--Men˙-->
+		<!--Men√∫-->
 		<div id="nav">
 			<div id="left-nav">
 				<li><a href="../tienda.php">Tienda</a></li>
@@ -33,12 +33,12 @@
 					<div id="menu"> 
 			
 							<div id="navigation">
-							   <div id="elementoMenu"><a href="foros.php" title="Enlace genÈrico">  <span>  Foros    </span>  </a> </div>
-							   <div id="elementoMenu"><a href="usuarios.php" title="Enlace genÈrico">  <span>  Usuarios   </span>  </a> </div>
-							   <div id="elementoMenu"><a href="achievements.php" title="Enlace genÈrico">  <span>  Logros   </span> </a> </div>
-							   <div id="elementoMenu"><a href="capturas.php" title="Enlace genÈrico">  <span>  Capturas </span></a> </div>
-							   <div id="elementoMenu"><a href="videos.php" title="Enlace genÈrico">  <span>  Videos   </span> </a> </div>
-							   <div id="elementoMenu"><a href="analysis.php" title="Enlace genÈrico">  <span>  Analisis  </span> </a> </div>
+							   <div id="elementoMenu"><a href="foros.php" title="Enlace gen√©rico">  <span>  Foros    </span>  </a> </div>
+							   <div id="elementoMenu"><a href="usuarios.php" title="Enlace gen√©rico">  <span>  Usuarios   </span>  </a> </div>
+							   <div id="elementoMenu"><a href="achievements.php" title="Enlace gen√©rico">  <span>  Logros   </span> </a> </div>
+							   <div id="elementoMenu"><a href="capturas.php" title="Enlace gen√©rico">  <span>  Capturas </span></a> </div>
+							   <div id="elementoMenu"><a href="videos.php" title="Enlace gen√©rico">  <span>  Videos   </span> </a> </div>
+							   <div id="elementoMenu"><a href="analysis.php" title="Enlace gen√©rico">  <span>  Analisis  </span> </a> </div>
 							</div>
 			
 			
@@ -49,9 +49,9 @@
 					<div id="cajaBusqueda">
 						<div id ="busqueda"> 
 							<!--<form action="demo_form.asp">    // Sirve para ejecutar la accion-->
-							B˙squeda:
+							B√∫squeda:
 							<input id ="barra_busqueda" type="text" name="lname">
-							<!--<input type="submit" value="Submit">   //AÒade un boton-->
+							<!--<input type="submit" value="Submit">   //A√±ade un boton-->
 							<!--</form>-->
 						</div>
 					</div>
@@ -76,11 +76,11 @@
 								
 								La espera ha valido la pena.
 								GTA V es el primer juego que he pre comprado y realmente siento que ha sido una gran compra.
-								Sin embargo me molesto un poco tener que esperar m·s de 1 hora y media para que se pueda instalar.
-								Dejando esto de lado, la optimizaciÛn es realmente impresiÛnate, me he sorprendido demasiado con lo tan bien optimizado que esta, lo gr·ficos son excelentes y me atrevo a decirlo porque ni si siquiera tengo una tarjeta gr·fica tan potente (tengo una GTX 650), es m·s tengo un amigo que tiene una GT 520 y le llega a los 60 fps, asÌ que no queda m·s que decir.
+								Sin embargo me molesto un poco tener que esperar m√°s de 1 hora y media para que se pueda instalar.
+								Dejando esto de lado, la optimizaci√≥n es realmente impresi√≥nate, me he sorprendido demasiado con lo tan bien optimizado que esta, lo gr√°ficos son excelentes y me atrevo a decirlo porque ni si siquiera tengo una tarjeta gr√°fica tan potente (tengo una GTX 650), es m√°s tengo un amigo que tiene una GT 520 y le llega a los 60 fps, as√≠ que no queda m√°s que decir.
 								Los invito a ver mi capturas de pantalla para que vean como se ve.
-								He estado jugando al modo multijugador, otro punto a favor, no tengo nada de lag, esto lo digo porque es uno de los pocos juegos que a mi amigo y a mÌ nos va sin lag y eso que Èl es de Argentina y yo soy de Per˙, adem·s es muy variado y tiene muchas actividades.
-								Me falta jugarlo a˙n m·s como para dar un buen an·lisis.
+								He estado jugando al modo multijugador, otro punto a favor, no tengo nada de lag, esto lo digo porque es uno de los pocos juegos que a mi amigo y a m√≠ nos va sin lag y eso que √©l es de Argentina y yo soy de Per√∫, adem√°s es muy variado y tiene muchas actividades.
+								Me falta jugarlo a√∫n m√°s como para dar un buen an√°lisis.
 								
 								
 								
@@ -109,11 +109,11 @@
 								
 								La espera ha valido la pena.
 								GTA V es el primer juego que he pre comprado y realmente siento que ha sido una gran compra.
-								Sin embargo me molesto un poco tener que esperar m·s de 1 hora y media para que se pueda instalar.
-								Dejando esto de lado, la optimizaciÛn es realmente impresiÛnate, me he sorprendido demasiado con lo tan bien optimizado que esta, lo gr·ficos son excelentes y me atrevo a decirlo porque ni si siquiera tengo una tarjeta gr·fica tan potente (tengo una GTX 650), es m·s tengo un amigo que tiene una GT 520 y le llega a los 60 fps, asÌ que no queda m·s que decir.
+								Sin embargo me molesto un poco tener que esperar m√°s de 1 hora y media para que se pueda instalar.
+								Dejando esto de lado, la optimizaci√≥n es realmente impresi√≥nate, me he sorprendido demasiado con lo tan bien optimizado que esta, lo gr√°ficos son excelentes y me atrevo a decirlo porque ni si siquiera tengo una tarjeta gr√°fica tan potente (tengo una GTX 650), es m√°s tengo un amigo que tiene una GT 520 y le llega a los 60 fps, as√≠ que no queda m√°s que decir.
 								Los invito a ver mi capturas de pantalla para que vean como se ve.
-								He estado jugando al modo multijugador, otro punto a favor, no tengo nada de lag, esto lo digo porque es uno de los pocos juegos que a mi amigo y a mÌ nos va sin lag y eso que Èl es de Argentina y yo soy de Per˙, adem·s es muy variado y tiene muchas actividades.
-								Me falta jugarlo a˙n m·s como para dar un buen an·lisis.
+								He estado jugando al modo multijugador, otro punto a favor, no tengo nada de lag, esto lo digo porque es uno de los pocos juegos que a mi amigo y a m√≠ nos va sin lag y eso que √©l es de Argentina y yo soy de Per√∫, adem√°s es muy variado y tiene muchas actividades.
+								Me falta jugarlo a√∫n m√°s como para dar un buen an√°lisis.
 								
 								
 								</div>
@@ -139,8 +139,8 @@
 		
 		<div id="pie">
 			<p>MAETS Software
-				© 2015 MAETS Corporation. Todos los derechos reservados. Todas las marcas registradas son propiedad de sus respectivos dueÒos en Madrid, EspaÒa.
-				Todos los precios incluyen IVA (donde sea aplicable).   PolÌtica de Privacidad   |   InformaciÛn legal   |   Acuerdo de Suscriptor a MAETS
+				¬© 2015 MAETS Corporation. Todos los derechos reservados. Todas las marcas registradas son propiedad de sus respectivos due√±os en Madrid, Espa√±a.
+				Todos los precios incluyen IVA (donde sea aplicable).   Pol√≠tica de Privacidad   |   Informaci√≥n legal   |   Acuerdo de Suscriptor a MAETS
 			</p>
 		</div>
 	</div>

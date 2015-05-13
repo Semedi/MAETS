@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ï»¿<!DOCTYPE html>
 
 
 <head>
@@ -12,12 +12,12 @@
 
 <body>
 	<div id="container">
-		<!--Menú-->
+		<!--MenÃº-->
 		<div id="nav">
 			<div id="left-nav">
 				<li><a href="../tienda.php">Tienda</a></li>
-				<li><a href="../Community.php">	Comunidad</a></li>
-				<li><a href="../Contact.php">Contacto</a></li>
+				<li><a href="../community.php">	Comunidad</a></li>
+				<li><a href="../contact.php">Contacto</a></li>
 			</div>
 			
 			<a href="../index.php"><img class="icono_nav" src="../images/MAETS.png"></a>				
@@ -31,12 +31,12 @@
 			<div id="menu"> 
 	
 					<div id="navigation">
-							   <div id="elementoMenu"><a href="foros.php" title="Enlace genérico">  <span>  Foros    </span>  </a> </div>
-							   <div id="elementoMenu"><a href="usuarios.php" title="Enlace genérico">  <span>  Usuarios   </span>  </a> </div>
-							   <div id="elementoMenu"><a href="achievements.php" title="Enlace genérico">  <span>  Logros   </span> </a> </div>
-							   <div id="elementoMenu"><a href="capturas.php" title="Enlace genérico">  <span>  Capturas </span></a> </div>
-							   <div id="elementoMenu"><a href="videos.php" title="Enlace genérico">  <span>  Videos   </span> </a> </div>
-							   <div id="elementoMenu"><a href="analysis.php" title="Enlace genérico">  <span>  Analisis  </span> </a> </div>
+							   <div id="elementoMenu"><a href="foros.php" title="Enlace genÃ©rico">  <span>  Foros    </span>  </a> </div>
+							   <div id="elementoMenu"><a href="usuarios.php" title="Enlace genÃ©rico">  <span>  Usuarios   </span>  </a> </div>
+							   <div id="elementoMenu"><a href="achievements.php" title="Enlace genÃ©rico">  <span>  Logros   </span> </a> </div>
+							   <div id="elementoMenu"><a href="capturas.php" title="Enlace genÃ©rico">  <span>  Capturas </span></a> </div>
+							   <div id="elementoMenu"><a href="videos.php" title="Enlace genÃ©rico">  <span>  Videos   </span> </a> </div>
+							   <div id="elementoMenu"><a href="analysis.php" title="Enlace genÃ©rico">  <span>  Analisis  </span> </a> </div>
 					</div>
 	
 	
@@ -44,9 +44,9 @@
 			<div id="cajaBusqueda">
 				<div id ="busqueda"> 
 					<!--<form action="demo_form.asp">    // Sirve para ejecutar la accion-->
-					Búsqueda:
+					BÃºsqueda:
 					<input id ="barra_busqueda" type="text" name="lname">
-					<!--<input type="submit" value="Submit">   //Añade un boton-->
+					<!--<input type="submit" value="Submit">   //AÃ±ade un boton-->
 					<!--</form>-->
 				</div>
 			</div>
@@ -85,7 +85,7 @@
 				<p><img src="../images/usuarios/holi.jpg" width=30px height=30px> MissHoli</p> 
 			</div>
 			<div id="ultimos_logros">
-				<h4> Últimos logros: </h4>
+				<h4> Ãšltimos logros: </h4>
 				<p><img src="../images/usuarios/misterT.jpg" width=30px height=30px> Mr. T</p>  
 				<p><img src="../images/usuarios/montero.jpg" width=30px height=30px> Montero</p>  
 				<p><img src="../images/usuarios/usuario.jpg" width=30px height=30px> Drulas</p> 
@@ -98,8 +98,8 @@
 		
 		<div id="pie">
 			<p>MAETS Software
-				© 2015 MAETS Corporation. Todos los derechos reservados. Todas las marcas registradas son propiedad de sus respectivos dueños en Madrid, España.
-				Todos los precios incluyen IVA (donde sea aplicable).   Política de Privacidad   |   Información legal   |   Acuerdo de Suscriptor a MAETS
+				Â© 2015 MAETS Corporation. Todos los derechos reservados. Todas las marcas registradas son propiedad de sus respectivos dueÃ±os en Madrid, EspaÃ±a.
+				Todos los precios incluyen IVA (donde sea aplicable).   PolÃ­tica de Privacidad   |   InformaciÃ³n legal   |   Acuerdo de Suscriptor a MAETS
 			</p>
 		</div>
 	</div>

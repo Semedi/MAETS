@@ -15,8 +15,8 @@
 		<div id="nav">
 			<div id="left-nav">
 				<li><a href="tienda.php">Tienda</a></li>
-				<li><a href="Community.php">Comunidad</a></li>
-				<li><a href="Contact.php">Contacto</a></li>
+				<li><a href="community.php">Comunidad</a></li>
+				<li><a href="contact.php">Contacto</a></li>
 			</div>
 			
 			<a href="index.php"><img class="icono_nav" src="images/MAETS.png"></a>				

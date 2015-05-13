@@ -14,14 +14,15 @@
 		<div id="nav">
 			<div id="left-nav">
 				<li><a href="tienda.php">Tienda</a></li>
-				<li><a href="Community.php">Comunidad</a></li>
-				<li><a href="Contact.php">Contacto</a></li>
+
+				<li><a href="community.php">Comunidad</a></li>
+				<li><a href="contact.php">Contacto</a></li>
 			</div>
 			
 			<a href="index.php"><img class="icono_nav" src="images/MAETS.png"></a>
 			
 			<div id="right-nav">
-				<li><a href="signup.php">Sign Up<a></li>
+				<li><a href="signUp.php">Sign Up<a></li>
 				<li><a href =""><s>Log In</s></a></li>
 			</div>
 		</div>
@@ -31,17 +32,18 @@
 			<div id="logIn">
 			<t1>Iniciar Sesion</t1>
 				<p>Usuarios Registrados</p>
+				<form action="include/usuariosGestor.php" method="POST">
 				</br>
 				<p>Nombre de la cuenta </p>
 				<p>
 				<input type="text" id="name" name="name" value="" placeholder="Tu nombre" required="required" autofocus="autofocus" />  
 				</p>
-				<p>Contrasena</p>
-				<input type="text" id="name" name="name" value="" placeholder="Tu contrasena" required="required" autofocus="autofocus" />
+				<p>Contraseña</p>
+				<input type="text" id="passw" name="passw" value="" placeholder="Tu contraseña" required="required" autofocus="autofocus" />
 				</br>
 				</br>
 				<div id= "logInButton">
-				<a href="pagPpalUser.php">Iniciar Sesion</a>
+				<button type="submit">Iniciar sesión</button>
 				</div>
 				</br>
 				<a href="recuperarContraseña.php"><p>¿Has olvidado la contraseña?</p> </a>
@@ -52,7 +54,7 @@
 				<br/>
 				<p>Continua para crear tu cuenta, la solucion digital lider entre los jugadores de PC y Mac.</p>
 				<div id="newAccount">
-				<a href="nuevaCuenta.php">Crear Cuenta</a>
+				<a href="signUp.php">Crear Cuenta</a>
 				</div>
 			</div>
 			
