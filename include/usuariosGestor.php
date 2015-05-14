@@ -39,54 +39,9 @@
 					}
 				?>
 
-
-			<?php
-			?>
-
-				<div id = "contenido">
-					<?php
-						$nombre = $_REQUEST["name"];
-						$contra = $_REQUEST["passw"];
-
-						if($nombre == "admin"){
-							if($contra == "adminpass"){
-								$_session["nombre"] = $nombre;
-								$_session["permisos"] = "admin";
-								echo "
-								<h1> Bienvenido Administrador </h1>
-								<p> Usa el menú de la izquierda para navegar. </p>
-								"; 
-							} else {
-								echo "
-								<h1> ERROR </h1>
-								<p> El usuario o contraseña no son válidos. </p>
-								";
-							}
-						} else if ($nombre == "user"){
-							if($contra == "userpass"){
-								echo "
-								<h1> Bienvenido Usuario </h1>
-								<p> Usa el menú de la izquierda para navegar. </p>
-								";
-							} else {
-								echo "
-								<h1> ERROR </h1>
-								<p> El usuario o contraseña no son válidos. </p>
-								";
-							}
-							
-						} else {
-							echo "
-								<h1> ERROR </h1>
-								<p> El usuario o contraseña no son válidos. </p>
-								";
-
-						}
-					?>
-			</div>
-
-			<?php
-			?>
+				<?php
+					header("Location: ../index.php");
+				?>
 	
 		</div>
 	</body>

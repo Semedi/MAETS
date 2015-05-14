@@ -24,7 +24,7 @@
 				<li><a href="../signUp.php">Sign Up</a></li>
 				<li><a href="../logIn.php">Log in</a></li>
 			</div>
-	    </div>
+	    </div>	
 
 	    <div id="content">
 		

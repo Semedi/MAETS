@@ -12,19 +12,7 @@
 <body>
 	<div id="container">
 		<!--Menú-->
-		<div id="nav">
-			<div id="left-nav">
-				<li><a href="tienda.php">Tienda</a></li>
-				<li><a href="community.php">	Comunidad</a></li>
-				<li><a href="">Contacto</a></li>
-			</div>
-			
-			<a href="index.php"><img class="icono_nav" src="images/MAETS.png"></a>				
-			<div id="right-nav">
-				<li><a href="signUp.php">Sign Up</a></li>
-				<li><a href="logIn.php">Log in</a></li>
-			</div>
-	    </div>
+		<?php  include ('static/mainTOP.php'); ?>	
 
 	    <div id="content">
 		

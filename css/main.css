@@ -87,10 +87,23 @@ img.icono_nav{
 	height: 75px;
 }
 
+
 #pie{
 	color: white;
 	padding: 10px;
 	text-align: center;
 	clear: both;
 	background-color: rgba(20,30,33,1);
+}
+
+#nombreUsuario{
+	float: left;
+	width: 560px;
+	margin-top: 25px;
+}
+
+#imagenUsuario{
+	float: right;
+	border-right: 20px;
+	margin-top: -50px;	
 }
