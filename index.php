@@ -9,7 +9,9 @@
 </head>
 
 
-<?php  include ('static/mainTOP.php'); ?>		
+
+<?php  include ('static/mainTOP.php'); ?>	
+	
 	    	<div id="content-container">
 	    		<img class="image" src="images/imageSlider.png">
 	    	</div>
@@ -86,5 +88,7 @@
 					</table>
 				</div>
 				
-	<?php  include ('static/mainBOT.php'); ?>
+<?php  include ('static/mainBOT.php'); ?>
+	
+</html>
 	

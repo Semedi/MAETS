@@ -1,6 +1,6 @@
 ﻿<!DOCTYPE html>
 
-
+</html>
 <head>
 	<title> MAETS </title>
 	<link rel="icon" type="image/png" href="images/MAETS.png" />
@@ -13,16 +13,6 @@
 <?php  include ('static/mainTOP.php'); ?>	
 <?php  include ('static/communityMenu.php'); ?>	
 			
-			
-			<div id="cajaBusqueda">
-				<div id ="busqueda"> 
-					<!--<form action="demo_form.asp">    // Sirve para ejecutar la accion-->
-					Búsqueda:
-					<input id ="barra_busqueda" type="text" name="lname">
-					<!--<input type="submit" value="Submit">   //Añade un boton-->
-					<!--</form>-->
-				</div>
-			</div>
 			
 			<div id="bienvenida">
 				<h1> Bienvenido a la Comunidad de MAETS </h1>

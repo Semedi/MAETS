@@ -1,6 +1,6 @@
 ﻿<!DOCTYPE html>
 
-
+<html>
 <head>
 	<title> MAETS </title>
 	<link rel="icon" type="image/png" href="images/MAETS.png" />
@@ -9,24 +9,8 @@
 </head>	
 
 
-<body>
-	<div id="container">
-		<!--Menú-->
-		<div id="nav">
-			<div id="left-nav">
-				<li><a href="tienda.php">Tienda</a></li>
-				<li><a href="community.php">Comunidad</a></li>
-				<li><a href="contact.php">Contacto</a></li>
-			</div>
-			
-			<a href="index.php"><img class="icono_nav" src="images/MAETS.png"></a>				
-			<div id="right-nav">
-				<li><a href="signUp.php">Sign Up</a></li>
-				<li><a href="logIn.php">Log in</a></li>
-			</div>
-	    </div>
+<?php  include ('static/mainTOP.php'); ?>
 
-	    <div id="content">
     		<div id="left-side">	
     			<h1 class="upper-bar-name">Grand Theft Auto V</h1>
     		</div>
@@ -114,16 +98,6 @@
         		</br>
         		<a href="compra.php"><img src="images/boton-comprar.png"></a>				
 	    	</div>
-		</div>
-
-		<div id="pie">
-			<p>MAETS Software
-				© 2015 MAETS Corporation. Todos los derechos reservados. Todas las marcas registradas son propiedad de sus respectivos dueños en Madrid, España.
-				Todos los precios incluyen IVA (donde sea aplicable).   Política de Privacidad   |   Información legal   |   Acuerdo de Suscriptor a MAETS
-			</p>
-		</div>
-	</div>
-
-</body>
+<?php  include ('static/mainBOT.php'); ?>
 	
 </html>

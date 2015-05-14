@@ -1,5 +1,6 @@
 ﻿<!DOCTYPE html>
 
+<html>
 
 <head>
 	<title> MAETS </title>
@@ -9,12 +10,8 @@
 </head>
 
 
-<body>
-	<div id="container">
-		<!--Menú-->
-		<?php  include ('static/mainTOP.php'); ?>	
+<?php  include ('static/mainTOP.php'); ?>	
 
-	    <div id="content">
 		
 				<div id="contact-form">  
 
@@ -55,17 +52,6 @@
 				   
 				</div> <!--/formulario del contacto-->										
 	    	
-		</div>
-
-
-		<div id="pie">
-			<p>MAETS Software
-				© 2015 MAETS Corporation. Todos los derechos reservados. Todas las marcas registradas son propiedad de sus respectivos dueños en Madrid, España.
-				Todos los precios incluyen IVA (donde sea aplicable).   Política de Privacidad   |   Información legal   |   Acuerdo de Suscriptor a MAETS
-			</p>
-		</div>
-	</div>
-
-</body>
+<?php include ('static/mainBOT.php'); ?>
 	
 </html>

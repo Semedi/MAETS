@@ -1,5 +1,7 @@
 ﻿<!DOCTYPE html>
 
+<html>
+
 <head>
   <title> MAETS </title>
   <link rel="icon" type="image/png" href="images/MAETS.png" />
@@ -8,12 +10,9 @@
   <link rel="stylesheet" type="text/css" href="css/main.css" />
 </head>
 
-<body>
-  <div id="container">
-    <!--Menú-->
-    <?php  include ('static/mainTOP.php'); ?>  
 
-    <div id="content">
+<?php  include ('static/mainTOP.php'); ?>  
+
       <div id = "left-menu">
         <h2>Categorias</h2>
         <p>Free to play</p>
@@ -91,19 +90,8 @@
           <br></br>
           <a href="articulo-tienda.php"><img class="image" src="images/GTAV.jpg"></a>
         </div>
-    </div>
 
- <div id="pie">
-      <p>MAETS Software
-        © 2015 MAETS Corporation. Todos los derechos reservados. Todas las marcas registradas son propiedad de sus respectivos dueños en Madrid, España.
-        Todos los precios incluyen IVA (donde sea aplicable).   Política de Privacidad   |   Información legal   |   Acuerdo de Suscriptor a MAETS
-      </p>
-    </div>
-
-    </div>
-  </div>
-
-</body>
+<?php  include ('static/mainBOT.php'); ?>
   
 </html>
   

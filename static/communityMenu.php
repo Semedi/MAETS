@@ -1,13 +1,24 @@
-<div id="menu"> 
+ï»¿<div id="menu"> 
 	
 					<div id="navigation">
-					   <div id="elementoMenu"><a href="community/foros.php" title="Enlace genérico">  <span>  Foros    </span>  </a> </div>
-					   <div id="elementoMenu"><a href="community/usuarios.php" title="Enlace genérico">  <span>Usuario   </span>  </a> </div>
-					   <div id="elementoMenu"><a href="community/achievements.php" title="Enlace genérico">  <span>  Logros   </span> </a> </div>
-					   <div id="elementoMenu"><a href="community/capturas.php" title="Enlace genérico">  <span>  Capturas </span></a> </div>
-					   <div id="elementoMenu"><a href="community/videos.php" title="Enlace genérico">  <span>  Videos   </span> </a> </div>
-					   <div id="elementoMenu"><a href="community/analysis.php" title="Enlace genérico">  <span>  Analysis  </span> </a> </div>
+					   <div id="elementoMenu"><a href="/MAETS/community/foros.php" title="Enlace generico">  Foros     </a> </div>
+					   <div id="elementoMenu"><a href="/MAETS/community/usuarios.php" title="Enlace generico">  Usuario     </a> </div>
+					   <div id="elementoMenu"><a href="/MAETS/community/achievements.php" title="Enlace generico">   Logros    </a> </div>
+					   <div id="elementoMenu"><a href="/MAETS/community/capturas.php" title="Enlace generico">   Capturas </a> </div>
+					   <div id="elementoMenu"><a href="/MAETS/community/videos.php" title="Enlace generico">   Videos    </a> </div>
+					   <div id="elementoMenu"><a href="/MAETS/community/analysis.php" title="Enlace generico">  Analysis  </a> </div>
 					</div>
 	
 	
+			</div>
+			
+			
+<div id="cajaBusqueda">
+				<div id ="busqueda"> 
+					<!--<form action="demo_form.asp">    // Sirve para ejecutar la accion-->
+					BÃºsqueda:
+					<input id ="barra_busqueda" type="text" name="lname">
+					<!--<input type="submit" value="Submit">   //aÃ±ade un boton-->
+					<!--</form>-->
+				</div>
 			</div>

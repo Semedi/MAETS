@@ -1,6 +1,6 @@
 ﻿<!DOCTYPE html>
 
-
+</html>
 
 <head>
 	<title> Log In </title>
@@ -8,27 +8,10 @@
 	<link rel="stylesheet" type="text/css" href="css/login.css" />
 	 <link rel="stylesheet" type="text/css" href="css/main.css" />
 </head>
-<body>
-	<div id="container">
-		<!--Menú-->
-		<div id="nav">
-			<div id="left-nav">
-				<li><a href="tienda.php">Tienda</a></li>
 
-				<li><a href="community.php">Comunidad</a></li>
-				<li><a href="contact.php">Contacto</a></li>
-			</div>
-			
-			<a href="index.php"><img class="icono_nav" src="images/MAETS.png"></a>
-			
-			<div id="right-nav">
-				<li><a href="signUp.php">Sign Up<a></li>
-				<li><a href =""><s>Log In</s></a></li>
-			</div>
-		</div>
-		<!--Comentario en HTML -->
 
-		<div id="content">
+<?php  include ('static/mainTOP.php'); ?>
+
 			<div id="logIn">
 			<t1>Iniciar Sesion</t1>
 				<p>Usuarios Registrados</p>
@@ -57,17 +40,8 @@
 				<a href="signUp.php">Crear Cuenta</a>
 				</div>
 			</div>
-			
-		</div>
 
-		<div id="pie">
-			<p>MAETS Software
-				© 2015 MAETS Corporation. Todos los derechos reservados. Todas las marcas registradas son propiedad de sus respectivos dueños en Madrid, España.
-				Todos los precios incluyen IVA (donde sea aplicable).   Política de Privacidad   |   Información legal   |   Acuerdo de Suscriptor a MAETS
-			</p>
-		</div>
-	</div>
 
-</body>
+<?php  include ('static/mainBOT.php'); ?>
 	
 </html>
