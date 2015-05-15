@@ -1,5 +1,42 @@
 <!DOCTYPE html>
 
+
+
+<?php
+
+//recibe user/pass y comprueba en la base de datos si es correcto
+function login(string user, string pass){
+	return(true);
+	}
+//cierra la sesion
+function logout(){}
+
+//añade usuarios a la bd(faltan parametros)
+function addUser(){
+	return(true);
+}
+
+//elimina user de la bd
+function deleteUSer(){
+	return(true);
+}
+//añade relacion de amigos a la bdd
+function addFriend(int user1, int user2){
+	return(true);
+}
+
+//elimina relacion de amigos
+function deleteFriend(int user1, int user2){
+	return(true);
+}
+
+
+
+?>
+
+
+
+
 <html>
 <head>
 </head>
