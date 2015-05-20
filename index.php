@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+<?php  include ('include/session.php'); ?>
+<!DOCTYPE html>
 
 <html>
 <head>
