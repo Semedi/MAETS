@@ -1,61 +1,17 @@
-<!DOCTYPE html>
-
-
-
 <?php
 
+require("session.php");
 //recibe user/pass y comprueba en la base de datos si es correcto
-function login(string user, string pass){
-	return(true);
-	}
-//cierra la sesion
-function logout(){}
-
-//añade usuarios a la bd(faltan parametros)
-function addUser(){
-	return(true);
-}
-
-//elimina user de la bd
-function deleteUSer(){
-	return(true);
-}
-//añade relacion de amigos a la bdd
-function addFriend(int user1, int user2){
-	return(true);
-}
-
-//elimina relacion de amigos
-function deleteFriend(int user1, int user2){
-	return(true);
-}
+function login($user, $pass){
 
 
-
-?>
-
-
-
-
-<html>
-<head>
-</head>
-	<body>
-		<div id="contenedor">
-
-				<?php
-					session_start();
-
-					$nombre = $_REQUEST["name"];
-					$contra = $_REQUEST["passw"];
-					$_SESSION["esAdmin"] = false;
-					$_SESSION["login"] = false;
-
-					if($nombre == "admin"){
-						if($contra == "adminpass"){
+					if($user == "admin"){
+						if($pass == "admin"){
 							$_SESSION["nombre"] = "Administrador";
 							$_SESSION["login"] = true;
 							$_SESSION["esAdmin"] = true;
+
+
 						} else {
 							$_SESSION["login"] = false;
 							$_SESSION["esAdmin"] = false;
@@ -74,12 +30,65 @@ function deleteFriend(int user1, int user2){
 							$_SESSION["login"] = false;
 							$_SESSION["esAdmin"] = false;
 					}
-				?>
+		
 
-				<?php
-					header("Location: ../index.php");
-				?>
+		echo "ok";
+		return;
 	
-		</div>
-	</body>
-</html>
+	}
+//cierra la sesion
+function logout(){}
+
+//añade usuarios a la bd(faltan parametros)
+function addUser(){
+	return(true);
+}
+
+//elimina user de la bd
+function deleteUSer(){
+	return(true);
+}
+//añade relacion de amigos a la bdd
+function addFriend(){
+	return(true);
+}
+
+//elimina relacion de amigos
+function deleteFriend(){
+	return(true);
+}
+
+
+$functionName = filter_input(INPUT_GET, 'functionName');
+
+
+
+
+
+switch ($functionName) {
+    case "login":
+        login($_GET["user"], $_GET["pass"]);
+        
+        break;
+    case "logout":
+        echo "correcto";
+        break;
+    case "deleteUser":
+        echo "i es igual a 2";
+        break;
+    case "addUser":
+    	break;
+
+}
+
+
+
+
+
+
+
+
+?>
+
+
+

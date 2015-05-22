@@ -1,2 +1,0 @@
-Los html contienen la plantilla de divs que sigue cada pagina (pcomunidad es la estructura de la seccion comunidad con el menu nuevo por ej)
-Incluir en las paginas el css de la plantilla y el especifico de la pagina por separado.

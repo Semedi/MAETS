@@ -9,15 +9,43 @@
 	<link rel="icon" type="image/png" href="images/MAETS.png" />
 	<link rel="stylesheet" type="text/css" href="css/login.css" />
 	 <link rel="stylesheet" type="text/css" href="css/main.css" />
+	 <script type="text/javascript" src="js\jquery-1.9.1.min.js"> </script>
+
+	 <script type="text/javascript">
+
+	 $( document ).ready(function() {
+
+		 $('#login').click(
+		 	function(){
+
+		 			$.get("include/usuariosGestor.php",{ functionName:"login", user:"admin", pass:"admin"  },function(data){
+
+		 					alert(data);
+		 					
+
+
+
+		 	}
+
+
+
+		 	);
+
+
+
+	});
+
+	 </script>
+
 </head>
 
 
 <?php  include ('static/mainTOP.php'); ?>
 
 			<div id="logIn">
-			<t1>Iniciar Sesion</t1>
+				<t1>Iniciar Sesion</t1>
 				<p>Usuarios Registrados</p>
-				<form action="include/usuariosGestor.php" method="POST">
+				
 				</br>
 				<p>Nombre de la cuenta </p>
 				<p>
@@ -28,7 +56,7 @@
 				</br>
 				</br>
 				<div id= "logInButton">
-				<button type="submit">Iniciar sesión</button>
+				<button type="button" id="login">Iniciar sesión</button>
 				</div>
 				</br>
 				<a href="recuperarContraseña.php"><p>¿Has olvidado la contraseña?</p> </a>
