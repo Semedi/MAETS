@@ -18,10 +18,19 @@
 		 $('#login').click(
 		 	function(){
 
-		 			$.get("include/usuariosGestor.php",{ functionName:"login", user:"admin", pass:"admin"  },function(data){
+		 			$.get("include/usuariosGestor.php",{ functionName:"login", user:"admin", pass:"admin" },function(data){
 
-		 					alert(data);
+		 					trimmed_data = $.trim(data);
 		 					
+		 					alert(data);
+
+
+		 					if (trimmed_data == "correcto"){
+		 						alert ("funciona");}
+		 					else {
+
+		 						alert ("no funciona");
+		 					}
 
 
 
@@ -34,6 +43,9 @@
 
 
 	});
+
+
+		});
 
 	 </script>
 

@@ -1,10 +1,12 @@
 <?php
 
-require("session.php");
+
 //recibe user/pass y comprueba en la base de datos si es correcto
 function login($user, $pass){
 
+	$value="incorrecto";
 
+	
 					if($user == "admin"){
 						if($pass == "admin"){
 							$_SESSION["nombre"] = "Administrador";
@@ -12,30 +14,36 @@ function login($user, $pass){
 							$_SESSION["esAdmin"] = true;
 
 
+							$value="correcto";
+
+
 						} else {
 							$_SESSION["login"] = false;
 							$_SESSION["esAdmin"] = false;
+							$value="correcto";
 						}
 					} else if ($nombre == "user"){
 						if($contra == "userpass"){
 							$_SESSION["nombre"] = "Juan";
 							$_SESSION["login"] = true;
 							$_SESSION["esAdmin"] = false;
+							$value="correcto";
 						} else {
 							$_SESSION["login"] = false;
 							$_SESSION["esAdmin"] = false;
+							$value="correcto";
 						}
 						
 					} else {
 							$_SESSION["login"] = false;
 							$_SESSION["esAdmin"] = false;
+							$value="correcto";
 					}
 		
-
-		echo "ok";
-		return;
+					echo $value;
 	
 	}
+
 //cierra la sesion
 function logout(){}
 
@@ -71,10 +79,10 @@ switch ($functionName) {
         
         break;
     case "logout":
-        echo "correcto";
+        
         break;
     case "deleteUser":
-        echo "i es igual a 2";
+        
         break;
     case "addUser":
     	break;
