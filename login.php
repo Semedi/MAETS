@@ -26,10 +26,10 @@
 
 
 		 					if (trimmed_data == "correcto"){
-		 						alert ("funciona");}
+		 						alert ("haced login");}
 		 					else {
 
-		 						alert ("no funciona");
+		 						alert ("mostrar error");
 		 					}
 
 

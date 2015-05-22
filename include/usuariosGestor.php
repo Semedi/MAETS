@@ -6,40 +6,14 @@ function login($user, $pass){
 
 	$value="incorrecto";
 
-	
+
 					if($user == "admin"){
-						if($pass == "admin"){
-							$_SESSION["nombre"] = "Administrador";
-							$_SESSION["login"] = true;
-							$_SESSION["esAdmin"] = true;
-
-
-							$value="correcto";
-
-
-						} else {
-							$_SESSION["login"] = false;
-							$_SESSION["esAdmin"] = false;
-							$value="correcto";
-						}
-					} else if ($nombre == "user"){
-						if($contra == "userpass"){
-							$_SESSION["nombre"] = "Juan";
-							$_SESSION["login"] = true;
-							$_SESSION["esAdmin"] = false;
-							$value="correcto";
-						} else {
-							$_SESSION["login"] = false;
-							$_SESSION["esAdmin"] = false;
-							$value="correcto";
-						}
 						
-					} else {
-							$_SESSION["login"] = false;
-							$_SESSION["esAdmin"] = false;
 							$value="correcto";
-					}
-		
+						}
+
+
+
 					echo $value;
 	
 	}
