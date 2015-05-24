@@ -18,7 +18,7 @@
 		 $('#login').click(
 		 	function(){
 
-		 			$.get("include/usuariosGestor.php",{ functionName:"login", user:"admin", pass:"admin" },function(data){
+		 			$.get("include/usuariosGestor.php",{ functionName:"login", user:$('#name').val(), pass:$('#passw').val() },function(data){
 
 		 					trimmed_data = $.trim(data);
 		 					

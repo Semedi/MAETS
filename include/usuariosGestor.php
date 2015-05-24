@@ -7,14 +7,22 @@ function login($user, $pass){
 	$value="incorrecto";
 
 
-					if($user == "admin"){
+					if($user == "admin" && $pass == "admin"){
 						
 							$value="correcto";
+
+
 						}
+					if ($user == "user" && $pass == "user"){
+						$value="correcto";
+					}
 
 
 
-					echo $value;
+
+
+
+					return ($value);
 	
 	}
 
@@ -49,7 +57,7 @@ $functionName = filter_input(INPUT_GET, 'functionName');
 
 switch ($functionName) {
     case "login":
-        login($_GET["user"], $_GET["pass"]);
+       echo login($_GET["user"], $_GET["pass"]);
         
         break;
     case "logout":
