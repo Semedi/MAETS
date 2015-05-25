@@ -1,6 +1,5 @@
-﻿<!DOCTYPE html>
-<?php
-
+﻿<?php
+include ('include/session.php');
 
 	//funcion de prueba para cargar una cabecera default 
 function cargaCabeceraAnon(){
