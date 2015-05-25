@@ -1,20 +1,21 @@
 <?php
-
+include ('session.php'); 
 
 //recibe user/pass y comprueba en la base de datos si es correcto
 function login($user, $pass){
 
 	$value="incorrecto";
-
+	$_SESSION["login"] == false;
 
 					if($user == "admin" && $pass == "admin"){
 						
 							$value="correcto";
-
+							$_SESSION["login"] == true;
 
 						}
 					if ($user == "user" && $pass == "user"){
 						$value="correcto";
+						$_SESSION["login"] == true;
 					}
 
 
