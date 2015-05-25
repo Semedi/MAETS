@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 08-05-2015 a las 23:49:50
+-- Tiempo de generación: 25-05-2015 a las 17:59:22
 -- Versión del servidor: 5.6.21
 -- Versión de PHP: 5.6.3
 
@@ -91,7 +91,7 @@ CREATE TABLE IF NOT EXISTS `imagenes` (
 CREATE TABLE IF NOT EXISTS `juego` (
 `Id` int(10) NOT NULL,
   `Título` varchar(100) COLLATE utf8_bin NOT NULL,
-  `Portada` blob NOT NULL,
+  `Portada` longblob NOT NULL,
   `Precio` int(4) NOT NULL,
   `Edad` int(3) NOT NULL,
   `Compañia` varchar(100) COLLATE utf8_bin NOT NULL,
@@ -140,7 +140,7 @@ CREATE TABLE IF NOT EXISTS `respuesta` (
 CREATE TABLE IF NOT EXISTS `usuario` (
 `Id` int(10) NOT NULL,
   `Nick` varchar(20) COLLATE utf8_bin NOT NULL,
-  `Contraseña` varchar(25) COLLATE utf8_bin NOT NULL,
+  `Contrasenia` varchar(25) COLLATE utf8_bin NOT NULL,
   `Nombre` varchar(20) COLLATE utf8_bin NOT NULL,
   `Apellidos` varchar(50) COLLATE utf8_bin NOT NULL,
   `Correo` varchar(50) COLLATE utf8_bin NOT NULL,
@@ -152,7 +152,14 @@ CREATE TABLE IF NOT EXISTS `usuario` (
   `Puntuacion` int(7) NOT NULL,
   `Rol` enum('Usuario Registrado','Administrador','Desarrollador','Gestor-Tienda','Gestor-Comunidad','') COLLATE utf8_bin NOT NULL,
   `Imagen` blob NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Tabla de información del usuario';
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Tabla de información del usuario';
+
+--
+-- Volcado de datos para la tabla `usuario`
+--
+
+INSERT INTO `usuario` (`Id`, `Nick`, `Contrasenia`, `Nombre`, `Apellidos`, `Correo`, `Fecha de Nacimiento`, `País`, `Ciudad`, `Dirección`, `Código Postal`, `Puntuacion`, `Rol`, `Imagen`) VALUES
+(1, 'Drulas', 'Drulas', 'JAvirulo', 'Drulas Druloide', 'drulas@eldrulo.dru', '2013-03-12', 'Drulan', 'Drulopia', 'Calle del Drulo, s/n', 28033, 2147483647, 'Usuario Registrado', '');
 
 --
 -- Índices para tablas volcadas
@@ -240,7 +247,7 @@ MODIFY `Id` int(10) NOT NULL AUTO_INCREMENT;
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-MODIFY `Id` int(10) NOT NULL AUTO_INCREMENT;
+MODIFY `Id` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

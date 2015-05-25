@@ -21,15 +21,12 @@
 		 			$.get("include/usuariosGestor.php",{ functionName:"login", user:$('#name').val(), pass:$('#passw').val() },function(data){
 
 		 					trimmed_data = $.trim(data);
-		 					
-		 					alert(data);
 
-
-		 					if (trimmed_data == "correcto"){
-		 						alert ("haced login");}
+		 					if (trimmed_data == ""){
+		 						alert ("haced login");
+		 					}
 		 					else {
-
-		 						alert ("mostrar error");
+		 						alert (data);
 		 					}
 
 

@@ -1,8 +1,4 @@
-
 <?php
-
-
-
 
  /*Create connection*/
 function createConnection(){
@@ -11,27 +7,14 @@ function createConnection(){
 	$user="root";
 	$bdd="maets";
 
-
-
-	$con=mysqli_connect(servidor, user, "", bdd);
-	//echo "Success to connect to MySQL: ";
-	// echo "<br>";
-	 //Check connection
-	if (mysqli_connect_errno()) {
-	  echo "Failed to connect to MySQL: " . mysqli_connect_error();
-	  }else return $con;
+	mysql_connect($servidor, $user, "");
+	@mysql_select_db($bdd) or die("Unable to select database");
 }
 
 
  function closeConnection($con){
 	
-		mysqli_close($con);
-	
+		mysql_free_result($con);
+		mysql_close();
 
  }
-
-
-
-
-
-?>
