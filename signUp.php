@@ -9,6 +9,44 @@
 	<link rel="icon" type="image/png" href="images/MAETS.png" />
 	<link rel="stylesheet" type="text/css" href="css/singup.css" />
 	 <link rel="stylesheet" type="text/css" href="css/main.css" />
+	 <script type="text/javascript" src="js\jquery-1.9.1.min.js"> </script>
+
+	 <script type="text/javascript">
+
+	 $( document ).ready(function() {
+
+		 $('#signUp').click(
+		 	function(){
+
+		 			$.get("include/usuariosGestor.php",{ functionName:"addUser", user:$('#name').val(), pass:$('#passw').val(), mail: $('#mail').val() },function(data){
+
+		 					trimmed_data = $.trim(data);
+
+		 					if (trimmed_data == ""){
+		 						alert ("¡Usuario nuevo registrado!");
+		 					}
+		 					else {
+		 						alert (data);
+		 					}
+
+
+
+		 	}
+
+
+
+		 	);
+
+
+
+	});
+
+
+		});
+
+	 </script>
+
+
 </head>
 
 <?php  include ('static/mainTOP.php'); ?>
@@ -38,8 +76,8 @@
 				<p> 
 				<input type="mail" id="mail" name="mail" value="" placeholder="tu email" required="required" />  
 				</p>
-				<div id= "singUpButton">
-				<a href="pagPpalUser.php">Crear cuenta</a>
+				<div id= "signUpButton">
+				<button type="button" id="signUp">Crear cuenta</button>
 				</div>
 			
 		</div>	
