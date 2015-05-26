@@ -43,7 +43,9 @@ closeConnection($result);
 }
 
 //cierra la sesion
-function logout(){}
+function logout(){
+	session_destroy();
+}
 
 
 //añade usuarios a la bd(faltan parametros)
@@ -102,8 +104,7 @@ switch ($functionName) {
         
         break;
     case "logout":
-        
-        break;
+        logout();
     case "deleteUser":
         
         break;

@@ -20,7 +20,9 @@ function cargaCabeceraAnon(){
 
 			} else {
 				echo "
-							<div id='nombreUsuario'><li><a href='/MAETS/index.php'>NombreUsuario</a></li></div>
+							<div id='nombreUsuario'><li><a href='/MAETS/index.php'>"; echo $_SESSION["Nick"]; echo "</a></li>
+							<div id='logout'><li><a href='/MAETS/index.php'> logout </a></li></div>
+							</div>
 							<li><a href='index.php'><img id='imagenUsuario'  src='/MAETS/images/userProfile.png'></a></li>";
 			}
 							
@@ -37,6 +39,44 @@ function cargaCabeceraAnon(){
 }
 
 ?>
+
+
+<script type="text/javascript" src="js\jquery-1.9.1.min.js"> </script>
+
+	 <script type="text/javascript">
+
+	 $( document ).ready(function() {
+
+		 $('#logout').click(
+		 	function(){
+
+		 			$.get("include/usuariosGestor.php",{ functionName:"logout"},function(data){
+
+		 					trimmed_data = $.trim(data);
+
+		 					if (trimmed_data == ""){
+		 						window.location.href = "index.php";
+		 					}
+		 					else {
+		 						alert (data);
+		 					}
+
+
+
+		 	}
+
+
+
+		 	);
+
+
+
+	});
+
+
+		});
+
+	 </script>
 
 <body>
 	<div id="container">

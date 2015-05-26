@@ -54,6 +54,12 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#141414', end
 	margin-top: 25px;	
 }
 
+#logout{
+	color: red;
+	font-size: 8px;
+}
+
+
 #content{
 	/*Degradado de fondo*/
 	background: rgba(34,36,41,1);
