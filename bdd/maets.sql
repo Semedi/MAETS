@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 25-05-2015 a las 17:59:22
+-- Tiempo de generación: 25-05-2015 a las 19:57:48
 -- Versión del servidor: 5.6.21
 -- Versión de PHP: 5.6.3
 
@@ -64,7 +64,7 @@ CREATE TABLE IF NOT EXISTS `consigue` (
 
 CREATE TABLE IF NOT EXISTS `hilo` (
 `Id` int(10) NOT NULL,
-  `Título` varchar(200) COLLATE utf8_bin NOT NULL,
+  `Titulo` varchar(200) COLLATE utf8_bin NOT NULL,
   `Fecha de creación` date NOT NULL,
   `Último mensaje` date NOT NULL,
   `IdUsuario` int(10) NOT NULL
@@ -77,7 +77,7 @@ CREATE TABLE IF NOT EXISTS `hilo` (
 --
 
 CREATE TABLE IF NOT EXISTS `imagenes` (
-  `Título` varchar(20) COLLATE utf8_bin NOT NULL,
+  `Titulo` varchar(20) COLLATE utf8_bin NOT NULL,
   `Imagen` blob NOT NULL,
 `id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
@@ -90,11 +90,11 @@ CREATE TABLE IF NOT EXISTS `imagenes` (
 
 CREATE TABLE IF NOT EXISTS `juego` (
 `Id` int(10) NOT NULL,
-  `Título` varchar(100) COLLATE utf8_bin NOT NULL,
+  `Titulo` varchar(100) COLLATE utf8_bin NOT NULL,
   `Portada` longblob NOT NULL,
   `Precio` int(4) NOT NULL,
   `Edad` int(3) NOT NULL,
-  `Compañia` varchar(100) COLLATE utf8_bin NOT NULL,
+  `Companyia` varchar(100) COLLATE utf8_bin NOT NULL,
   `Tipo` enum('Free to Play','Acesso Anticipado','Acción','Aventura','Carreras','Casual','Deportes','Estrategia','Indie','Multijugador Masivo','Rol','Simuladores') COLLATE utf8_bin NOT NULL,
   `Etiquetas` varchar(200) COLLATE utf8_bin NOT NULL,
   `Idiomas` enum('Inglés','Español','Ruso','Italiano','Chino','Japones','Francés','Portugués','Árabe') COLLATE utf8_bin NOT NULL,
@@ -111,7 +111,7 @@ CREATE TABLE IF NOT EXISTS `juego` (
 CREATE TABLE IF NOT EXISTS `logro` (
 `Id` int(10) NOT NULL,
   `JuegoID` int(10) NOT NULL,
-  `Título` varchar(100) COLLATE utf8_bin NOT NULL,
+  `Titulo` varchar(100) COLLATE utf8_bin NOT NULL,
   `Puntos` int(3) NOT NULL,
   `Tipo` enum('Bronce','Plata','Oro','Platino') CHARACTER SET utf16 COLLATE utf16_bin NOT NULL,
   `Fecha` date NOT NULL,
@@ -145,10 +145,10 @@ CREATE TABLE IF NOT EXISTS `usuario` (
   `Apellidos` varchar(50) COLLATE utf8_bin NOT NULL,
   `Correo` varchar(50) COLLATE utf8_bin NOT NULL,
   `Fecha de Nacimiento` date NOT NULL,
-  `País` varchar(50) COLLATE utf8_bin NOT NULL,
+  `Pais` varchar(50) COLLATE utf8_bin NOT NULL,
   `Ciudad` varchar(50) COLLATE utf8_bin NOT NULL,
-  `Dirección` varchar(100) COLLATE utf8_bin NOT NULL,
-  `Código Postal` int(7) NOT NULL,
+  `Direccion` varchar(100) COLLATE utf8_bin NOT NULL,
+  `Codigo Postal` int(7) NOT NULL,
   `Puntuacion` int(7) NOT NULL,
   `Rol` enum('Usuario Registrado','Administrador','Desarrollador','Gestor-Tienda','Gestor-Comunidad','') COLLATE utf8_bin NOT NULL,
   `Imagen` blob NOT NULL
@@ -158,7 +158,7 @@ CREATE TABLE IF NOT EXISTS `usuario` (
 -- Volcado de datos para la tabla `usuario`
 --
 
-INSERT INTO `usuario` (`Id`, `Nick`, `Contrasenia`, `Nombre`, `Apellidos`, `Correo`, `Fecha de Nacimiento`, `País`, `Ciudad`, `Dirección`, `Código Postal`, `Puntuacion`, `Rol`, `Imagen`) VALUES
+INSERT INTO `usuario` (`Id`, `Nick`, `Contrasenia`, `Nombre`, `Apellidos`, `Correo`, `Fecha de Nacimiento`, `Pais`, `Ciudad`, `Direccion`, `Codigo Postal`, `Puntuacion`, `Rol`, `Imagen`) VALUES
 (1, 'Drulas', 'Drulas', 'JAvirulo', 'Drulas Druloide', 'drulas@eldrulo.dru', '2013-03-12', 'Drulan', 'Drulopia', 'Calle del Drulo, s/n', 28033, 2147483647, 'Usuario Registrado', '');
 
 --

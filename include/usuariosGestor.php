@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 include ('session.php'); 
 include ('config.php');
 
@@ -45,10 +45,35 @@ closeConnection($result);
 //cierra la sesion
 function logout(){}
 
+
 //añade usuarios a la bd(faltan parametros)
-function addUser(){
-	return(true);
+function addUser($user, $pass, $mail){
+
+	createConnection();
+	
+	$result = mysql_query("SELECT * FROM usuario WHERE nick = '$user'");
+
+	//Validamos si el nombre del administrador existe en la base de datos o es correcto
+	if($result == FALSE){
+			die(mysql_error());
+	}
+
+	if($row = mysql_fetch_array($result))
+		{     
+		echo "Ya existe este usuario";
+		}
+		else
+		{
+			$q = "INSERT INTO `usuario` (`Id`, `Nick`, `Contrasenia`, `Nombre`, `Apellidos`, `Correo`, `Fecha de Nacimiento`, `Pais`, `Ciudad`, `Direccion`, `Codigo Postal`, `Puntuacion`, `Rol`)
+						 VALUES (NULL, '$user' , '$pass', '', '', '$mail', '0000-00-00', '', '', '', 00000, 0 , 'Usuario Registrado')";
+			mysql_query($q) or die(mysql_error());
+
+		
+		}
+
+	closeConnection($result);
 }
+
 
 //elimina user de la bd
 function deleteUSer(){
@@ -83,7 +108,7 @@ switch ($functionName) {
         
         break;
     case "addUser":
-    	break;
+    	addUser($_GET["user"], $_GET["pass"], $_GET["mail"]);
 
 }
 
