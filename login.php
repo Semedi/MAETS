@@ -24,6 +24,7 @@
 
 		 					if (trimmed_data == ""){
 		 						alert ("haced login");
+		 						window.location.href = "index.php";
 		 					}
 		 					else {
 		 						alert (data);

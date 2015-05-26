@@ -26,6 +26,8 @@ function login($user, $pass){
 					session_start();  
 				  //Almacenamos el nombre de usuario en una variable de sesión usuario
 					$_SESSION['Nick'] = $user;
+					$_SESSION['Logueado'] = true;
+					$_SESSION['Rol'] = $row["Rol"];
 				 }
 			else
 				 {

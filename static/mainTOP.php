@@ -13,21 +13,26 @@ function cargaCabeceraAnon(){
 
  function cargaCabecera(){
 
- 	if(isset($_SESSION["login"])){
+ 	if(isset($_SESSION["Nick"])){
 
-		if($_SESSION["login"] == true){
-							echo "
+		if($_SESSION["Logueado"] == true){
+			if ($_SESSION["Rol"] == "Administrador") {
+
+			} else {
+				echo "
 							<div id='nombreUsuario'><li><a href='/MAETS/index.php'>NombreUsuario</a></li></div>
 							<li><a href='index.php'><img id='imagenUsuario'  src='/MAETS/images/userProfile.png'></a></li>";
+			}
+							
 						
 								
-			} else{
-
+		} else{
 				cargaCabeceraAnon();
-			}
-
 		}
-	else {    cargaCabeceraAnon();}
+
+	}	else {    
+		cargaCabeceraAnon();
+	}
 
 }
 
