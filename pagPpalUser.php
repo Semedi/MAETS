@@ -5,62 +5,74 @@
 <html>
 
 <head>
-	<title> Bienvenido </title>
-	<link rel="icon" type="image/png" href="images/MAETS.png" />
-	<link rel="stylesheet" type="text/css" href="css/pagPpalUser.css" />
+  	<title> MAETS </title>
+  	<link rel="icon" type="image/png" href="images/MAETS.png" />
+  	<link rel="stylesheet" type="text/css" href="css/tienda.css" />
+  	<link rel="stylesheet" type="text/css" href="css/ptienda.css" />
+  	<link rel="stylesheet" type="text/css" href="css/main.css" />
 </head>
 
 
-<?php  include ('static/mainTOP.php'); ?>
-			<div id="ofertas">
-				<h1>Ofertas</h1>
-				<br></br>
-				<a href="pagPpalUser.php"><img class="main_photo" src="images/mainImage.png"></a>
-				<p>Cuando un joven estafador callejero, un ladrón de bancos retirado y un psicópata aterrador se ven involucrados con lo peor y más desquiciado del mundo criminal, del gobierno de los EE. UU. y de la industria del espectáculo, tendrán que llevar a cabo una serie de peligrosos golpes para sobrevivir en una ciudad implacable en la que no pueden confiar en nadie. Y mucho menos los unos en los otros. </p>
-			</div>
-			<div id="gadgets">
-				<div id="destacados">
-					<table>
-					<caption><h2> Destacados </h2></caption>
-					<tr>
-					  <th>Título</th>
-					  <th>Desarrollador</th>
-					  <th>Precio</th>
-					</tr>
+<?php  include ('static/mainTOP.php'); ?>  
 
-					<tr>
-						<td>GTA V</td>
-						<td>Rockstar</td>
-						<td>55€</td>
-					</tr>
-			 
-					<tr>
-					  <td>This War of Mine</td>
-					  <td>11 Bit Studios</td>
-					  <td>20€</td>
-					</tr>
-			 
-					<tr>
-					  <td>The Witcher 3</td>
-					  <td>CD Proyect RED</td>
-					  <td>59.99€</td>
-					</tr>
+      <div id = "left-menu">
+        <h2>Opciones</h2>
+        <p>Información personal</p>
+        <p> <a href='/MAETS/editInfo.php'>Editar cuenta </a></p>
+        <p>Mis juegos</p>
+        <p>Mis mensajes</p>
+       	<p>Cerrar sesión </p>
+       
+      </div>
 
-					<tr>
-					  <td>Darkest Dungeon</td>
-					  <td>Power Up Audio</td>
-					  <td>13.99€</td>
-					</tr>
-				  </table>
-				</div>
-				<div id="video">
-				<h2>Videos</h2>
-				<a href="pagPpalUser.php"><img class="video_photo" src="images/video.png"></a>
-				</div>
-			</div>
-		
+      <div id = "right-menu">
+                <img id="imagenLupa" src="images/Lupa.png">
+        <p>
+          <input type="text" id="name" name="name" value="" placeholder="Buscar videojuego", required="required" autofocus="autofocus"/>  
+           </br>
+        </p>
+
+     </div>
+
+      <h1> Perfil del usuario</h1>
+
+      <table>
+        <tr><h2> Resumen </h2></tr>
+        
+
+        <tr>
+            <td>Nick:</td>
+            <td><?php echo $_SESSION["Nick"]; ?></td>
+        </tr>
+ 
+        <tr>
+            <td>Nombre: </a></td>
+            <td><?php echo $_SESSION['Nombre']; ?></td>
+        </tr>
+ 
+         <tr>
+            <td>Apellidos: </a></td>
+            <td><?php echo $_SESSION['Apellidos']; ?></td>
+        </tr>
+
+                <tr>
+            <td>Correo: </a></td>
+            <td><?php echo $_SESSION["Email"]; ?></td>
+        </tr>
+
+                 <tr>
+            <td>Juegos comprados: </a></td>
+            <td><?php echo $_SESSION["Nick"]; ?></td>
+        </tr>
+
+               <tr>
+            <td>Puntos de logro: </a></td>
+            <td><?php echo $_SESSION["Nick"]; ?></td>
+        </tr>
+      </table>
+
+
 <?php  include ('static/mainBOT.php'); ?>
-
-
-	
+  
 </html>
+  

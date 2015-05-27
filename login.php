@@ -36,7 +36,7 @@
 <?php  include ('static/mainTOP.php'); ?>
 
 			<div id="logIn">
-				<t1>Iniciar Sesion</t1>
+				<t1>Iniciar Sesión</t1>
 				<p>Usuarios Registrados</p>
 				
 				</br>
@@ -45,12 +45,10 @@
 				<input type="text" id="name" name="name" value="" placeholder="Tu nombre" required="required" autofocus="autofocus" />  
 				</p>
 				<p>Contraseña</p>
-				<input type="text" id="passw" name="passw" value="" placeholder="Tu contraseña" required="required" autofocus="autofocus" />
+				<input type="password" id="passw" name="passw" value="" placeholder="Tu contraseña" required="required" autofocus="autofocus"/>
 				</br>
 				</br>
-				<div id= "logInButton">
 				<button type="button" id="login">Iniciar sesión</button>
-				</div>
 				</br>
 				<a href="recuperarContraseña.php"><p>¿Has olvidado la contraseña?</p> </a>
 			</div>
@@ -58,10 +56,10 @@
 			<t1>Crear una cuenta</t1>
 				<p>Unirse es gratis</p>
 				<br/>
-				<p>Continua para crear tu cuenta, la solucion digital lider entre los jugadores de PC y Mac.</p>
-				<div id="newAccount">
-				<a href="signUp.php">Crear Cuenta</a>
-				</div>
+				<p>Continua para crear tu cuenta, la solución digital lider entre los jugadores de PC y Mac.</p>
+				<form action="signUp.php">
+   					<input type="submit" value="Crea tu cuenta">
+				</form>
 			</div>
 
 

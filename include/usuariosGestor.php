@@ -4,14 +4,11 @@ include ('config.php');
 
 //recibe user/pass y comprueba en la base de datos si es correcto
 function login($user, $pass){
-	/*Consulta de mysql con la que indicamos que necesitamos que seleccione
-	**solo los campos que tenga como nombre_administrador el que el formulario
-	**le ha enviado*/
 	createConnection();
 	
 	$result = mysql_query("SELECT * FROM usuario WHERE nick = '$user'");
 
-	//Validamos si el nombre del administrador existe en la base de datos o es correcto
+	//Validamos si el nombre del usuario existe en la base de datos o es correcto
 	if($result == FALSE){
 			die(mysql_error());
 	}
@@ -24,10 +21,13 @@ function login($user, $pass){
 				  //Creamos sesión
 				 	session_destroy();
 					session_start();  
-				  //Almacenamos el nombre de usuario en una variable de sesión usuario
+				  //Almacenamos los datos del usuario en variables
 					$_SESSION['Nick'] = $user;
 					$_SESSION['Logueado'] = true;
 					$_SESSION['Rol'] = $row["Rol"];
+					$_SESSION['Nombre'] = $row["Nombre"];
+					$_SESSION['Apellidos'] = $row["Apellidos"];
+					$_SESSION['Email'] = $row["Correo"];
 				 }
 			else
 				 {

@@ -46,20 +46,20 @@
 			
 				<p>Escoge una contraseña</p>
 				<p> 
-				<input type="passw" id="passw" name="passw" value="" placeholder="tu contraseña" required="required" />  
+				<input type="password" id="passw" name="passw" value="" placeholder="tu contraseña" required="required" />  
 				</p>
 				<p>Vuelve a introducir la contraseña</p>
 				<p> 
-				<input type="passw" id="passw" name="passw" value="" placeholder="tu contraseña" required="required" />  
+				<input type="password" id="passw" name="passw" value="" placeholder="tu contraseña" required="required" />  
 				</p>
 			
-				<p>Direccion de email actual:</p>
+				<p>Dirección de email actual:</p>
 				<p> 
-				<input type="mail" id="mail" name="mail" value="" placeholder="tu email" required="required" />  
+				<input type="text" id="mail" name="mail" value="" placeholder="tu email" required="required" />  
 				</p>
 				<p>Vuelve a introducir tu email</p>
 				<p> 
-				<input type="mail" id="mail" name="mail" value="" placeholder="tu email" required="required" />  
+				<input type="text" id="mail" name="mail" value="" placeholder="tu email" required="required" />  
 				</p>
 				<div id= "signUpButton">
 				<button type="button" id="signUp">Crear cuenta</button>
@@ -67,7 +67,7 @@
 			
 		</div>	
 		<div ="acuerdo">
-				<h1>ACUERDO DE SUSCRIPCION</h1>
+				<h1>ACUERDO DE SUSCRIPCIÓN</h1>
 				<t1>
 				El presente Acuerdo de suscriptor a MAETS («acuerdo») es un documento legal en el que se explican sus derechos y obligaciones como suscriptor. Léalo atentamente.
 
