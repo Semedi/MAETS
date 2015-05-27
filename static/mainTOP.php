@@ -43,40 +43,25 @@ function cargaCabeceraAnon(){
 
 <script type="text/javascript" src="js\jquery-1.9.1.min.js"> </script>
 
-	 <script type="text/javascript">
+	<script type="text/javascript">
 
-	 $( document ).ready(function() {
-
-		 $('#logout').click(
-		 	function(){
-
+		$( document ).ready(function() {
+		 	$('#logout').click(
+		 		function(){
 		 			$.get("include/usuariosGestor.php",{ functionName:"logout"},function(data){
-
-		 					trimmed_data = $.trim(data);
-
+		 				trimmed_data = $.trim(data);
 		 					if (trimmed_data == ""){
 		 						window.location.href = "index.php";
 		 					}
 		 					else {
 		 						alert (data);
 		 					}
-
-
-
-		 	}
-
-
-
-		 	);
-
-
-
-	});
-
-
+		 			 	}
+				 	);
+				});
 		});
 
-	 </script>
+	</script>
 
 <body>
 	<div id="container">

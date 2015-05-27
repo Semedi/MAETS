@@ -8,42 +8,26 @@
 	<title> Log In </title>
 	<link rel="icon" type="image/png" href="images/MAETS.png" />
 	<link rel="stylesheet" type="text/css" href="css/login.css" />
-	 <link rel="stylesheet" type="text/css" href="css/main.css" />
-	 <script type="text/javascript" src="js\jquery-1.9.1.min.js"> </script>
+	<link rel="stylesheet" type="text/css" href="css/main.css" />
+	<script type="text/javascript" src="js\jquery-1.9.1.min.js"> </script>
 
-	 <script type="text/javascript">
+	<script type="text/javascript">
 
-	 $( document ).ready(function() {
-
-		 $('#login').click(
-		 	function(){
-
-		 			$.get("include/usuariosGestor.php",{ functionName:"login", user:$('#name').val(), pass:$('#passw').val() },function(data){
-
-		 					trimmed_data = $.trim(data);
-
-		 					if (trimmed_data == ""){
-		 						window.location.href = "index.php";
-		 					}
-		 					else {
-		 						alert (data);
-		 					}
-
-
-
-		 	}
-
-
-
-		 	);
-
-
-
-	});
-
-
+		$( document ).ready(function() {
+			$('#login').click(
+			 	function(){
+					$.get("include/usuariosGestor.php",{ functionName:"login", user:$('#name').val(), pass:$('#passw').val() },function(data){
+			 			trimmed_data = $.trim(data);
+				 			if (trimmed_data == ""){
+				 				window.location.href = "index.php";
+				 			}
+				 			else {
+				 				alert (data);
+				 			}
+			 			}
+			 		);
+				});
 		});
-
 	 </script>
 
 </head>

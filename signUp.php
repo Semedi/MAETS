@@ -8,43 +8,28 @@
 	<title> Sing Up </title>
 	<link rel="icon" type="image/png" href="images/MAETS.png" />
 	<link rel="stylesheet" type="text/css" href="css/singup.css" />
-	 <link rel="stylesheet" type="text/css" href="css/main.css" />
-	 <script type="text/javascript" src="js\jquery-1.9.1.min.js"> </script>
+	<link rel="stylesheet" type="text/css" href="css/main.css" />
+	<script type="text/javascript" src="js\jquery-1.9.1.min.js"> </script>
 
-	 <script type="text/javascript">
+	<script type="text/javascript">
 
-	 $( document ).ready(function() {
-
-		 $('#signUp').click(
-		 	function(){
-
+		$( document ).ready(function() {
+			$('#signUp').click(
+		 		function(){
 		 			$.get("include/usuariosGestor.php",{ functionName:"addUser", user:$('#name').val(), pass:$('#passw').val(), mail: $('#mail').val() },function(data){
-
-		 					trimmed_data = $.trim(data);
-
+		 				trimmed_data = $.trim(data);
 		 					if (trimmed_data == ""){
 		 						alert ("¡Usuario nuevo registrado!");
 		 					}
 		 					else {
 		 						alert (data);
 		 					}
-
-
-
-		 	}
-
-
-
-		 	);
-
-
-
-	});
-
-
+		 				}
+				 	);
+				});
 		});
 
-	 </script>
+	</script>
 
 
 </head>

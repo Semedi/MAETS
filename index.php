@@ -15,7 +15,7 @@
 <?php  include ('static/mainTOP.php'); ?>	
 	
 	    	<div id="content-container">
-	    		<img class="image" src="images/imageSlider.png">
+	    		<?php include ('include/image-slider.source.html');?>
 	    	</div>
 				<div id="elem">
 					<h1>Juegos más vendidos</h1>
