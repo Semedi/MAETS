@@ -4,16 +4,12 @@ include ('config.php');
 
 //recibe user/pass y comprueba en la base de datos si es correcto
 function login($user, $pass){
-	createConnection();
+	$connection = createConnection();
 	
-	$result = mysql_query("SELECT * FROM usuario WHERE nick = '$user'");
-
-	//Validamos si el nombre del usuario existe en la base de datos o es correcto
-	if($result == FALSE){
-			die(mysql_error());
-	}
-
-	if($row = mysql_fetch_array($result))
+	$result = "SELECT * FROM usuario WHERE nick = '$user'";
+	$result = $connection->query($result) or die ($connection->error. " en la linea".(_LINE_-1));
+	
+	if($row = $result->fetch_assoc())
 		{     
 			//Si el usuario es correcto ahora validamos su contraseña
 			 if($row["Contrasenia"] == $pass)
@@ -39,7 +35,7 @@ function login($user, $pass){
 			echo "NO EXISTE ESE USUARIO";
 		}
 
-closeConnection($result);
+closeConnection($connection);
 }
 
 //cierra la sesion
@@ -51,29 +47,24 @@ function logout(){
 //añade usuarios a la bd(faltan parametros)
 function addUser($user, $pass, $mail){
 
-	createConnection();
+	$connection = createConnection();
 	
-	$result = mysql_query("SELECT * FROM usuario WHERE nick = '$user'");
+	$result = "SELECT * FROM usuario WHERE nick = '$user'";
+	$result = $connection->query($result) or die ($connection->error. " en la linea".(_LINE_-1));
 
-	//Validamos si el nombre del administrador existe en la base de datos o es correcto
-	if($result == FALSE){
-			die(mysql_error());
-	}
 
-	if($row = mysql_fetch_array($result))
+	if($row = $result->fetch_assoc())
 		{     
-		echo "Ya existe este usuario";
+			echo "Ya existe este usuario";
 		}
-		else
+	else
 		{
 			$q = "INSERT INTO `usuario` (`Id`, `Nick`, `Contrasenia`, `Nombre`, `Apellidos`, `Correo`, `Fecha de Nacimiento`, `Pais`, `Ciudad`, `Direccion`, `Codigo Postal`, `Puntuacion`, `Rol`)
-						 VALUES (NULL, '$user' , '$pass', '', '', '$mail', '0000-00-00', '', '', '', 00000, 0 , 'Usuario Registrado')";
-			mysql_query($q) or die(mysql_error());
-
-		
+				VALUES (NULL, '$user' , '$pass', '', '', '$mail', '0000-00-00', '', '', '', 00000, 0 , 'Usuario Registrado')";
+			$connection->query($q) or die($connection->error. " en la linea".(_LINE_-1));
 		}
 
-	closeConnection($result);
+	closeConnection($connection);
 }
 
 
@@ -93,11 +84,6 @@ function deleteFriend(){
 
 
 $functionName = filter_input(INPUT_GET, 'functionName');
-
-
-
-
-
 switch ($functionName) {
     case "login":
        login($_GET["user"], $_GET["pass"]);

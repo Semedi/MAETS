@@ -1,12 +1,14 @@
 <?php
 
+include ('session.php'); 
+include ('config.php');
 //añade un juego a la base de datos(faltan parametros)
-function addGame(String game){
+function addGame($juego){
 	return (true);
 }
 
 //elimina juego de la bdd
-function deleteGame(int id){
+function deleteGame($id){
 	
 	return(true);
 }
@@ -18,30 +20,33 @@ function modifyGame(){
 
 //Trae un juego de la base de datos
 function getGame($juego){
-	/*Consulta de mysql con la que indicamos que necesitamos que seleccione
-	**solo los campos que tenga como nombre_administrador el que el formulario
-	**le ha enviado*/
-	createConnection();
-	
-	$result = mysql_query("SELECT * FROM juego WHERE titulo = '$juego'");
+	$connection = createConnection();
+	$result = "SELECT * FROM juego WHERE titulo = '$juego'";
+	$result = $connection->query($result) or die ($connection->error. " en la linea".(_LINE_-1));
 
-	//Si no existe el juego en la base de datos...
-	if($result == FALSE){
-			die(mysql_error());
-	}
-
-	if($row = mysql_fetch_array($result))
+	if($row = $result->fetch_assoc())
 		{     
-			//Si el juego es correcto traemos los datos
-
+			return $row;
 		}
 		else
 		{
-			echo "NO EXISTE ESE JUEGO";
+			echo "NO EXISTE ESE USUARIO";
 		}
 
-closeConnection($result);
-	return(true);
+closeConnection($connection);
+}
+
+$functionName = filter_input(INPUT_GET, 'functionName');
+switch ($functionName) {
+    case "addGame":        
+        break;
+    case "deleteGame":
+        break;
+    case "modifyGame":
+        break;
+    case "getGame":
+    	getGame($_GET["juego"]);
+
 }
 
 

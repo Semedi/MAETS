@@ -1,4 +1,5 @@
 ﻿<?php  include ('include/session.php'); ?>
+<?php  include ('include/juegosGestor.php'); ?>
 
 <!DOCTYPE html>
 
@@ -8,13 +9,37 @@
 	<link rel="icon" type="image/png" href="images/MAETS.png" />
 	<link rel="stylesheet" type="text/css" href="css/main.css" />
 	<link rel="stylesheet" type="text/css" href="css/articulo-tienda.css" />
+
+	
+	<script type="text/javascript" src="js\jquery-1.9.1.min.js"> </script>
+	<script type="text/javascript">
+	$( document ).ready(function() {
+				$.get("include/juegosGestor.php",{ functionName:"getGame", juego: <?php echo $_GET["juego"];?> },function(data){
+		 			trimmed_data = $.trim(data);
+			 			if (trimmed_data == ""){
+			 			}
+			 			else {
+			 				alert (data);
+			 			}
+		 		})
+		});
+	 </script>
+
+
+
+
 </head>	
+
+	
+
 
 
 <?php  include ('static/mainTOP.php'); ?>
 
+
+		
     		<div id="left-side">	
-    			<h1 class="upper-bar-name">Grand Theft Auto V</h1>
+    			<h1 class="upper-bar-name"> <?php echo $_GET["juego"]; ?></h1>
     		</div>
     		<div id="right-side">
     			<h1 class="upper-bar-price">Precio: 55€</h1>	

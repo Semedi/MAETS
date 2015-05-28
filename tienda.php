@@ -51,39 +51,39 @@
         </tr>
 
         <tr>
-            <td><a href="articulo-tienda.php">GTA V</a></td>
-            <td><a href="articulo-tienda.php">Rockstar</a></td>
-            <td><a href="articulo-tienda.php">55€</a></td>
+            <td><a href="articulo-tienda.php?juego='Grand Theft Auto V'">GTA V</a></td>
+            <td><a href="articulo-tienda.php?juego=Grand Theft Auto V">Rockstar</a></td>
+            <td><a href="articulo-tienda.php?juego=Grand Theft Auto V">55€</a></td>
         </tr>
  
         <tr>
-          <td><a href="articulo-tienda.php">This War of Mine</a></td>
-          <td><a href="articulo-tienda.php">11 Bit Studios</a></td>
-          <td><a href="articulo-tienda.php">20€</a></td>
+          <td><a href="articulo-tienda.php?juego=This War of Mine">This War of Mine</a></td>
+          <td><a href="articulo-tienda.php?juego=This War of Mine">11 Bit Studios</a></td>
+          <td><a href="articulo-tienda.php?juego=This War of Mine">20€</a></td>
         </tr>
  
         <tr>
-          <td><a href="articulo-tienda.php">The Witcher 3</a></td>
-          <td><a href="articulo-tienda.php">CD Proyect RED</a></td>
-          <td><a href="articulo-tienda.php">59.99€</a></td>
+          <td><a href="articulo-tienda.php?juego=The Witcher 3: Wild Hunt">The Witcher 3</a></td>
+          <td><a href="articulo-tienda.php?juego=The Witcher 3: Wild Hunt">CD Proyect RED</a></td>
+          <td><a href="articulo-tienda.php?juego=The Witcher 3: Wild Hunt">59.99€</a></td>
         </tr>
 
         <tr>
-          <td><a href="articulo-tienda.php">Darkest Dungeon</a></td>
-          <td><a href="articulo-tienda.php">Power Up Audio</a></td>
-          <td><a href="articulo-tienda.php">13.99€</a></td>
+          <td><a href="articulo-tienda.php?juego=Darkest Dungeon">Darkest Dungeon</a></td>
+          <td><a href="articulo-tienda.php?juego=Darkest Dungeon">Power Up Audio</a></td>
+          <td><a href="articulo-tienda.php?juego=Darkest Dungeon">13.99€</a></td>
         </tr>
 
          <tr>
-          <td><a href="articulo-tienda.php">Mortal Kombat X</a></td>
-          <td><a href="articulo-tienda.php">NetherRealm Studios</a></td>
-          <td><a href="articulo-tienda.php">49.99€</a></td>
+          <td><a href="articulo-tienda.php?juego=Mortal Kombat X">Mortal Kombat X</a></td>
+          <td><a href="articulo-tienda.php?juego=Mortal Kombat X">NetherRealm Studios</a></td>
+          <td><a href="articulo-tienda.php?juego=Mortal Kombat X">49.99€</a></td>
         </tr>
 
          <tr>
-          <td><a href="articulo-tienda.php">Project Cars</a></td>
-          <td><a href="articulo-tienda.php">Slightly Mad Studios</a></td>
-          <td><a href="articulo-tienda.php">34.99€</a></td>
+          <td><a href="articulo-tienda.php?juego=Project Cars">Project Cars</a></td>
+          <td><a href="articulo-tienda.php?juego=Project Cars">Slightly Mad Studios</a></td>
+          <td><a href="articulo-tienda.php?juego=Project Cars">34.99€</a></td>
         </tr>
       </table>
 

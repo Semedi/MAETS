@@ -1,5 +1,7 @@
 <?php
 
+//CREAR UNA VARIABLE QUE GUARDE EL DIR DE MAETS
+
  /*Create connection*/
 function createConnection(){
 
@@ -7,14 +9,15 @@ function createConnection(){
 	$user="root";
 	$bdd="maets";
 
-	mysql_connect($servidor, $user, "");
-	@mysql_select_db($bdd) or die("Unable to select database");
+	$mysqli = new mysqli($servidor, $user, "", $bdd);
+	if (mysqli_connect_errno() ) {
+	 echo "Error de conexión a la BD: ".mysqli_connect_error();
+	 exit();
+	}
+	return $mysqli;
 }
 
 
- function closeConnection($con){
-	
-		mysql_free_result($con);
-		mysql_close();
-
+ function closeConnection($mysqli){
+		$mysqli->close();
  }
