@@ -18,22 +18,26 @@ function modifyGame(){
 	return(true);
 }
 
-//Trae un juego de la base de datos
+//TRAE UNA FILA ENTERA DE UN JUEGO CON EL NOMBRE QUE LE PASES, ESTE ES EL METODO QUE FUNCIONA BIEN
 function getGame($juego){
 	$connection = createConnection();
 	$result = "SELECT * FROM juego WHERE titulo = '$juego'";
 	$result = $connection->query($result) or die ($connection->error. " en la linea".(_LINE_-1));
-
 	if($row = $result->fetch_assoc())
 		{     
+			closeConnection($connection);
 			return $row;
 		}
 		else
 		{
-			echo "NO EXISTE ESE USUARIO";
+			echo "NO EXISTE ESE JUEGO";
 		}
-
 closeConnection($connection);
+}
+
+function getNameOfGame($juego){
+	$row = getGame($juego);
+	echo $row["Titulo"];
 }
 
 $functionName = filter_input(INPUT_GET, 'functionName');
@@ -45,7 +49,9 @@ switch ($functionName) {
     case "modifyGame":
         break;
     case "getGame":
-    	getGame($_GET["juego"]);
+    	return getGame($_GET["juego"]);
+    case "getNameOfGame":
+    	echo getNameOfGame($_GET["juego"]);
 
 }
 

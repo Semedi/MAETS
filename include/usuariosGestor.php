@@ -59,12 +59,19 @@ function addUser($user, $pass, $mail){
 		}
 	else
 		{
+			//$salt = str_replace('=', '.', base64_encode(mcrypt_create_iv(20)));
+			//$hashed = auth_encripta($pass, $salt);
+			//echo $hashed;
 			$q = "INSERT INTO `usuario` (`Id`, `Nick`, `Contrasenia`, `Nombre`, `Apellidos`, `Correo`, `Fecha de Nacimiento`, `Pais`, `Ciudad`, `Direccion`, `Codigo Postal`, `Puntuacion`, `Rol`)
 				VALUES (NULL, '$user' , '$pass', '', '', '$mail', '0000-00-00', '', '', '', 00000, 0 , 'Usuario Registrado')";
 			$connection->query($q) or die($connection->error. " en la linea".(_LINE_-1));
 		}
 
 	closeConnection($connection);
+}
+
+function auth_encripta($pass, $salt) {
+	 password_hash($pass."miApp");
 }
 
 
