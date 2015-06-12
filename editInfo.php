@@ -19,7 +19,7 @@
         <h2>Opciones</h2>
         <p>Información personal</p>
         <p> <a href='/MAETS/editInfo.php'>Editar cuenta </a></p>
-        <p>Mis juegos</p>
+        <p><a href='/MAETS/misJuegosUser.php'>Mis juegos </a></p>
         <p>Mis mensajes</p>
        	<p>Cerrar sesión </p>
        
