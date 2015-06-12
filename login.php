@@ -2,7 +2,7 @@
 
 <!DOCTYPE html>
 
-</html>
+<html>
 
 <head>
 	<title> Log In </title>
@@ -52,14 +52,17 @@
 				</br>
 				<a href="recuperarContraseña.php"><p>¿Has olvidado la contraseña?</p> </a>
 			</div>
+
 			<div id ="singUp">
-			<t1>Crear una cuenta</t1>
+
+				<t1>Crear una cuenta</t1>
 				<p>Unirse es gratis</p>
 				<br/>
 				<p>Continua para crear tu cuenta, la solución digital lider entre los jugadores de PC y Mac.</p>
 				<form action="signUp.php">
    					<input type="submit" value="Crea tu cuenta">
 				</form>
+				
 			</div>
 
 

@@ -1,4 +1,6 @@
-﻿<div id="menu"> 
+<div id="menu"> 
+
+
 	
 					<div id="navigation">
 					   <div id="elementoMenu"><a href="/MAETS/community/foros.php" title="Enlace generico">  Foros     </a> </div>

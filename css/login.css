@@ -1,64 +1,5 @@
 @charset "utf-8";
 
-body{
-	/*Degradado de fondo*/
-	background: rgba(238,238,238,1);
-	background: -moz-linear-gradient(top, rgba(238,238,238,1) 0%, rgba(110,110,110,1) 100%);
-	background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(238,238,238,1)), color-stop(100%, rgba(110,110,110,1)));
-	background: -webkit-linear-gradient(top, rgba(238,238,238,1) 0%, rgba(110,110,110,1) 100%);
-	background: -o-linear-gradient(top, rgba(238,238,238,1) 0%, rgba(110,110,110,1) 100%);
-	background: -ms-linear-gradient(top, rgba(238,238,238,1) 0%, rgba(110,110,110,1) 100%);
-	background: linear-gradient(to bottom, rgba(238,238,238,1) 0%, rgba(110,110,110,1) 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', endColorstr='#6e6e6e', GradientType=0 );
-
-	font-family: sans-serif;
-	text-align: center;
-
-	margin-top: 0px;
-	margin-bottom: 0px;
-}
-
-#container{
-	background-color : #151515;
-	width: 1220px;
-	padding 10px;
-	margin: 0 auto;
-	height:1090px;
-}
-
-#nav{
-	background-color: #222429;
-   	padding: 10px;
-   	overflow: auto;
-}
-
-#left-nav{
-	float:left;
-	width: 560px;
-	margin-top: 25px;
-}
-
-#right-nav{
-	float: left;
-	width: 560px;
-	margin-top: 25px;	
-}
-
-#content{
-	/*Degradado de fondo*/
-	background: rgba(34,36,41,1);
-	background: -moz-linear-gradient(top, rgba(34,36,41,1) 0%, rgba(40,65,102,1) 4%, rgba(12,32,59,1) 100%);
-	background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(34,36,41,1)), color-stop(4%, rgba(40,65,102,1)), color-stop(100%, rgba(12,32,59,1)));
-	background: -webkit-linear-gradient(top, rgba(34,36,41,1) 0%, rgba(40,65,102,1) 4%, rgba(12,32,59,1) 100%);
-	background: -o-linear-gradient(top, rgba(34,36,41,1) 0%, rgba(40,65,102,1) 4%, rgba(12,32,59,1) 100%);
-	background: -ms-linear-gradient(top, rgba(34,36,41,1) 0%, rgba(40,65,102,1) 4%, rgba(12,32,59,1) 100%);
-	background: linear-gradient(to bottom, rgba(34,36,41,1) 0%, rgba(40,65,102,1) 4%, rgba(12,32,59,1) 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#222429', endColorstr='#0c203b', GradientType=0 );
-	height: 844px;
-   	padding: 20px;
-   	overflow: auto;
-   	clear: both;
-}
 #logIn {
 	margin: auto;
 	margin-top: 20px;
@@ -101,25 +42,6 @@ body{
 
 
 
-a{
-	text-decoration: none;
-	color: white;
-}
-
-
-li {
-	display: inline;
-	text-align: center;
-	margin: 0 10px 0 0;
-	padding: 10px;
-	color: white;
-	font-size: 150%;
-	font-weight: bold;
-}
-/*ul{
-	display: inline;
-	text-align :center;
-}*/
 t1{
 	text-align: center;
 	margin: 0 10px 0 0;
@@ -137,18 +59,4 @@ p{
 s{
 	text-decoration: none;
 	color: #848484;
-}
-img.icono_nav{
-	float: left;
-	width: 75px;
-	height: 75px;
-}
-
-#pie{
-	width: 1200px;
-	color: white;
-	padding: 10px;
-	text-align: center;
-	clear: both;
-	background-color: rgba(20,30,33,1);
 }

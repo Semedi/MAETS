@@ -1,63 +1,5 @@
 @charset "utf-8";
 
-body{
-	/*Degradado de fondo*/
-	background: rgba(238,238,238,1);
-	background: -moz-linear-gradient(top, rgba(238,238,238,1) 0%, rgba(110,110,110,1) 100%);
-	background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(238,238,238,1)), color-stop(100%, rgba(110,110,110,1)));
-	background: -webkit-linear-gradient(top, rgba(238,238,238,1) 0%, rgba(110,110,110,1) 100%);
-	background: -o-linear-gradient(top, rgba(238,238,238,1) 0%, rgba(110,110,110,1) 100%);
-	background: -ms-linear-gradient(top, rgba(238,238,238,1) 0%, rgba(110,110,110,1) 100%);
-	background: linear-gradient(to bottom, rgba(238,238,238,1) 0%, rgba(110,110,110,1) 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', endColorstr='#6e6e6e', GradientType=0 );
-
-	font-family: sans-serif;
-	text-align: center;
-
-	margin-top: 0px;
-	margin-bottom: 0px;
-}
-
-#container{
-    width: 1220px;
-    height: 1090px;
-    margin: 0 auto;
-}
-
-#nav{
-	background-color: #222429;
-   	padding: 10px;
-   	overflow: auto;
-}
-
-#left-nav{
-	float:left;
-	width: 560px;
-	margin-top: 25px;
-}
-
-#right-nav{
-	float: left;
-	width: 560px;
-	margin-top: 1px;	
-}
-
-#content{
-	/*Degradado de fondo*/
-	background: rgba(34,36,41,1);
-	background: -moz-linear-gradient(top, rgba(34,36,41,1) 0%, rgba(40,65,102,1) 4%, rgba(12,32,59,1) 100%);
-	background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(34,36,41,1)), color-stop(4%, rgba(40,65,102,1)), color-stop(100%, rgba(12,32,59,1)));
-	background: -webkit-linear-gradient(top, rgba(34,36,41,1) 0%, rgba(40,65,102,1) 4%, rgba(12,32,59,1) 100%);
-	background: -o-linear-gradient(top, rgba(34,36,41,1) 0%, rgba(40,65,102,1) 4%, rgba(12,32,59,1) 100%);
-	background: -ms-linear-gradient(top, rgba(34,36,41,1) 0%, rgba(40,65,102,1) 4%, rgba(12,32,59,1) 100%);
-	background: linear-gradient(to bottom, rgba(34,36,41,1) 0%, rgba(40,65,102,1) 4%, rgba(12,32,59,1) 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#222429', endColorstr='#0c203b', GradientType=0 );
-
-	height: 844px;
-   	padding: 20px;
-   	overflow: auto;
-   	clear: both;
-}
 
 #user_info{
 	background: rgba(207,201,201,0.21);
@@ -77,20 +19,6 @@ body{
 
 
 
-a{
-	text-decoration: none;
-	color: white;
-}
-
-li {
-	display: inline;
-	text-align: center;
-	margin: 0 10px 0 0;
-	padding: 10px;
-	color: white;
-	font-size: 150%;
-	font-weight: bold;
-}
 
 h1{
 	color: #FFFFFF;
@@ -98,12 +26,6 @@ h1{
 	font-size: 19px;
 }
 
-
-img.icono_nav{
-	float: left;
-	width: 75px;
-	height: 75px;
-}
 
 #imagen_usuario{
 	margin-top: 0;
@@ -128,13 +50,6 @@ img.icono_nav{
 	height: 36px
 }
 
-#pie{
-	color: white;
-	padding: 10px;
-	text-align: center;
-	clear: both;
-	background-color: rgba(20,30,33,1);
-}
 
 #texto_perfil{
 	margin-left: 45px;

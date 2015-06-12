@@ -64,6 +64,8 @@ function cargaCabeceraAnon(){
 	</script>
 
 <body>
+
+	<div id="franja"/>
 	<div id="container">
 		<!--Men?-->
 		<div id="nav">
