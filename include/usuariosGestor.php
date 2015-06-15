@@ -40,7 +40,9 @@ closeConnection($connection);
 
 //cierra la sesion
 function logout(){
+	$_SESSION['Logueado'] = false;
 	session_destroy();
+	header('Location: ../index.php');
 }
 
 

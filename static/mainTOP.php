@@ -1,5 +1,5 @@
 ﻿<?php
-include ('include/session.php');
+if (!isset($_SESSION)) session_start();
 
 	//funcion de prueba para cargar una cabecera default 
 function cargaCabeceraAnon(){
