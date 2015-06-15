@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 include ('session.php'); 
 include ('config.php');
 
@@ -88,6 +88,8 @@ function addFriend(){
 function deleteFriend(){
 	return(true);
 }
+
+//muestra los juegos que posee un usuario
 
 
 $functionName = filter_input(INPUT_GET, 'functionName');

@@ -1,4 +1,4 @@
-<?php  include ('../include/session.php'); ?>
+<?php  include ('include/session.php'); ?>
 
 <!DOCTYPE html>
 
@@ -7,19 +7,19 @@
 <head>
   	<title> MAETS </title>
   	<link rel="icon" type="image/png" href="images/MAETS.png" />
-  	<link rel="stylesheet" type="text/css" href="../css/tienda.css" />
-  	<link rel="stylesheet" type="text/css" href="../css/ptienda.css" />
-  	<link rel="stylesheet" type="text/css" href="../css/main.css" />
+  	<link rel="stylesheet" type="text/css" href="css/tienda.css" />
+  	<link rel="stylesheet" type="text/css" href="css/ptienda.css" />
+  	<link rel="stylesheet" type="text/css" href="css/main.css" />
 </head>
 
 
-<?php  include ('../static/mainTOP.php'); ?>  
+<?php  include ('static/mainTOP.php'); ?>  
 
       <div id = "left-menu">
         <h2>Opciones</h2>
         <p>Información personal</p>
-        <p> <a href='/MAETS/Usuario/editInfo.php'>Editar cuenta </a></p>
-        <p><a href='/MAETS/Usuario/misJuegosUser.php'>Mis juegos</a>></p>
+        <p> <a href='/MAETS/editInfo.php'>Editar cuenta </a></p>
+        <p>Mis juegos</p>
         <p>Mis mensajes</p>
        	<p>Cerrar sesión </p>
        
@@ -72,7 +72,7 @@
       </table>
 
 
-<?php  include ('../static/mainBOT.php'); ?>
+<?php  include ('static/mainBOT.php'); ?>
   
 </html>
   
