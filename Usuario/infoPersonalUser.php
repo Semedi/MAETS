@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 
 <html>
 
@@ -33,45 +33,38 @@
         </p>
 
      </div>
-
-
-
       <h1> Perfil del usuario</h1>
 
       <table>
-        <tr><h2> Editar información de tu cuenta </h2></tr>
         
-
-        <tr>
-            <td><a href="nuevoNick">Nuevo Nick: </a></td>
-				<input type="text" id="name" name="name" value="" placeholder="Tu nuevo Nick" required="required" autofocus="autofocus" />  
-				
-        </tr>
  
         <tr>
-            <td><a href="articulo-tienda.php">Nombre: </a></td>
-            <td><a href="articulo-tienda.php"> <?php echo $_SESSION['Nombre']; ?> </a></td>
+            <td>Nombre: <?php echo $_SESSION["Nombre"]; ?></td>
         </tr>
  
          <tr>
-            <td><a href="articulo-tienda.php">Apellidos: </a></td>
-            <td><a href="articulo-tienda.php"> <?php echo $_SESSION['Apellidos']; ?> </a></td>
+            <td>Apellidos: <?php echo $_SESSION["Apellidos"]; ?> </td>
         </tr>
 
-                <tr>
-            <td><a href="articulo-tienda.php">Correo: </a></td>
-            <td><a href="articulo-tienda.php"> <?php echo $_SESSION["Email"]; ?> </a></td>
+        <tr>
+            <td>Correo: <?php echo $_SESSION["Email"]; ?></td>
         </tr>
 
-                 <tr>
-            <td><a href="articulo-tienda.php">Juegos comprados: </a></td>
-            <td><a href="articulo-tienda.php"> <?php echo $_SESSION["Nick"]; ?> </a></td>
+         <tr>
+            <td>Pais:<?php echo $_SESSION["Pais"]; ?></td>
         </tr>
 
                <tr>
-            <td><a href="articulo-tienda.php">Puntos de logro: </a></td>
-            <td><a href="articulo-tienda.php"> <?php echo $_SESSION["Nick"]; ?> </a></td>
+            <td>Ciudad:<?php echo $_SESSION["Ciudad"]; ?> </a></td>
         </tr>
+         <tr>
+            <td>Direccion:<?php echo $_SESSION["Direccion"]; ?> </td>
+          
+        </tr>
+         <tr>
+            <td>Codigo postal: <?php echo $_SESSION["CP"]; ?></td>
+        </tr>
+
       </table>
 
 
