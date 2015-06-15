@@ -1,0 +1,46 @@
+#cajaThread {  
+
+	
+	height: 700px;
+	width: 90%;  
+   	margin: 0 auto;
+   	-moz-border-radius: 10px;  
+   	-webkit-border-radius: 15px; 
+   	padding: 50px;
+ 
+}
+
+
+#cajaThread textarea {  
+   height: 500px;
+   width: 800px; 
+   float : center; 
+   background-color: rgb(20,31,44);
+   color: white;
+}  
+
+#cajaThread input{
+	background-color: rgb(20,31,44);
+	color: white;
+
+}
+
+#cajaThread p{
+color: white;
+
+}
+
+#crearTema{
+	
+	padding: 10px 30px;
+	float: center;
+	background-color: lightblue;
+}
+
+
+
+#boton{
+	width: 100%;
+	
+
+}
