@@ -46,6 +46,13 @@
 	background-color: rgba(60,86,102,1);
 }
 
+#nuevoTema {
+            background-color: lightblue;
+            float: left;
+            margin-left: 50px;
+            padding:20px;
+            margin-bottom: 20px;
+        }
 
 table{
 	background: rgba(76,76,76,1);

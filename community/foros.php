@@ -1,6 +1,4 @@
-﻿<?php include('../include/session.php'); ?>
-
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 
 <html>
 
@@ -16,6 +14,8 @@
 <?php  include ('../static/mainTOP.php'); ?>	
 <?php  include ('../static/communityMenu.php'); ?>	
 			
+
+			<button id="nuevoTema" onclick="location.href = 'thread.php';">Nuevo Tema</button>
 		
 			<div id ="cajaCentral">
 					<div id="foros">
@@ -89,14 +89,13 @@
 							<p id="creados">14</p>
 						   </td>
 						</tr>
-					</table>
-			
-			
-			
-			
-			
-					
+					</table>		
 	    	</div>
+
+
+
+
+
 <?php  include ('../static/mainBOT.php'); ?>	
 
 	

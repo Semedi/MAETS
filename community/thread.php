@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 
 <html>
 
@@ -7,7 +7,7 @@
 	<link rel="icon" type="image/png" href="images/MAETS.png" />
 	<link rel="stylesheet" type="text/css" href="../css/main.css" />
 	<link rel="stylesheet" type="text/css" href="../css/pcomunidad.css" />
-	<link rel="stylesheet" type="text/css" href="css/capturas.css" />
+	<link rel="stylesheet" type="text/css" href="css/thread.css" />
 </head>
 
 
@@ -16,12 +16,18 @@
 			
 			
 			
-			<div id="capturas">
-				<img class="icono2" src="../images/gta5A.jpg" />
-				<img class="icono" src="../images/gta5p.jpg" />
-				<img class="icono3" src="../images/GTAV.jpg" />
-				<img class="icono4" src="../images/rust.jpg" />
-				<img class="icono5" src="../images/project-cars.jpg" />
+			<div id="cajaThread">
+				
+				<p id="titulo"><b>Titulo</b> </p>
+				<p>
+  				<input type="text" id="titulo" name="titulo" value="" required="required" autofocus="autofocus" /> 
+  				</p>
+				<textarea  id="hilo" name="hilo" required="required"></textarea> 
+
+
+				<div id="boton">
+				<button id="crearTema">crear tema</button>
+				</div>
 				
 				
 			</div>	
