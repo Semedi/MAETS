@@ -43,18 +43,21 @@
             
 
             <tr>
-            
-             <td>Nick:<input type="text" name="nick" id="nick" class="texto" value= <?php echo $_SESSION["Nick"]; ?> />
+             <td>Nick:</td>
+             <td><input type="text" name="nick" id="nick" class="texto" value= <?php echo $_SESSION["Nick"]; ?> /></td>
+             
     				
             </tr>
 
             <tr>
-             <td>Nombre:<input type="text" name="nombre" id="nombre" class="texto" value= <?php echo $_SESSION["Nombre"]; ?> />
+             <td>Nombre:</td>
+             <input type="text" name="nombre" id="nombre" class="texto" value= <?php echo $_SESSION["Nombre"]; ?> />
 
             </tr>
      
              <tr>
-                <td>Apellidos:<input type="text" name="apell" id="apellidos" class="texto" value= <?php echo $_SESSION["Apellidos"]; ?> />
+                <td>Apellidos:</td>
+                <td><input type="text" name="nombre" id="nombre" class="texto" value= <?php echo $_SESSION["Apellidos"]; ?> />
             </tr>
 
             <tr>

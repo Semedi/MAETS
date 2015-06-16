@@ -5,9 +5,9 @@
 <head>
   	<title> MAETS </title>
   	<link rel="icon" type="image/png" href="../images/MAETS.png" />
-  	<link rel="stylesheet" type="text/css" href="../css/tienda.css" />
+
   	<link rel="stylesheet" type="text/css" href="../css/ptienda.css" />
-  	<link rel="stylesheet" type="text/css" href="../css/main.css" />
+    <link rel="stylesheet" type="text/css" href="../css/main.css" />
     <link rel="stylesheet" type="text/css" href="../css/modifyUserInfo.css" />
 </head>
 
@@ -29,9 +29,7 @@
       <div id = "right-menu">
           <h2>Actualiza o completa tu infomacion</h2>
             <div id ="updateInfoButton">
-              <form action="modificaInfo.php">
-              <input type="button" value="Acualizar">
-              </form>
+              <button type="button" id = "updateInfoButton">Actualizar</button>
             </div>
         
 
@@ -42,30 +40,35 @@
         
  
         <tr>
-            <td>Nombre: <?php echo $_SESSION["Nombre"]; ?></td>
+            <td>Nombre:</td>
+             <td><input type="text" name="nombre" id="nombre" class="texto" value= <?php echo $_SESSION["Nombre"]; ?> /></td>
         </tr>
  
          <tr>
-            <td>Apellidos: <?php echo $_SESSION["Apellidos"]; ?> </td>
+            <td>Apellidos:</td>
+                <td><input type="text" name="apellidos" id="apellidos" class="texto" value= <?php echo $_SESSION["Apellidos"]; ?> /></td>
         </tr>
 
         <tr>
-            <td>Correo: <?php echo $_SESSION["Email"]; ?></td>
+            <td>Correo:</td>
+                <td><input type="text" name="mail" id="mail" class="texto" value= <?php echo $_SESSION["Email"]; ?> /></td>
         </tr>
 
-         <tr>
-            <td>Pais:<?php echo $_SESSION["Pais"]; ?></td>
+        <tr>
+            <td>Pais:</td>
+             <td><input type="text" name="pais" id="pais" class="texto" value= <?php echo $_SESSION["Pais"]; ?> /></td>
         </tr>
-
-               <tr>
-            <td>Ciudad:<?php echo $_SESSION["Ciudad"]; ?> </a></td>
+        <tr>
+            <td>Ciudad:</td>
+             <td><input type="text" name="ciudad" id="ciudad" class="texto" value= <?php echo $_SESSION["Ciudad"]; ?> /></td>
         </tr>
-         <tr>
-            <td>Direccion:<?php echo $_SESSION["Direccion"]; ?> </td>
-          
+        <tr>
+            <td>Direccion:</td>
+             <td><input type="text" name="direccion" id="direccion" class="texto" value= <?php echo $_SESSION["Direccion"]; ?> /></td>
         </tr>
-         <tr>
-            <td>Codigo postal: <?php echo $_SESSION["CP"]; ?></td>
+        <tr>
+            <td>Codigo postal:</td>
+              <td><input type="text" name="CP" id="CP" class="texto" value= <?php echo $_SESSION["CP"]; ?> /></td>
         </tr>
 
       </table>
