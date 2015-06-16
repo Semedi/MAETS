@@ -23,7 +23,7 @@ function cargaCabeceraAnon(){
 							<div id='nombreUsuario'><li><a href='/MAETS/Usuario/pagPpalUser.php'>"; echo $_SESSION["Nick"]; echo "</a></li>
 							<div id='logout'><li><a href='/MAETS/index.php'> logout </a></li></div>
 							</div>
-							<li><a href='/MAETS/Usuario/pagPpalUser.php'><img id='imagenUsuario'  src='/MAETS/images/userProfile.png'></a></li>";
+							<li><a href='/MAETS/Usuario/pagPpalUser.php'><img id='imagenUsuario' src='/MAETS/images/userProfile.png'></a></li>";
 			}
 							
 						
