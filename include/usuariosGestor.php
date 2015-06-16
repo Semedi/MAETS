@@ -28,6 +28,7 @@ function login($user, $pass){
 					$_SESSION['Direccion'] = $row["Direccion"];
 					$_SESSION['Ciudad'] = $row["Ciudad"];
 					$_SESSION['CP'] = $row["Codigo Postal"];
+					$_SESSION['IMG'] = $row["Imagen"];
 				 }
 			else
 				 {

@@ -8,6 +8,7 @@
   	<link rel="stylesheet" type="text/css" href="../css/tienda.css" />
   	<link rel="stylesheet" type="text/css" href="../css/ptienda.css" />
   	<link rel="stylesheet" type="text/css" href="../css/main.css" />
+    <link rel="stylesheet" type="text/css" href="../css/modifyUserInfo.css" />
 </head>
 
 
@@ -26,11 +27,13 @@
       </div>
 
       <div id = "right-menu">
-                <img id="imagenLupa" src="images/Lupa.png">
-        <p>
-          <input type="text" id="name" name="name" value="", required="required" autofocus="autofocus"/>  
-           
-        </p>
+          <h2>Actualiza o completa tu infomacion</h2>
+            <div id ="updateInfoButton">
+              <form action="modificaInfo.php">
+              <input type="button" value="Acualizar">
+              </form>
+            </div>
+        
 
      </div>
       <h1> Perfil del usuario</h1>

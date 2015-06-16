@@ -5,9 +5,11 @@
 <head>
   	<title> MAETS </title>
   	<link rel="icon" type="image/png" href="../images/MAETS.png" />
-  	<link rel="stylesheet" type="text/css" href="../css/tienda.css" />
+  	
   	<link rel="stylesheet" type="text/css" href="../css/ptienda.css" />
   	<link rel="stylesheet" type="text/css" href="../css/main.css" />
+    <link rel="stylesheet" type="text/css" href="../css/modifyUserInfo.css" />
+
 </head>
 
 
@@ -25,55 +27,47 @@
        
       </div>
 
-      <div id = "right-menu">
-                <img id="imagenLupa" src="images/Lupa.png">
-        <p>
-          <input type="text" id="name" name="name" value="", required="required" autofocus="autofocus"/>  
-           
-        </p>
+      <div id = "modificarAvatar">
+          <h1> Modifica tu avatar</h1>
+            <div>
+                <img id='imagen_Avatar'  src='/MAETS/images/userProfile.png'/>
+            </div>
+            <div id= "updateInfoButton">
+               <button type="button" id="updateInfoButton">Modificar</button>
+            </div>
 
      </div>
 
+     <div id ="mainContent">
+     
+        <h1> Perfil del usuario/Editar información de tu cuenta</h1>
 
+        <table>
 
-      <h1> Perfil del usuario</h1>
+            <tr>
+            
+             <td>Nick:</td>
+             <td><input type="text" name="nick" id="nick" class="texto" value= <?php echo $_SESSION["Nick"]; ?> /></td>
+    				
+            </tr>
 
-      <table>
-        <tr><h2> Editar información de tu cuenta </h2></tr>
-        
+            <tr>
+             <td>Contraseña:</td>
+             <td><input type="text" name="nombre" id="nombre" class="texto" value= "**********"/></td>
 
-        <tr>
-            <td><a href="nuevoNick">Nuevo Nick: </a></td>
-				<input type="text" id="name" name="name" value="" placeholder="Tu nuevo Nick" required="required" autofocus="autofocus" />  
-				
-        </tr>
- 
-        <tr>
-            <td><a href="articulo-tienda.php">Nombre: </a></td>
-            <td><a href="articulo-tienda.php"> <?php echo $_SESSION['Nombre']; ?> </a></td>
-        </tr>
- 
-         <tr>
-            <td><a href="articulo-tienda.php">Apellidos: </a></td>
-            <td><a href="articulo-tienda.php"> <?php echo $_SESSION['Apellidos']; ?> </a></td>
-        </tr>
+            </tr>
 
-                <tr>
-            <td><a href="articulo-tienda.php">Correo: </a></td>
-            <td><a href="articulo-tienda.php"> <?php echo $_SESSION["Email"]; ?> </a></td>
-        </tr>
-
-                 <tr>
-            <td><a href="articulo-tienda.php">Juegos comprados: </a></td>
-            <td><a href="articulo-tienda.php"> <?php echo $_SESSION["Nick"]; ?> </a></td>
-        </tr>
-
-               <tr>
-            <td><a href="articulo-tienda.php">Puntos de logro: </a></td>
-            <td><a href="articulo-tienda.php"> <?php echo $_SESSION["Nick"]; ?> </a></td>
-        </tr>
-      </table>
-
+            <tr>
+                <td>Correo:</td>
+                <td><input type="text" name="mail" id="mail" class="texto" value= <?php echo $_SESSION["Email"]; ?> /></td>
+            </tr>
+  
+        </table>
+         <div id= "updateInfoButton">
+             <button type="button" id="updateInfoButton">Modificar</button>
+             <button type="button" id="updatePassw">Cambiar contraseña </button>
+            </div>
+      </div> 
 
 <?php  include ('../static/mainBOT.php'); ?>
   

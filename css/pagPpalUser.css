@@ -41,6 +41,18 @@
 	float: center;
 	margin: 0 auto;
 }
+#singUpButton{
+	margin-top: 10px;
+	display:inline-table;
+	float: center;
+	width: 150px;
+	height: 30px;
+	background-color: #585858;
+	text-align: center;
+	-moz-border-radius: 5px;  
+   -webkit-border-radius: 5px;  
+   border-radius: 5px;
+}
 
 a{
 	text-decoration: none;
