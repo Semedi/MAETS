@@ -76,3 +76,28 @@ td{
 	width: 250px;
 	height: 250px;
 }
+#juegos {
+    
+    padding: 10px 20px;
+    
+    float: center;
+    width: 300px;
+    
+}
+
+#juegos li{
+
+	display: block;
+	color: white;
+	text-decoration: blink;
+	font-size: 80%;
+	border-left: 1px solid #333;
+    border-right: 1px solid #333;
+    border-bottom: 1px solid #333;
+    border-top: 1px solid #333; 
+    background-color: #585858;
+    border-radius: 4px 4px 4px 4px;
+
+
+}
+

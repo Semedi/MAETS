@@ -18,10 +18,11 @@
         <h2>Opciones</h2>
         <p><a href='/MAETS/Usuario/infoPersonalUser.php'>Informacion personal </a></p>
         <p> <a href='/MAETS/Usuario/editInfo.php'>Editar cuenta </a></p>
-         <p><a href='/MAETS/Usuario/misJuegosUser.php'>Mis juegos </a></p>
+        <p><a href='/MAETS/Usuario/misJuegosUser.php'>Mis juegos </a></p>
+        <p><a href='/MAETS/Usuario/amigos.php'>Amigos</a></p>
       
 
-        <p>Mis mensajes</p>
+        
        	<p>Cerrar sesión </p>
        
       </div>
@@ -34,7 +35,7 @@
         
 
      </div>
-      <h1> Perfil del usuario</h1>
+      <h1> Perfil del usuario/Información personal</h1>
 
       <table>
         
