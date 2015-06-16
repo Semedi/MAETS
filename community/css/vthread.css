@@ -1,0 +1,72 @@
+
+
+
+#contenidoCentral{
+
+
+border-style: solid;
+    border-width: 2px;
+    border-color: black;
+margin-top: 400px;
+padding: 100px;
+background-color: red;
+
+}
+
+
+
+#cajaText{
+
+margin-top: 30px;
+color: #F5F5DC;
+background-color: rgb(20,31,44);
+width: 800px;
+display: inline-block;
+border-radius: 53px 53px 53px 53px;
+-moz-border-radius: 53px 53px 53px 53px;
+-webkit-border-radius: 53px 53px 53px 53px;
+border: 1px solid white;
+}
+
+#cajaText h3{
+
+	
+}
+
+#espacio{
+	width:800px;
+	height:25px;
+}
+
+
+#pe{
+color: #D3D3D3
+}
+
+.avatar{
+width: 100px;
+height: 100px;
+margin-top:10px;
+margin-left:20px;
+float:left;
+
+
+}
+
+#info{
+	float:left;
+	margin-top:50px;
+	margin-left:5px;
+}
+
+
+
+
+#textoMensaje{
+
+padding: 20px;
+float: right;
+
+
+}
+
