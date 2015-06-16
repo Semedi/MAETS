@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 16-06-2015 a las 19:14:07
+-- Tiempo de generación: 16-06-2015 a las 19:36:05
 -- Versión del servidor: 5.6.21
 -- Versión de PHP: 5.6.3
 
@@ -29,6 +29,19 @@ SET time_zone = "+00:00";
 CREATE TABLE IF NOT EXISTS `amigo` (
   `IDUsuario` int(10) NOT NULL,
   `IDAmigo` int(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `analisis`
+--
+
+CREATE TABLE IF NOT EXISTS `analisis` (
+  `IdJuego` int(10) NOT NULL,
+  `IdUsuario` int(10) NOT NULL,
+  `Texto` longtext COLLATE utf8_bin NOT NULL,
+  `Recomendado` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 -- --------------------------------------------------------
@@ -180,6 +193,12 @@ INSERT INTO `usuario` (`Id`, `Nick`, `Contrasenia`, `Nombre`, `Apellidos`, `Corr
 --
 ALTER TABLE `amigo`
  ADD PRIMARY KEY (`IDUsuario`,`IDAmigo`);
+
+--
+-- Indices de la tabla `analisis`
+--
+ALTER TABLE `analisis`
+ ADD PRIMARY KEY (`IdJuego`,`IdUsuario`);
 
 --
 -- Indices de la tabla `compras`
