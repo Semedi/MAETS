@@ -29,6 +29,7 @@ function login($user, $pass){
 					$_SESSION['Ciudad'] = $row["Ciudad"];
 					$_SESSION['CP'] = $row["Codigo Postal"];
 					$_SESSION['IMG'] = $row["Imagen"];
+					$_SESSION['ID'] = $row["Id"];
 				 }
 			else
 				 {
@@ -81,18 +82,12 @@ function addUser($user, $pass, $mail){
 function auth_encripta($pass, $salt) {
 	 password_hash($pass."miApp");
 }
-//modifica la informacion de un usuario
-function modifyUser($user){
-	$connection = createConnection();
-	$result = "SELECT * FROM usuario WHERE nick = '$user'";
-	$result = $connection ->query($result) or die ($connecntion->error. " en la linea". (_LINE_-1));
-
-	if($row = $result -> fetch_assoc())
-	   {
-	   	$q = "INERT INTO 'usuario' (`Id`, `Nick`, `Contrasenia`, `Nombre`, `Apellidos`, `Correo`, `Fecha de Nacimiento`, `Pais`, `Ciudad`, `Direccion`, `Codigo Postal`, `Puntuacion`, `Rol`)
-	   		  VALUES(NULL, '$user', '$pass', '$name', '$apellidos', '$mail','0000-00-00', '', '', '', 00000, 0 , 'Usuario Registrado')";
-	   }$connection->query($q) or die($connection->error. " en la linea".(_LINE_-1));
-	closeConnection($connection);
+//modifica la informacion de la cuenta un usuario
+function modifyUserAcount($user,$mail){
+	/*$connection = createConnection();
+	$sql = "UPDATE `maets`.`usuario` SET `Nick` ='$user',`Correo`= '$mail' WHERE `usuario`.`Id` ='$_SESSION['ID']')"; 
+    $connection ->query($sql) or die ($connecntion->error. " en la linea". (_LINE_-1));
+	closeConnection($connection);*/
 }
 
 

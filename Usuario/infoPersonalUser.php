@@ -8,7 +8,7 @@
 
   	
     <link rel="stylesheet" type="text/css" href="../css/main.css" />
-    <link rel="stylesheet" type="text/css" href="../css/modifyUserInfo.css" />
+    <link rel="stylesheet" type="text/css" href="../css/users.css" />
 </head>
 
 
@@ -23,6 +23,7 @@
         
 
      </div>
+      <div id ="mainContent">
       <h1> Perfil del usuario/Información personal</h1>
 
       <table>
@@ -61,6 +62,7 @@
         </tr>
 
       </table>
+    </div>
 
 
 <?php  include ('../static/mainBOT.php'); ?>

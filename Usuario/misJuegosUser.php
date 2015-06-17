@@ -10,7 +10,7 @@
 
     
     <link rel="stylesheet" type="text/css" href="../css/main.css" />
-    <link rel="stylesheet" type="text/css" href="../css/modifyUserInfo.css" />
+    <link rel="stylesheet" type="text/css" href="../css/users.css" />
 </head>
 
 
@@ -18,7 +18,7 @@
 <?php include ('../static/userMenu.php'); ?>
        
        <div id = "right-menu">
-                <img id="imagenLupa" src="images/Lupa.png">
+                <img id="imagenLupa" src="../images/lupa2.png">
         <p>
           <input type="text" id="name" name="name" value="" placeholder="Buscar videojuego", required="required" autofocus="autofocus"/>  
            </br>
