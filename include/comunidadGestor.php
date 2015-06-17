@@ -1,12 +1,13 @@
 <?php
 
 //añade foro a la bdd
-function addForum(){
+function newTopic(){
+	
 	return(true);
 }
 
 //elimina un foro de la bdd
-function deleteForum(int id){
+function deleteForum(){
 	
 	return(true);
 }

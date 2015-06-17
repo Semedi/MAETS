@@ -15,7 +15,8 @@
 <?php  include ('../static/communityMenu.php'); ?>	
 			
 
-			<button id="nuevoTema" onclick="location.href = 'thread.php';">Nuevo Tema</button>
+			<button name="newThread" id="nuevoTema" onclick="location.href ='thread.php';">Nuevo Tema</button>
+			
 		
 			<div id ="cajaCentral">
 					<div id="foros">

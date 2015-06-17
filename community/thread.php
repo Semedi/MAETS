@@ -8,6 +8,27 @@
 	<link rel="stylesheet" type="text/css" href="../css/main.css" />
 	<link rel="stylesheet" type="text/css" href="../css/pcomunidad.css" />
 	<link rel="stylesheet" type="text/css" href="css/thread.css" />
+
+	<script type="text/javascript" src="../js/jquery-1.9.1.min.js"> </script>
+
+	<script type="text/javascript">
+
+		$( document ).ready(function() {
+			$('#crearTema').click(
+			 	function(){
+					$.get("../include/comunidadGestor.php",{ functionName:"newTopic", content:$('#hilo').val(), title:$('#titulo').val() },function(data){
+			 			trimmed_data = $.trim(data);
+				 			if (trimmed_data == ""){
+				 				window.location.href = "../index.php";
+				 			}
+				 			else {
+				 				alert (data);
+				 			}
+			 			}
+			 		);
+				});
+		});
+	 </script>
 </head>
 
 
@@ -25,8 +46,8 @@
 				<textarea  id="hilo" name="hilo" required="required"></textarea> 
 
 
-				<div id="boton">
-				<button id="crearTema">crear tema</button>
+				<div id="botonThread">
+				<button name="newtopic" id="crearTema">crear tema</button>
 				</div>
 				
 				

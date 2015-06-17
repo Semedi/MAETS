@@ -1,6 +1,6 @@
 <?php
-include ('session.php'); 
 include ('config.php');
+if (!isset($_SESSION)) session_start();
 
 //recibe user/pass y comprueba en la base de datos si es correcto
 function login($user, $pass){
@@ -45,7 +45,8 @@ closeConnection($connection);
 
 //cierra la sesion
 function logout(){
-	$_SESSION['Logueado'] = false;
+
+	session_start();
 	session_destroy();
 	header('Location: ../index.php');
 }
@@ -110,6 +111,8 @@ function deleteFriend(){
 }
 
 //muestra los juegos que posee un usuario
+
+
 
 
 $functionName = filter_input(INPUT_GET, 'functionName');
