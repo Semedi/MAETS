@@ -46,7 +46,7 @@ table{
 	border-bottom: 1px #9898A6 groove;
 	border-left: 1px #222429 solid;
 	border-radius: 4px;
-	float: left;
+	float: center;
 }
 
 tr{
@@ -75,6 +75,15 @@ td{
 	margin: 5px;
 	width: 250px;
 	height: 250px;
+}
+#imagenLupa{
+margin-top: 10px;
+	margin-left: 10px;
+	float: center;
+	width: 50px;
+	height: 50px;
+
+
 }
 #juegos {
     
@@ -198,7 +207,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c4c4c', end
 	width: 120px
 	text-shadow: 1px 1px #000000;
 	text-align: left;
-	background-color: #B2B2B2;
 }
 
 #celda{

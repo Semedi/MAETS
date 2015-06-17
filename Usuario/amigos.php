@@ -7,7 +7,7 @@
 	<link rel="icon" type="image/png" href="../images/MAETS.png" />
 
   <link rel="stylesheet" type="text/css" href="../css/main.css" />
-  <link rel="stylesheet" type="text/css" href="../css/modifyUserInfo.css" />
+  <link rel="stylesheet" type="text/css" href="../css/users.css" />
 	
 </head>
 

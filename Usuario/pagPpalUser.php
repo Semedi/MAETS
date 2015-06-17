@@ -7,7 +7,7 @@
   	<link rel="icon" type="image/png" href="images/MAETS.png" />
   
   	<link rel="stylesheet" type="text/css" href="../css/main.css" />
-    <link rel="stylesheet" type="text/css" href="../css/modifyUserInfo.css" />
+    <link rel="stylesheet" type="text/css" href="../css/users.css" />
 </head>
 
 
@@ -15,7 +15,7 @@
 
 <?php include ('../static/userMenu.php'); ?>
 
-
+ <div id ="mainContent">
       <h1> Perfil del usuario</h1>
 
       <table>
@@ -52,7 +52,7 @@
             <td>52</td>
         </tr>
       </table>
-
+</div>
 
 <?php  include ('../static/mainBOT.php'); ?>
   
