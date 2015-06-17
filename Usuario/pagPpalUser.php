@@ -6,8 +6,8 @@
   	<title> MAETS </title>
   	<link rel="icon" type="image/png" href="images/MAETS.png" />
   
-  	<link rel="stylesheet" type="text/css" href="../css/ptienda.css" />
   	<link rel="stylesheet" type="text/css" href="../css/main.css" />
+    <link rel="stylesheet" type="text/css" href="../css/modifyUserInfo.css" />
 </head>
 
 
@@ -15,14 +15,6 @@
 
 <?php include ('../static/userMenu.php'); ?>
 
-      <div id = "right-menu">
-                <img id="imagenLupa" src="images/Lupa.png">
-        <p>
-          <input type="text" id="name" name="name" value="" placeholder="Buscar videojuego", required="required" autofocus="autofocus"/>  
-           </br>
-        </p>
-
-     </div>
 
       <h1> Perfil del usuario</h1>
 
