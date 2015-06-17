@@ -5,20 +5,25 @@
 <head>
 	<title> MAETS </title>
 	<link rel="icon" type="image/png" href="../images/MAETS.png" />
+
+  <link rel="stylesheet" type="text/css" href="../css/main.css" />
+  <link rel="stylesheet" type="text/css" href="../css/modifyUserInfo.css" />
 	<link rel="stylesheet" type="text/css" href="../css/amigos.css" />
 </head>
 
 
-<?php  include ('../static/mainTOP.php'); ?>  
+<?php  include ('../static/mainTOP.php'); ?> 
+<?php include ('../static/userMenu.php'); ?>
 
 	    	<div id = "user_info">
-	 			<img id="imagen_usuarioGrande" src="../images/usuario.jpg">
-	 			
-	 			<div id = "texto_perfil" >
-	 				<h2>jDruet →  <div id = "letra_pequena">Amigos</div></h2>
-	 				<img id = "bandera_nacionalidad" src="../images/espana.png">
-	 			</div>
+  	 			<img id="imagen_Avatar" src='/MAETS/images/userProfile.png'>
+  	 			 <div id = "texto_perfil" >
+  	 			   	<h2><?php echo $_SESSION["Nick"]; ?> →  <div id = "letra_pequena">Amigos</div></h2>
+  	 				  <img id = "bandera_nacionalidad" src="../images/usuarios/SpainFlag.jpg">
+  	 			 </div>
 	    	</div>
+        
+        
 
 	    	<table>
         <tr>

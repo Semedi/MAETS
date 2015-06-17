@@ -1,3 +1,5 @@
+<?php  include ('include/session.php'); ?>
+
 <!DOCTYPE html>
 
 <html>
@@ -5,15 +7,23 @@
 <head>
   	<title> MAETS </title>
   	<link rel="icon" type="image/png" href="images/MAETS.png" />
-  
-  	<link rel="stylesheet" type="text/css" href="../css/ptienda.css" />
-  	<link rel="stylesheet" type="text/css" href="../css/main.css" />
+  	<link rel="stylesheet" type="text/css" href="css/tienda.css" />
+  	<link rel="stylesheet" type="text/css" href="css/ptienda.css" />
+  	<link rel="stylesheet" type="text/css" href="css/main.css" />
 </head>
 
 
-<?php  include ('../static/mainTOP.php'); ?>  
+<?php  include ('static/mainTOP.php'); ?>  
 
-<?php include ('../static/userMenu.php'); ?>
+      <div id = "left-menu">
+        <h2>Opciones</h2>
+        <p>Información personal</p>
+        <p> <a href='/MAETS/editInfo.php'>Editar cuenta </a></p>
+        <p>Mis juegos</p>
+        <p>Mis mensajes</p>
+       	<p>Cerrar sesión </p>
+       
+      </div>
 
       <div id = "right-menu">
                 <img id="imagenLupa" src="images/Lupa.png">
@@ -52,17 +62,17 @@
 
                  <tr>
             <td>Juegos comprados: </a></td>
-            <td>5</td>
+            <td><?php echo $_SESSION["Nick"]; ?></td>
         </tr>
 
                <tr>
             <td>Puntos de logro: </a></td>
-            <td>52</td>
+            <td><?php echo $_SESSION["Nick"]; ?></td>
         </tr>
       </table>
 
 
-<?php  include ('../static/mainBOT.php'); ?>
+<?php  include ('static/mainBOT.php'); ?>
   
 </html>
   
