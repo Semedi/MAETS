@@ -121,3 +121,20 @@ background: rgba(207,201,201,0.21);
 	border-left: 1px #222429 solid;
 	border-radius: 4px;
 }
+a{
+	text-decoration: none;
+	color: white;
+}
+
+
+
+h2{
+	font-size: 20px;
+	font-weight: bloth;
+	color: #FFFFFF;
+	text-shadow: 1px 1px #000000;
+}
+
+p{
+	color: #9898A6;
+}
