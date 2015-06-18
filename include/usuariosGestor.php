@@ -94,19 +94,25 @@ function auth_encripta($pass, $salt) {
 	 password_hash($pass."miApp");
 }
 //modifica la informacion de la cuenta un usuario
-function modifyUserAccount($user,$mail){
+function modifyUserAccount($user,$mail, $ID){
 
+	$connection = createConnection();
+
+	$sql = "UPDATE `maets`.`usuario` SET `Nick` ='$user',`Correo`= '$mail' WHERE `usuario`.`Id` ='$ID'"; 
+
+    $connection ->query($sql) or die ($connection->error. " en la linea". ('_LINE_-1'));
+	closeConnection($connection);
+
+}
+//actualiza la informacion personal del usuario
+function updatePersonalInfo($nombre, $apellidos, $mail, $pais, $ciudad, $direccion, $CP, $ID){
 	
 	$connection = createConnection();
 
-	$sql = "UPDATE `maets`.`usuario` SET `Nick` ='$user',`Correo`= '$mail' WHERE `usuario`.`Id` ='$_SESSION['ID']')"; 
+	$sql = "UPDATE `maets`.`usuario` SET `Nombre` ='$nombre',`Apellidos`='$apellidos', `Correo`= '$mail', `Pais`= '$pais', `Ciudad`='$ciudad', `Direccion`='$direccion', `Codigo Postal`='$CP'  WHERE `usuario`.`Id` ='$ID'"; 
 
-    $connection ->query($sql) or die ($connection->error. " en la linea". (_LINE_-1));
+    $connection ->query($sql) or die ($connection->error. " en la linea". ('_LINE_-1'));
 	closeConnection($connection);
-
-	echo "ok";
-
-
 
 }
 
@@ -146,8 +152,10 @@ switch ($functionName) {
     	break;
 
     case "modifyUserAccount":
-    	modifyUserAccount($_GET["user"], $_GET["mail"]);
+    	modifyUserAccount($_GET["user"], $_GET["mail"], $_SESSION["ID"]);
     	break;
+    case "updatePersonalInfo":
+    	updatePersonalInfo($_GET["nombre"], $_GET["apellidos"], $_GET["mail"],$_GET["pais"],$_GET["ciudad"], $_GET["direccion"],$_GET["CP"],$_SESSION["ID"]);
 
 }
 

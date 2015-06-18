@@ -17,13 +17,17 @@
 
 
 
-      $('#updateButton').click(
+      $('#modifyButton').click(
         function(){
-          $.get("../include/usuariosGestor.php",{ functionName:"modifyUserAccount", user:$('#nick').val(), mail:$('#mail').val() },function(data){
-            trimmed_data = $.trim(data);
-            
-            if (data="ok")
-              alert("ok");
+          $.get("../include/usuariosGestor.php",{ functionName:"modifyUserAccount", user:$('#nick').val(), mail:$('#mail').val()},function(data){
+          trimmed_data = $.trim(data);
+              if (trimmed_data == ""){
+                alert("Se han guardado los cambios");
+                window.location.href = "editInfo.php";
+              }
+              else {
+                alert (data);
+              };
         
             }
           );
@@ -77,8 +81,8 @@
             </tr>
   
         </table>
-         <div id= "updateInfoButton">
-             <button type="button" id="updateButton">Modificar</button>
+         <div id= "updateInfoButton3">
+             <button type="button" id="modifyButton">Modificar</button>
              <button type="button" id="updatePassw">Cambiar contraseña </button>
             </div>
       </div> 

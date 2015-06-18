@@ -13,6 +13,15 @@
    -webkit-border-radius: 5px;  
    border-radius: 5px;
 }
+#modifyButton{
+	margin-top: 10px;
+	display:inline-table;
+	float: center;
+	text-align: center;
+	-moz-border-radius: 5px;  
+   -webkit-border-radius: 5px;  
+   border-radius: 5px;
+}
 #updatePassw{
 	margin-top: 10px;
 	margin-left:2cm;
