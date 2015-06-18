@@ -9,10 +9,14 @@ function login($user, $pass){
 	$result = "SELECT * FROM usuario WHERE nick = '$user'";
 	$result = $connection->query($result) or die ($connection->error. " en la linea".(_LINE_-1));
 	
+
+
 	if($row = $result->fetch_assoc())
-		{     
+		{    
+				
 			//Si el usuario es correcto ahora validamos su contraseña
-			 if($row["Contrasenia"] == $pass)
+			$dbHash = $row["Contrasenia"];
+			if (crypt($pass, $dbHash) == $dbHash)
 				 {
 				  //Creamos sesión
 				 	session_destroy();
@@ -33,6 +37,8 @@ function login($user, $pass){
 				 }
 			else
 				 {
+//				 	echo crypt($pass, $stmt);
+				 	//echo $stmt;
 					echo "MALA CONTRASEÑA";
 			 	}
 		}
@@ -67,11 +73,16 @@ function addUser($user, $pass, $mail){
 		}
 	else
 		{
-			//$salt = str_replace('=', '.', base64_encode(mcrypt_create_iv(20)));
-			//$hashed = auth_encripta($pass, $salt);
-			//echo $hashed;
+			$nombreSal = $user;
+			$passSal = $pass;
+			
+			$salt = substr(base64_encode(openssl_random_pseudo_bytes('30')), 0, 22);
+			$salt = strtr($salt, array('+' => '.')); 
+			$hash = crypt($passSal, '$2y$10$' . $salt);
+
+			//var_dump($hash);
 			$q = "INSERT INTO `usuario` (`Id`, `Nick`, `Contrasenia`, `Nombre`, `Apellidos`, `Correo`, `Fecha de Nacimiento`, `Pais`, `Ciudad`, `Direccion`, `Codigo Postal`, `Puntuacion`, `Rol`)
-				VALUES (NULL, '$user' , '$pass', '', '', '$mail', '0000-00-00', '', '', '', 00000, 0 , 'Usuario Registrado')";
+				VALUES (NULL, '$user' , '$hash', '', '', '$mail', '0000-00-00', '', '', '', 00000, 0 , 'Usuario Registrado')";
 			$connection->query($q) or die($connection->error. " en la linea".(_LINE_-1));
 		}
 
