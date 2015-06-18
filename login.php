@@ -26,6 +26,20 @@
 			 		);
 				});
 		});
+		$(document).keypress(function(e) {
+   			if(e.which == 13) {
+       			$.get("include/usuariosGestor.php",{ functionName:"login", user:$('#name').val(), pass:$('#passw').val() },function(data){
+		 			trimmed_data = $.trim(data);
+			 			if (trimmed_data == ""){
+			 				window.location.href = "index.php";
+			 			}
+			 			else {
+			 				alert (data);
+			 			}
+		 			}
+		 		);
+   			}
+		});
 	 </script>
 
 </head>
