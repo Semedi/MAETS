@@ -23,7 +23,7 @@
 
               if (trimmed_data == ""){
                 alert("Tus datos se ha actualizado");
-                window.location.href = "infoPersonal.php";
+                window.location.href = "infoPersonalUser.php";
                 
               }
               else {
