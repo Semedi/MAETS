@@ -11,25 +11,29 @@
     <link rel="stylesheet" type="text/css" href="../css/users.css" />
     <script type="text/javascript" src="../js/jquery-1.9.1.min.js"> </script>
 
-  <script type="text/javascript">
+<script type="text/javascript">
 
     $( document ).ready(function() {
+
+
+
       $('#updateButton').click(
         function(){
-          $.get("../include/usuariosGestor.php",{ functionName:"modifyUserAcount", user:$('#nick').val(),mail: $('#mail').val() },function(data){
+          $.get("../include/usuariosGestor.php",{ functionName:"modifyUserAccount", user:$('#nick').val(), mail:$('#mail').val() },function(data){
             trimmed_data = $.trim(data);
-              if (trimmed_data == ""){
-                alert ("Los cambios se han guardado!");
-              }
-              else {
-                alert (data);
-              }
+            
+            if (data="ok")
+              alert("ok");
+        
             }
           );
         });
-    });
 
-  </script>
+
+
+
+    });
+   </script>
 
 </head>
 
@@ -43,7 +47,7 @@
                 <img id='imagen_Avatar'  src='/MAETS/images/userProfile.png'/>
             </div>
             <div id= "updateInfoButton">
-               <button type="button" id="updateButton">Modificar</button>
+               <button type="button" id="updateButton2">Modificar</button>
             </div>
 
      </div>
@@ -74,7 +78,7 @@
   
         </table>
          <div id= "updateInfoButton">
-             <button type="button" id="updateInfoButton">Modificar</button>
+             <button type="button" id="updateButton">Modificar</button>
              <button type="button" id="updatePassw">Cambiar contraseña </button>
             </div>
       </div> 

@@ -83,11 +83,20 @@ function auth_encripta($pass, $salt) {
 	 password_hash($pass."miApp");
 }
 //modifica la informacion de la cuenta un usuario
-function modifyUserAcount($user,$mail){
-	/*$connection = createConnection();
+function modifyUserAccount($user,$mail){
+
+	
+	$connection = createConnection();
+
 	$sql = "UPDATE `maets`.`usuario` SET `Nick` ='$user',`Correo`= '$mail' WHERE `usuario`.`Id` ='$_SESSION['ID']')"; 
-    $connection ->query($sql) or die ($connecntion->error. " en la linea". (_LINE_-1));
-	closeConnection($connection);*/
+
+    $connection ->query($sql) or die ($connection->error. " en la linea". (_LINE_-1));
+	closeConnection($connection);
+
+	echo "ok";
+
+
+
 }
 
 
@@ -123,6 +132,11 @@ switch ($functionName) {
         break;
     case "addUser":
     	addUser($_GET["user"], $_GET["pass"], $_GET["mail"]);
+    	break;
+
+    case "modifyUserAccount":
+    	modifyUserAccount($_GET["user"], $_GET["mail"]);
+    	break;
 
 }
 
