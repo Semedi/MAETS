@@ -99,11 +99,12 @@ function modifyUserAccount($user,$mail){
 	
 	$connection = createConnection();
 
+/*
 	$sql = "UPDATE `maets`.`usuario` SET `Nick` ='$user',`Correo`= '$mail' WHERE `usuario`.`Id` ='$_SESSION['ID']')"; 
 
     $connection ->query($sql) or die ($connection->error. " en la linea". (_LINE_-1));
 	closeConnection($connection);
-
+*/
 	echo "ok";
 
 
