@@ -6,18 +6,17 @@ function selectGenero($tipo){
 
 	$connection=createConnection();
 
-	$num = 0;
-
 	$sql = "SELECT * FROM juego where tipo = '$tipo'";
 
-	$sql = $connection->query($sql) or die ($connection->error. " en la linea". (_LINE_-1));
+	$res = $connection->query($sql) or die ($connection->error. " en la linea". (_LINE_-1));
 
-	if ($row = $sql->fetch_assoc()){
-		$num =$sql->num_rows;
-	}
+	while($ret[] = mysql_fetch_assoc($res));
 
+	echo "<pre>";
+	print_r($ret);
+	echo "</pre>";
 
-	return($num);
+	return($ret);
 }
 
 
