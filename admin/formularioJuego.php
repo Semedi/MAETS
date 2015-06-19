@@ -5,7 +5,7 @@
 	<title> MAETS </title>
 	<link rel="icon" type="image/png" href="../images/MAETS.png"/>
 	<link rel="stylesheet" type="text/css" href="../css/main.css"/>
-	<link rel="stylesheet" type="text/css" href="../css/gestorJuegos.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/formularioJuego.css"/>
 </head>
 
 <?php include ('../static/mainTOP.php'); ?>
@@ -13,6 +13,7 @@
 	<body>
 		<div id="game-form">  
 
+			</br>
 		   <center><h1>Nuevo juego</h1></center>
 		   
 		   <p id="failure">Algo esta mal.</p>  
@@ -92,7 +93,7 @@
 					<p><input type=checkbox value='a' name=checked checked> Marque esta casilla para verificar que ha leído nuestros términos y condiciones del servicio.</p>
 				</form>
 
-				<p>  <input type="submit" value="enviar" /></p>
+				<p>  <input type="submit" value="Añadir" /></p>
 		   </form>   
 		</div>	
 

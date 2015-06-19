@@ -37,9 +37,9 @@
 						
 								<p> <label for="consult">Motivo de la consulta: </label> </p>
 						 
-								<p><input type="radio" name="consult" value="evaluacion">Evaluación</p>
-								<p><input type="radio" name="consult" value="sugerencias">Sugerencias</p>
-								<p><input type="radio" name="consult" value="criticas">Críticas</p>      
+								<p><input type="radio" name="consult" value="evaluacion">Evaluación
+								   <input type="radio" name="consult" value="sugerencias">Sugerencias
+								   <input type="radio" name="consult" value="criticas">Críticas</p>      
 								
 								<textarea id="message" name="message" placeholder="Escribe aquí tu mensaje." required="required"></textarea>  
 						  
