@@ -36,8 +36,7 @@
 	    		<?php 
 
 	    		require_once 'include/vTienda.php';
-	    		
-	    		
+	    	
 
 				generarLista("Acción");
 
