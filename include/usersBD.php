@@ -54,6 +54,33 @@ function newUser($user, $pass, $mail){
 	closeConnection($connection);
 }
 
+function findUser($userNick){
+	$connection = createConnection();
+	$result = "SELECT * FROM usuario WHERE nick = '$userNick'";
+	$result = $connection->query($result) or die ($connection->error. "en la linea".(_LINE_-1));
+	if($row = $result->fetch_assoc()){
+	}else{
+		echo "El usuario buscado no existe";
+	}
+	closeConnection($connection);
+}
+
+
+function insertFriend($friendNick, $userId){
+	$connection = createConnection();
+	$result = "SELECT * FROM usuario WHERE nick = '$friendNick'";
+	$result = $connection->query($result) or die ($connection->error. "en la linea".(_LINE_-1));
+	if($row = $result->fetch_assoc()){
+		$friendId= row["Id"];
+		$sql= "INSERT INTO `maets`.`amigo` (`IDUsuario`, `IDAmigo`) VALUES ('$userId', '$friendId')";
+		$connection->query($sql) or die($connection->error. "en la linea".(_LINE_-1));
+	}else{
+		echo "El usuario buscado no existe";
+	}
+	closeConnection($connection);
+	
+}
+
 function auth_encripta($pass, $salt) {
 	 password_hash($pass."miApp");
 }

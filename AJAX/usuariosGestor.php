@@ -50,8 +50,13 @@ function deleteUSer(){
 	return(true);
 }
 //añade relacion de amigos a la bdd
-function addFriend(){
-	return(true);
+function addFriend($friendNick, $userId){
+	include '../include/usersBD.php';
+	insertFriend($friendNick, $userId);
+}
+function searchUser($userNick){
+	include'../include/usersBD.php';
+	findUser($userNick);
 }
 
 //elimina relacion de amigos
@@ -84,6 +89,10 @@ switch ($functionName) {
     	break;
     case "updatePersonalInfo":
     	updatePersonalInfo($_GET["nombre"], $_GET["apellidos"], $_GET["mail"],$_GET["pais"],$_GET["ciudad"], $_GET["direccion"],$_GET["CP"],$_SESSION["ID"]);
+    case "addFriend":
+    	addFriend($_GET["friendNick"], $_SESSION["ID"]);
+    case "searchUser":
+    	searchUser($_GET["userNick"]);
 
 }
 

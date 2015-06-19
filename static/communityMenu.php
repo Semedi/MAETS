@@ -1,3 +1,26 @@
+<script type="text/javascript" src="..\js\jquery-1.9.1.min.js"> </script>
+
+	<script type="text/javascript">
+
+			$(document).keypress(function(e) {
+			   			if(e.which == 13) {
+			       			$.get("../AJAX/usuariosGestor.php",{ functionName:"searchUser", userNick:$('#busqueda_user').val(),},function(data){
+					 			trimmed_data = $.trim(data);
+						 			if (trimmed_data == ""){
+						 				window.location.href = "pagPpalUser2.php";
+						 			}
+						 			else {
+						 				alert (data);
+						 			}
+					 			}
+					 		);
+			   			}
+					});
+	</script>
+
+
+
+
 <div id="menu"> 
 
 
@@ -19,7 +42,8 @@
 				<div id ="busqueda"> 
 					<!--<form action="demo_form.asp">    // Sirve para ejecutar la accion-->
 					Búsqueda:
-					<input id ="barra_busqueda" type="text" name="lname">
+					<input type  ="text" name ="busqueda_user" id ="busqueda_user" class="texto" name="lname"/>
+					<!--keypress??-->
 					<!--<input type="submit" value="Submit">   //añade un boton-->
 					<!--</form>-->
 				</div>
