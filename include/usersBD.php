@@ -1,5 +1,7 @@
 <?php
 
+require_once ("config.php");
+
 function modifyAccount($user,$mail, $ID){
 
 	$connection = createConnection();

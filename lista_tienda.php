@@ -12,6 +12,7 @@
 
 
 <?php  include ('static/mainTOP.php'); ?>	
+
 	 <div id = "left-menu">
         <h2>Categorias</h2>
         <p>Free to play</p>
@@ -32,8 +33,13 @@
 	    	<div id="content-container">
 	    		<div id="contenedor">
 
-	    		<?php include 'include/vTienda.php'; 
-	    			generarLista();
+	    		<?php 
+
+	    		require_once 'include/vTienda.php';
+	    		
+	    		
+
+				generarLista("Acción");
 
 
 	    		?>
