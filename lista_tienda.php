@@ -27,28 +27,20 @@
         <p>Rol</p>
         <p>Simuladores</p>
       </div>
+
+      
 	    	<div id="content-container">
 	    		<div id="contenedor">
-	    			<div id="juego" onclick="location.href='articulo-tienda.php'" style="cursor:pointer">
-	    				<img class="imagen" src="images/GTAV.jpg">
-	    				<div id="titulo"> 
-	    					<p><b>Titulo de prueba</b> </p>
-	    					<p>Categoria: ...</p>
-	    				 </div>
-	    				 <div id="precio">
-	    				 	<p>Precio: mazoooo</p>
-	    				 </div>
-	    			 </div>
-	    			 <div id="juego">
-	    			 </div>
-	    			 <div id="juego">
-	    			 </div>
-	    			 <div id="juego">
-	    			 </div>
-	    			 <div id="juego">
-	    			 </div>
+
+	    		<?php include 'include/vTienda.php'; 
+	    			generarLista();
+
+
+	    		?>
+
+
 	    		</div>
-				</div>
+			</div>
 				
 <?php  include ('static/mainBOT.php'); ?>
 	
