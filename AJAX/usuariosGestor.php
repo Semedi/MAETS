@@ -1,5 +1,5 @@
 <?php
-include ('config.php');
+include ('../include/config.php');
 if (!isset($_SESSION)) session_start();
 
 //recibe user/pass y comprueba en la base de datos si es correcto
@@ -61,6 +61,7 @@ function logout(){
 
 //añade usuarios a la bd(faltan parametros)
 function addUser($user, $pass, $mail){
+	
 
 	$connection = createConnection();
 	

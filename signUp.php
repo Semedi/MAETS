@@ -14,7 +14,7 @@
 		$( document ).ready(function() {
 			$('#signUp').click(
 		 		function(){
-		 			$.get("include/usuariosGestor.php",{ functionName:"addUser", user:$('#name').val(), pass:$('#passw').val(), mail: $('#mail').val() },function(data){
+		 			$.get("AJAX/usuariosGestor.php",{ functionName:"addUser", user:$('#name').val(), pass:$('#passw').val(), mail: $('#mail').val() },function(data){
 		 				trimmed_data = $.trim(data);
 		 					if (trimmed_data == ""){
 		 						alert ("¡Usuario nuevo registrado!");

@@ -19,7 +19,7 @@
 
       $('#modifyButton').click(
         function(){
-          $.get("../include/usuariosGestor.php",{ functionName:"modifyUserAccount", user:$('#nick').val(), mail:$('#mail').val()},function(data){
+          $.get("../AJAX/usuariosGestor.php",{ functionName:"modifyUserAccount", user:$('#nick').val(), mail:$('#mail').val()},function(data){
           trimmed_data = $.trim(data);
               if (trimmed_data == ""){
                 alert("Se han guardado los cambios");

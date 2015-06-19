@@ -48,7 +48,7 @@ function cargaCabeceraAnon(){
 		$( document ).ready(function() {
 		 	$('#logout').click(
 		 		function(){
-		 			$.get("include/usuariosGestor.php",{ functionName:"logout"},function(data){
+		 			$.get("AJAX/usuariosGestor.php",{ functionName:"logout"},function(data){
 		 				trimmed_data = $.trim(data);
 		 					if (trimmed_data == ""){
 		 						window.location.href = "index.php";
