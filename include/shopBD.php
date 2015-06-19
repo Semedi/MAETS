@@ -1,8 +1,7 @@
 <?php
 
-require_once ("config.php");
 
-
+require_once 'include/config.php';
 function selectGenero($tipo){
 
 	$connection=createConnection();
@@ -13,12 +12,12 @@ function selectGenero($tipo){
 
 	$slq = $connection->query($sql) or die ($connection->error. " en la linea". (_LINE_-1));
 
-	if ($row = $sql->cubrid_fetch_assoc()){
+	if ($row = $sql->fetch_assoc()){
 		$num =$sql->num_rows;
 	}
 
 
-	return($num);	
+	return($num);
 }
 
 
