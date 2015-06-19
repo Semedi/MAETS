@@ -1,4 +1,5 @@
 <?php
+
 include ('../include/config.php');
 if (!isset($_SESSION)) session_start();
 
@@ -70,6 +71,7 @@ function deleteFriend(){
 
 
 $functionName = filter_input(INPUT_GET, 'functionName');
+
 switch ($functionName) {
     case "login":
        login($_GET["user"], $_GET["pass"]);

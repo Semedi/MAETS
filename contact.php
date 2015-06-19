@@ -15,6 +15,7 @@
 		
 				<div id="contact-form">  
 
+					   </br>
 					   <center><h1>Contacto</h1></center>
 					   
 					   <p id="failure">Algo esta mal.</p>  
