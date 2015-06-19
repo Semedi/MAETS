@@ -61,6 +61,7 @@ function logout(){
 
 //añade usuarios a la bd(faltan parametros)
 function addUser($user, $pass, $mail){
+	
 
 	$connection = createConnection();
 	

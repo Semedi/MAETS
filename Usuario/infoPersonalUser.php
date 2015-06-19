@@ -18,7 +18,7 @@
       $('#updatePersonalInfo').click(
         function(){
           alert("ante de la funcion");
-          $.get("../include/usuariosGestor.php",{ functionName:"updatePersonalInfo", nombre:$('#nombre').val(),apellidos:$('#apellidos').val(), mail:$('#mail').val(), pais:$('#pais').val(), ciudad:$('#ciudad').val(), direccion:$('#direccion').val(), CP:$('#CP').val()},function(data){
+          $.get("../AJAX/usuariosGestor.php",{ functionName:"updatePersonalInfo", nombre:$('#nombre').val(),apellidos:$('#apellidos').val(), mail:$('#mail').val(), pais:$('#pais').val(), ciudad:$('#ciudad').val(), direccion:$('#direccion').val(), CP:$('#CP').val()},function(data){
            trimmed_data = $.trim(data); 
 
               if (trimmed_data == ""){
