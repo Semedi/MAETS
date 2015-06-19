@@ -133,24 +133,53 @@ function compruebaLogin($user, $pass){
 closeConnection($connection);
 }
 
+function numberOfGames(){
+	$connection = createConnection();
+	$id = $_SESSION['ID'];
+	$result = "SELECT COUNT(IDUsuario) FROM compras WHERE IDUsuario = $id";
+	$result = $connection->query($result) or die ($connection->error. " en la linea".(_LINE_-1));
+
+	//FALTA DEVOLVER EL RESULTADO
+
+	closeConnection($connection);
+}
+
+function getMyGames(){
+	$connection = createConnection();
+	$id = $_SESSION['ID'];
+	$result = "SELECT titulo FROM juego JOIN compras JOIN usuario WHERE juego.Id = compras.IDJuego and usuario.ID = $id";
+	$result = $connection->query($result) or die ($connection->error. " en la linea".(_LINE_-1));
+
+	//FALTA DEVOLVER EL RESULTADO
+
+	closeConnection($connection);
+}
+
+function getMyFriends(){
+	$connection = createConnection();
+	$id = $_SESSION['ID'];
+	$result = "SELECT Nick FROM usuario JOIN amigo WHERE ID != $id and IDUsuario = $id";
+	$result = $connection->query($result) or die ($connection->error. " en la linea".(_LINE_-1));
+
+	//FALTA DEVOLVER EL RESULTADO
+
+	closeConnection($connection);
+}
 
 
 
 
+function puntosDeLogro(){
+	$connection = createConnection();
+	$id = $_SESSION['ID'];
+	//SELECT SUM(Puntos) FROM consigue NATURAL JOIN logro WHERE IDUsuario = 6
+	$result = "SELECT SUM(Puntos) FROM logro JOIN consigue WHERE logro.ID = consigue.IDLogro and IDUsuario = $id";
+	$result = $connection->query($result) or die ($connection->error. " en la linea".(_LINE_-1));
 
+	//FALTA DEVOLVER EL RESULTADO
 
-
-
-
-
-
-
-
-
-
-
-
-
+	closeConnection($connection);
+}
 
 
 ?>
