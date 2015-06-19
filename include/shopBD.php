@@ -10,7 +10,7 @@ function selectGenero($tipo){
 
 	$sql = "SELECT * FROM juego where tipo = '$tipo'";
 
-	$slq = $connection->query($sql) or die ($connection->error. " en la linea". (_LINE_-1));
+	$sql = $connection->query($sql) or die ($connection->error. " en la linea". (_LINE_-1));
 
 	if ($row = $sql->fetch_assoc()){
 		$num =$sql->num_rows;

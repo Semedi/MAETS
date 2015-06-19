@@ -38,7 +38,7 @@
 	    		require_once 'include/vTienda.php';
 	    	
 
-				generarLista("Acción");
+				generarLista("Rol");
 
 
 	    		?>
