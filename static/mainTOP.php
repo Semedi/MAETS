@@ -16,15 +16,14 @@ function cargaCabeceraAnon(){
  	if(isset($_SESSION["Nick"])){
 
 		if($_SESSION["Logueado"] == true){
-			if ($_SESSION["Rol"] == "Administrador") {
-
-			} else {
-				echo "
-							<div id='nombreUsuario'><li><a href='/MAETS/Usuario/pagPpalUser.php'>"; echo $_SESSION["Nick"]; echo "</a></li>
-							<div id='logout'><li><a href='/MAETS/index.php'> logout </a></li></div>
-							</div>
-							<li><a href='/MAETS/Usuario/pagPpalUser.php'><img id='imagenUsuario' src='/MAETS/images/userProfile.png'></a></li>";
-			}
+			echo
+				"<div id='nombreUsuario'>
+					<li><a href='/MAETS/Usuario/pagPpalUser.php'>" .$_SESSION["Nick"]. "</a></li>
+				  	<div id='logout'>
+				  		<li><a href='/MAETS/index.php'> logout </a></li>
+					</div>
+				</div>
+				<li><a href='/MAETS/Usuario/pagPpalUser.php'><img id='imagenUsuario' src='/MAETS/images/userProfile.png'></a></li>";
 							
 						
 								
