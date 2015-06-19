@@ -61,34 +61,11 @@ function logout(){
 
 //añade usuarios a la bd(faltan parametros)
 function addUser($user, $pass, $mail){
-	
 
-	$connection = createConnection();
-	
-	$result = "SELECT * FROM usuario WHERE nick = '$user'";
-	$result = $connection->query($result) or die ($connection->error. " en la linea".(_LINE_-1));
+	include '../include/usersBD.php';
 
-
-	if($row = $result->fetch_assoc())
-		{     
-			echo "Ya existe este usuario";
-		}
-	else
-		{
-			$nombreSal = $user;
-			$passSal = $pass;
-			
-			$salt = substr(base64_encode(openssl_random_pseudo_bytes('30')), 0, 22);
-			$salt = strtr($salt, array('+' => '.')); 
-			$hash = crypt($passSal, '$2y$10$' . $salt);
-
-			//var_dump($hash);
-			$q = "INSERT INTO `usuario` (`Id`, `Nick`, `Contrasenia`, `Nombre`, `Apellidos`, `Correo`, `Fecha de Nacimiento`, `Pais`, `Ciudad`, `Direccion`, `Codigo Postal`, `Puntuacion`, `Rol`)
-				VALUES (NULL, '$user' , '$hash', '', '', '$mail', '0000-00-00', '', '', '', 00000, 0 , 'Usuario Registrado')";
-			$connection->query($q) or die($connection->error. " en la linea".(_LINE_-1));
-		}
-
-	closeConnection($connection);
+	newUser($user, $pass, $mail);
+	header('Location: ../index.php');
 }
 
 function auth_encripta($pass, $salt) {
@@ -97,23 +74,16 @@ function auth_encripta($pass, $salt) {
 //modifica la informacion de la cuenta un usuario
 function modifyUserAccount($user,$mail, $ID){
 
-	$connection = createConnection();
+	include '../include/usersBD.php';
 
-	$sql = "UPDATE `maets`.`usuario` SET `Nick` ='$user',`Correo`= '$mail' WHERE `usuario`.`Id` ='$ID'"; 
-
-    $connection ->query($sql) or die ($connection->error. " en la linea". ('_LINE_-1'));
-	closeConnection($connection);
+	modifyAccount($user,$mail, $ID);
 
 }
 //actualiza la informacion personal del usuario
 function updatePersonalInfo($nombre, $apellidos, $mail, $pais, $ciudad, $direccion, $CP, $ID){
 	
-	$connection = createConnection();
-
-	$sql = "UPDATE `maets`.`usuario` SET `Nombre` ='$nombre',`Apellidos`='$apellidos', `Correo`= '$mail', `Pais`= '$pais', `Ciudad`='$ciudad', `Direccion`='$direccion', `Codigo Postal`='$CP'  WHERE `usuario`.`Id` ='$ID'"; 
-
-    $connection ->query($sql) or die ($connection->error. " en la linea". ('_LINE_-1'));
-	closeConnection($connection);
+	include '../include/usersBD.php';
+	updateInfo($nombre, $apellidos, $mail, $pais, $ciudad, $direccion, $CP, $ID);
 
 }
 
