@@ -4,50 +4,9 @@ if (!isset($_SESSION)) session_start();
 
 //recibe user/pass y comprueba en la base de datos si es correcto
 function login($user, $pass){
-	$connection = createConnection();
-	
-	$result = "SELECT * FROM usuario WHERE nick = '$user'";
-	$result = $connection->query($result) or die ($connection->error. " en la linea".(_LINE_-1));
-	
+	include '../include/usersBD.php';
 
-
-	if($row = $result->fetch_assoc())
-		{    
-				
-			//Si el usuario es correcto ahora validamos su contraseña
-			$dbHash = $row["Contrasenia"];
-			if (crypt($pass, $dbHash) == $dbHash)
-				 {
-				  //Creamos sesión
-				 	session_destroy();
-					session_start();  
-				  //Almacenamos los datos del usuario en variables
-					$_SESSION['Nick'] = $user;
-					$_SESSION['Logueado'] = true;
-					$_SESSION['Rol'] = $row["Rol"];
-					$_SESSION['Nombre'] = $row["Nombre"];
-					$_SESSION['Apellidos'] = $row["Apellidos"];
-					$_SESSION['Email'] = $row["Correo"];
-					$_SESSION['Pais'] = $row["Pais"];
-					$_SESSION['Direccion'] = $row["Direccion"];
-					$_SESSION['Ciudad'] = $row["Ciudad"];
-					$_SESSION['CP'] = $row["Codigo Postal"];
-					$_SESSION['IMG'] = $row["Imagen"];
-					$_SESSION['ID'] = $row["Id"];
-				 }
-			else
-				 {
-//				 	echo crypt($pass, $stmt);
-				 	//echo $stmt;
-					echo "MALA CONTRASEÑA";
-			 	}
-		}
-		else
-		{
-			echo "NO EXISTE ESE USUARIO";
-		}
-
-closeConnection($connection);
+	compruebaLogin($user, $pass);
 }
 
 //cierra la sesion
@@ -68,9 +27,7 @@ function addUser($user, $pass, $mail){
 	header('Location: ../index.php');
 }
 
-function auth_encripta($pass, $salt) {
-	 password_hash($pass."miApp");
-}
+
 //modifica la informacion de la cuenta un usuario
 function modifyUserAccount($user,$mail, $ID){
 
