@@ -23,7 +23,7 @@
 							<div id="cajaAnalisis">
 							
 								<div id ="portada">
-									<a href="#"><img class="icono_A" src="../images/gta5A.jpg"></a>
+									<a href="#"><img class="icono_A" src="../images/analisis/gta5A.jpg"></a>
 									<p>
 									<img class="icono_B" src="../images/LIKE.png">
 									Recomendado
@@ -55,7 +55,7 @@
 							<div id="cajaAnalisis">
 							
 								<div id ="portada">
-									<a href="#"><img class="icono_A" src="../images/gta5A.jpg"></a>
+									<a href="#"><img class="icono_A" src="../images/analisis/gta5A.jpg"></a>
 									<p>
 									<img class="icono_B" src="../images/LIKE.png">
 									Recomendado

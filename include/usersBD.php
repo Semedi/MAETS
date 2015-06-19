@@ -92,8 +92,7 @@ function compruebaLogin($user, $pass){
 				 }
 			else
 				 {
-//				 	echo crypt($pass, $stmt);
-				 	//echo $stmt;
+//				 	
 					echo "MALA CONTRASEÑA";
 			 	}
 		}
