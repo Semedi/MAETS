@@ -1,0 +1,47 @@
+#game-form {  
+	background-color: rgb(20,31,44);
+	
+
+	height: 1750px;
+	width: 90%;  
+   	margin: 0 auto;
+   	-moz-border-radius: 10px;  
+   	-webkit-border-radius: 15px; 
+ 
+}
+
+#game-form textarea {  
+   height: 150px;  
+}
+
+#game-form p{
+   color: #FFFFFF;
+}
+
+#game-form h1{
+	font-size: 40px;
+}
+ 
+ 
+ #game-form #submit {  
+   width: 450px;  
+   color: #BFD7C1;  
+   border: none;  
+   background-color: #6EA070;
+}  
+ 
+ #game-form textarea {  
+   width: 450px;
+   background: #fff;
+   border: 0;
+   -moz-border-radius: 5px;  
+   -webkit-border-radius: 5px;  
+   border-radius: 5px;
+   margin-bottom: 25px;  
+   padding: 5px;  
+} 
+
+#failure, #success {
+   color: #6EA070;
+   display:none;  
+}
