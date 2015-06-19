@@ -54,7 +54,55 @@ function newUser($user, $pass, $mail){
 	closeConnection($connection);
 }
 
+function auth_encripta($pass, $salt) {
+	 password_hash($pass."miApp");
+}
 
+function compruebaLogin($user, $pass){
+	$connection = createConnection();
+	
+	$result = "SELECT * FROM usuario WHERE nick = '$user'";
+	$result = $connection->query($result) or die ($connection->error. " en la linea".(_LINE_-1));
+	
+
+
+	if($row = $result->fetch_assoc())
+		{    
+				
+			//Si el usuario es correcto ahora validamos su contraseña
+			$dbHash = $row["Contrasenia"];
+			if (crypt($pass, $dbHash) == $dbHash)
+				 {
+				  //Creamos sesión
+				 	session_destroy();
+					session_start();  
+				  //Almacenamos los datos del usuario en variables
+					$_SESSION['Nick'] = $user;
+					$_SESSION['Logueado'] = true;
+					$_SESSION['Rol'] = $row["Rol"];
+					$_SESSION['Nombre'] = $row["Nombre"];
+					$_SESSION['Apellidos'] = $row["Apellidos"];
+					$_SESSION['Email'] = $row["Correo"];
+					$_SESSION['Pais'] = $row["Pais"];
+					$_SESSION['Direccion'] = $row["Direccion"];
+					$_SESSION['Ciudad'] = $row["Ciudad"];
+					$_SESSION['CP'] = $row["Codigo Postal"];
+					$_SESSION['IMG'] = $row["Imagen"];
+					$_SESSION['ID'] = $row["Id"];
+				 }
+			else
+				 {
+//				 	
+					echo "MALA CONTRASEÑA";
+			 	}
+		}
+		else
+		{
+			echo "NO EXISTE ESE USUARIO";
+		}
+
+closeConnection($connection);
+}
 
 
 

@@ -39,9 +39,9 @@
 			
 			<div id="capturas">
 				<h4> Capturas del día: </h4>
-				<img src="images/dbx1.jpg">
-				<img src="images/gtav1.jpg">
-				<img src="images/ac1.jpg">
+				<img src="images/screens/dbx1.jpg">
+				<img src="images/screens/gtav1.jpg">
+				<img src="images/screens/ac1.jpg">
 			</div>
 			
 <?php  include ('static/mainBOT.php'); ?>	
