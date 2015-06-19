@@ -22,6 +22,16 @@
    -webkit-border-radius: 5px;  
    border-radius: 5px;
 }
+#addFriendButton{
+margin-left: -2.5cm;
+margin-top: 15px;
+display:inline-table;
+float: bottom;
+text-align: center;
+-moz-border-radius: 5px;  
+ -webkit-border-radius: 5px;  
+ border-radius: 5px;
+}
 #updatePassw{
 	margin-top: 10px;
 	margin-left:2cm;
