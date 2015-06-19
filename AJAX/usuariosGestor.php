@@ -57,7 +57,12 @@ function addFriend($friendNick, $userId){
 }
 function searchUser($userNick){
 	include'../include/usersBD.php';
-	findUser($userNick);
+
+	 $cont =findUser($userNick);
+
+	header('Location:../Usuario/pagPpalUser2.php');
+
+	
 }
 
 //elimina relacion de amigos
@@ -91,10 +96,13 @@ switch ($functionName) {
     	break;
     case "updatePersonalInfo":
     	updatePersonalInfo($_GET["nombre"], $_GET["apellidos"], $_GET["mail"],$_GET["pais"],$_GET["ciudad"], $_GET["direccion"],$_GET["CP"],$_SESSION["ID"]);
+    	break;
     case "addFriend":
     	addFriend($_GET["friendNick"], $_SESSION["ID"]);
+    	break;
     case "searchUser":
     	searchUser($_GET["userNick"]);
+    	break;
 
 }
 

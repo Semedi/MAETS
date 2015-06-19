@@ -8,6 +8,34 @@
 
   <link rel="stylesheet" type="text/css" href="../css/main.css" />
   <link rel="stylesheet" type="text/css" href="../css/users.css" />
+   <script type="text/javascript" src="../js/jquery-1.9.1.min.js"> </script>
+
+<script type="text/javascript">
+  $( document ).ready(function() {
+
+
+
+      $('#addFriendButton').click(
+        function(){
+          $.get("../AJAX/usuariosGestor.php",{ functionName:"addFriend", friendNick:$('#nick').val()},function(data){
+          trimmed_data = $.trim(data);
+              if (trimmed_data == ""){
+                alert("Se han guardado los cambios");
+                window.location.href = "editInfo.php";
+              }
+              else {
+                alert (data);
+              };
+        
+            }
+          );
+        });
+
+
+
+
+    });
+   </script>
 	
 </head>
 

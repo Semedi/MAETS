@@ -1,17 +1,14 @@
-<script type="text/javascript" src="..\js\jquery-1.9.1.min.js"> </script>
+<script type="text/javascript" src="/MAETS/js/jquery-1.9.1.min.js"> </script>
 
 	<script type="text/javascript">
 
 			$(document).keypress(function(e) {
 			   			if(e.which == 13) {
-			       			$.get("../AJAX/usuariosGestor.php",{ functionName:"searchUser", userNick:$('#busqueda_user').val(),},function(data){
+			       			$.get("/MAETS/AJAX/usuariosGestor.php",{ functionName:"searchUser", userNick:$('#busqueda_user').val(),},function(data){
 					 			trimmed_data = $.trim(data);
-						 			if (trimmed_data == ""){
-						 				window.location.href = "pagPpalUser2.php";
-						 			}
-						 			else {
-						 				alert (data);
-						 			}
+					 			
+						 		window.location.href = "../Usuario/pagPpalUser2.php";
+						 	
 					 			}
 					 		);
 			   			}

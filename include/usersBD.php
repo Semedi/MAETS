@@ -56,13 +56,17 @@ function newUser($user, $pass, $mail){
 
 function findUser($userNick){
 	$connection = createConnection();
-	$result = "SELECT * FROM usuario WHERE nick = '$userNick'";
+	$num=0;
+	$result = "SELECT * FROM usuario WHERE nick LIKE '%$userNick%'";
 	$result = $connection->query($result) or die ($connection->error. "en la linea".(_LINE_-1));
-	if($row = $result->fetch_assoc()){
-	}else{
-		echo "El usuario buscado no existe";
-	}
+	if($row = $result->fetch_assoc())
+		$num= $result->num_rows;
+	
+		
+	
 	closeConnection($connection);
+
+	return ($num);
 }
 
 
@@ -130,24 +134,6 @@ function compruebaLogin($user, $pass){
 
 closeConnection($connection);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
