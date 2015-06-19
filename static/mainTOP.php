@@ -23,7 +23,7 @@ function cargaCabeceraAnon(){
 							<div id='nombreUsuario'><li><a href='/MAETS/Usuario/pagPpalUser.php'>"; echo $_SESSION["Nick"]; echo "</a></li>
 							<div id='logout'><li><a href='/MAETS/index.php'> logout </a></li></div>
 							</div>
-							<li><a href='/MAETS/Usuario/pagPpalUser.php'><img id='imagenUsuario'  src='/MAETS/images/userProfile.png'></a></li>";
+							<li><a href='/MAETS/Usuario/pagPpalUser.php'><img id='imagenUsuario' src='/MAETS/images/userProfile.png'></a></li>";
 			}
 							
 						
@@ -41,7 +41,7 @@ function cargaCabeceraAnon(){
 ?>
 
 
-<script type="text/javascript" src="js\jquery-1.9.1.min.js"> </script>
+<script type="text/javascript" src="/MAETS/js/jquery-1.9.1.min.js"> </script>
 
 	<script type="text/javascript">
 
@@ -52,9 +52,6 @@ function cargaCabeceraAnon(){
 		 				trimmed_data = $.trim(data);
 		 					if (trimmed_data == ""){
 		 						window.location.href = "index.php";
-		 					}
-		 					else {
-		 						alert (data);
 		 					}
 		 			 	}
 				 	);

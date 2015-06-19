@@ -1,0 +1,22 @@
+﻿#juego {
+	height: 100px;
+	width: 700px;
+	border: 1px;
+	background-color: rgb(20,31,44);
+	margin-left: 260px;
+	margin-top: 5px;
+}
+.imagen {
+	height: 98px;
+	width: 200px;
+	float: left;
+}
+#titulo {
+	margin-top: 5px;
+	float: left;
+	margin-left: 10px;
+}
+#precio {
+	float: right;
+	margin-right: 10px;
+}
