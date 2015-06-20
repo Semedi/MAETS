@@ -1,7 +1,8 @@
 <?php
 
 define('RAIZ_APP', 'http://localhost/MAETS');
-define('INDEX', RAIZ_APP.'/index.php');
+define('HOME', RAIZ_APP.'/index.php');
+session_start();
 
 
 //CREAR UNA VARIABLE QUE GUARDE EL DIR DE MAETS
