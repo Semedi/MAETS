@@ -15,9 +15,9 @@ function generarLista($tipo){
 				echo "<div id='juego' onclick='location.href='articulo-tienda.php'' style='cursor:pointer'>";
 	    				echo "<img class='imagen' src='images/Portadas/" .$res[$i]['Portada']. "'>";
 	    				echo "<div id='titulo'>";
-	    					echo "<p><b>" .$res[$i]['Titulo']. " </b> </p>";
-	    					echo "<p>Categoria:" .$res[$i]['Tipo']. "</p>";
+	    					echo "<p class='titulo'><b>" .$res[$i]['Titulo']. " </b> </p>";
 	    				echo "</div>";
+	    				echo "</br><p class='descripcion'>" .$res[$i]['Descripcion']. "</p>";
 	    				echo "<div id='precio'>";
 	    					echo "<p>Precio:" .$res[$i]['Precio']. "€</p>";
 	    				echo "</div>";
