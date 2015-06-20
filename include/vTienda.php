@@ -20,7 +20,7 @@ function generarLista($tipo){
 	    					echo "<p>Categoria:" .$res[$i]['Tipo']. "</p>";
 	    				echo "</div>";
 	    				echo "<div id='precio'>";
-	    					echo "<p>Precio:" .$res[$i]['Precio']. "</p>";
+	    					echo "<p>Precio:" .$res[$i]['Precio']. "€</p>";
 	    				echo "</div>";
 	    		echo "</div>";
 	    	}

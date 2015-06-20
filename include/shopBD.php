@@ -12,6 +12,8 @@ function selectGenero($tipo){
 
 	while($ret[] = $res->fetch_assoc());
 
+	closeConnection($connection);
+
 	return($ret);
 }
 

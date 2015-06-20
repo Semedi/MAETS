@@ -36,10 +36,10 @@
 	    		<?php 
 
 	    		require_once 'include/vTienda.php';
-	    	
-	    		$cat = $categoria;
-	    		echo "<p>" .$categoria. "</p>";
-				generarLista("Rol");
+	    		
+	    		$cat=$_GET['categoria'];
+				
+				generarLista($cat);
 
 	    		?>
 
