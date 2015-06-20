@@ -1,7 +1,7 @@
 <?php
 
 
-require_once 'include/config.php';
+require_once '../include/config.php';
 function selectGenero($tipo){
 
 	$connection=createConnection();
