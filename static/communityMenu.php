@@ -2,14 +2,14 @@
 
 	<script type="text/javascript">
 
+	var ruta ="<?php echo RAIZ_APP."/Usuario/resultados.php" ?>";
+
 			$(document).keypress(function(e) {
 			   			if(e.which == 13) {
 			       			$.get("/MAETS/AJAX/usuariosGestor.php",{ functionName:"searchUser", userNick:$('#busqueda_user').val(),},function(data){
 					 			trimmed_data = $.trim(data);
 
-					 			alert(data);
-					 			
-						 		window.location.href = "../Usuario/pagPpalUser2.php";
+						 		window.location.href = ruta;
 						 	
 					 			}
 					 		);

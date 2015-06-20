@@ -16,7 +16,23 @@ function getForoBD()
 			return ($row);
 		}
 	}
+
+
+
+function getLastCaptures(){
+	$connection = createConnection();
+
+	$sql = "SELECT Ruta FROM capturas ORDER BY fecha DESC LIMIT 4"; 
+
+    $res = $connection->query($sql) or die ($connection->error. " en la linea". (_LINE_-1));
+
+	while($ret[] = $res->fetch_assoc());
+
+	closeConnection($connection);
+
+	return($ret);
 	
+
 function nuevoHilo($contenido, $titulo, $idusuario)
 	{
 		$hoy = getdate();
@@ -28,4 +44,23 @@ function nuevoHilo($contenido, $titulo, $idusuario)
 		$con->query($sql) or die ($con->error. "en la linea".(_LINE_-1));
 		$con.closeConnection();
 	}
+
+}
+
+function getLastAnalisis(){
+	$connection = createConnection();
+
+	$sql = "SELECT * FROM analisis ORDER BY fecha DESC LIMIT 4"; 
+
+    $res = $connection->query($sql) or die ($connection->error. " en la linea". (_LINE_-1));
+
+	while($ret[] = $res->fetch_assoc());
+
+	closeConnection($connection);
+
+	return($ret);
+}
+
+
+
 ?>

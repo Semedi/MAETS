@@ -16,7 +16,7 @@
 
       <div id = "left-menu">
         <?php
-          require_once("static/menuCategorias.html");
+          require_once("static/menuCategorias.php");
         ?>
       </div>
 
