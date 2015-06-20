@@ -22,10 +22,7 @@ function generarLista($tipo){
 	    				echo "<div id='precio'>";
 	    					echo "<p>Precio:" .$res[$i]['Precio']. "</p>";
 	    				echo "</div>";
-	    		echo "</div>";  
-
-	    		echo "<p>" .$res[$i]["Portada"]. "</p>";
-	    		echo "<p> img class='imagen' src='" .$res[$i]['Portada']. "'</p>";
+	    		echo "</div>";
 	    	}
 
 }

@@ -37,7 +37,8 @@
 
 	    		require_once 'include/vTienda.php';
 	    	
-
+	    		$cat = $categoria;
+	    		echo "<p>" .$categoria. "</p>";
 				generarLista("Rol");
 
 	    		?>
