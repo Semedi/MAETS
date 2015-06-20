@@ -57,6 +57,26 @@ function getNameOfGame($juego){
 	echo $row["Titulo"];
 }
 
+function addGameToUser($juego, $user) {
+	$connection = createConnection();
+	
+	$result = "SELECT * FROM compras WHERE IDUsuario = '$user' AND IDJuego = '$juego'";
+	$result = $connection->query($result) or die ($connection->error. " en la linea".(_LINE_-1));
+
+
+	if($row = $result->fetch_assoc())
+		{     
+			echo "Ya tienes este juego en tu biblioteca.";
+		}
+	else {
+		$q = "INSERT INTO compras ('IDUsuario', 'IDJuego')
+			VALUES ('$user', '$juego')";
+		$connection->query($q) or die($connection->error. " en la linea".(_LINE_-1));
+	}
+
+	closeConnection($connection);
+}
+
 $functionName = filter_input(INPUT_GET, 'functionName');
 switch ($functionName) {
     case "addGame":        
