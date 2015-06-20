@@ -22,7 +22,7 @@
 		
 			<div id ="cajaCentral">
 					<div id="foros">
-					<center><h1></h1></center>
+					
 					</div>
 					
 					
@@ -36,7 +36,9 @@
 							<h4> Temas creados</h4>
 						  </td>
 						</tr>
-						<?php generarForo();?>
+						<div id = "cuerpo_foro">
+							<?php generarForo();?>
+						</div>
 
 						
 						<tr>
