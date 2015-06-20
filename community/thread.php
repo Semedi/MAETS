@@ -17,14 +17,13 @@
 		$( document ).ready(function() {
 			$('#crearTema').click(
 			 	function(){
-					$.get("../include/comunidadGestor.php",{ functionName:"newTopic", content:$('#hilo').val(), title:$('#titulo').val() },function(data){
+					$.get("../AJAX/comunidadGestor.php",{ functionName:"newTopic", content:$('#hilo').val(), title:$('#titulo').val() },function(data){
 			 			trimmed_data = $.trim(data);
-				 			if (trimmed_data == ""){
-				 				window.location.href = "../index.php";
-				 			}
-				 			else {
-				 				alert (data);
-				 			}
+						
+								alert(data);
+				 				window.location.href = "foros.php";
+				 			
+				 			
 			 			}
 			 		);
 				});

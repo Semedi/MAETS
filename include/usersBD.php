@@ -56,17 +56,35 @@ function newUser($user, $pass, $mail){
 
 function findUser($userNick){
 	$connection = createConnection();
-	$num=0;
-	$result = "SELECT * FROM usuario WHERE nick LIKE '%$userNick%'";
-	$result = $connection->query($result) or die ($connection->error. "en la linea".(_LINE_-1));
+	//$num=0;
+	$sql = "SELECT * FROM usuario WHERE nick LIKE '%$userNick%'";
+	$result = $connection->query($sql) or die ($connection->error. "en la linea".(_LINE_-1));
 	if($row = $result->fetch_assoc())
-		$num= $result->num_rows;
-	
-		
-	
-	closeConnection($connection);
+	{
+		closeConnection($connection);
+		return ($row);
+	}
+		//$num= $result->num_rows;
+	else
+		closeConnection($connection);
+		return (NULL);
+}
 
-	return ($num);
+function findUserById($iduser){
+	$con = createConnection();
+	$sql = "SELECT nick FROM usuario WHERE id = '$iduser'";
+	$rs = $con->query($sql) or die  ($con->error. " en la linea ".(_LINE_-1));
+	if($rs != NULL)
+	{
+		if($row = $rs->fetch_assoc())
+		{
+			closeConnection($con);
+			return ($row);
+		}
+		else
+			closeConnection($con);
+			return (NULL);
+	}
 }
 
 

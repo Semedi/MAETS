@@ -2,7 +2,7 @@
 
 //añade foro a la bdd
 function newTopic(){
-	
+	echo "crearTema";
 	return(true);
 }
 
@@ -15,7 +15,14 @@ function deleteForum(){
 
 
 
+$functionName = filter_input(INPUT_GET, 'functionName');
 
+switch ($functionName) {
+    case "newTopic":
+      newTopic(); 
+        break;
+ 
+}
 
 
 
