@@ -17,4 +17,15 @@ function getForoBD()
 		}
 	}
 	
+function nuevoHilo($contenido, $titulo, $idusuario)
+	{
+		$hoy = getdate();
+		//$fecha = $hoy['year']."-".$hoy['mon']."-".$hoy['mday'];
+		$fecha = gmdate('Y-m-d \G\M\T');
+		$con = createConnection();
+		$sql = "INSERT INTO `hilo`(`Titulo`, `Texto`, `Fecha_creacion`, `Ultimo_mensaje`, `IdUsuario`) VALUES";
+		$sql.= "(".$titulo.", ".$contenido.", ".$fecha.", ".$fecha.", ".$idusuario.")";
+		$con->query($sql) or die ($con->error. "en la linea".(_LINE_-1));
+		$con.closeConnection();
+	}
 ?>

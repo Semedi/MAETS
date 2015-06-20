@@ -43,11 +43,12 @@
 				<p>
   				<input type="text" id="titulo" name="titulo" value="" required="required" autofocus="autofocus" /> 
   				</p>
+				<p id="titulo"><b>Contenido</b> </p>
 				<textarea  id="hilo" name="hilo" required="required"></textarea> 
 
 
 				<div id="botonThread">
-				<button name="newtopic" id="crearTema">crear tema</button>
+				<button name="newtopic" id="crearTema">Crear tema</button>
 				</div>
 				
 				
