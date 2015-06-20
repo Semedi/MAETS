@@ -1,8 +1,5 @@
 <?php
 
-
-
-
 function generarLista($tipo){
 
 	require_once 'include/shopOp.php'; 
@@ -12,7 +9,7 @@ function generarLista($tipo){
 
 			for($i=0; $i<sizeof($res)-1; $i++) {
 
-				echo "<div id='juego' onclick=location.href='articulo-tienda.php' style='cursor:pointer'>";
+				echo "<div id='juego' onclick=location.href='articulo-tienda.php?juego=" .$res[$i]['Id']. "' style='cursor:pointer'>";
 	    				echo "<img class='imagen' src='images/Portadas/" .$res[$i]['Portada']. "'>";
 	    				echo "<div id='titulo'>";
 	    					echo "<p class='titulo'><b>" .$res[$i]['Titulo']. " </b> </p>";
@@ -26,7 +23,9 @@ function generarLista($tipo){
 
 }
 
-
+function generarArticulo($id) {
+	echo "hola";
+}
 
 
 
