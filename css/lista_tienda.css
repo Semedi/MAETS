@@ -6,17 +6,33 @@
 	margin-left: 260px;
 	margin-top: 5px;
 }
+
 .imagen {
 	height: 98px;
 	width: 200px;
 	float: left;
 }
+
 #titulo {
-	margin-top: 5px;
+	margin-top: -5px;
 	float: left;
 	margin-left: 10px;
+	height: 10px;
 }
+
+p.titulo {
+	color: white;
+}
+
+p.descripcion {
+	margin-top: 15px;
+	margin-left: 15px;
+	float: left;
+	font-size: 12px;
+}
+
 #precio {
 	float: right;
 	margin-right: 10px;
+	margin-top: 40px;
 }
