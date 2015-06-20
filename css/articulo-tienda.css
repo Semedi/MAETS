@@ -34,8 +34,12 @@ p{
 	text-align: left;
 }
 
+p.descripcion {
+	font-size: 12px;
+}
+
 p.details{
-	float: left;
+	margin-left: 10px;
 	text-align: left;
 }
 
@@ -56,7 +60,7 @@ h1.upper-bar-price{
 	margin: 2px auto;
 }
 
-iframe.article{
+img.portada{
 	width: 770px;
 	height: 423px;
 }

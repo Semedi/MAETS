@@ -26,11 +26,9 @@
 
 	    		<?php 
 
-	    		require_once 'include/vTienda.php';
-	    		
-	    		$cat = $_GET['categoria'];
+	    		require_once ('include/vTienda.php');
 
-				generarLista(substr($cat, 1, -1));
+				generarLista($_GET['categoria']);
 
 	    		?>
 

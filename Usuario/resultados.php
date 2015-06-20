@@ -13,11 +13,12 @@
 
 
 <?php  include ('../static/mainTOP.php'); ?>  
+<?php  include ('../static/communityMenu.php'); ?>	
 
-<?php include ('../static/userMenu.php'); ?>
 
  <div id ="mainContent">
       <h1> Resultados de la búsqueda</h1>
+
 
         
         

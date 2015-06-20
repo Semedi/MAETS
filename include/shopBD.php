@@ -17,6 +17,22 @@ function selectGenero($tipo){
 	return($ret);
 }
 
+function selectJuegoById($id) {
+	$connection=createConnection();
+
+	$sql = "SELECT * FROM juego WHERE Id = '$id'";
+
+	$res = $connection->query($sql) or die ($connection->error. " en la linea". (_LINE_-1));
+
+	if($ret = $res->fetch_assoc()) {
+		closeConnection($connection);
+		return ($ret);
+	}
+
+	closeConnection($connection);
+	return (NULL);
+}
+
 
 
 

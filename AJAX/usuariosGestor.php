@@ -9,14 +9,6 @@ function login($user, $pass){
 	compruebaLogin($user, $pass);
 }
 
-//cierra la sesion
-function logout(){
-
-	session_start();
-	session_destroy();
-	
-}
-
 
 //añade usuarios a la bd(faltan parametros)
 function addUser($user, $pass, $mail){
@@ -81,8 +73,6 @@ switch ($functionName) {
        login($_GET["user"], $_GET["pass"]);
         
         break;
-    case "logout":
-        logout();
     case "deleteUser":
         
         break;
