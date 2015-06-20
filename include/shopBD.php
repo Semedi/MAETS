@@ -10,11 +10,7 @@ function selectGenero($tipo){
 
 	$res = $connection->query($sql) or die ($connection->error. " en la linea". (_LINE_-1));
 
-	while($ret[] = mysql_fetch_assoc($res));
-
-	echo "<pre>";
-	print_r($ret);
-	echo "</pre>";
+	while($ret[] = $res->fetch_assoc());
 
 	return($ret);
 }

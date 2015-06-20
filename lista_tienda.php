@@ -40,7 +40,6 @@
 
 				generarLista("Rol");
 
-
 	    		?>
 
 
