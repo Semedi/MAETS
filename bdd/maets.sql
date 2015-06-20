@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 19-06-2015 a las 19:12:27
+-- Tiempo de generación: 20-06-2015 a las 14:10:06
 -- Versión del servidor: 5.6.21
 -- Versión de PHP: 5.6.3
 
@@ -76,13 +76,13 @@ CREATE TABLE IF NOT EXISTS `capturas` (
 --
 
 INSERT INTO `capturas` (`Id`, `Nombre`, `Ruta`) VALUES
-(1, 'Captura de Assassins Creed 1', '../images/screens/ac1.jpg'),
-(2, 'Captura de Dragon Ball', '../images/screens/dbx1.jpg'),
-(3, 'Captura de GTA V', '../images/screens/gta5p.jpg'),
-(4, 'Captura de GTA V 2', '../images/screens/GTAV.jpg'),
-(5, 'Captura de GTA V 3', '../images/screens/gtav1.jpg'),
-(6, 'Captura de Rust', '../images/screens/rust.jpg'),
-(7, 'Captura de Project Cars', '../images/screens/project-cars.jpg');
+(1, 'Captura de Assassins Creed 1', 'ac1.jpg'),
+(2, 'Captura de Dragon Ball', 'dbx1.jpg'),
+(3, 'Captura de GTA V', 'gta5p.jpg'),
+(4, 'Captura de GTA V 2', 'GTAV.jpg'),
+(5, 'Captura de GTA V 3', 'gtav1.jpg'),
+(6, 'Captura de Rust', 'rust.jpg'),
+(7, 'Captura de Project Cars', 'project-cars.jpg');
 
 -- --------------------------------------------------------
 
@@ -176,16 +176,16 @@ CREATE TABLE IF NOT EXISTS `juego` (
 --
 
 INSERT INTO `juego` (`Id`, `Titulo`, `Portada`, `Precio`, `Edad`, `Descripcion`, `DescripcionLarga`, `Companyia`, `Tipo`, `Etiquetas`, `Idiomas`, `Ventas`, `Fecha`) VALUES
-(1, 'Grand Theft Auto V', '../images/Portadas/PortadaGTA.png', 60, 18, '', '', 'Rockstar', 'Acción', '', 'Español', 0, '2015-04-14'),
-(2, 'Dishonored', '../images/Portadas/PortadaDishonored.png', 15, 18, 'Violencia brutal en una ciudad portaria infectada por la peste', 'Ambientado en un mundo industrial y retrofuturista, Dishonored es definido por sus propios autores como un juego sobre la violencia brutal. La ciudad portuaria está infectada por la peste; la mitad de la población está muerta o agonizando, y la otra mitad vive con miedo a un régimen opresor.', 'Bethesda Studios', 'Acción', 'Accion, Primera persona, Aventura, Ciencia Ficcion', 'Español', 0, '2012-10-12'),
-(3, 'The Witcher 3: Wild Hunt', '../images/Portadas/PortadaTheWitcherIII.png', 55, 18, 'Tercera entrega de la serie de The Witcher', 'The Witcher 3: Wild Hunt es la tercera entrega de la serie The Witcher, que nos devuelve al conocido cazador de bestias Geralt de Rivia en una nueva aventura. Rol de la vieja escuela en un fascinante mundo de fantasía, cargado de grandes historias y con un gran acabado artístico y tecnológico.', 'CD Projekt RED', 'Rol', 'Rol, RPG, Accion RPG', 'Español', 0, '2015-05-19'),
-(4, 'Heroes of the Storm', '../images/Portadas/PortadaHeroesOfTheStorm.png', 0, 12, 'El futuro de los MOBA esta en Hots', 'Los héroes y villanos de Diablo, StarCraft y Warcraft se dan cita en este MOBA 5 vs. 5 desarrollado por Blizzard, que nos permite combatir en varios escenarios con sus propias particularidades. Obtén el poder de los dioses dominando sus templos, o invoca a un temible gólem de sangre recogiendo calaveras, en este juego de acción estratégica de corte free-to-play.', 'Blizzard', 'Free to Play', 'Estrategia, Tiempo Real, MOBA, Ciencia ficcion, Diablo, Starcraft, Warcraft, Cooperativo, Competiivo', 'Español', 0, '2015-06-02'),
-(5, 'Pillars of Eternity', '../images/Portadas/PortadaPillarsOfEternity.png', 30, 18, 'Juego RPG ambientado en mundo de fantasia', 'Pillars of Eternity es un juego RPG ambientado en un mundo de fantasía, que trata de recuperar la esencia de grandes clásicos del género rolero como Planescape: Torment, Baldur’s Gate o Icewind Dale', 'Obsidian', 'Rol', 'Combate por turnos, Rol, Fantasia', 'Inglés', 0, '2015-03-26'),
-(6, 'La Tierra Media: Sombras de Mordor', '../images/Portadas/PortadaSombrasDeMordor.png', 37, 18, 'AVentura ambientada en el universo de fantasia del Señor de los Anillos', 'Aventura ambientada en el universo de fantasía de El Señor de los Anillos que nos pone en la piel de un misterioso aventurero conocido como Talion, decidido a alcanzar las sombrías tierras de Mordor.', 'Monolith', 'Aventura', 'Accion, Aventura, Tercera Persona, Golum, Fantasia, Señor de los Anillo, LotR', 'Español', 0, '2014-09-30'),
-(7, 'Project Cars', '../images/Portadas/PortadaProjectCars.png', 40, 3, 'Simulador de velocidad', 'Project Cars es un simulador de velocidad desarrollado por Slightly Mad Studios, responsables de Need for Speed: Shift. El juego cuenta con gran variedad de tipos de vehículos, climatología variable y un sistema de control que apuesta por el realismo.', 'Slightly Mad Studios', 'Carreras', 'Conduccion, GT, Formula 1, Carreras, Simulador', 'Español', 0, '2015-05-07'),
-(8, 'ARK: Survival Evolved', '../images/Portadas/PortadaArk.png', 20, 18, 'Survival en una isla con dinosaurios', 'Tras despertar en una misteriosa isla que da nombre al juego, el jugador deberá cazar, recolectar alimentos y recursos, investigar nuevas tecnologías o construir su propio refugio en una nueva aventura de supervivencia. ¿Su punto diferenciador? La caza y domesticación de dinosaurios leviatán y otras criaturas primitivas.', 'Studio Wildcard', 'Acesso Anticipado', 'Accion, Primera persona, aventura, fantasia, dinosaurios, ficcion, multijugador, online', 'Inglés', 0, '0000-00-00'),
-(9, 'This War of Mine', '../images/Portadas/PortadaThisWarOfMine.png', 15, 12, 'Sobrevive a las penurias de la guerra', 'Sobrevive a las penurias de la guerra en la piel de un civil, que por el día debe velar por la seguridad de su refugio, mientras que por las noches sale al exterior en busca de recursos para mantenerse con vida.', '11 bit Studios', 'Indie', 'Estrategia, Tiempo Real, Bélico, Guerra, Survival', 'Español', 0, '2014-11-14'),
-(10, 'Fifa 15', '../images/Portadas/PortadaFifa15.png', 55, 3, 'Videojuego de la serie FIFA', 'Videojuego de la serie FIFA para la temporada de fútbol 2014-2015. El título presenta licencias de más de 25 competiciones oficiales, y entre sus novedades destacan un comportamiento de los porteros mucho más reales, nuevas animaciones para los jugadores, cambios en el comportamiento del esférico y un ritmo de juego más rápido, entre otros tantos.', 'EA Sports', 'Deportes', 'Deportes, Futbol, 2015', 'Español', 0, '2014-09-25');
+(1, 'Grand Theft Auto V', 'PortadaGTA.png', 60, 18, '', '', 'Rockstar', 'Acción', '', 'Español', 0, '2015-04-14'),
+(2, 'Dishonored', 'PortadaDishonored.png', 15, 18, 'Violencia brutal en una ciudad portaria infectada por la peste', 'Ambientado en un mundo industrial y retrofuturista, Dishonored es definido por sus propios autores como un juego sobre la violencia brutal. La ciudad portuaria está infectada por la peste; la mitad de la población está muerta o agonizando, y la otra mitad vive con miedo a un régimen opresor.', 'Bethesda Studios', 'Acción', 'Accion, Primera persona, Aventura, Ciencia Ficcion', 'Español', 0, '2012-10-12'),
+(3, 'The Witcher 3: Wild Hunt', 'PortadaTheWitcherIII.png', 55, 18, 'Tercera entrega de la serie de The Witcher', 'The Witcher 3: Wild Hunt es la tercera entrega de la serie The Witcher, que nos devuelve al conocido cazador de bestias Geralt de Rivia en una nueva aventura. Rol de la vieja escuela en un fascinante mundo de fantasía, cargado de grandes historias y con un gran acabado artístico y tecnológico.', 'CD Projekt RED', 'Rol', 'Rol, RPG, Accion RPG', 'Español', 0, '2015-05-19'),
+(4, 'Heroes of the Storm', 'PortadaHeroesOfTheStorm.png', 0, 12, 'El futuro de los MOBA esta en Hots', 'Los héroes y villanos de Diablo, StarCraft y Warcraft se dan cita en este MOBA 5 vs. 5 desarrollado por Blizzard, que nos permite combatir en varios escenarios con sus propias particularidades. Obtén el poder de los dioses dominando sus templos, o invoca a un temible gólem de sangre recogiendo calaveras, en este juego de acción estratégica de corte free-to-play.', 'Blizzard', 'Free to Play', 'Estrategia, Tiempo Real, MOBA, Ciencia ficcion, Diablo, Starcraft, Warcraft, Cooperativo, Competiivo', 'Español', 0, '2015-06-02'),
+(5, 'Pillars of Eternity', 'PortadaPillarsOfEternity.png', 30, 18, 'Juego RPG ambientado en mundo de fantasia', 'Pillars of Eternity es un juego RPG ambientado en un mundo de fantasía, que trata de recuperar la esencia de grandes clásicos del género rolero como Planescape: Torment, Baldur’s Gate o Icewind Dale', 'Obsidian', 'Rol', 'Combate por turnos, Rol, Fantasia', 'Inglés', 0, '2015-03-26'),
+(6, 'La Tierra Media: Sombras de Mordor', 'PortadaSombrasDeMordor.png', 37, 18, 'AVentura ambientada en el universo de fantasia del Señor de los Anillos', 'Aventura ambientada en el universo de fantasía de El Señor de los Anillos que nos pone en la piel de un misterioso aventurero conocido como Talion, decidido a alcanzar las sombrías tierras de Mordor.', 'Monolith', 'Aventura', 'Accion, Aventura, Tercera Persona, Golum, Fantasia, Señor de los Anillo, LotR', 'Español', 0, '2014-09-30'),
+(7, 'Project Cars', 'PortadaProjectCars.png', 40, 3, 'Simulador de velocidad', 'Project Cars es un simulador de velocidad desarrollado por Slightly Mad Studios, responsables de Need for Speed: Shift. El juego cuenta con gran variedad de tipos de vehículos, climatología variable y un sistema de control que apuesta por el realismo.', 'Slightly Mad Studios', 'Carreras', 'Conduccion, GT, Formula 1, Carreras, Simulador', 'Español', 0, '2015-05-07'),
+(8, 'ARK: Survival Evolved', 'PortadaArk.png', 20, 18, 'Survival en una isla con dinosaurios', 'Tras despertar en una misteriosa isla que da nombre al juego, el jugador deberá cazar, recolectar alimentos y recursos, investigar nuevas tecnologías o construir su propio refugio en una nueva aventura de supervivencia. ¿Su punto diferenciador? La caza y domesticación de dinosaurios leviatán y otras criaturas primitivas.', 'Studio Wildcard', 'Acesso Anticipado', 'Accion, Primera persona, aventura, fantasia, dinosaurios, ficcion, multijugador, online', 'Inglés', 0, '0000-00-00'),
+(9, 'This War of Mine', 'PortadaThisWarOfMine.png', 15, 12, 'Sobrevive a las penurias de la guerra', 'Sobrevive a las penurias de la guerra en la piel de un civil, que por el día debe velar por la seguridad de su refugio, mientras que por las noches sale al exterior en busca de recursos para mantenerse con vida.', '11 bit Studios', 'Indie', 'Estrategia, Tiempo Real, Bélico, Guerra, Survival', 'Español', 0, '2014-11-14'),
+(10, 'Fifa 15', 'PortadaFifa15.png', 55, 3, 'Videojuego de la serie FIFA', 'Videojuego de la serie FIFA para la temporada de fútbol 2014-2015. El título presenta licencias de más de 25 competiciones oficiales, y entre sus novedades destacan un comportamiento de los porteros mucho más reales, nuevas animaciones para los jugadores, cambios en el comportamiento del esférico y un ritmo de juego más rápido, entre otros tantos.', 'EA Sports', 'Deportes', 'Deportes, Futbol, 2015', 'Español', 0, '2014-09-25');
 
 -- --------------------------------------------------------
 
@@ -208,18 +208,18 @@ CREATE TABLE IF NOT EXISTS `logro` (
 --
 
 INSERT INTO `logro` (`Id`, `JuegoID`, `Titulo`, `Puntos`, `Tipo`, `Fecha`, `Imagen`) VALUES
-(1, 3, 'Lila y grosellas', 15, 'Bronce', '2015-06-18', '../images/logros/logroTW3.png'),
-(2, 3, 'Un amigo en apuros', 15, 'Bronce', '2015-06-18', '../images/logros/logroTW3.png'),
-(3, 3, 'Caida Libre', 15, 'Bronce', '2015-06-18', '../images/logros/logroTW3.png'),
-(4, 3, 'Luchador', 30, 'Plata', '2015-06-18', '../images/logros/logroTW3.png'),
-(5, 3, 'Control de plagas', 30, 'Plata', '2015-06-18', '../images/logros/logroTW3.png'),
-(6, 3, 'Senda recorrida', 65, 'Oro', '2015-06-18', '../images/logros/logroTW3.png'),
-(7, 3, 'Las fronteras de lo imposible', 65, 'Oro', '2015-06-18', '../images/logros/logroTW3.png'),
-(8, 2, 'Deshonrado', 25, 'Bronce', '2015-06-18', '../images/logros/logroDishonored.jpg'),
-(9, 2, 'Excomunión', 25, 'Bronce', '2015-06-18', '../images/logros/logroDishonored.jpg'),
-(10, 2, 'Guardaespaldas', 25, 'Bronce', '2015-06-18', '../images/logros/logroDishonored.jpg'),
-(11, 2, 'Manos limpias', 50, 'Plata', '2015-06-18', '../images/logros/logroDishonored.jpg'),
-(12, 2, 'Negociador', 100, 'Platino', '2015-06-18', '../images/logros/logroDishonored.jpg');
+(1, 3, 'Lila y grosellas', 15, 'Bronce', '2015-06-18', 'logroTW3.png'),
+(2, 3, 'Un amigo en apuros', 15, 'Bronce', '2015-06-18', 'logroTW3.png'),
+(3, 3, 'Caida Libre', 15, 'Bronce', '2015-06-18', 'logroTW3.png'),
+(4, 3, 'Luchador', 30, 'Plata', '2015-06-18', 'logroTW3.png'),
+(5, 3, 'Control de plagas', 30, 'Plata', '2015-06-18', 'logroTW3.png'),
+(6, 3, 'Senda recorrida', 65, 'Oro', '2015-06-18', 'logroTW3.png'),
+(7, 3, 'Las fronteras de lo imposible', 65, 'Oro', '2015-06-18', 'logroTW3.png'),
+(8, 2, 'Deshonrado', 25, 'Bronce', '2015-06-18', 'logroDishonored.jpg'),
+(9, 2, 'Excomunión', 25, 'Bronce', '2015-06-18', 'logroDishonored.jpg'),
+(10, 2, 'Guardaespaldas', 25, 'Bronce', '2015-06-18', 'logroDishonored.jpg'),
+(11, 2, 'Manos limpias', 50, 'Plata', '2015-06-18', 'logroDishonored.jpg'),
+(12, 2, 'Negociador', 100, 'Platino', '2015-06-18', 'logroDishonored.jpg');
 
 -- --------------------------------------------------------
 
@@ -269,10 +269,10 @@ CREATE TABLE IF NOT EXISTS `usuario` (
 --
 
 INSERT INTO `usuario` (`Id`, `Nick`, `Contrasenia`, `Nombre`, `Apellidos`, `Correo`, `Fecha de Nacimiento`, `Pais`, `Ciudad`, `Direccion`, `Codigo Postal`, `Puntuacion`, `Rol`, `Imagen`) VALUES
-(6, 'Drulas', '$2y$10$idews1ZgezwJur/oOqb26uBHaLdC2kNFiVy.iK2iCR6rAvDzzG59q', 'Javier', 'Drulas Druloide', 'duruleto@drulas.com', '2001-03-20', 'Drulon', 'Drulopia', 'Avenida de Druloide 24 s/n', 28033, 0, 'Usuario Registrado', '../images/usuarios/usuario.jpg'),
-(7, 'Javi', '$2y$10$mgBUFmgP3GIMlR.03tWeLeD141mPVKSHwk/s3OQ2W3ZORRdezUZbK', 'Javi', 'Druet Honrubia', 'javi@hotmail.com', '1993-03-20', 'España', 'Madrid', 'Avenida de ', 28033, 0, 'Usuario Registrado', '../images/usuarios/misterT.jpg'),
-(13, 'Prueba', '$2y$10$.HsV3pKt63NAB4NApF0PL.rU3gOmBBfXgu.jY1j/ClbC9kCNokklG', '', '', 'prueba', '0000-00-00', '', '', '', 0, 0, 'Usuario Registrado', '../images/prueba.png'),
-(14, 'Usuario1', '$2y$10$bd/LlAjMkOy2aYOyb4ApRe2xYA0sFOPd5kcvNJWR54TPFA9MtIRYC', '', '', 'usuario1@user.com', '0000-00-00', '', '', '', 0, 0, 'Usuario Registrado', '../images/usuarios/usuario.jpg');
+(6, 'Drulas', '$2y$10$idews1ZgezwJur/oOqb26uBHaLdC2kNFiVy.iK2iCR6rAvDzzG59q', 'Javier', 'Drulas', 'duruleto@drulas.com', '2001-03-20', 'Drulon', 'Drulopia', 'Avenida', 28033, 0, 'Usuario Registrado', 'usuario.jpg'),
+(7, 'Javi', '$2y$10$mgBUFmgP3GIMlR.03tWeLeD141mPVKSHwk/s3OQ2W3ZORRdezUZbK', 'Javi', 'Druet Honrubia', 'javi@hotmail.com', '1993-03-20', 'España', 'Madrid', 'Avenida de ', 28033, 0, 'Usuario Registrado', 'misterT.jpg'),
+(13, 'Prueba', '$2y$10$.HsV3pKt63NAB4NApF0PL.rU3gOmBBfXgu.jY1j/ClbC9kCNokklG', '', '', 'prueba', '0000-00-00', '', '', '', 0, 0, 'Usuario Registrado', 'prueba.png'),
+(14, 'Usuario1', '$2y$10$bd/LlAjMkOy2aYOyb4ApRe2xYA0sFOPd5kcvNJWR54TPFA9MtIRYC', '', '', 'usuario1@user.com', '0000-00-00', '', '', '', 0, 0, 'Usuario Registrado', 'usuario.jpg');
 
 --
 -- Índices para tablas volcadas
