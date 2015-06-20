@@ -1,7 +1,5 @@
 <?php
 
-require_once ("config.php");
-
 function modifyAccount($user,$mail, $ID){
 
 	$connection = createConnection();
@@ -48,39 +46,12 @@ function newUser($user, $pass, $mail){
 			$hash = crypt($passSal, '$2y$10$' . $salt);
 
 			//var_dump($hash);
-			$q = "INSERT INTO `usuario` (`Id`, `Nick`, `Contrasenia`, `Nombre`, `Apellidos`, `Correo`, `Fecha de Nacimiento`, `Pais`, `Ciudad`, `Direccion`, `Codigo Postal`, `Puntuacion`, `Rol`)
-				VALUES (NULL, '$user' , '$hash', '', '', '$mail', '0000-00-00', '', '', '', 00000, 0 , 'Usuario Registrado')";
+			$q = "INSERT INTO `usuario` (`Id`, `Nick`, `Contrasenia`, `Nombre`, `Apellidos`, `Correo`, `Fecha de Nacimiento`, `Pais`, `Ciudad`, `Direccion`, `Codigo Postal`, `Puntuacion`, `Rol`, `Imagen`)
+				VALUES (NULL, '$user' , '$hash', '', '', '$mail', '0000-00-00', '', '', '', 00000, 0 , 'Usuario Registrado', '../images/usuarios/usuario.jpg')";
 			$connection->query($q) or die($connection->error. " en la linea".(_LINE_-1));
 		}
 
 	closeConnection($connection);
-}
-
-function findUser($userNick){
-	$connection = createConnection();
-	$result = "SELECT * FROM usuario WHERE nick = '$userNick'";
-	$result = $connection->query($result) or die ($connection->error. "en la linea".(_LINE_-1));
-	if($row = $result->fetch_assoc()){
-	}else{
-		echo "El usuario buscado no existe";
-	}
-	closeConnection($connection);
-}
-
-
-function insertFriend($friendNick, $userId){
-	$connection = createConnection();
-	$result = "SELECT * FROM usuario WHERE nick = '$friendNick'";
-	$result = $connection->query($result) or die ($connection->error. "en la linea".(_LINE_-1));
-	if($row = $result->fetch_assoc()){
-		$friendId= row["Id"];
-		$sql= "INSERT INTO `maets`.`amigo` (`IDUsuario`, `IDAmigo`) VALUES ('$userId', '$friendId')";
-		$connection->query($sql) or die($connection->error. "en la linea".(_LINE_-1));
-	}else{
-		echo "El usuario buscado no existe";
-	}
-	closeConnection($connection);
-	
 }
 
 function auth_encripta($pass, $salt) {
@@ -133,6 +104,7 @@ function compruebaLogin($user, $pass){
 closeConnection($connection);
 }
 
+
 function numberOfGames(){
 	$connection = createConnection();
 	$id = $_SESSION['ID'];
@@ -180,6 +152,9 @@ function puntosDeLogro(){
 
 	closeConnection($connection);
 }
+
+
+
 
 
 ?>
