@@ -13,6 +13,7 @@
 
 <?php  include ('../static/mainTOP.php'); ?>	
 <?php  include ('../static/communityMenu.php'); ?>	
+<?php  include ('../include/vComunidad.php'); ?>
 			
 
 			<button name="newThread" id="nuevoTema" onclick="location.href ='thread.php';">Nuevo Tema</button>
@@ -25,6 +26,7 @@
 					
 					
 					<table>
+					
 						<tr>
 						  <td id = "cabecera_foro">
 							<h4>Foro</h4>
@@ -33,7 +35,9 @@
 							<h4> Temas creados</h4>
 						  </td>
 						</tr>
+						<?php generarForo();?>
 
+						
 						<tr>
 						   <td id = "tema"> 
 							<h5>Normas y ayuda</h5>

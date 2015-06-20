@@ -5,11 +5,11 @@
 	float: right;
 	border-image: 0px;
 	margin-top: 16px;
-	margin-right:8px;
-	width: 16px;
+	margin-right:6px;
+
+	width: 19px;
   	height: 19px;
 }
-
 
 
 #left-menu{
@@ -46,5 +46,11 @@ h2{
 
 p{
 	color: #9898A6;
+}
+
+#right-menu{
+	float: right;
+	margin: 5px;
+	width: 210px;
 }
 

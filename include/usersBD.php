@@ -1,7 +1,5 @@
 <?php
 
-require_once ("config.php");
-
 function modifyAccount($user,$mail, $ID){
 
 	$connection = createConnection();
@@ -47,14 +45,14 @@ function newUser($user, $pass, $mail){
 			$salt = strtr($salt, array('+' => '.')); 
 			$hash = crypt($passSal, '$2y$10$' . $salt);
 
-			//var_dump($hash);
-			$q = "INSERT INTO `usuario` (`Id`, `Nick`, `Contrasenia`, `Nombre`, `Apellidos`, `Correo`, `Fecha de Nacimiento`, `Pais`, `Ciudad`, `Direccion`, `Codigo Postal`, `Puntuacion`, `Rol`)
-				VALUES (NULL, '$user' , '$hash', '', '', '$mail', '0000-00-00', '', '', '', 00000, 0 , 'Usuario Registrado')";
+			$q = "INSERT INTO `usuario` (`Id`, `Nick`, `Contrasenia`, `Nombre`, `Apellidos`, `Correo`, `Fecha de Nacimiento`, `Pais`, `Ciudad`, `Direccion`, `Codigo Postal`, `Puntuacion`, `Rol`, `Imagen`)
+				VALUES (NULL, '$user' , '$hash', '', '', '$mail', '0000-00-00', '', '', '', 00000, 0 , 'Usuario Registrado', 'usuario.jpg')";
 			$connection->query($q) or die($connection->error. " en la linea".(_LINE_-1));
 		}
 
 	closeConnection($connection);
 }
+
 
 function findUser($userNick){
 	$connection = createConnection();
@@ -86,6 +84,7 @@ function insertFriend($friendNick, $userId){
 	closeConnection($connection);
 	
 }
+
 
 function auth_encripta($pass, $salt) {
 	 password_hash($pass."miApp");
@@ -137,6 +136,7 @@ function compruebaLogin($user, $pass){
 closeConnection($connection);
 }
 
+
 function numberOfGames(){
 	$connection = createConnection();
 	$id = $_SESSION['ID'];
@@ -183,5 +183,6 @@ function puntosDeLogro(){
 
 	closeConnection($connection);
 }
+
 
 ?>

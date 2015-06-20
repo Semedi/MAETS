@@ -6,7 +6,6 @@ if (!isset($_SESSION)) session_start();
 //recibe user/pass y comprueba en la base de datos si es correcto
 function login($user, $pass){
 	include '../include/usersBD.php';
-
 	compruebaLogin($user, $pass);
 }
 
@@ -51,6 +50,7 @@ function deleteUSer(){
 	return(true);
 }
 //añade relacion de amigos a la bdd
+
 function addFriend($friendNick, $userId){
 	include '../include/usersBD.php';
 	insertFriend($friendNick, $userId);
@@ -61,9 +61,8 @@ function searchUser($userNick){
 	 $cont =findUser($userNick);
 
 	header('Location:../Usuario/pagPpalUser2.php');
-
-	
 }
+	
 
 //elimina relacion de amigos
 function deleteFriend(){
@@ -96,6 +95,7 @@ switch ($functionName) {
     	break;
     case "updatePersonalInfo":
     	updatePersonalInfo($_GET["nombre"], $_GET["apellidos"], $_GET["mail"],$_GET["pais"],$_GET["ciudad"], $_GET["direccion"],$_GET["CP"],$_SESSION["ID"]);
+
     	break;
     case "addFriend":
     	addFriend($_GET["friendNick"], $_SESSION["ID"]);
@@ -103,6 +103,7 @@ switch ($functionName) {
     case "searchUser":
     	searchUser($_GET["userNick"]);
     	break;
+
 
 }
 

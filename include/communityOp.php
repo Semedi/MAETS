@@ -1,20 +1,17 @@
 <?php 
+include('communityBD.php');	
 
-//Permite a un gestor de la comunidad dar un logro de un juego
-function giveAchivement(int user, int game, int id){
 	
 	
 	
-	return(true);
-}
-
-
-
-
-
-
-
-
+	
+function getForoOP()
+	{
+		$hilos = getForoBD();
+		
+		return ($hilos);
+		
+	}
 
 
 
