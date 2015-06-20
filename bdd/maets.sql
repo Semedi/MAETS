@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.2.11
+-- version 4.3.11
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 20-06-2015 a las 14:38:36
--- Versión del servidor: 5.6.21
--- Versión de PHP: 5.6.3
+-- Tiempo de generación: 20-06-2015 a las 18:00:26
+-- Versión del servidor: 5.6.24
+-- Versión de PHP: 5.6.8
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -66,7 +66,7 @@ INSERT INTO `analisis` (`IdJuego`, `IdUsuario`, `Texto`, `Recomendado`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `capturas` (
-`Id` int(11) NOT NULL,
+  `Id` int(11) NOT NULL,
   `Nombre` varchar(100) COLLATE utf8_bin NOT NULL,
   `Ruta` varchar(150) COLLATE utf8_bin NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
@@ -134,11 +134,11 @@ INSERT INTO `consigue` (`IDLogro`, `IDUsuario`, `Fecha`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `hilo` (
-`Id` int(10) NOT NULL,
+  `Id` int(10) NOT NULL,
   `Titulo` varchar(200) COLLATE utf8_bin NOT NULL,
   `Texto` longtext COLLATE utf8_bin NOT NULL,
-  `Fecha de creación` date NOT NULL,
-  `Último mensaje` date NOT NULL,
+  `Fecha_de_creacion` date NOT NULL,
+  `Ultimo_mensaje` date NOT NULL,
   `IdUsuario` int(10) NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
@@ -146,7 +146,7 @@ CREATE TABLE IF NOT EXISTS `hilo` (
 -- Volcado de datos para la tabla `hilo`
 --
 
-INSERT INTO `hilo` (`Id`, `Titulo`, `Texto`, `Fecha de creación`, `Último mensaje`, `IdUsuario`) VALUES
+INSERT INTO `hilo` (`Id`, `Titulo`, `Texto`, `Fecha_de_creacion`, `Ultimo_mensaje`, `IdUsuario`) VALUES
 (1, 'Bienvenidos a GTA Online', 'Buenas tardes, creo este foro para ir añadiendo información sobre el progreso que voy consiguiendo en el GTA V, en el modo multijugador, espero que ayudeis con vuestros consejos!!', '2015-06-18', '0000-00-00', 6);
 
 -- --------------------------------------------------------
@@ -156,7 +156,7 @@ INSERT INTO `hilo` (`Id`, `Titulo`, `Texto`, `Fecha de creación`, `Último mens
 --
 
 CREATE TABLE IF NOT EXISTS `juego` (
-`Id` int(10) NOT NULL,
+  `Id` int(10) NOT NULL,
   `Titulo` varchar(100) COLLATE utf8_bin NOT NULL,
   `Portada` varchar(100) COLLATE utf8_bin NOT NULL,
   `Precio` int(4) NOT NULL,
@@ -164,9 +164,9 @@ CREATE TABLE IF NOT EXISTS `juego` (
   `Descripcion` varchar(100) COLLATE utf8_bin NOT NULL,
   `DescripcionLarga` longtext COLLATE utf8_bin NOT NULL,
   `Companyia` varchar(100) COLLATE utf8_bin NOT NULL,
-  `Tipo` enum('Free to Play','Acesso Anticipado','Acción','Aventura','Carreras','Casual','Deportes','Estrategia','Indie','Multijugador Masivo','Rol','Simuladores') COLLATE utf8_bin NOT NULL,
+  `Tipo` enum('Free_to_Play','Acceso_Anticipado','Accion','Aventura','Carreras','Casual','Deportes','Estrategia','Indie','Multijugador_Masivo','Rol','Simuladores') COLLATE utf8_bin NOT NULL,
   `Etiquetas` varchar(200) COLLATE utf8_bin NOT NULL,
-  `Idiomas` enum('Inglés','Español','Ruso','Italiano','Chino','Japones','Francés','Portugués','Árabe') COLLATE utf8_bin NOT NULL,
+  `Idiomas` enum('Ingles','Espanyol','Ruso','Italiano','Chino','Japones','Frances','Portugues','Arabe') COLLATE utf8_bin NOT NULL,
   `Ventas` int(12) NOT NULL,
   `Fecha` date NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
@@ -176,16 +176,16 @@ CREATE TABLE IF NOT EXISTS `juego` (
 --
 
 INSERT INTO `juego` (`Id`, `Titulo`, `Portada`, `Precio`, `Edad`, `Descripcion`, `DescripcionLarga`, `Companyia`, `Tipo`, `Etiquetas`, `Idiomas`, `Ventas`, `Fecha`) VALUES
-(1, 'Grand Theft Auto V', 'PortadaGTA.png', 60, 18, '', '', 'Rockstar', 'Acción', '', 'Español', 0, '2015-04-14'),
-(2, 'Dishonored', 'PortadaDishonored.png', 15, 18, 'Violencia brutal en una ciudad portaria infectada por la peste', 'Ambientado en un mundo industrial y retrofuturista, Dishonored es definido por sus propios autores como un juego sobre la violencia brutal. La ciudad portuaria está infectada por la peste; la mitad de la población está muerta o agonizando, y la otra mitad vive con miedo a un régimen opresor.', 'Bethesda Studios', 'Acción', 'Accion, Primera persona, Aventura, Ciencia Ficcion', 'Español', 0, '2012-10-12'),
-(3, 'The Witcher 3: Wild Hunt', 'PortadaTheWitcherIII.png', 55, 18, 'Tercera entrega de la serie de The Witcher', 'The Witcher 3: Wild Hunt es la tercera entrega de la serie The Witcher, que nos devuelve al conocido cazador de bestias Geralt de Rivia en una nueva aventura. Rol de la vieja escuela en un fascinante mundo de fantasía, cargado de grandes historias y con un gran acabado artístico y tecnológico.', 'CD Projekt RED', 'Rol', 'Rol, RPG, Accion RPG', 'Español', 0, '2015-05-19'),
-(4, 'Heroes of the Storm', 'PortadaHeroesOfTheStorm.png', 0, 12, 'El futuro de los MOBA esta en Hots', 'Los héroes y villanos de Diablo, StarCraft y Warcraft se dan cita en este MOBA 5 vs. 5 desarrollado por Blizzard, que nos permite combatir en varios escenarios con sus propias particularidades. Obtén el poder de los dioses dominando sus templos, o invoca a un temible gólem de sangre recogiendo calaveras, en este juego de acción estratégica de corte free-to-play.', 'Blizzard', 'Free to Play', 'Estrategia, Tiempo Real, MOBA, Ciencia ficcion, Diablo, Starcraft, Warcraft, Cooperativo, Competiivo', 'Español', 0, '2015-06-02'),
-(5, 'Pillars of Eternity', 'PortadaPillarsOfEternity.png', 30, 18, 'Juego RPG ambientado en mundo de fantasia', 'Pillars of Eternity es un juego RPG ambientado en un mundo de fantasía, que trata de recuperar la esencia de grandes clásicos del género rolero como Planescape: Torment, Baldur’s Gate o Icewind Dale', 'Obsidian', 'Rol', 'Combate por turnos, Rol, Fantasia', 'Inglés', 0, '2015-03-26'),
-(6, 'La Tierra Media: Sombras de Mordor', 'PortadaSombrasDeMordor.png', 37, 18, 'AVentura ambientada en el universo de fantasia del Señor de los Anillos', 'Aventura ambientada en el universo de fantasía de El Señor de los Anillos que nos pone en la piel de un misterioso aventurero conocido como Talion, decidido a alcanzar las sombrías tierras de Mordor.', 'Monolith', 'Aventura', 'Accion, Aventura, Tercera Persona, Golum, Fantasia, Señor de los Anillo, LotR', 'Español', 0, '2014-09-30'),
-(7, 'Project Cars', 'PortadaProjectCars.png', 40, 3, 'Simulador de velocidad', 'Project Cars es un simulador de velocidad desarrollado por Slightly Mad Studios, responsables de Need for Speed: Shift. El juego cuenta con gran variedad de tipos de vehículos, climatología variable y un sistema de control que apuesta por el realismo.', 'Slightly Mad Studios', 'Carreras', 'Conduccion, GT, Formula 1, Carreras, Simulador', 'Español', 0, '2015-05-07'),
-(8, 'ARK: Survival Evolved', 'PortadaArk.png', 20, 18, 'Survival en una isla con dinosaurios', 'Tras despertar en una misteriosa isla que da nombre al juego, el jugador deberá cazar, recolectar alimentos y recursos, investigar nuevas tecnologías o construir su propio refugio en una nueva aventura de supervivencia. ¿Su punto diferenciador? La caza y domesticación de dinosaurios leviatán y otras criaturas primitivas.', 'Studio Wildcard', 'Acesso Anticipado', 'Accion, Primera persona, aventura, fantasia, dinosaurios, ficcion, multijugador, online', 'Inglés', 0, '0000-00-00'),
-(9, 'This War of Mine', 'PortadaThisWarOfMine.png', 15, 12, 'Sobrevive a las penurias de la guerra', 'Sobrevive a las penurias de la guerra en la piel de un civil, que por el día debe velar por la seguridad de su refugio, mientras que por las noches sale al exterior en busca de recursos para mantenerse con vida.', '11 bit Studios', 'Indie', 'Estrategia, Tiempo Real, Bélico, Guerra, Survival', 'Español', 0, '2014-11-14'),
-(10, 'Fifa 15', 'PortadaFifa15.png', 55, 3, 'Videojuego de la serie FIFA', 'Videojuego de la serie FIFA para la temporada de fútbol 2014-2015. El título presenta licencias de más de 25 competiciones oficiales, y entre sus novedades destacan un comportamiento de los porteros mucho más reales, nuevas animaciones para los jugadores, cambios en el comportamiento del esférico y un ritmo de juego más rápido, entre otros tantos.', 'EA Sports', 'Deportes', 'Deportes, Futbol, 2015', 'Español', 0, '2014-09-25');
+(1, 'Grand Theft Auto V', 'PortadaGTA.png', 60, 18, '', '', 'Rockstar', 'Accion', '', '', 0, '2015-04-14'),
+(2, 'Dishonored', 'PortadaDishonored.png', 15, 18, 'Violencia brutal en una ciudad portaria infectada por la peste', 'Ambientado en un mundo industrial y retrofuturista, Dishonored es definido por sus propios autores como un juego sobre la violencia brutal. La ciudad portuaria está infectada por la peste; la mitad de la población está muerta o agonizando, y la otra mitad vive con miedo a un régimen opresor.', 'Bethesda Studios', 'Aventura', 'Accion, Primera persona, Aventura, Ciencia Ficcion', '', 0, '2012-10-12'),
+(3, 'The Witcher 3: Wild Hunt', 'PortadaTheWitcherIII.png', 55, 18, 'Tercera entrega de la serie de The Witcher', 'The Witcher 3: Wild Hunt es la tercera entrega de la serie The Witcher, que nos devuelve al conocido cazador de bestias Geralt de Rivia en una nueva aventura. Rol de la vieja escuela en un fascinante mundo de fantasía, cargado de grandes historias y con un gran acabado artístico y tecnológico.', 'CD Projekt RED', 'Rol', 'Rol, RPG, Accion RPG', '', 0, '2015-05-19'),
+(4, 'Heroes of the Storm', 'PortadaHeroesOfTheStorm.png', 0, 12, 'El futuro de los MOBA esta en Hots', 'Los héroes y villanos de Diablo, StarCraft y Warcraft se dan cita en este MOBA 5 vs. 5 desarrollado por Blizzard, que nos permite combatir en varios escenarios con sus propias particularidades. Obtén el poder de los dioses dominando sus templos, o invoca a un temible gólem de sangre recogiendo calaveras, en este juego de acción estratégica de corte free-to-play.', 'Blizzard', 'Free_to_Play', 'Estrategia, Tiempo Real, MOBA, Ciencia ficcion, Diablo, Starcraft, Warcraft, Cooperativo, Competiivo', '', 0, '2015-06-02'),
+(5, 'Pillars of Eternity', 'PortadaPillarsOfEternity.png', 30, 18, 'Juego RPG ambientado en mundo de fantasia', 'Pillars of Eternity es un juego RPG ambientado en un mundo de fantasía, que trata de recuperar la esencia de grandes clásicos del género rolero como Planescape: Torment, Baldur’s Gate o Icewind Dale', 'Obsidian', 'Rol', 'Combate por turnos, Rol, Fantasia', '', 0, '2015-03-26'),
+(6, 'La Tierra Media: Sombras de Mordor', 'PortadaSombrasDeMordor.png', 37, 18, 'AVentura ambientada en el universo de fantasia del Señor de los Anillos', 'Aventura ambientada en el universo de fantasía de El Señor de los Anillos que nos pone en la piel de un misterioso aventurero conocido como Talion, decidido a alcanzar las sombrías tierras de Mordor.', 'Monolith', 'Aventura', 'Accion, Aventura, Tercera Persona, Golum, Fantasia, Señor de los Anillo, LotR', '', 0, '2014-09-30'),
+(7, 'Project Cars', 'PortadaProjectCars.png', 40, 3, 'Simulador de velocidad', 'Project Cars es un simulador de velocidad desarrollado por Slightly Mad Studios, responsables de Need for Speed: Shift. El juego cuenta con gran variedad de tipos de vehículos, climatología variable y un sistema de control que apuesta por el realismo.', 'Slightly Mad Studios', 'Carreras', 'Conduccion, GT, Formula 1, Carreras, Simulador', '', 0, '2015-05-07'),
+(8, 'ARK: Survival Evolved', 'PortadaArk.png', 20, 18, 'Survival en una isla con dinosaurios', 'Tras despertar en una misteriosa isla que da nombre al juego, el jugador deberá cazar, recolectar alimentos y recursos, investigar nuevas tecnologías o construir su propio refugio en una nueva aventura de supervivencia. ¿Su punto diferenciador? La caza y domesticación de dinosaurios leviatán y otras criaturas primitivas.', 'Studio Wildcard', '', 'Accion, Primera persona, aventura, fantasia, dinosaurios, ficcion, multijugador, online', '', 0, '0000-00-00'),
+(9, 'This War of Mine', 'PortadaThisWarOfMine.png', 15, 12, 'Sobrevive a las penurias de la guerra', 'Sobrevive a las penurias de la guerra en la piel de un civil, que por el día debe velar por la seguridad de su refugio, mientras que por las noches sale al exterior en busca de recursos para mantenerse con vida.', '11 bit Studios', 'Indie', 'Estrategia, Tiempo Real, Bélico, Guerra, Survival', '', 0, '2014-11-14'),
+(10, 'Fifa 15', 'PortadaFifa15.png', 55, 3, 'Videojuego de la serie FIFA', 'Videojuego de la serie FIFA para la temporada de fútbol 2014-2015. El título presenta licencias de más de 25 competiciones oficiales, y entre sus novedades destacan un comportamiento de los porteros mucho más reales, nuevas animaciones para los jugadores, cambios en el comportamiento del esférico y un ritmo de juego más rápido, entre otros tantos.', 'EA Sports', 'Deportes', 'Deportes, Futbol, 2015', '', 0, '2014-09-25');
 
 -- --------------------------------------------------------
 
@@ -194,7 +194,7 @@ INSERT INTO `juego` (`Id`, `Titulo`, `Portada`, `Precio`, `Edad`, `Descripcion`,
 --
 
 CREATE TABLE IF NOT EXISTS `logro` (
-`Id` int(10) NOT NULL,
+  `Id` int(10) NOT NULL,
   `JuegoID` int(10) NOT NULL,
   `Titulo` varchar(100) COLLATE utf8_bin NOT NULL,
   `Puntos` int(3) NOT NULL,
@@ -248,7 +248,7 @@ INSERT INTO `respuesta` (`IDHilo`, `IDUsuario`, `Fecha`, `Mensaje`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `usuario` (
-`Id` int(10) NOT NULL,
+  `Id` int(10) NOT NULL,
   `Nick` varchar(20) COLLATE utf8_bin NOT NULL,
   `Contrasenia` varchar(100) COLLATE utf8_bin NOT NULL,
   `Nombre` varchar(20) COLLATE utf8_bin NOT NULL,
@@ -283,61 +283,61 @@ INSERT INTO `usuario` (`Id`, `Nick`, `Contrasenia`, `Nombre`, `Apellidos`, `Corr
 -- Indices de la tabla `amigo`
 --
 ALTER TABLE `amigo`
- ADD PRIMARY KEY (`IDUsuario`,`IDAmigo`);
+  ADD PRIMARY KEY (`IDUsuario`,`IDAmigo`);
 
 --
 -- Indices de la tabla `analisis`
 --
 ALTER TABLE `analisis`
- ADD PRIMARY KEY (`IdJuego`,`IdUsuario`);
+  ADD PRIMARY KEY (`IdJuego`,`IdUsuario`);
 
 --
 -- Indices de la tabla `capturas`
 --
 ALTER TABLE `capturas`
- ADD PRIMARY KEY (`Id`);
+  ADD PRIMARY KEY (`Id`);
 
 --
 -- Indices de la tabla `compras`
 --
 ALTER TABLE `compras`
- ADD PRIMARY KEY (`IDUsuario`,`IDJuego`,`Fecha de compra`);
+  ADD PRIMARY KEY (`IDUsuario`,`IDJuego`,`Fecha de compra`);
 
 --
 -- Indices de la tabla `consigue`
 --
 ALTER TABLE `consigue`
- ADD PRIMARY KEY (`IDLogro`,`IDUsuario`);
+  ADD PRIMARY KEY (`IDLogro`,`IDUsuario`);
 
 --
 -- Indices de la tabla `hilo`
 --
 ALTER TABLE `hilo`
- ADD PRIMARY KEY (`Id`);
+  ADD PRIMARY KEY (`Id`);
 
 --
 -- Indices de la tabla `juego`
 --
 ALTER TABLE `juego`
- ADD PRIMARY KEY (`Id`);
+  ADD PRIMARY KEY (`Id`);
 
 --
 -- Indices de la tabla `logro`
 --
 ALTER TABLE `logro`
- ADD PRIMARY KEY (`Id`);
+  ADD PRIMARY KEY (`Id`);
 
 --
 -- Indices de la tabla `respuesta`
 --
 ALTER TABLE `respuesta`
- ADD PRIMARY KEY (`IDHilo`,`IDUsuario`,`Fecha`);
+  ADD PRIMARY KEY (`IDHilo`,`IDUsuario`,`Fecha`);
 
 --
 -- Indices de la tabla `usuario`
 --
 ALTER TABLE `usuario`
- ADD PRIMARY KEY (`Id`), ADD UNIQUE KEY `Nick` (`Nick`);
+  ADD PRIMARY KEY (`Id`), ADD UNIQUE KEY `Nick` (`Nick`);
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
@@ -347,27 +347,27 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de la tabla `capturas`
 --
 ALTER TABLE `capturas`
-MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT de la tabla `hilo`
 --
 ALTER TABLE `hilo`
-MODIFY `Id` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+  MODIFY `Id` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT de la tabla `juego`
 --
 ALTER TABLE `juego`
-MODIFY `Id` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=11;
+  MODIFY `Id` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=11;
 --
 -- AUTO_INCREMENT de la tabla `logro`
 --
 ALTER TABLE `logro`
-MODIFY `Id` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=13;
+  MODIFY `Id` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=13;
 --
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-MODIFY `Id` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=16;
+  MODIFY `Id` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=16;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

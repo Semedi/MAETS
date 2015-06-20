@@ -14,19 +14,9 @@
 <?php  include ('static/mainTOP.php'); ?>  
 
       <div id = "left-menu">
-        <h2>Categorias</h2>
-        <p><a href="lista_tienda.php?categoria='f2p'">Free to Play</a></p>
-        <p>Acceso Anticipado</p>
-        <p>Acción</p>
-        <p>Aventura</p>
-        <p>Carreras</p>
-        <p>Casual</p>
-        <p>Deportes</p>
-        <p>Estrategia</p>
-        <p>Indie</p>
-        <p>Multijugador masivo</p>
-        <p>Rol</p>
-        <p>Simuladores</p>
+        <?php
+          require_once("static/menuCategorias.html");
+        ?>
       </div>
 
       <div id = "right-menu">
