@@ -26,7 +26,7 @@ define('COMUNIDAD', RAIZ_APP.'/community');
 
 
 
-//CREAR UNA VARIABLE QUE GUARDE EL DIR DE MAETS
+//CREAR UNA VARIABLE QUE GUARDE EL DIR DE MAETS   
 
  /*Create connection*/
 function createConnection(){
