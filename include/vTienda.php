@@ -46,38 +46,21 @@ function generarArticulo($id) {
 		echo "<p class='details'><b>Género: </b> " .str_replace('_', ' ', $res['Tipo']). " </p>";
 		echo "<p class='details'><b>Desarrollador: </b>" .$res['Companyia']. "</p>";
 		echo "<p class='details'><b>Fecha de lanzamiento: </b>" .$res['Fecha']. "</p>";
+	    echo "<p class='details'><b>Idioma: </b>";
+	    mostrarIdioma($res['Idiomas']);
+	    echo "</p>"; 
 	    echo "</br>";
-	    echo "</br>";
-	    echo "</br>";
-
-	    echo "<table>";
-	    	echo "<tr>";
-	    		echo "<td id ='nombreColumna'><strong>Idioma</strong></td>";
-	    		echo "<td id ='nombreColumna'><strong>Disponible</strong></td>";
-
-
+	    echo "<a href='compra.php?juego=" .$res['Id']. "'><img src='images/boton-comprar.png'</a>";
 
 
 }
 
-function mostrarIdioma($idiomas) {
-	foreach ($idiomas as $idioma) {
-		echo "<td>" .$idioma. "</td>";
-		echo "<td>";
-		if()
-	}
+function mostrarIdioma($idioma) {
+	if($idioma == "")
+		echo "No disponible";
+	else if($idioma == "Espanyol")
+		echo "Español";
+	else
+		echo $idioma;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 ?>
