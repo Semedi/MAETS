@@ -1,8 +1,8 @@
-#contact-form {  
+#game-form {  
 	background-color: rgb(20,31,44);
 	
 
-	height: 550px;
+	height: 1200px;
 	width: 90%;  
    	margin: 0 auto;
    	-moz-border-radius: 10px;  
@@ -10,27 +10,27 @@
  
 }
 
-#contact-form textarea {  
+#game-form textarea {  
    height: 150px;  
-}  
-
-#contact-form p{
-color: #FFFFFF;
 }
 
-#contact-form h1{
+#game-form p{
+   color: #FFFFFF;
+}
+
+#game-form h1{
 	font-size: 40px;
 }
  
  
- #contact-form #submit {  
+ #game-form #submit {  
    width: 450px;  
    color: #BFD7C1;  
    border: none;  
    background-color: #6EA070;
 }  
  
- #contact-form textarea {  
+ #game-form textarea {  
    width: 450px;
    background: #fff;
    border: 0;

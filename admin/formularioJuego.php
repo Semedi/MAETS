@@ -5,7 +5,7 @@
 	<title> MAETS </title>
 	<link rel="icon" type="image/png" href="../images/MAETS.png"/>
 	<link rel="stylesheet" type="text/css" href="../css/main.css"/>
-	<link rel="stylesheet" type="text/css" href="../css/gestorJuegos.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/formularioJuego.css"/>
 </head>
 
 <?php include ('../static/mainTOP.php'); ?>
@@ -13,6 +13,7 @@
 	<body>
 		<div id="game-form">  
 
+			</br>
 		   <center><h1>Nuevo juego</h1></center>
 		   
 		   <p id="failure">Algo esta mal.</p>  
@@ -51,8 +52,16 @@
 				<?php
 					$tipos = ['Free to Play','Acesso Anticipado','Acción','Aventura','Carreras','Casual','Deportes','Estrategia','Indie','Multijugador Masivo','Rol','Simuladores'];
 					$numTipos = 12;
+					$j = 0;
 					for($i=0; $i<$numTipos; $i++) {
-						echo '<p><input type="radio" name="idiomas" value="'.$tipos[$i].'">'.$tipos[$i].'</p>';
+						if($j == 4) {
+							echo '</p>';
+							$j = 0;
+						}
+						if($j == 0) 
+							echo '<p>';
+						echo '<input type="radio" name="idiomas" value="'.$tipos[$i].'">'. $tipos[$i] . '    ';
+						$j++;
 					}
 					echo '</br>';
 				?>
@@ -63,8 +72,16 @@
 				<?php
 					$idiomas = ['Inglés','Español','Ruso','Italiano','Chino','Japones','Francés','Portugués','Árabe'];
 					$numIdiomas = 9;
+					$j=0;
 					for($i=0; $i<$numIdiomas; $i++) {
-						echo '<p><input type="checkbox" name="idiomas" value="'.$idiomas[$i].'">'.$idiomas[$i].'</p>';
+						if($j == 3) {
+							echo '</p>';
+							$j = 0;
+						}
+						if($j == 0)
+							echo '<p>';
+						echo '<input type="checkbox" name="idiomas" value="'.$idiomas[$i].'">' . $idiomas[$i] . '    ';
+						$j++;
 					}
 					echo '</br>';
 				?>
@@ -76,7 +93,7 @@
 					<p><input type=checkbox value='a' name=checked checked> Marque esta casilla para verificar que ha leído nuestros términos y condiciones del servicio.</p>
 				</form>
 
-				<p>  <input type="submit" value="enviar" /></p>
+				<p>  <input type="submit" value="Añadir" /></p>
 		   </form>   
 		</div>	
 

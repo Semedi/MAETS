@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 19-06-2015 a las 13:06:07
+-- Tiempo de generación: 19-06-2015 a las 19:12:27
 -- Versión del servidor: 5.6.21
 -- Versión de PHP: 5.6.3
 
@@ -58,6 +58,31 @@ CREATE TABLE IF NOT EXISTS `analisis` (
 
 INSERT INTO `analisis` (`IdJuego`, `IdUsuario`, `Texto`, `Recomendado`) VALUES
 (1, 6, 'La espera ha valido la pena. GTA V es el primer juego que he pre-comprado y realmente siento que ha sido una gran compra. Sin embargo me molestó un poco tener que esperar más de 1 hora y media para que se pudiese instalar. Dejando esto de lado, la optimización es realmente impresionante, me he sorprendido demasiado con lo tan bien optimizado que está, los gráficos son excelentes y me atrevo a decirlo porque no tengo una gráfica demasiado potente (tengo una GTX 650), así que no queda nada más que decir. Os invito a ver mis capturas de pantalla para que veáis como se ve. He estado jugando al modo multijugador, otro punto a favor, no tengo nada de lag. Además es muy variado y tiene muchas actividades, Me falta jugarlo aún más como para dar un análisis completo.', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `capturas`
+--
+
+CREATE TABLE IF NOT EXISTS `capturas` (
+`Id` int(11) NOT NULL,
+  `Nombre` varchar(100) COLLATE utf8_bin NOT NULL,
+  `Ruta` varchar(150) COLLATE utf8_bin NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- Volcado de datos para la tabla `capturas`
+--
+
+INSERT INTO `capturas` (`Id`, `Nombre`, `Ruta`) VALUES
+(1, 'Captura de Assassins Creed 1', '../images/screens/ac1.jpg'),
+(2, 'Captura de Dragon Ball', '../images/screens/dbx1.jpg'),
+(3, 'Captura de GTA V', '../images/screens/gta5p.jpg'),
+(4, 'Captura de GTA V 2', '../images/screens/GTAV.jpg'),
+(5, 'Captura de GTA V 3', '../images/screens/gtav1.jpg'),
+(6, 'Captura de Rust', '../images/screens/rust.jpg'),
+(7, 'Captura de Project Cars', '../images/screens/project-cars.jpg');
 
 -- --------------------------------------------------------
 
@@ -237,7 +262,7 @@ CREATE TABLE IF NOT EXISTS `usuario` (
   `Puntuacion` int(7) NOT NULL,
   `Rol` enum('Usuario Registrado','Administrador','Desarrollador','Gestor-Tienda','Gestor-Comunidad','') COLLATE utf8_bin NOT NULL,
   `Imagen` varchar(150) COLLATE utf8_bin NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Tabla de información del usuario';
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Tabla de información del usuario';
 
 --
 -- Volcado de datos para la tabla `usuario`
@@ -245,7 +270,9 @@ CREATE TABLE IF NOT EXISTS `usuario` (
 
 INSERT INTO `usuario` (`Id`, `Nick`, `Contrasenia`, `Nombre`, `Apellidos`, `Correo`, `Fecha de Nacimiento`, `Pais`, `Ciudad`, `Direccion`, `Codigo Postal`, `Puntuacion`, `Rol`, `Imagen`) VALUES
 (6, 'Drulas', '$2y$10$idews1ZgezwJur/oOqb26uBHaLdC2kNFiVy.iK2iCR6rAvDzzG59q', 'Javier', 'Drulas Druloide', 'duruleto@drulas.com', '2001-03-20', 'Drulon', 'Drulopia', 'Avenida de Druloide 24 s/n', 28033, 0, 'Usuario Registrado', '../images/usuarios/usuario.jpg'),
-(7, 'Javi', '$2y$10$mgBUFmgP3GIMlR.03tWeLeD141mPVKSHwk/s3OQ2W3ZORRdezUZbK', 'Javi', 'Druet Honrubia', 'javi@hotmail.com', '1993-03-20', 'España', 'Madrid', 'Avenida de ', 28033, 0, 'Usuario Registrado', '../images/usuarios/misterT.jpg');
+(7, 'Javi', '$2y$10$mgBUFmgP3GIMlR.03tWeLeD141mPVKSHwk/s3OQ2W3ZORRdezUZbK', 'Javi', 'Druet Honrubia', 'javi@hotmail.com', '1993-03-20', 'España', 'Madrid', 'Avenida de ', 28033, 0, 'Usuario Registrado', '../images/usuarios/misterT.jpg'),
+(13, 'Prueba', '$2y$10$.HsV3pKt63NAB4NApF0PL.rU3gOmBBfXgu.jY1j/ClbC9kCNokklG', '', '', 'prueba', '0000-00-00', '', '', '', 0, 0, 'Usuario Registrado', '../images/prueba.png'),
+(14, 'Usuario1', '$2y$10$bd/LlAjMkOy2aYOyb4ApRe2xYA0sFOPd5kcvNJWR54TPFA9MtIRYC', '', '', 'usuario1@user.com', '0000-00-00', '', '', '', 0, 0, 'Usuario Registrado', '../images/usuarios/usuario.jpg');
 
 --
 -- Índices para tablas volcadas
@@ -262,6 +289,12 @@ ALTER TABLE `amigo`
 --
 ALTER TABLE `analisis`
  ADD PRIMARY KEY (`IdJuego`,`IdUsuario`);
+
+--
+-- Indices de la tabla `capturas`
+--
+ALTER TABLE `capturas`
+ ADD PRIMARY KEY (`Id`);
 
 --
 -- Indices de la tabla `compras`
@@ -310,6 +343,11 @@ ALTER TABLE `usuario`
 --
 
 --
+-- AUTO_INCREMENT de la tabla `capturas`
+--
+ALTER TABLE `capturas`
+MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
+--
 -- AUTO_INCREMENT de la tabla `hilo`
 --
 ALTER TABLE `hilo`
@@ -328,7 +366,7 @@ MODIFY `Id` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=13;
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-MODIFY `Id` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
+MODIFY `Id` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=15;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

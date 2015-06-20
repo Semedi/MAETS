@@ -15,7 +15,7 @@
 
       <div id = "left-menu">
         <h2>Categorias</h2>
-        <p>Free to play</p>
+        <p><a href="lista_tienda.php?categoria='f2p'">Free to Play</a></p>
         <p>Acceso Anticipado</p>
         <p>Acción</p>
         <p>Aventura</p>
@@ -88,7 +88,7 @@
       <div id="content-container">
           <br></br>
           <br></br>
-          <a href="articulo-tienda.php"><img class="image" src="images/GTAV.jpg"></a>
+          <a href="articulo-tienda.php"><img class="image" src="images/screens/GTAV.jpg"></a>
         </div>
 
 <?php  include ('static/mainBOT.php'); ?>

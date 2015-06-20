@@ -25,7 +25,7 @@ function addUser($user, $pass, $mail){
 	include '../include/usersBD.php';
 
 	newUser($user, $pass, $mail);
-	header('Location: ../index.php');
+	//header('Location: ../index.php');
 }
 
 

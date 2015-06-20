@@ -1,47 +1,35 @@
-#game-form {  
-	background-color: rgb(20,31,44);
-	
-
-	height: 1750px;
-	width: 90%;  
-   	margin: 0 auto;
-   	-moz-border-radius: 10px;  
-   	-webkit-border-radius: 15px; 
- 
+button {
+   border-radius: 35px 35px 35px 35px;
+   -moz-border-radius: 35px 35px 35px 35px;
+   -webkit-border-radius: 35px 35px 35px 35px;
+   border: 0px hidden #ffffff;
+   width: 150px;
+   height: 25px;
 }
 
-#game-form textarea {  
-   height: 150px;  
+table {
+	margin: 15px auto;
+
+	background: -moz-linear-gradient(left, rgba(207,201,201,0.21) 0%, rgba(223,153,141,0) 40%, rgba(248,80,50,0) 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, rgba(207,201,201,0.21)), color-stop(40%, rgba(223,153,141,0)), color-stop(100%, rgba(248,80,50,0)));
+    background: -webkit-linear-gradient(left, rgba(207,201,201,0.21) 0%, rgba(223,153,141,0) 40%, rgba(248,80,50,0) 100%);
+    background: -o-linear-gradient(left, rgba(207,201,201,0.21) 0%, rgba(223,153,141,0) 40%, rgba(248,80,50,0) 100%);
+    background: -ms-linear-gradient(left, rgba(207,201,201,0.21) 0%, rgba(223,153,141,0) 40%, rgba(248,80,50,0) 100%);
+    background: linear-gradient(to right, rgba(207,201,201,0.21) 0%, rgba(223,153,141,0) 40%, rgba(248,80,50,0) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cfc9c9', endColorstr='#f85032', GradientType=1 );
+	border-top: 1px #9898A6 groove;
+	border-left: 1px #222429 solid;
+	border-radius: 4px;
+
+	padding: 10px;
 }
 
-#game-form p{
-   color: #FFFFFF;
+th {
+	text-decoration: bold;
+	color: white;
+	padding: 10px;
 }
 
-#game-form h1{
-	font-size: 40px;
-}
- 
- 
- #game-form #submit {  
-   width: 450px;  
-   color: #BFD7C1;  
-   border: none;  
-   background-color: #6EA070;
-}  
- 
- #game-form textarea {  
-   width: 450px;
-   background: #fff;
-   border: 0;
-   -moz-border-radius: 5px;  
-   -webkit-border-radius: 5px;  
-   border-radius: 5px;
-   margin-bottom: 25px;  
-   padding: 5px;  
-} 
-
-#failure, #success {
-   color: #6EA070;
-   display:none;  
-}
+td {
+	color: white;
+}	
