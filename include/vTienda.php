@@ -7,15 +7,13 @@ function generarLista($tipo){
 
 	require_once 'include/shopOp.php'; 
 	//llamar a getLista()
-		
-		echo $tipo;
 
 		$res = getLista($tipo);
 
 			for($i=0; $i<sizeof($res)-1; $i++) {
 
 				echo "<div id='juego' onclick='location.href='articulo-tienda.php'' style='cursor:pointer'>";
-	    				echo "<img class='imagen' src='" .$res[$i]['Portada']. "'>";
+	    				echo "<img class='imagen' src='images/Portadas/" .$res[$i]['Portada']. "'>";
 	    				echo "<div id='titulo'>";
 	    					echo "<p><b>" .$res[$i]['Titulo']. " </b> </p>";
 	    					echo "<p>Categoria:" .$res[$i]['Tipo']. "</p>";
