@@ -49,7 +49,7 @@
             <div id = "user_friends_header">
               <img id="imagen_Avatar" src='/MAETS/images/userProfile.png'>
                <div id = "texto_perfil" >
-                  <h2><?php echo $_SESSION["Nick"]; ?></h2>
+                  <h2>usuario</h2>
                   <img id = "bandera_nacionalidad" src="../images/usuarios/SpainFlag.jpg">
                </div>
                 <div id = "botonAniadir">
@@ -65,26 +65,26 @@
 
                 <tr>
                     <td>Nick:</td>
-                    <td><?php echo $_SESSION["Nick"]; ?></td>
+                    <td>?</td>
                 </tr>
          
                 <tr>
                     <td>Nombre: </a></td>
-                    <td><?php echo $_SESSION['Nombre']; ?></td>
+                    <td>?</td>
                 </tr>
          
                  <tr>
                     <td>Apellidos: </a></td>
-                    <td><?php echo $_SESSION['Apellidos']; ?></td>
+                    <td>?</td>
                 </tr>
 
                         <tr>
                     <td>Correo: </a></td>
-                    <td><?php echo $_SESSION["Email"]; ?></td>
+                    <td>?</td>
                 </tr>
 
                          <tr>
-                    <td>Juegos comprados: </a></td>
+                    <td>?</td>
                     <td>5</td>
                 </tr>
 

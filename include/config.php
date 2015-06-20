@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 //LA VARIABLE MAS IMPORTANTE: REDEFINIR SI COLOCAIS LA CARPETA EN OTRO LADO QUE NO SEA HTDOCS
 define('RAIZ_APP', 'http://localhost/MAETS');
 
@@ -15,12 +15,15 @@ define('COMMUNITY', RAIZ_APP.'/community.php');
 define('USER', RAIZ_APP.'/Usuario/PagPpalUser.php');
 
 
+
+
 //carpetas
 define('IMAGENES', RAIZ_APP.'/images');
+define('COMUNIDAD', RAIZ_APP.'/community');
 
 
 
-session_start();
+
 
 
 //CREAR UNA VARIABLE QUE GUARDE EL DIR DE MAETS
