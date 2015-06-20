@@ -35,7 +35,7 @@
 
 	require_once ('include/vTienda.php');
 
-	generarArticulo($_GET['Id']);
+	generarArticulo($_GET['juego']);
 
 	require_once ('static/mainBOT.php');
 ?>

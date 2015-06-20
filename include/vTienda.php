@@ -1,8 +1,9 @@
 <?php
 
+require_once 'include/shopOp.php';
+
 function generarLista($tipo){
 
-	require_once 'include/shopOp.php'; 
 	//llamar a getLista()
 
 		$res = getLista($tipo);
@@ -24,10 +25,48 @@ function generarLista($tipo){
 }
 
 function generarArticulo($id) {
-	echo "hola";
+	$res = getJuegoById($id);
+
+	//var_dump($res);
+
+	echo "<div id='left-side'>";
+		echo "<h1 class='upper-bar-name'>" .$res['Titulo']. "</h1>";
+	echo "</div>";
+	echo "<div id='right-side'>";
+		echo "<h1 class='upper-bar'>Precio: " .$res['Precio']. "</h1>";
+	echo "</div>";
+
+	echo "<div id='left-side'>";
+		echo "<img class='portada' src='images/Portadas/" .$res['Portada']. "'>";
+
+		echo "<p>Descipcion del juego</p>";
+		echo "<p class='descripcion'>" .$res['DescripcionLarga']. "</p>";
+	echo "</div>";
+	echo "<div id='details'>";
+		echo "<p class='details'><b>Género: </b> " .str_replace('_', ' ', $res['Tipo']). " </p>";
+		echo "<p class='details'><b>Desarrollador: </b>" .$res['Companyia']. "</p>";
+		echo "<p class='details'><b>Fecha de lanzamiento: </b>" .$res['Fecha']. "</p>";
+	    echo "</br>";
+	    echo "</br>";
+	    echo "</br>";
+
+	    echo "<table>";
+	    	echo "<tr>";
+	    		echo "<td id ='nombreColumna'><strong>Idioma</strong></td>";
+	    		echo "<td id ='nombreColumna'><strong>Disponible</strong></td>";
+
+
+
+
 }
 
-
+function mostrarIdioma($idiomas) {
+	foreach ($idiomas as $idioma) {
+		echo "<td>" .$idioma. "</td>";
+		echo "<td>";
+		if()
+	}
+}
 
 
 

@@ -4,12 +4,12 @@ require_once 'include/shopBD.php';
 
 
 
-function getLista($tipo){
-	
+function getLista($tipo) {
+	return (selectGenero($tipo));
+}
 
-	 	
-	 		return (selectGenero($tipo));
-
+function getJuegoById($id) {
+	return (selectJuegoById($id));
 }
 
 ?>
