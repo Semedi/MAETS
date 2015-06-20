@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 20-06-2015 a las 14:10:06
+-- Tiempo de generación: 20-06-2015 a las 14:38:36
 -- Versión del servidor: 5.6.21
 -- Versión de PHP: 5.6.3
 
@@ -262,7 +262,7 @@ CREATE TABLE IF NOT EXISTS `usuario` (
   `Puntuacion` int(7) NOT NULL,
   `Rol` enum('Usuario Registrado','Administrador','Desarrollador','Gestor-Tienda','Gestor-Comunidad','') COLLATE utf8_bin NOT NULL,
   `Imagen` varchar(150) COLLATE utf8_bin NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Tabla de información del usuario';
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Tabla de información del usuario';
 
 --
 -- Volcado de datos para la tabla `usuario`
@@ -272,7 +272,8 @@ INSERT INTO `usuario` (`Id`, `Nick`, `Contrasenia`, `Nombre`, `Apellidos`, `Corr
 (6, 'Drulas', '$2y$10$idews1ZgezwJur/oOqb26uBHaLdC2kNFiVy.iK2iCR6rAvDzzG59q', 'Javier', 'Drulas', 'duruleto@drulas.com', '2001-03-20', 'Drulon', 'Drulopia', 'Avenida', 28033, 0, 'Usuario Registrado', 'usuario.jpg'),
 (7, 'Javi', '$2y$10$mgBUFmgP3GIMlR.03tWeLeD141mPVKSHwk/s3OQ2W3ZORRdezUZbK', 'Javi', 'Druet Honrubia', 'javi@hotmail.com', '1993-03-20', 'España', 'Madrid', 'Avenida de ', 28033, 0, 'Usuario Registrado', 'misterT.jpg'),
 (13, 'Prueba', '$2y$10$.HsV3pKt63NAB4NApF0PL.rU3gOmBBfXgu.jY1j/ClbC9kCNokklG', '', '', 'prueba', '0000-00-00', '', '', '', 0, 0, 'Usuario Registrado', 'prueba.png'),
-(14, 'Usuario1', '$2y$10$bd/LlAjMkOy2aYOyb4ApRe2xYA0sFOPd5kcvNJWR54TPFA9MtIRYC', '', '', 'usuario1@user.com', '0000-00-00', '', '', '', 0, 0, 'Usuario Registrado', 'usuario.jpg');
+(14, 'Usuario1', '$2y$10$bd/LlAjMkOy2aYOyb4ApRe2xYA0sFOPd5kcvNJWR54TPFA9MtIRYC', '', '', 'usuario1@user.com', '0000-00-00', '', '', '', 0, 0, 'Usuario Registrado', 'usuario.jpg'),
+(15, 'Admin', '$2y$10$UiwAJxd89sfcl5WW/6KHNOh/vYcSjLCupWxI13Y1Dc9aksEZhC5Tu', 'Admin', 'Admin admin', 'admin@admin.es', '0000-00-00', 'Admin', 'Admin', 'Admin', 28033, 0, 'Administrador', 'usuario.jpg');
 
 --
 -- Índices para tablas volcadas
@@ -366,7 +367,7 @@ MODIFY `Id` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=13;
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-MODIFY `Id` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=15;
+MODIFY `Id` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=16;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

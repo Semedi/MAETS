@@ -30,7 +30,7 @@
       </div>
 
       <div id = "right-menu">
-                <img id="imagenLupa" src="images/Lupa.png">
+        <img id="imagenLupa" src="images/Lupa.png">
         <p>
           <input type="text" id="name" name="name" value="" placeholder="Buscar videojuego", required="required" autofocus="autofocus"/>  
            </br>
