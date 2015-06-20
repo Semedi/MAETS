@@ -1,5 +1,9 @@
 <?php
 
+define('RAIZ_APP', 'http://localhost/MAETS');
+define('INDEX', RAIZ_APP.'/index.php');
+
+
 //CREAR UNA VARIABLE QUE GUARDE EL DIR DE MAETS
 
  /*Create connection*/

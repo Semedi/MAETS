@@ -6,6 +6,8 @@
 			   			if(e.which == 13) {
 			       			$.get("/MAETS/AJAX/usuariosGestor.php",{ functionName:"searchUser", userNick:$('#busqueda_user').val(),},function(data){
 					 			trimmed_data = $.trim(data);
+
+					 			alert(data);
 					 			
 						 		window.location.href = "../Usuario/pagPpalUser2.php";
 						 	

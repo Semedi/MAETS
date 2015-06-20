@@ -17,7 +17,7 @@
 		 			$.get("AJAX/usuariosGestor.php",{ functionName:"addUser", user:$('#name').val(), pass:$('#passw').val(), mail: $('#mail').val() },function(data){
 		 				trimmed_data = $.trim(data);
 		 					if (trimmed_data == ""){
-		 						alert ("¡Usuario nuevo registrado!");
+		 						window.location.href = "index.php";
 		 					}
 		 					else {
 		 						alert (data);

@@ -14,7 +14,7 @@ function logout(){
 
 	session_start();
 	session_destroy();
-	header('Location: ../index.php');
+	
 }
 
 
@@ -24,7 +24,7 @@ function addUser($user, $pass, $mail){
 	include '../include/usersBD.php';
 
 	newUser($user, $pass, $mail);
-	//header('Location: ../index.php');
+
 }
 
 
@@ -32,7 +32,6 @@ function addUser($user, $pass, $mail){
 function modifyUserAccount($user,$mail, $ID){
 
 	include '../include/usersBD.php';
-
 	modifyAccount($user,$mail, $ID);
 
 }
@@ -60,7 +59,8 @@ function searchUser($userNick){
 
 	 $cont =findUser($userNick);
 
-	header('Location:../Usuario/pagPpalUser2.php');
+     echo $cont;
+
 }
 	
 
@@ -69,7 +69,7 @@ function deleteFriend(){
 	return(true);
 }
 
-//muestra los juegos que posee un usuario
+
 
 
 

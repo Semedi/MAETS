@@ -20,7 +20,7 @@ function cargaCabeceraAnon(){
 				"<div id='nombreUsuario'>
 					<li><a href='/MAETS/Usuario/pagPpalUser.php'>" .$_SESSION["Nick"]. "</a></li>
 				  	<div id='logout'>
-				  		<li><a href='/MAETS/index.php'> logout </a></li>
+				  		<li><a href='/MAETS/include/logout.php'>Logout</a></li>
 					</div>
 				</div>
 				<li><a href='/MAETS/Usuario/pagPpalUser.php'><img id='imagenUsuario' src='/MAETS/images/userProfile.png'></a></li>";
@@ -36,28 +36,9 @@ function cargaCabeceraAnon(){
 	}
 
 }
-
 ?>
 
 
-<script type="text/javascript" src="/MAETS/js/jquery-1.9.1.min.js"> </script>
-
-	<script type="text/javascript">
-
-		$( document ).ready(function() {
-		 	$('#logout').click(
-		 		function(){
-		 			$.get("AJAX/usuariosGestor.php",{ functionName:"logout"},function(data){
-		 				trimmed_data = $.trim(data);
-		 					if (trimmed_data == ""){
-		 						//window.location.href = "index.php";
-		 					}
-		 			 	}
-				 	);
-				});
-		});
-
-	</script>
 
 <body>
 
