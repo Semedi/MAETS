@@ -8,10 +8,27 @@
 	<link rel="icon" type="image/png" href="../images/MAETS.png" />
 	<link rel="stylesheet" type="text/css" href="../css/main.css" />
 	<link rel="stylesheet" type="text/css" href="../css/compra.css" />
+
+	<script type="text/javascript">
+
+		$( document ).ready(function() {
+			$('#crearTema').click(
+			 	function(){
+					$.get("../AJAX/comunidadGestor.php",{ functionName:"newTopic", content:$('#hilo').val(), title:$('#titulo').val() },function(data){
+			 			trimmed_data = $.trim(data);
+						
+								alert(data);
+				 				window.location.href = "foros.php";
+				 			
+				 			
+			 			}
+			 		);
+				});
+		});
 </head>
 
 <?php  include ('../static/mainTOP.php'); ?>
-
+	
 
 	    	<form>
 	    		</br>
@@ -35,7 +52,7 @@
 				<input type="text" id="apellidos" name="apellidos" value="" placeholder="Apellidos del titular de la tarjeta" required="required" autofocus="autofocus" />  
 				</p>
 
-				<p><input type="submit" value="Comprar"/></p>   
+				<button name="newtopic" id="crearTema">crear tema</button>
 			</form>
 
 
