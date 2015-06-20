@@ -7,7 +7,8 @@ function generarLista($tipo){
 
 	require_once 'include/shopOp.php'; 
 	//llamar a getLista()
-	
+		
+		echo $tipo;
 
 		$res = getLista($tipo);
 

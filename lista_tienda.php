@@ -14,19 +14,9 @@
 <?php  include ('static/mainTOP.php'); ?>	
 
 	 <div id = "left-menu">
-        <h2>Categorias</h2>
-        <p>Free to play</p>
-        <p>Acceso Anticipado</p>
-        <p>Acción</p>
-        <p>Aventura</p>
-        <p>Carreras</p>
-        <p>Casual</p>
-        <p>Deportes</p>
-        <p>Estrategia</p>
-        <p>Indie</p>
-        <p>Multijugador masivo</p>
-        <p>Rol</p>
-        <p>Simuladores</p>
+        <?php
+        	require_once('static/menuCategorias.html');
+        ?>
       </div>
 
       
@@ -37,9 +27,9 @@
 
 	    		require_once 'include/vTienda.php';
 	    		
-	    		$cat=$_GET['categoria'];
-				
-				generarLista($cat);
+	    		$cat = $_GET['categoria'];
+
+				generarLista(substr($cat, 1, -1));
 
 	    		?>
 
