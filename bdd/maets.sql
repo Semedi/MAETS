@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.3.11
+-- version 4.2.11
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 20-06-2015 a las 18:00:26
--- Versión del servidor: 5.6.24
--- Versión de PHP: 5.6.8
+-- Tiempo de generación: 20-06-2015 a las 20:36:24
+-- Versión del servidor: 5.6.21
+-- Versión de PHP: 5.6.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -49,15 +49,16 @@ CREATE TABLE IF NOT EXISTS `analisis` (
   `IdJuego` int(10) NOT NULL,
   `IdUsuario` int(10) NOT NULL,
   `Texto` longtext COLLATE utf8_bin NOT NULL,
-  `Recomendado` tinyint(1) NOT NULL
+  `Recomendado` tinyint(1) NOT NULL,
+  `Fecha` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
 -- Volcado de datos para la tabla `analisis`
 --
 
-INSERT INTO `analisis` (`IdJuego`, `IdUsuario`, `Texto`, `Recomendado`) VALUES
-(1, 6, 'La espera ha valido la pena. GTA V es el primer juego que he pre-comprado y realmente siento que ha sido una gran compra. Sin embargo me molestó un poco tener que esperar más de 1 hora y media para que se pudiese instalar. Dejando esto de lado, la optimización es realmente impresionante, me he sorprendido demasiado con lo tan bien optimizado que está, los gráficos son excelentes y me atrevo a decirlo porque no tengo una gráfica demasiado potente (tengo una GTX 650), así que no queda nada más que decir. Os invito a ver mis capturas de pantalla para que veáis como se ve. He estado jugando al modo multijugador, otro punto a favor, no tengo nada de lag. Además es muy variado y tiene muchas actividades, Me falta jugarlo aún más como para dar un análisis completo.', 1);
+INSERT INTO `analisis` (`IdJuego`, `IdUsuario`, `Texto`, `Recomendado`, `Fecha`) VALUES
+(1, 6, 'La espera ha valido la pena. GTA V es el primer juego que he pre-comprado y realmente siento que ha sido una gran compra. Sin embargo me molestó un poco tener que esperar más de 1 hora y media para que se pudiese instalar. Dejando esto de lado, la optimización es realmente impresionante, me he sorprendido demasiado con lo tan bien optimizado que está, los gráficos son excelentes y me atrevo a decirlo porque no tengo una gráfica demasiado potente (tengo una GTX 650), así que no queda nada más que decir. Os invito a ver mis capturas de pantalla para que veáis como se ve. He estado jugando al modo multijugador, otro punto a favor, no tengo nada de lag. Además es muy variado y tiene muchas actividades, Me falta jugarlo aún más como para dar un análisis completo.', 1, '2015-06-01 13:26:29');
 
 -- --------------------------------------------------------
 
@@ -66,23 +67,24 @@ INSERT INTO `analisis` (`IdJuego`, `IdUsuario`, `Texto`, `Recomendado`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `capturas` (
-  `Id` int(11) NOT NULL,
+`Id` int(11) NOT NULL,
   `Nombre` varchar(100) COLLATE utf8_bin NOT NULL,
-  `Ruta` varchar(150) COLLATE utf8_bin NOT NULL
+  `Ruta` varchar(150) COLLATE utf8_bin NOT NULL,
+  `Fecha` datetime NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
 -- Volcado de datos para la tabla `capturas`
 --
 
-INSERT INTO `capturas` (`Id`, `Nombre`, `Ruta`) VALUES
-(1, 'Captura de Assassins Creed 1', 'ac1.jpg'),
-(2, 'Captura de Dragon Ball', 'dbx1.jpg'),
-(3, 'Captura de GTA V', 'gta5p.jpg'),
-(4, 'Captura de GTA V 2', 'GTAV.jpg'),
-(5, 'Captura de GTA V 3', 'gtav1.jpg'),
-(6, 'Captura de Rust', 'rust.jpg'),
-(7, 'Captura de Project Cars', 'project-cars.jpg');
+INSERT INTO `capturas` (`Id`, `Nombre`, `Ruta`, `Fecha`) VALUES
+(1, 'Captura de Assassins Creed 1', 'ac1.jpg', '2015-06-09 15:28:38'),
+(2, 'Captura de Dragon Ball', 'dbx1.jpg', '2015-06-10 00:21:16'),
+(3, 'Captura de GTA V', 'gta5p.jpg', '2015-06-01 18:45:42'),
+(4, 'Captura de GTA V 2', 'GTAV.jpg', '2015-05-20 09:25:47'),
+(5, 'Captura de GTA V 3', 'gtav1.jpg', '2015-06-14 03:25:35'),
+(6, 'Captura de Rust', 'rust.jpg', '2015-01-06 13:21:00'),
+(7, 'Captura de Project Cars', 'project-cars.jpg', '2015-03-24 10:26:17');
 
 -- --------------------------------------------------------
 
@@ -134,7 +136,7 @@ INSERT INTO `consigue` (`IDLogro`, `IDUsuario`, `Fecha`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `hilo` (
-  `Id` int(10) NOT NULL,
+`Id` int(10) NOT NULL,
   `Titulo` varchar(200) COLLATE utf8_bin NOT NULL,
   `Texto` longtext COLLATE utf8_bin NOT NULL,
   `Fecha_de_creacion` date NOT NULL,
@@ -156,7 +158,7 @@ INSERT INTO `hilo` (`Id`, `Titulo`, `Texto`, `Fecha_de_creacion`, `Ultimo_mensaj
 --
 
 CREATE TABLE IF NOT EXISTS `juego` (
-  `Id` int(10) NOT NULL,
+`Id` int(10) NOT NULL,
   `Titulo` varchar(100) COLLATE utf8_bin NOT NULL,
   `Portada` varchar(100) COLLATE utf8_bin NOT NULL,
   `Precio` int(4) NOT NULL,
@@ -194,7 +196,7 @@ INSERT INTO `juego` (`Id`, `Titulo`, `Portada`, `Precio`, `Edad`, `Descripcion`,
 --
 
 CREATE TABLE IF NOT EXISTS `logro` (
-  `Id` int(10) NOT NULL,
+`Id` int(10) NOT NULL,
   `JuegoID` int(10) NOT NULL,
   `Titulo` varchar(100) COLLATE utf8_bin NOT NULL,
   `Puntos` int(3) NOT NULL,
@@ -248,7 +250,7 @@ INSERT INTO `respuesta` (`IDHilo`, `IDUsuario`, `Fecha`, `Mensaje`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `usuario` (
-  `Id` int(10) NOT NULL,
+`Id` int(10) NOT NULL,
   `Nick` varchar(20) COLLATE utf8_bin NOT NULL,
   `Contrasenia` varchar(100) COLLATE utf8_bin NOT NULL,
   `Nombre` varchar(20) COLLATE utf8_bin NOT NULL,
@@ -283,61 +285,61 @@ INSERT INTO `usuario` (`Id`, `Nick`, `Contrasenia`, `Nombre`, `Apellidos`, `Corr
 -- Indices de la tabla `amigo`
 --
 ALTER TABLE `amigo`
-  ADD PRIMARY KEY (`IDUsuario`,`IDAmigo`);
+ ADD PRIMARY KEY (`IDUsuario`,`IDAmigo`);
 
 --
 -- Indices de la tabla `analisis`
 --
 ALTER TABLE `analisis`
-  ADD PRIMARY KEY (`IdJuego`,`IdUsuario`);
+ ADD PRIMARY KEY (`IdJuego`,`IdUsuario`);
 
 --
 -- Indices de la tabla `capturas`
 --
 ALTER TABLE `capturas`
-  ADD PRIMARY KEY (`Id`);
+ ADD PRIMARY KEY (`Id`);
 
 --
 -- Indices de la tabla `compras`
 --
 ALTER TABLE `compras`
-  ADD PRIMARY KEY (`IDUsuario`,`IDJuego`,`Fecha de compra`);
+ ADD PRIMARY KEY (`IDUsuario`,`IDJuego`,`Fecha de compra`);
 
 --
 -- Indices de la tabla `consigue`
 --
 ALTER TABLE `consigue`
-  ADD PRIMARY KEY (`IDLogro`,`IDUsuario`);
+ ADD PRIMARY KEY (`IDLogro`,`IDUsuario`);
 
 --
 -- Indices de la tabla `hilo`
 --
 ALTER TABLE `hilo`
-  ADD PRIMARY KEY (`Id`);
+ ADD PRIMARY KEY (`Id`);
 
 --
 -- Indices de la tabla `juego`
 --
 ALTER TABLE `juego`
-  ADD PRIMARY KEY (`Id`);
+ ADD PRIMARY KEY (`Id`);
 
 --
 -- Indices de la tabla `logro`
 --
 ALTER TABLE `logro`
-  ADD PRIMARY KEY (`Id`);
+ ADD PRIMARY KEY (`Id`);
 
 --
 -- Indices de la tabla `respuesta`
 --
 ALTER TABLE `respuesta`
-  ADD PRIMARY KEY (`IDHilo`,`IDUsuario`,`Fecha`);
+ ADD PRIMARY KEY (`IDHilo`,`IDUsuario`,`Fecha`);
 
 --
 -- Indices de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  ADD PRIMARY KEY (`Id`), ADD UNIQUE KEY `Nick` (`Nick`);
+ ADD PRIMARY KEY (`Id`), ADD UNIQUE KEY `Nick` (`Nick`);
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
@@ -347,27 +349,27 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de la tabla `capturas`
 --
 ALTER TABLE `capturas`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
+MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT de la tabla `hilo`
 --
 ALTER TABLE `hilo`
-  MODIFY `Id` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+MODIFY `Id` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT de la tabla `juego`
 --
 ALTER TABLE `juego`
-  MODIFY `Id` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=11;
+MODIFY `Id` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=11;
 --
 -- AUTO_INCREMENT de la tabla `logro`
 --
 ALTER TABLE `logro`
-  MODIFY `Id` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=13;
+MODIFY `Id` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=13;
 --
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `Id` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=16;
+MODIFY `Id` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=16;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
