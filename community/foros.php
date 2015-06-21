@@ -27,14 +27,23 @@
 					
 					
 					<table>
-					
+					<caption > </caption>
+					<th id = "titulo_foro" colspan=4>Foro de MAETS </th>
 						<tr>
+						
 						  <td id = "cabecera_foro">
-							<h4>Foro</h4>
-							<h4> Último mensaje...</h4>
-							<h4> ...en el tema</h4>
-							<h4> Temas creados</h4>
-						  </td>
+							<h4>Título</h4>
+							</td>
+							<td id = "cabecera_foro">
+							<h4> Creador del hilo</h4>
+							</td>
+							<td id = "cabecera_foro">
+							<h4> Respuestas al hilo</h4>
+							</td>
+							<td id = "cabecera_foro">
+							<h4> Última respuesta</h4>
+							</td>
+						  
 						</tr>
 						<div id = "cuerpo_foro">
 							<?php generarForo();?>

@@ -3,18 +3,18 @@
 #bienvenida h1{
 	font-size: 200%;
 }
-#juegos,#foros_importantes,#amigos_conectados, #capturas h4{
+#juegos,#foros_ultimos,#analisis_ultimos, #capturas_ultimas, h4{
 	color: white;
 	text-align: center;
 }
 
-#juegos,#foros_importantes,#amigos_conectados{
+#juegos,#foros_ultimos,#analisis_ultimos,#capturas_ultimas {
 	float: left;
 	margin-left: 120px;
 	margin-top: 35px;
 }
 
-#juegos p,#foros_importantes p,#amigos_conectados p{
+#juegos p,#foros_ultimos p,#analisis_ultimos p, #capturas_ultimas p{
 	color: black;
 	padding: 7px;
 	border-radius: 100px;
