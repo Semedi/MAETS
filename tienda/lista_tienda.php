@@ -28,7 +28,7 @@
 
 	    		require_once ('../include/vTienda.php');
 
-				generarLista($_GET['categoria']);
+				generarLista($_GET['categoria'], 'tienda');
 
 	    		?>
 

@@ -1,12 +1,13 @@
 <?php
 
-require_once (RAIZ_APP."/include/shopOp.php");
-
-function generarLista($tipo){
-
+function generarLista($tipo, $gen){
+	if($gen == 'index')
+		require_once ('/include/shopOp.php');
+	else if($gen == 'tienda')
+		require_once ('/../include/shopOp.php');
 	//llamar a getLista()
 
-		$res = getLista($tipo);
+		$res = getLista($tipo, $gen);
 
 			for($i=0; $i<sizeof($res)-1; $i++) {
 
@@ -24,8 +25,12 @@ function generarLista($tipo){
 
 }
 
-function generarArticulo($id) {
-	$res = getJuegoById($id);
+function generarArticulo($id, $gen) {
+	if($gen == 'index')
+		require_once ('/include/shopOp.php');
+	else if($gen == 'tienda')
+		require_once ('/../include/shopOp.php');
+	$res = getJuegoById($id, $gen);
 
 	echo "<div id='left-side'>";
 		echo "<h1 class='upper-bar-name'>" .$res['Titulo']. "</h1>";
@@ -63,8 +68,16 @@ function mostrarIdioma($idioma) {
 		echo $idioma;
 }
 
-function mostrarMasVendidos($num) {
-	$res = selectMasVendidos($num);
-	print_r($res);
+function mostrarMas($num, $column) {
+	require_once('/include/shopOp.php');
+	$res = seleccionarMas($num, $column);
+	foreach ($res as $aux) {
+		echo "<tr>";
+			echo "<td><a href=tienda/articulo-tienda.php?juego=" .$aux['Id']. ">" .$aux['Titulo']. "</a></td>";
+			echo "<td><a href=tienda/articulo-tienda.php?juego=" .$aux['Id']. ">" .$aux['Companyia']. "</a></td>";
+			echo "<td><a href=tienda/articulo-tienda.php?juego=" .$aux['Id']. ">" .$aux['Precio']. "</a></td>";
+		echo "</tr>";
+	}
 }
+
 ?>

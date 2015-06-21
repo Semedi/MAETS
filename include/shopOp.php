@@ -1,19 +1,24 @@
 <?php
 
-require_once (RAIZ_APP.'/include/shopBD.php');
-
-
-
-function getLista($tipo) {
-	return (selectGenero($tipo));
+function getLista($tipo, $gen) {
+	if($gen == 'index')
+		require_once ('/include/shopBD.php');
+	else if($gen == 'tienda')
+		require_once ('/../include/shopBD.php');
+	return (selectGenero($tipo, $gen));
 }
 
-function getJuegoById($id) {
-	return (selectJuegoById($id));
+function getJuegoById($id, $gen) {
+	if($gen == 'index')
+		require_once ('/include/shopBD.php');
+	else if($gen == 'tienda')
+		require_once ('/../include/shopBD.php');
+	return (selectJuegoById($id, $gen));
 }
 
-function seleccionarMasVendidos($num) {
-	return (selectMasVendidos($num));
+function seleccionarMas($num, $column) {
+	require_once ('/include/shopBD.php');
+	return (selectMas($num, $column));
 }
 
 ?>

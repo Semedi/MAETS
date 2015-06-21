@@ -15,7 +15,7 @@
 
 	require_once ('../include/vTienda.php');
 
-	generarArticulo($_GET['juego']);
+	generarArticulo($_GET['juego'], 'tienda');
 
 	require_once ('../static/mainBOT.php');
 ?>

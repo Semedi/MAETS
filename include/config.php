@@ -21,6 +21,7 @@ define('USER', RAIZ_APP.'/Usuario/PagPpalUser.php');
 define('IMAGENES', RAIZ_APP.'/images');
 define('COMUNIDAD', RAIZ_APP.'/community');
 define('TIENDACARPETA', RAIZ_APP.'/tienda');
+define('INCLUDECARPETA', RAIZ_APP.'/include');
 
 
 

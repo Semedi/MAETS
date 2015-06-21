@@ -1,9 +1,9 @@
 @charset "utf-8";
 
-#nombreColumna{
+td.nombreColumna{
 	font-size: 25px;
 	font-weight: bloth;
-	color: #00143D;
+	color: white;
 	text-shadow: 1px 1px #000000;
 	text-align: left;
 	background-color: #B2B2B2;

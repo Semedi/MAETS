@@ -1,8 +1,12 @@
 <?php
 
 
-require_once RAIZ_APP.'/include/config.php';
-function selectGenero($tipo){
+function selectGenero($tipo, $gen){
+
+	if($gen == 'index')
+		require_once ('/include/config.php');
+	else if($gen == 'tienda')
+		require_once ('/../include/config.php');
 
 	$connection=createConnection();
 
@@ -17,7 +21,13 @@ function selectGenero($tipo){
 	return($ret);
 }
 
-function selectJuegoById($id) {
+function selectJuegoById($id, $gen) {
+
+	if($gen == 'index')
+		require_once ('/include/config.php');
+	else if($gen == 'tienda')
+		require_once ('/../include/config.php');
+
 	$connection=createConnection();
 
 	$sql = "SELECT * FROM juego WHERE Id = '$id'";
@@ -26,6 +36,7 @@ function selectJuegoById($id) {
 
 	if($ret = $res->fetch_assoc()) {
 		closeConnection($connection);
+
 		return ($ret);
 	}
 
@@ -33,16 +44,18 @@ function selectJuegoById($id) {
 	return (NULL);
 }
 
-function selectMasVendidos($num) {
+function selectMas($num, $column) {
+	require_once('/include/config.php');
+
 	$connection=createConnection();
 
- 	$sql = "SELECT TOP " .$num. "Titulo, Companya, Precio ORDER BY Ventas Desc";
+ 	$sql = "SELECT Id, Titulo, Companyia, Precio FROM juego ORDER BY " .$column. " Desc LIMIT " .$num;
 
- 	$res = $connection->query($sql) or die ($connection->error). " en la linea".(_LINE_-1));
+ 	$res = $connection->query($sql) or die ($connection->error). " en la linea".(_LINE_-1);
 
-	while($res[] = $fecch_assoc());
+	while($ret[] = $res->fetch_assoc());
 
-	closeConectoin($connection);
+	closeConnection($connection);
 
 	return ($ret);
 
