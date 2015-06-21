@@ -40,7 +40,7 @@ function generarUsuario($user){
 		  echo "<div id = 'user_friends_header'>";
           echo "<img id='imagen_Avatar' src='../images/usuarios/".$res[0]['Imagen']."'>";
           echo "<div id = 'texto_perfil' >";
-          echo "<h2>".$user."</h2>";
+          echo "<h2 id='nickuser'>".$user."</h2>";
           echo "<img id = 'bandera_nacionalidad' src='../images/usuarios/SpainFlag.jpg'>";
           echo "</div>";
           echo "<div id = 'botonAniadir'>";
