@@ -61,7 +61,7 @@ function getNameOfGame($juego){
 
 function addGameToUser($juego, $user) {
 
-if($ret = $res->fetch_assoc()) {
+	if($ret = $res->fetch_assoc()) {
 		closeConnection($connection);
 		return ($ret);
 	}
@@ -84,8 +84,11 @@ if($ret = $res->fetch_assoc()) {
 		echo "Ya tienes este juego en tu biblioteca.";
 	}
 	else {
+		// Insertar en compras
 		$q = "INSERT INTO compras ('IDUsuario', 'IDJuego') VALUES ('$idUser', '$juego')";
 		$connection->query($q) or die($connection->error. " en la linea".(_LINE_-1));
+		// Ventas + 1
+		$q = ""
 		echo "Compra realizad con éxito.";
 	}
 
