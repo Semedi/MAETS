@@ -22,7 +22,7 @@ function Screenshot(){
 
 function getListaUsuarios($valor, $column, $like) {
 	
-	return (select($valor, $column, $like));
+	return (selectUser($valor, $column, $like));
 }
 
 
