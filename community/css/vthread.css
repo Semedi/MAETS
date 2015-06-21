@@ -63,10 +63,17 @@ float:left;
 
 
 #textoMensaje{
-
-padding: 20px;
-float: right;
-
-
+	padding: 20px;
+	float: right;
 }
 
+#botonThread {
+	margin-top: 15px;
+	width: 100px;
+	height: 50px;
+}
+
+#texto {
+	width: 700px;
+	height: 150px;
+}

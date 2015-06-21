@@ -138,4 +138,20 @@ require_once('shopBD.php');
 			}
 		}
 	}
+
+	function generarThreadAns($id) {
+		$thread = seleccionarThreadById($id);
+		$nombreForo = $thread['Titulo'];
+		// idHilo, idUsuario, titulo
+		echo "<div id='cajaText'>
+				<p id='titulo'><b>$nombreForo</b> </p>
+				<p><b>Contenido</b> </p>
+
+				<textarea  id='texto' name='texto' required='required'></textarea> 
+
+				<div id='botonThread'>
+					<button name='crearRespuesta' id='crearRespuesta'>Responder</button>
+				</div>
+			</div>";
+	}
 ?>
