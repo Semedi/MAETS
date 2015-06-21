@@ -8,14 +8,18 @@ require_once('usersBD.php');
 				foreach($hilos as $hilo)
 				{
 					$autor = findUserById($hilo['idusuario']);
+					//$ultimoMensaje = 
 					echo '<tr>';
-					echo '<td>';
-						echo '<div id =\'hilo\'>';
-							echo "<h5 class =\"titulo\">".$hilo['titulo']."</h5>";
-							echo "<p class=\"creador\">".$autor['nick']."</p>";
-							echo "<p class=\"num_mensajes\">5</p>";
-							echo "<p class=\"ult_mensaje\">".$hilo['ultimo_mensaje']."</p>";
-						echo "</div>";	
+					echo '<td id = "tema">';
+						//echo '<div id =\'hilo\'>';
+							echo "<h5>".$hilo['titulo']."</h5>";
+							//echo "<p class=\"creador\">".$autor['nick']."</p>";
+							//echo "<p>5</p>";
+							echo "<p id='ult_mens'>".$hilo['ultimo_mensaje']."</p>";
+							echo "<p id='en_tema'>".$hilo['ultimo_mensaje']."</p>";
+							echo "<p id='creados'>".$hilo['ultimo_mensaje']."</p>";
+							
+						//echo "</div>";	
 					echo "</td>";
 					echo "</tr>";	
 						
@@ -23,3 +27,5 @@ require_once('usersBD.php');
 	}
 
 ?>
+
+

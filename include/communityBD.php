@@ -5,7 +5,7 @@ function getForoBD()
 	{
 		$con = createConnection();
 		//$retorno = [];
-		$sql = "SELECT id, titulo, texto, fecha_creacion, ultimo_mensaje, idusuario ";
+		$sql = "SELECT id, titulo, texto, fecha_de_creacion, ultimo_mensaje, idusuario ";
 		$sql.= "FROM hilo";
 		$rs = $con->query($sql) or die ($con->error. "en la linea".(_LINE_-1));
 		//$rs = mysql_query($sql, $mysqli);
@@ -59,6 +59,23 @@ function getLastAnalisis(){
 	closeConnection($connection);
 
 	return($ret);
+}
+
+//AUN SIN ACABAR
+function getLastRespuesta($hiloID){
+	$connection = createConnection();
+
+	$sql = "SELECT mensaje FROM respuesta JOIN hilo WHERE hilo.id = respuesta.IDHilo AND hilo.id = '$hiloID' ORDER BY Fecha_de_creacion DESC limit 1"; 
+
+    $res = $connection->query($sql) or die ($connection->error. " en la linea". (_LINE_-1));
+
+	while($ret[] = $res->fetch_assoc());
+
+	closeConnection($connection);
+
+	return($ret);
+
+	
 }
 
 

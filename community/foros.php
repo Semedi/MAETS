@@ -40,7 +40,7 @@
 							<?php generarForo();?>
 						</div>
 
-						
+						<!--
 						<tr>
 						   <td id = "tema"> 
 							<h5>Normas y ayuda</h5>
@@ -49,6 +49,7 @@
 							<p id="creados">50</p>
 						   </td>
 						</tr>
+						
 						<tr>
 						   <td id = "tema"> 
 							<h5>Nuevo en MAETS</h5>
@@ -97,6 +98,8 @@
 							<p id="creados">14</p>
 						   </td>
 						</tr>
+						-->
+
 					</table>		
 	    	</div>
 

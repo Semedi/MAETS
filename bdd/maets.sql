@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 20-06-2015 a las 20:58:32
+-- Tiempo de generación: 21-06-2015 a las 03:47:35
 -- Versión del servidor: 5.6.21
 -- Versión de PHP: 5.6.3
 
@@ -142,14 +142,15 @@ CREATE TABLE IF NOT EXISTS `hilo` (
   `Fecha_de_creacion` date NOT NULL,
   `Ultimo_mensaje` date NOT NULL,
   `IdUsuario` int(10) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
 -- Volcado de datos para la tabla `hilo`
 --
 
 INSERT INTO `hilo` (`Id`, `Titulo`, `Texto`, `Fecha_de_creacion`, `Ultimo_mensaje`, `IdUsuario`) VALUES
-(1, 'Bienvenidos a GTA Online', 'Buenas tardes, creo este foro para ir añadiendo información sobre el progreso que voy consiguiendo en el GTA V, en el modo multijugador, espero que ayudeis con vuestros consejos!!', '2015-06-18', '0000-00-00', 6);
+(1, 'Bienvenidos a GTA Online', 'Buenas tardes, creo este foro para ir añadiendo información sobre el progreso que voy consiguiendo en el GTA V, en el modo multijugador, espero que ayudeis con vuestros consejos!!', '2015-06-18', '2015-06-19', 6),
+(3, 'Instalando Dishonored', 'Estoy teniendo problemas al instalar el juego, ¿Alguien me puede ayudar a arreglarlo?\r\nEl error que me da es 404 tu no sabes instalar juegos aqui.\r\n\r\nGracias de antemano', '2015-06-13', '0000-00-00', 13);
 
 -- --------------------------------------------------------
 
@@ -185,7 +186,7 @@ INSERT INTO `juego` (`Id`, `Titulo`, `Portada`, `Precio`, `Edad`, `Descripcion`,
 (5, 'Pillars of Eternity', 'PortadaPillarsOfEternity.png', 29.99, 18, 'Juego RPG ambientado en mundo de fantasia', 'Pillars of Eternity es un juego RPG ambientado en un mundo de fantasía, que trata de recuperar la esencia de grandes clásicos del género rolero como Planescape: Torment, Baldur’s Gate o Icewind Dale', 'Obsidian', 'Rol', 'Combate por turnos, Rol, Fantasia', '', 0, '2015-03-26'),
 (6, 'La Tierra Media: Sombras de Mordor', 'PortadaSombrasDeMordor.png', 34.99, 18, 'AVentura ambientada en el universo de fantasia del Señor de los Anillos', 'Aventura ambientada en el universo de fantasía de El Señor de los Anillos que nos pone en la piel de un misterioso aventurero conocido como Talion, decidido a alcanzar las sombrías tierras de Mordor.', 'Monolith', 'Aventura', 'Accion, Aventura, Tercera Persona, Golum, Fantasia, Señor de los Anillo, LotR', '', 0, '2014-09-30'),
 (7, 'Project Cars', 'PortadaProjectCars.png', 39.99, 3, 'Simulador de velocidad', 'Project Cars es un simulador de velocidad desarrollado por Slightly Mad Studios, responsables de Need for Speed: Shift. El juego cuenta con gran variedad de tipos de vehículos, climatología variable y un sistema de control que apuesta por el realismo.', 'Slightly Mad Studios', 'Carreras', 'Conduccion, GT, Formula 1, Carreras, Simulador', '', 0, '2015-05-07'),
-(8, 'ARK: Survival Evolved', 'PortadaArk.png', 19.99, 18, 'Survival en una isla con dinosaurios', 'Tras despertar en una misteriosa isla que da nombre al juego, el jugador deberá cazar, recolectar alimentos y recursos, investigar nuevas tecnologías o construir su propio refugio en una nueva aventura de supervivencia. ¿Su punto diferenciador? La caza y domesticación de dinosaurios leviatán y otras criaturas primitivas.', 'Studio Wildcard', '', 'Accion, Primera persona, aventura, fantasia, dinosaurios, ficcion, multijugador, online', '', 0, '0000-00-00'),
+(8, 'ARK: Survival Evolved', 'PortadaArk.png', 19.99, 18, 'Survival en una isla con dinosaurios', 'Tras despertar en una misteriosa isla que da nombre al juego, el jugador deberá cazar, recolectar alimentos y recursos, investigar nuevas tecnologías o construir su propio refugio en una nueva aventura de supervivencia. ¿Su punto diferenciador? La caza y domesticación de dinosaurios leviatán y otras criaturas primitivas.', 'Studio Wildcard', 'Acceso_Anticipado', 'Accion, Primera persona, aventura, fantasia, dinosaurios, ficcion, multijugador, online', '', 0, '0000-00-00'),
 (9, 'This War of Mine', 'PortadaThisWarOfMine.png', 14.99, 12, 'Sobrevive a las penurias de la guerra', 'Sobrevive a las penurias de la guerra en la piel de un civil, que por el día debe velar por la seguridad de su refugio, mientras que por las noches sale al exterior en busca de recursos para mantenerse con vida.', '11 bit Studios', 'Indie', 'Estrategia, Tiempo Real, Bélico, Guerra, Survival', '', 0, '2014-11-14'),
 (10, 'Fifa 15', 'PortadaFifa15.png', 54.99, 3, 'Videojuego de la serie FIFA', 'Videojuego de la serie FIFA para la temporada de fútbol 2014-2015. El título presenta licencias de más de 25 competiciones oficiales, y entre sus novedades destacan un comportamiento de los porteros mucho más reales, nuevas animaciones para los jugadores, cambios en el comportamiento del esférico y un ritmo de juego más rápido, entre otros tantos.', 'EA Sports', 'Deportes', 'Deportes, Futbol, 2015', '', 0, '2014-09-25');
 
@@ -354,7 +355,7 @@ MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
 -- AUTO_INCREMENT de la tabla `hilo`
 --
 ALTER TABLE `hilo`
-MODIFY `Id` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+MODIFY `Id` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT de la tabla `juego`
 --
