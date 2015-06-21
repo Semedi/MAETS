@@ -26,7 +26,7 @@ require_once('shopBD.php');
 							//echo "</div>";	
 						echo "</td>";
 						echo "</tr>";	
-						}
+					}
 				}			
 	}
 
@@ -59,37 +59,68 @@ require_once('shopBD.php');
 		}
 	}
 
+	function generarUltimosForos($num) {
+		$ultimosForos = seleccionarMasComunidad($num, 'Fecha_de_creacion', 'hilo');
+		
+		echo "<div id='foros_ultimos'>";
+			echo "<h4> Foros añadidos recientemente: </h4>";
+			foreach ($ultimosForos as $aux) {
+				if($aux != NULL)
+					echo "<p>" .$aux['Titulo']. "</p>";
+			}
+		echo "</div>";
+	}
 
-	/*<div id="cajaAnalisis">
+	function generarUltimosAnalisis($num) {
+		$ultimosAnalisis = seleccionarMasComunidad($num, 'Fecha', 'analisis');
+
+		echo "<div id='analisis_ultimos'>";
+			echo "<h4> Analisis añadidos recientemente: </h4>";
+			foreach ($ultimosAnalisis as $aux) {
+				if($aux != NULL) {
+					$nombreJuego = selectJuegoById($aux['IdJuego'], 'index')['Titulo'];
+					echo "<p>" .$nombreJuego. "</p>";
+				}
+			}
+		echo "</div>";
+	}
+
+	function generarUltimasCapturas($num) {
+		$ultimasCapturas = seleccionarMasComunidad($num, 'Fecha', 'capturas');
+
+		echo "<div id='capturas_ultimas'>";
+			echo "<h4> Capturas añadidas recientemente: </h4>";
+			foreach ($ultimasCapturas as $aux) {
+				if($aux != NULL) 
+					echo "<p>" .$aux['Nombre']. "</p>";
+			}
+		echo "</div>";
+	}
+
+	/*<div id="juegos">
+				<h4> Juegos jugados recientemente: </h4>	
+				<p>Rust</p> 
+				<p>Dragon Age Inquisition</p>  
+				<p>Half Life 3</p> 
+			</div>
+			<div id="foros_importantes">
+				<h4> Foros importantes: </h4>
+				<p>Foro oficial</p>  
+				<p>Noticias desde MAETS</p>  
+				<p>Rust foro</p> 
+			</div>
+			<div id="amigos_conectados">
+				<h4> Amigos conectados: </h4>
+				<p>Drulas</p>  
+				<p>Sheldon Cooper</p>  
+				<p>Leonard Nimoy</p> 
+			</div>
 			
-				<div id ="portada">
-					<a href="#"><img class="icono_A" src="../images/analisis/gta5A.jpg"></a>
-					<p>
-					<img class="icono_B" src="../images/LIKE.png">
-					Recomendado
-					</p>
-					
-				</div>
-			
-				<div id="contenidoAnalisis">
-				
-				
-				La espera ha valido la pena.
-				GTA V es el primer juego que he pre comprado y realmente siento que ha sido una gran compra.
-				Sin embargo me molesto un poco tener que esperar más de 1 hora y media para que se pueda instalar.
-				Dejando esto de lado, la optimización es realmente impresiónate, me he sorprendido demasiado con lo tan bien optimizado que esta, lo gráficos son excelentes y me atrevo a decirlo porque ni si siquiera tengo una tarjeta gráfica tan potente (tengo una GTX 650), es más tengo un amigo que tiene una GT 520 y le llega a los 60 fps, así que no queda más que decir.
-				Los invito a ver mi capturas de pantalla para que vean como se ve.
-				He estado jugando al modo multijugador, otro punto a favor, no tengo nada de lag, esto lo digo porque es uno de los pocos juegos que a mi amigo y a mí nos va sin lag y eso que él es de Argentina y yo soy de Perú, además es muy variado y tiene muchas actividades.
-				Me falta jugarlo aún más como para dar un buen análisis.
-				
-				
-				
-				</div>
-				
-				<div id="pieAnalisis">
-				<center><p>GTA V</p></center>						
-				</div>
-				
+			<div id="capturas">
+				<h4> Capturas del día: </h4>
+				<img src="images/screens/dbx1.jpg">
+				<img src="images/screens/gtav1.jpg">
+				<img src="images/screens/ac1.jpg">
 			</div>*/
 
 ?>
