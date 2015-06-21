@@ -102,7 +102,24 @@ function getNumberOfRespuestas($hiloID){
 	
 }
 
+// ret: idJuego, nombreJuego, idUsuario, nombreUsuario, recomendado, texto 
+function getAnalisis() {
+	$con = createConnection();
 
+	$sql = "SELECT * FROM analisis;";
+
+	$res = $con->query($sql) or die ($con->error. " en la linea ".(_LINE_-1));
+
+	while($analisis[] = $res->fetch_assoc());
+
+	for($i=0; $i<sizeof($analisis)-1; $i++) {
+		$ret[] = [$analisis[$i]['IdJuego'], selectJuegoById($analisis[$i]['IdJuego'],'tienda')['Titulo'], $analisis[$i]['IdUsuario'], findUserById($analisis[$i]['IdUsuario'])['nick'], $analisis[$i]['Recomendado'], $analisis[$i]['Texto']];
+	}
+
+	closeConnection($con);
+
+	return $ret;
+}
 
 
 

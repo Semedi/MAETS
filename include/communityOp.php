@@ -1,22 +1,17 @@
 <?php 
-include('communityBD.php');	
 
-	
-	
-	
-	
-function getForoOP()
-	{
-		$hilos = getForoBD();
+
+require('communityBD.php');	
+
+function getForoOP() {
+	$hilos = getForoBD();
 		
-		return ($hilos);
+	return ($hilos);
 		
-	}
+}
 
-
-
-
-
-
+function getAnalisisOP() {
+	return (getAnalisis());
+}
 
 ?>
