@@ -12,25 +12,22 @@ require_once('shopBD.php');
 						$autor = findUserById($hilo['idusuario']);
 						$lastResp = getLastRespuesta($hilo['id']);
 						$numResp = getNumberOfRespuestas($hilo['id']);
-						//$ultimoMensaje = 
 						echo '<tr>';
-						echo '<td id = "tema">';
-							//echo '<div id =\'hilo\'>';
-								echo "<h5>".$hilo['titulo']."</h5>";
-						echo "</td>";
-						echo '<td id = "tema">';
-								echo "<p id='creador'>".$autor['nick']."</p>";
-						echo "</td>";
-						echo '<td id = "tema">';
-								echo "<p id='creados'>".$numResp['COUNT(mensaje)']."</p>";
-						echo "</td>";
-						echo '<td id = "tema">';						
-								echo "<p id='ult_mens'>".$lastResp['fecha']."</p>";
-						echo "</td>";
-								//echo "<p id='ult_mens'>".$hilo['ultimo_mensaje']."</p>";
-								//echo "<p id='en_tema'>".$lastResp['mensaje']."</p>";
-							//echo "</div>";	
-	
+							echo '<td id = "tema">';
+								echo "<a href='vthread.php?foro=" .$hilo['id']. "'>";
+									echo "<h5>".$hilo['titulo']."</h5>";
+								echo "</a>";
+							echo "</td>";
+							echo '<td id = "tema">';
+									echo "<p id='creador'>".$autor['nick']."</p>";
+							echo "</td>";
+							echo '<td id = "tema">';
+									echo "<p id='creados'>".$numResp['COUNT(mensaje)']."</p>";
+							echo "</td>";
+							echo '<td id = "tema">';						
+									echo "<p id='ult_mens'>".$lastResp['fecha']."</p>";
+							echo "</td>";	
+
 						echo "</tr>";	
 					}
 				}			
@@ -116,7 +113,6 @@ require_once('shopBD.php');
 				echo "<h3>" .$nombreForo. "</h3>";
 			echo "<div id='textoMensaje'>";
 				echo $thread['Texto'];
-				echo "</div>";
 			echo "</div>";
 		echo "</div>";
 		// Respuestas
@@ -130,7 +126,6 @@ require_once('shopBD.php');
 							echo "<h3>" .$nombreForo. "</h3>";
 						echo "<div id='textoMensaje'>";
 							echo $aux['Mensaje'];
-						echo "</div>";
 					echo "</div>";
 				echo "</div>";
 			}

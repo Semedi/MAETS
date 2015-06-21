@@ -14,15 +14,15 @@
 
 <?php  require_once ('../static/mainTOP.php'); ?>	
 <?php  require_once ('../static/communityMenu.php'); ?>
-				<div id= "ContenidoCentral">
+				<div id="ContenidoCentral">
 						<center>
-							<div id="espacio"/>
+							<div id="espacio">
 							</div>
-								<?php
+									<?php
 									require_once ('../include/vComunidad.php');
-									generarThread(1);
+									generarThread($_GET['foro']);
 								?>
-						</center>		
+						</center>
 				</div>	
 			
 					
