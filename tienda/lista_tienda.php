@@ -28,7 +28,10 @@
 
 	    		require_once ('../include/vTienda.php');
 
-				generarLista($_GET['categoria'], 'tienda');
+	    		if($_GET['tipo'] == 'cat')
+					generarLista($_GET['categoria'], 'Tipo', false, 'tienda');
+				else if($_GET['tipo'] == 'bus')
+					generarLista($_POST['busqueda'], 'Titulo', true, 'tienda');
 
 	    		?>
 
@@ -39,4 +42,3 @@
 <?php  include ('../static/mainBOT.php'); ?>
 	
 </html>
-	

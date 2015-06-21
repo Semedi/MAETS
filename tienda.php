@@ -21,11 +21,12 @@
       </div>
 
       <div id = "right-menu">
-        <img id="imagenLupa" src="images/Lupa.png">
-        <p>
-          <input type="text" id="name" name="name" value="" placeholder="Buscar videojuego", required="required" autofocus="autofocus"/>  
-           </br>
-        </p>
+
+        <!--<a href="tienda/lista_tienda.php?tipo=bus&busqueda="><img id="imagenLupa" src="images/Lupa.png"></a>-->
+        <form method=post action="tienda/lista_tienda.php?tipo=bus">
+          <input id="imagenLupa" type="image" src="images/Lupa.png" alt="Submit Form"/>
+          <input type="text" id="busqueda" name="busqueda" value="" placeholder="Buscar videojuego", required="required" autofocus="autofocus"/>
+        </form>
 
      </div>
 

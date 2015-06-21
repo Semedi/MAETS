@@ -1,11 +1,13 @@
 <?php
 
-function getLista($tipo, $gen) {
+// gen -> desde donde se llama
+
+function getLista($tipo, $column, $like, $gen) {
 	if($gen == 'index')
 		require_once ('/include/shopBD.php');
 	else if($gen == 'tienda')
 		require_once ('/../include/shopBD.php');
-	return (selectGenero($tipo, $gen));
+	return (select($tipo, $column, $like, $gen));
 }
 
 function getJuegoById($id, $gen) {

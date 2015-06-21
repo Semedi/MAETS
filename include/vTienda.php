@@ -1,13 +1,15 @@
 <?php
 
-function generarLista($tipo, $gen){
+// gen -> desde dónde se llama
+
+function generarLista($tipo, $column, $like, $gen){
 	if($gen == 'index')
 		require_once ('/include/shopOp.php');
 	else if($gen == 'tienda')
 		require_once ('/../include/shopOp.php');
 	//llamar a getLista()
 
-		$res = getLista($tipo, $gen);
+		$res = getLista($tipo, $column, $like, $gen);
 
 			for($i=0; $i<sizeof($res)-1; $i++) {
 
