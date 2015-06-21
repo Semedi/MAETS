@@ -9,6 +9,7 @@
 
   <link rel="stylesheet" type="text/css" href="../css/main.css" />
   <link rel="stylesheet" type="text/css" href="../css/users.css" />
+  <link rel="stylesheet" type="text/css" href="../css/pcomunidad.css" />
    <script type="text/javascript" src="../js/jquery-1.9.1.min.js"> </script>
 
 <script type="text/javascript">
@@ -42,58 +43,19 @@
 
 
 <?php  include ('../static/mainTOP.php'); ?> 
+<?php  include ('../static/communityMenu.php'); ?>  
 
 
-	    	
+	    	  
         <div id ="friendsContent">
-            <div id = "user_friends_header">
-              <img id="imagen_Avatar" src='/MAETS/images/userProfile.png'>
-               <div id = "texto_perfil" >
-                  <h2>usuario</h2>
-                  <img id = "bandera_nacionalidad" src="../images/usuarios/SpainFlag.jpg">
-               </div>
-                <div id = "botonAniadir">
-                   <button type="button" id="addFriendButton">Añadir a mis amigos</button>
-                  </div>
-            </div>
-            <div id ="mainContent">
-              <h1> Perfil del usuario</h1>
 
-              <table>
-                <tr><h2> Resumen </h2></tr>
-                
+               <?php 
 
-                <tr>
-                    <td>Nick:</td>
-                    <td>?</td>
-                </tr>
-         
-                <tr>
-                    <td>Nombre: </a></td>
-                    <td>?</td>
-                </tr>
-         
-                 <tr>
-                    <td>Apellidos: </a></td>
-                    <td>?</td>
-                </tr>
+            require_once ('../include/vUsuario.php');
+            generarUsuario($_GET['user']);
 
-                        <tr>
-                    <td>Correo: </a></td>
-                    <td>?</td>
-                </tr>
-
-                         <tr>
-                    <td>?</td>
-                    <td>5</td>
-                </tr>
-
-                       <tr>
-                    <td>Puntos de logro: </a></td>
-                    <td>52</td>
-                </tr>
-              </table>
-            </div>
+            ?>
+       
            
         </div>
 	  

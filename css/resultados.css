@@ -37,6 +37,9 @@ border-radius: 200px 200px 200px 200px;
 -moz-border-radius: 200px 200px 200px 200px;
 -webkit-border-radius: 200px 200px 200px 200px;
 border: 0px solid #000000;
+
+height:70px;
+width: 70px;
 }
 
 p{
