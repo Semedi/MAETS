@@ -21,24 +21,24 @@ function getForoBD()
 
 function getLastCaptures(){
 	require_once ('../include/config.php');
-	$connection = createConnection();
+	$con = createConnection();
 
 	$sql = "SELECT Ruta FROM capturas ORDER BY fecha DESC LIMIT 4"; 
 
-    $res = $connection->query($sql) or die ($connection->error. " en la linea". (_LINE_-1));
-
-	while($ret[] = $res->fetch_assoc());
-
-	closeConnection($connection);
-
-	return($ret);
+    $rs = $con->query($sql) or die ($con->error. "en la linea".(_LINE_-1));
+		//$rs = mysql_query($sql, $mysqli);
+		if($rs != NULL)
+		{
+			while($row[] = $rs->fetch_assoc());
+			closeConnection($con);
+			return ($row);
+		}
 	
 }
 function nuevoHilo($contenido, $titulo, $idusuario)
 	{
 		require_once ('../include/config.php');
 		$hoy = getdate();
-		//$fecha = $hoy['year']."-".$hoy['mon']."-".$hoy['mday'];
 		$fecha = gmdate('Y-m-d');
 		$con = createConnection();
 		$sql = "INSERT INTO `hilo`(`Titulo`, `Texto`, `Fecha_de_creacion`, `IdUsuario`) VALUES ";
@@ -47,6 +47,17 @@ function nuevoHilo($contenido, $titulo, $idusuario)
 		closeConnection($con);
 	}
 
+function nuevoVideo($link, $titulo, $idusuario)
+{
+	require_once ('../include/config.php');
+	$hoy = getdate();
+	$fecha = gmdate('Y-m-d');
+	$con = createConnection();
+	$sql = "INSERT INTO `video`(`Titulo`, `Enlace`, `Fecha_de_creacion`, `IdUsuario`) VALUES ";
+	$sql.= "('".$titulo."', '".$contenido."', '".$fecha."', '".$idusuario."')";
+	$con->query($sql) or die ($con->error);
+	closeConnection($con);
+}
 
 
 function getLastAnalisis(){
