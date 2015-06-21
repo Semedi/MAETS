@@ -17,11 +17,12 @@
 		$( document ).ready(function() {
 			$('#crearRespuesta').click(
 			 	function(){
-					$.get("../AJAX/comunidadGestor.php",{ functionName:"newAnswer", nombreForo:$('#titulo'), texto:$('#texto').val() },function(data){
+					var elemento = "<?php Print($_GET['foro']); ?>";
+					$.get("../AJAX/comunidadGestor.php",{ functionName:"newAnswer", idHilo: elemento, texto:$('#texto').val() },function(data){
 			 			trimmed_data = $.trim(data);
 						
 								alert(data);
-				 				window.location.href = "foros.php";
+				 				window.location.reload();
 				 			
 				 			
 			 			}
@@ -42,8 +43,18 @@
 									<?php
 									require_once ('../include/vComunidad.php');
 									generarThread($_GET['foro']);
-									generarThreadAns($_GET['foro']);
-								?>
+									?>
+									
+								<div id="cajaText">
+									<br />
+									<textarea  id='texto' name='texto' required='required'></textarea> 
+									<div id='botonThread'>
+										<button name='crearRespuesta' id='crearRespuesta'>Responder</button>
+									</div>
+								</div>
+								
+								
+								
 						</center>
 				</div>	
 			

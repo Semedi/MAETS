@@ -11,11 +11,10 @@ function newTopic($contenido, $tit, $idusuario){
 }
 
 // añade una respuesta a un hilo en la base de datos
-function newAnswer($titulo, $idUsuario, $texto) {
+function newAnswer($idHilo, $texto, $idUsuario) {
 	require_once '../include/communityBD.php';
-	$idHilo = selectIdThread($titulo);
 	insertarRespuesta($idHilo, $idUsuario, $texto);
-	echo "Respuesta creada con éxito.";
+	echo "Respuesta creada con exito.";
 	return (true);
 }
 
@@ -60,12 +59,12 @@ switch ($functionName) {
 		}	
 	 break;
 	case "newAnswer":
-		if(!isset($_SESSION))
-			echo "NO puedes responder un tema sin haberte logeado primero.";
+		if(!$_SESSION)
+			echo "No puedes responder un tema sin haberte logeado primero.";
 		else if(empty(($_GET['texto'])))
 			echo "No puedes resopnder un tema sin contenido.";
 		else {
-			newAnswer($_GET["titulo"], $_SESSION["ID"], $_GET["texto"]);
+			newAnswer($_GET["idHilo"], $_GET["texto"], $_SESSION["ID"]);
 		}
     break;
 	case "newVideo":
@@ -86,6 +85,8 @@ switch ($functionName) {
 			 newVideo($_GET["link"], $_GET["title"], $_SESSION["ID"]); 
 		}	
     break;
+	
+    
 }
 
 
