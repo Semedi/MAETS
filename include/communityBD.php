@@ -177,5 +177,30 @@ function selectThreadAnsById($id) {
 	return $ret;
 }
 
+function selectIdThread($titulo) {
+	require_once ('../include/config.php');
+
+	$connection = createConnection();
+
+	$sql = "SELECT Id FROM hilo WHERE Titulo = '$titulo'";	
+
+	$res = $connection->query($sql) or die ($connection->error). " en la linea".(_LINE_-1);
+
+	while($ret[] = $res->fetch_assoc());
+
+	return $ret;	
+}
+
+function insertarRespuesta($idHilo, $idUsuario, $texto) {
+	require_once ('../include/config.php');
+	$hoy = getdate();
+	//$fecha = $hoy['year']."-".$hoy['mon']."-".$hoy['mday'];
+	$fecha = gmdate('Y-m-d');
+	$con = createConnection();
+	$sql = "INSERT INTO `respuestas`(`IDHilo`, `IDUsuario`, `Fecha`, `Mensaje`) VALUES ";
+	$sql.= "('".$idHilo."', '".$idUsuario."', '".$fecha."', '".$texto."')";
+	$con->query($sql) or die ($con->error);
+	closeConnection($con);
+}
 
 ?>
