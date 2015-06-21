@@ -18,4 +18,8 @@ function seleccionarMasComunidad($num, $column, $table){
 	return (selectMasComunidad($num, $column, $table));
 }
 
+function seleccionarThreadById($id) {
+	return (selectThreadById($id));
+}
+
 ?>

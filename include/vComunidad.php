@@ -103,32 +103,10 @@ require_once('shopBD.php');
 		echo "</div>";
 	}
 
-	/*<div id="juegos">
-				<h4> Juegos jugados recientemente: </h4>	
-				<p>Rust</p> 
-				<p>Dragon Age Inquisition</p>  
-				<p>Half Life 3</p> 
-			</div>
-			<div id="foros_importantes">
-				<h4> Foros importantes: </h4>
-				<p>Foro oficial</p>  
-				<p>Noticias desde MAETS</p>  
-				<p>Rust foro</p> 
-			</div>
-			<div id="amigos_conectados">
-				<h4> Amigos conectados: </h4>
-				<p>Drulas</p>  
-				<p>Sheldon Cooper</p>  
-				<p>Leonard Nimoy</p> 
-			</div>
-			
-			<div id="capturas">
-				<h4> Capturas del día: </h4>
-				<img src="images/screens/dbx1.jpg">
-				<img src="images/screens/gtav1.jpg">
-				<img src="images/screens/ac1.jpg">
-			</div>*/
-
+	function generarThread($id) {
+		$thread = seleccionarThreadById($id);
+		print_r($thread);
+	}
 ?>
 
 
