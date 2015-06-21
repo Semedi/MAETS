@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 21-06-2015 a las 20:43:39
+-- Tiempo de generación: 22-06-2015 a las 00:03:05
 -- Versión del servidor: 5.6.21
 -- Versión de PHP: 5.6.3
 
@@ -99,26 +99,25 @@ INSERT INTO `capturas` (`Id`, `IDUsuario`, `Nombre`, `Ruta`, `Fecha`) VALUES
 CREATE TABLE IF NOT EXISTS `compras` (
   `IDUsuario` int(10) NOT NULL,
   `IDJuego` int(10) NOT NULL,
-  `Fecha de compra` datetime NOT NULL,
-  `Precio` float NOT NULL
+  `Fecha_de_compra` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
 -- Volcado de datos para la tabla `compras`
 --
 
-INSERT INTO `compras` (`IDUsuario`, `IDJuego`, `Fecha de compra`, `Precio`) VALUES
-(6, 1, '2015-06-01 12:43:00', 49),
-(6, 4, '2015-03-16 15:18:27', 30),
-(6, 12, '2015-06-21 00:00:00', 10),
-(6, 13, '2015-06-21 00:00:00', 7),
-(6, 22, '2015-06-21 00:00:00', 45),
-(7, 3, '2015-06-21 00:00:00', 55),
-(7, 4, '2015-06-03 00:00:00', 0),
-(7, 9, '2015-06-21 00:00:00', 15),
-(13, 15, '2015-06-21 00:00:00', 5),
-(13, 18, '2015-06-21 00:00:00', 50),
-(13, 21, '2015-06-21 00:00:00', 13);
+INSERT INTO `compras` (`IDUsuario`, `IDJuego`, `Fecha_de_compra`) VALUES
+(6, 1, '2015-06-01 12:43:00'),
+(6, 4, '2015-03-16 15:18:27'),
+(6, 12, '2015-06-21 00:00:00'),
+(6, 13, '2015-06-21 00:00:00'),
+(6, 22, '2015-06-21 00:00:00'),
+(7, 3, '2015-06-21 00:00:00'),
+(7, 4, '2015-06-03 00:00:00'),
+(7, 9, '2015-06-21 00:00:00'),
+(13, 15, '2015-06-21 00:00:00'),
+(13, 18, '2015-06-21 00:00:00'),
+(13, 21, '2015-06-21 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -167,7 +166,7 @@ CREATE TABLE IF NOT EXISTS `hilo` (
   `Texto` longtext COLLATE utf8_bin NOT NULL,
   `Fecha_de_creacion` date NOT NULL,
   `IdUsuario` int(10) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
 -- Volcado de datos para la tabla `hilo`
@@ -176,7 +175,8 @@ CREATE TABLE IF NOT EXISTS `hilo` (
 INSERT INTO `hilo` (`Id`, `Titulo`, `Texto`, `Fecha_de_creacion`, `IdUsuario`) VALUES
 (1, 'Bienvenidos a GTA Online', 'Buenas tardes, creo este foro para ir añadiendo información sobre el progreso que voy consiguiendo en el GTA V, en el modo multijugador, espero que ayudeis con vuestros consejos!!', '2015-06-18', 6),
 (3, 'Instalando Dishonored', 'Estoy teniendo problemas al instalar el juego, ¿Alguien me puede ayudar a arreglarlo?\r\nEl error que me da es 404 tu no sabes instalar juegos aqui.\r\n\r\nGracias de antemano', '2015-06-13', 13),
-(5, 'Project cars es un simulador', 'Creo este tema para que deis vuestras configuraciones de pc para este juego, diciendo como jugáis y con que periféricos aprovecháis este pedazo de juego!  \r\n', '2015-06-07', 7);
+(5, 'Project cars es un simulador', 'Creo este tema para que deis vuestras configuraciones de pc para este juego, diciendo como jugáis y con que periféricos aprovecháis este pedazo de juego!  \r\n', '2015-06-07', 7),
+(6, 'Truquillos para Magicka2', 'Algun consejo que dar con Magicka 2? Los conceptos del juego son bastante simples pero llevarlos a la practica es complicado.\r\nCuales son los mejores hechizos? y con cuales los juntais para hacerlos mas potentes?', '2015-06-14', 6);
 
 -- --------------------------------------------------------
 
@@ -198,7 +198,7 @@ CREATE TABLE IF NOT EXISTS `juego` (
   `Idiomas` enum('Ingles','Espanyol','Ruso','Italiano','Chino','Japones','Frances','Portugues','Arabe') COLLATE utf8_bin NOT NULL,
   `Ventas` int(12) NOT NULL,
   `Fecha` date NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
 -- Volcado de datos para la tabla `juego`
@@ -226,7 +226,9 @@ INSERT INTO `juego` (`Id`, `Titulo`, `Portada`, `Precio`, `Edad`, `Descripcion`,
 (19, 'Farm Expert 2016', 'PortadaFarmExpert.jpg', 16.99, 12, 'Farm Expert 2016 traslada al jugador al campo', 'Farm Expert 2016 traslada al jugador al campo y le otorga el control total de una granja desde la comodidad de su casa.', 'Silden', 'Simuladores', 'Granja, vaca, toooooro, bichos, tractores, camiones, simulator', 'Espanyol', 0, '2015-06-19'),
 (20, 'Euro Truck Simulator 2', 'PortadaEuroTrack.jpg', 3.99, 3, 'Travel across Europe as king of the road', 'Travel across Europe as king of the road, a trucker who delivers important cargo across impressive distances! With dozens of cities to explore from the UK, Belgium, Germany, Italy, the Netherlands, Poland, and many more, your endurance, skill and speed will all be pushed to their limits.', 'SCS Software ', 'Simuladores', 'Conduccion, camiones, accion, muerte y destruccion, explosiones y bombas', 'Espanyol', 0, '2013-01-16'),
 (21, 'NBA 2K15', 'PortadaNBA2k15.jpg', 12.49, 12, 'Por fin esposible disfrutar de la NBA', 'Por primera vez en la historia de la franquicia, será posible disfrutar de la versión para PC de NBA 2K15 con todas las características de la nueva generación. NBA 2K, que ha sido nominado para más de 70 premios al mejor juego del año, es el simulador de baloncesto definitivo.', '2K', 'Deportes', 'deportes, NBA, baloncesto, 2015, PC, canasta, cahcha', 'Espanyol', 0, '2014-10-06'),
-(22, 'F1 2015', 'PortadaF12015.jpg', 44.99, 3, 'Juego de F1 temporada 2015', 'Compite como un campeón en F1 2015. Un nuevo espectacular motor gráfico y su estilo televisivo te pondrán en el centro de la acción.', 'Codemasters ', 'Carreras', 'Carreras, velocidad, F1, Fernando Alonso es un paquete este año, lentorro', 'Espanyol', 0, '2015-06-10');
+(22, 'F1 2015', 'PortadaF12015.jpg', 44.99, 3, 'Juego de F1 temporada 2015', 'Compite como un campeón en F1 2015. Un nuevo espectacular motor gráfico y su estilo televisivo te pondrán en el centro de la acción.', 'Codemasters ', 'Carreras', 'Carreras, velocidad, F1, Fernando Alonso es un paquete este año, lentorro', 'Espanyol', 0, '2015-06-10'),
+(23, 'Magicka 2', 'PortadaMagicka2.jpg', 29.99, 12, 'Los poderosos magos encapuchados vuelven a la carga', 'Los poderosos magos encapuchados de Paradox Interactive vuelven a la carga con esta divertida aventura de acción en la que, una vez más, tenemos a nuestro alcance ocho elementos mágicos para crear decenas de sortilegios con los que provocaremos el caos entre las filas enemigas. Esta secuela mantiene intacto el divertido multijugador cooperativo del original y su retante Modo Desafío, en el que hay que sobrevivir a peligrosas oleadas de monstruos.', 'Pieces Interactive', 'Accion', 'Magia, multijugador, magicka, capuchas, poderes, jugabilidad', 'Espanyol', 0, '2015-05-26'),
+(24, 'Dota 2', 'PortadaDota2.jpg', 0, 12, 'Segunda entrega de Defense of the Ancients', 'Segunda entrega de Defense of the Ancients, cuyo desarrollo surge de la colaboración de Valve con Ice Frog. Y la cual respetará los más de 100 héroes del original, junto con sus items y las distintas mejoras, dejando de lado el motor de Warcraft III y se apuesta por el Source de la propia Valve', 'Valve', 'Free_to_Play', 'Free to play, free, multijugador, MOBA, toston', 'Espanyol', 0, '2013-07-09');
 
 -- --------------------------------------------------------
 
@@ -241,7 +243,7 @@ CREATE TABLE IF NOT EXISTS `logro` (
   `Puntos` int(3) NOT NULL,
   `Tipo` enum('Bronce','Plata','Oro','Platino') CHARACTER SET utf16 COLLATE utf16_bin NOT NULL,
   `Imagen` varchar(150) COLLATE utf8_bin NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
 -- Volcado de datos para la tabla `logro`
@@ -269,7 +271,11 @@ INSERT INTO `logro` (`Id`, `JuegoID`, `Titulo`, `Puntos`, `Tipo`, `Imagen`) VALU
 (19, 5, 'Cinco mejoras de baluarte', 25, 'Bronce', 'logroPOE.png'),
 (20, 5, 'Encantador', 50, 'Plata', 'logroPOE.png'),
 (21, 5, 'Pacifismo relativo', 75, 'Oro', 'logroPOE.png'),
-(22, 5, 'Triple Corona', 100, 'Platino', 'logroPOE.png');
+(22, 5, 'Triple Corona', 100, 'Platino', 'logroPOE.png'),
+(23, 23, 'Respeta a tus mayores', 25, 'Bronce', 'logroMagicka2.jpg'),
+(24, 23, '¡Mi Botin!', 25, 'Bronce', 'logroMagicka2.jpg'),
+(25, 23, 'Reviveme, porfa...', 50, 'Plata', 'logroMagicka2.jpg'),
+(26, 23, 'Brujo', 75, 'Oro', 'logroMagicka2.jpg');
 
 -- --------------------------------------------------------
 
@@ -347,10 +353,10 @@ CREATE TABLE IF NOT EXISTS `videos` (
 --
 
 INSERT INTO `videos` (`Id`, `IDUsuario`, `Nombre`, `Enlace`, `Fecha`) VALUES
-(1, 6, 'Video de la portada', 'https://youtu.be/Ob91E5DXIdY', '2015-06-04 10:13:13'),
-(2, 7, 'Trailer 1 GTA V', 'https://youtu.be/SC66xH7s-0M', '2015-05-12 16:31:41'),
-(3, 13, 'Video Rust', 'https://youtu.be/dzWQ1gjPcM0', '2015-06-14 08:35:40'),
-(4, 6, 'Video Project-Cars', 'https://youtu.be/TE6Chu7bMpY', '2015-04-15 00:17:16');
+(1, 6, 'Video de la portada', 'https://www.youtube.com/embed/Ob91E5DXIdY', '2015-06-04 10:13:13'),
+(2, 7, 'Trailer 1 GTA V', 'https://www.youtube.com/embed/SC66xH7s-0M', '2015-05-12 16:31:41'),
+(3, 13, 'Video Rust', 'https://www.youtube.com/embed/dzWQ1gjPcM0', '2015-06-14 08:35:40'),
+(4, 6, 'Video Project-Cars', 'https://www.youtube.com/embed/TE6Chu7bMpY', '2015-04-15 00:17:16');
 
 --
 -- Índices para tablas volcadas
@@ -378,7 +384,7 @@ ALTER TABLE `capturas`
 -- Indices de la tabla `compras`
 --
 ALTER TABLE `compras`
- ADD PRIMARY KEY (`IDUsuario`,`IDJuego`,`Fecha de compra`);
+ ADD PRIMARY KEY (`IDUsuario`,`IDJuego`,`Fecha_de_compra`);
 
 --
 -- Indices de la tabla `consigue`
@@ -435,17 +441,17 @@ MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
 -- AUTO_INCREMENT de la tabla `hilo`
 --
 ALTER TABLE `hilo`
-MODIFY `Id` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
+MODIFY `Id` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT de la tabla `juego`
 --
 ALTER TABLE `juego`
-MODIFY `Id` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=23;
+MODIFY `Id` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=25;
 --
 -- AUTO_INCREMENT de la tabla `logro`
 --
 ALTER TABLE `logro`
-MODIFY `Id` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=23;
+MODIFY `Id` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=27;
 --
 -- AUTO_INCREMENT de la tabla `usuario`
 --
