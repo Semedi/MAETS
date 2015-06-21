@@ -14,26 +14,36 @@
 	text-align: left;
 	background-color: rgba(5,12,12,1);
 }
+#titulo_foro{
+	text-align: center;
+	font-size: 40px;
+	margin: 5px;
+	width: 150px;
+	color: #FFFFFF;
+	text-shadow: 1px 1px #000000;
+	background-color: rgba(60,86,102,1);
+}
 #cabecera_foro h4 {
-	float: left;
-	margin-left: 100px;
 	color: white;
+	text-align: center;
 }
 #tema p{
 	font-size: 80%;
 	margin-top: 35px;
 }
-#ult_mens, #tema h5 {
+#tema h5 {
 	float: left;
 	margin-left: 20px;
 }
+
 
 #en_tema{
 	float: left;
 	margin-left: 165px;
 }
-#creados{
-	margin-left: 870px;
+
+#creador, #creados, #ult_mens{
+	text-align: center;
 }
 
 #tema{
