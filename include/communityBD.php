@@ -5,8 +5,8 @@ function getForoBD()
 		require_once ('../include/config.php');
 		$con = createConnection();
 		$sql = "SELECT id, titulo, texto, fecha_de_creacion,  idusuario ";
-		$sql.= "FROM hilo";
-		$rs = $con->query($sql) or die ($con->error. "en la linea".(_LINE_-1));
+		$sql.= "FROM hilo ORDER BY fecha_de_creacion ASC";
+		$rs = $con->query($sql) or die ($con->error);
 		if($rs != NULL)
 		{
 			while($row[] = $rs->fetch_assoc());

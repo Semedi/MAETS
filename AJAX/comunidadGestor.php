@@ -85,6 +85,7 @@ switch ($functionName) {
 			 newVideo($_GET["link"], $_GET["title"], $_SESSION["ID"]); 
 		}	
     break;
+	case:"newAnalisis"
 	
     
 }
