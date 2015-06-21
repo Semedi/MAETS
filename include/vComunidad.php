@@ -131,4 +131,18 @@ require_once('shopBD.php');
 			}
 		}
 	}
+	
+	
+function cargarVideos()
+{
+	
+	$videos = getVideosOP();
+		foreach($videos as $video)
+		{
+			$autor = findUserById($video['idusuario']);
+			echo "<h5>".$video['nombre']."</h5>";
+			echo "<iframe width=\"840\" height=\"560\" src=\"".$video['enlace']."\" frameborder=\"0\" allowfullscreen></iframe>";
+			echo "<p>Video subido por ".$autor['nick']." con fecha ".$video['fecha']."</p> \n\n";
+		}
+}		
 ?>

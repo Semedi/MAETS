@@ -4,11 +4,9 @@ function getForoBD()
 	{
 		require_once ('../include/config.php');
 		$con = createConnection();
-		//$retorno = [];
 		$sql = "SELECT id, titulo, texto, fecha_de_creacion,  idusuario ";
 		$sql.= "FROM hilo";
 		$rs = $con->query($sql) or die ($con->error. "en la linea".(_LINE_-1));
-		//$rs = mysql_query($sql, $mysqli);
 		if($rs != NULL)
 		{
 			while($row[] = $rs->fetch_assoc());
@@ -16,7 +14,20 @@ function getForoBD()
 			return ($row);
 		}
 	}
-
+function getVideosBD()
+	{
+		require_once ('../include/config.php');
+		$con = createConnection();
+		$sql = "SELECT id, idusuario, nombre, enlace, fecha ";
+		$sql.= "FROM videos";
+		$rs = $con->query($sql) or die ($con->error);
+		if($rs != NULL)
+		{
+			while($row[] = $rs->fetch_assoc());
+			closeConnection($con);
+			return ($row);
+		}
+	}
 
 
 function getLastCaptures(){
@@ -52,8 +63,8 @@ function nuevoVideo($link, $titulo, $idusuario)
 	$hoy = getdate();
 	$fecha = gmdate('Y-m-d');
 	$con = createConnection();
-	$sql = "INSERT INTO `video`(`Titulo`, `Enlace`, `Fecha_de_creacion`, `IdUsuario`) VALUES ";
-	$sql.= "('".$titulo."', '".$contenido."', '".$fecha."', '".$idusuario."')";
+	$sql = "INSERT INTO `videos`(`IDUsuario`, `Nombre`, `Enlace`, `Fecha`) VALUES ";
+	$sql.= "('".$idusuario."', '".$titulo."', '".$link."', '".$fecha."')";
 	$con->query($sql) or die ($con->error);
 	closeConnection($con);
 }

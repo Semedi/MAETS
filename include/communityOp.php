@@ -4,10 +4,13 @@
 require('communityBD.php');	
 
 function getForoOP() {
-	$hilos = getForoBD();
-		
-	return ($hilos);
-		
+	$hilos = getForoBD();	
+	return ($hilos);		
+}
+
+function getVideosOP() {
+	$videos = getVideosBD();	
+	return ($videos);	
 }
 
 function getAnalisisOP() {

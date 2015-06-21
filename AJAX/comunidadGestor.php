@@ -20,7 +20,7 @@ function deleteForum(){
 function newVideo($link, $tit, $idusuario){
 	require_once '../include/communityBD.php';
 	nuevoVideo($link, $tit, $idusuario);
-	echo"Hilo nuevo creado con exito.";
+	echo"Video insertado con exito.";
 	return(true);
 }
 
