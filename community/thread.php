@@ -17,7 +17,7 @@
 		$( document ).ready(function() {
 			$('#crearTema').click(
 			 	function(){
-					$.get("../AJAX/comunidadGestor.php",{ functionName:"newTopic", content:$('#hilo').val(), title:$('#titulo').val() },function(data){
+					$.get("../AJAX/comunidadGestor.php",{ functionName:"newTopic", content:$('#hilo').val(), title:$('#titulo_hilo').val() },function(data){
 			 			trimmed_data = $.trim(data);
 						
 								alert(data);
@@ -41,7 +41,7 @@
 				
 				<p id="titulo"><b>Titulo</b> </p>
 				<p>
-  				<input type="text" id="titulo" name="titulo" value="" required="required" autofocus="autofocus" /> 
+  				<input type="text" id="titulo_hilo" name="titulo" value="" required="required" autofocus="autofocus" /> 
   				</p>
 				<p id="titulo"><b>Contenido</b> </p>
 				<textarea  id="hilo" name="hilo" required="required"></textarea> 

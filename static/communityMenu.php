@@ -1,24 +1,6 @@
 <script type="text/javascript" src="/MAETS/js/jquery-1.9.1.min.js"> </script>
 
-	<script type="text/javascript">
-
-	var ruta ="<?php echo RAIZ_APP."/Usuario/resultados.php" ?>";
-
-			$(document).keypress(function(e) {
-			   			if(e.which == 13) {
-			       			$.get("/MAETS/AJAX/usuariosGestor.php",{ functionName:"searchUser", userNick:$('#busqueda_user').val(),},function(data){
-					 			trimmed_data = $.trim(data);
-
-						 		window.location.href = ruta;
-						 	
-					 			}
-					 		);
-			   			}
-					});
-	</script>
-
-
-
+	
 
 <div id="menu"> 
 
@@ -39,11 +21,11 @@
 			
 <div id="cajaBusqueda">
 				<div id ="busqueda"> 
-					<!--<form action="demo_form.asp">    // Sirve para ejecutar la accion-->
+					<form method=post action=<?php echo USUARIOCARPETA."/resultados.php" ?>>
 					Búsqueda:
-					<input type  ="text" name ="busqueda_user" id ="busqueda_user" class="texto" name="lname"/>
+					<input type  ="text" name ="busqueda" id ="busqueda" class="texto" name="lname"/>
 					<!--keypress??-->
 					<!--<input type="submit" value="Submit">   //añade un boton-->
-					<!--</form>-->
+					</form>
 				</div>
 			</div>

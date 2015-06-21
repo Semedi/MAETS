@@ -1,0 +1,45 @@
+#usuario{
+	
+	height: 100px;
+	width: 200px;
+	border: 1px;
+	background-color: rgb(20,31,44);
+	margin-left: 100px;
+	margin-top: 5px;
+	margin-bottom:10px;
+
+	border-radius: 47px 47px 47px 47px;
+	-moz-border-radius: 47px 47px 47px 47px;
+	-webkit-border-radius: 47px 47px 47px 47px;
+	border: 1px solid #000000;
+	border-color: white;
+
+	color: white;
+
+	float: left;
+
+
+
+
+}
+
+#margen{
+
+	height: 200px;
+
+}
+
+.avatar{
+
+
+margin-top: 5px;
+border-radius: 200px 200px 200px 200px;
+-moz-border-radius: 200px 200px 200px 200px;
+-webkit-border-radius: 200px 200px 200px 200px;
+border: 0px solid #000000;
+}
+
+p{
+
+	margin-bot:10px;
+}

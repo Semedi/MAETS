@@ -87,6 +87,23 @@ function findUserById($iduser){
 	}
 }
 
+function findImageUserById($iduser){
+	$con = createConnection();
+	$sql = "SELECT Imagen FROM usuario WHERE id = '$iduser'";
+	$rs = $con->query($sql) or die  ($con->error. " en la linea ".(_LINE_-1));
+	if($rs != NULL)
+	{
+		if($row = $rs->fetch_assoc())
+		{
+			closeConnection($con);
+			return ($row);
+		}
+		else
+			closeConnection($con);
+			return (NULL);
+	}
+}
+
 
 function insertFriend($friendNick, $userId){
 	$connection = createConnection();
@@ -201,6 +218,29 @@ function puntosDeLogro(){
 	$id = $_SESSION['ID'];
 	$result = "SELECT SUM(Puntos) FROM logro JOIN consigue WHERE logro.ID = consigue.IDLogro and IDUsuario = $id";
 	$res = $connection->query($result) or die ($connection->error. " en la linea". (_LINE_-1));
+
+	while($ret[] = $res->fetch_assoc());
+
+	closeConnection($connection);
+
+	return($ret);
+}
+
+function selectUser($valor, $column, $like){
+
+	$connection=createConnection();
+
+	if($valor == "")
+		$sql = "SELECT * FROM usuario";
+
+	else {
+		if($like)
+			$sql = "SELECT * FROM usuario WHERE UPPER(" .$column. ") LIKE UPPER('%$valor%')	";
+		else
+			$sql = "SELECT * FROM usuario WHERE " .$column. " = '$valor'";
+	}
+
+	$res = $connection->query($sql) or die ($connection->error. " en la linea". (_LINE_-1));
 
 	while($ret[] = $res->fetch_assoc());
 

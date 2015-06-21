@@ -9,6 +9,8 @@
   
   	<link rel="stylesheet" type="text/css" href="../css/main.css" />
    <link rel="stylesheet" type="text/css" href="../css/pcomunidad.css" />
+   <link rel="stylesheet" type="text/css" href="../css/resultados.css" />
+
 </head>
 
 
@@ -19,7 +21,20 @@
  <div id ="mainContent">
       <h1> Resultados de la búsqueda</h1>
 
+		    		<div id="contenedor">
+		    			<div id="margen"/>
 
+			    		<?php 
+
+			    			require_once ('../include/vUsuario.php');
+			    			require_once('../include/usersOp.php');
+			    			require_once('../include/usersBD.php');	
+
+							generarListaBusqueda($_POST['busqueda'], 'Nick', true);
+
+			    		?>
+
+	    			</div>
         
         
 
