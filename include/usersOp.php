@@ -22,6 +22,8 @@ function Screenshot(){
 
 function getListaUsuarios($valor, $column, $like) {
 	
+		require_once('../include/usersBD.php');
+	
 	return (selectUser($valor, $column, $like));
 }
 
