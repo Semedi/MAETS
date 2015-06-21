@@ -17,7 +17,7 @@
 		$( document ).ready(function() {
 			$('#crearTema').click(
 			 	function(){
-					$.get("../AJAX/comunidadGestor.php",{ functionName:"newTopic",title:$('#titulo_hilo').val() },function(data){
+					$.get("../AJAX/comunidadGestor.php",{ functionName:"newTopic", content:$('#hilo').val(), title:$('#titulo_hilo').val() },function(data){
 			 			trimmed_data = $.trim(data);
 						
 								alert(data);
