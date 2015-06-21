@@ -21,7 +21,7 @@
 			
 <div id="cajaBusqueda">
 				<div id ="busqueda"> 
-					<form method=post action=<?php echo USUARIOCARPETA."/resultados.php" ?>>
+					<form method=post action=<?php echo USUARIOCARPETA.'/resultados.php'?>>
 					Búsqueda:
 					<input type  ="text" name ="busqueda" id ="busqueda" class="texto" name="lname"/>
 					<!--keypress??-->

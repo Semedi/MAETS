@@ -32,7 +32,14 @@ require_once('shopBD.php');
 					}
 				}			
 	}
-
+	function generarCapturas() {
+		$i = 0;
+		$Capturas = obtenerCapturas();
+		while ($i < sizeof($Capturas) - 1) {
+			echo '<img class="icono'.$i.'" src="../images/screens/'.$Capturas[$i]['Ruta'].'" \>';
+			$i++;
+		}
+	}
 	function generarAnalisis() {
 		// Traer todos los análisis de la base de datos.
 		// IdJuego, NombreJuego, IdUsuario, NombreUsuario, recomendado, texto, portada

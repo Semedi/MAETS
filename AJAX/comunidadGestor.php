@@ -24,6 +24,14 @@ function deleteForum(){
 	return(true);
 }
 
+// sube un video a la bdd
+function newVideo($link, $tit, $idusuario){
+	require_once '../include/communityBD.php';
+	nuevoVideo($link, $tit, $idusuario);
+	echo"Hilo nuevo creado con exito.";
+	return(true);
+}
+
 
 
 
@@ -31,7 +39,7 @@ $functionName = filter_input(INPUT_GET, 'functionName');
 
 switch ($functionName) {
     case "newTopic":
-		if (!isset($_SESSION))
+		if (!$_SESSION)
 		{
 			echo "No puedes iniciar un tema sin haberte logeado primero.";
 		}
@@ -47,7 +55,7 @@ switch ($functionName) {
 		{
 			 newTopic($_GET["content"], $_GET["title"], $_SESSION["ID"]); 
 		}	
-	    break;
+	 break;
 	case "newAnswer":
 		if(!isset($_SESSION))
 			echo "NO puedes responder nu tema sin haberte logeado primero.";
@@ -55,7 +63,25 @@ switch ($functionName) {
 			echo "No puedes resopnder un tema sin contenido.";
 		else
 			newAnswer($_GET["titulo"], $_SESSION["ID"], $_GET["texto"]);
-		break;
+    break;
+	case "newVideo":
+		if (!$_SESSION)
+		{
+			echo "No puedes subir un video sin haberte logeado primero.";
+		}
+		elseif (empty($_GET["title"]))
+		{
+			echo "No puedes subir un video sin titulo.";
+		}
+		elseif (empty($_GET["link"]))
+		{
+			echo "No puedes subir un video sin su enlace.";
+		}
+		else
+		{
+			 newVideo($_GET["link"], $_GET["title"], $_SESSION["ID"]); 
+		}	
+    break;
 }
 
 

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 21-06-2015 a las 05:10:29
+-- Tiempo de generación: 21-06-2015 a las 19:34:39
 -- Versión del servidor: 5.6.21
 -- Versión de PHP: 5.6.3
 
@@ -68,6 +68,7 @@ INSERT INTO `analisis` (`IdJuego`, `IdUsuario`, `Texto`, `Recomendado`, `Fecha`)
 
 CREATE TABLE IF NOT EXISTS `capturas` (
 `Id` int(11) NOT NULL,
+  `IDUsuario` int(5) NOT NULL,
   `Nombre` varchar(100) COLLATE utf8_bin NOT NULL,
   `Ruta` varchar(150) COLLATE utf8_bin NOT NULL,
   `Fecha` datetime NOT NULL
@@ -77,14 +78,14 @@ CREATE TABLE IF NOT EXISTS `capturas` (
 -- Volcado de datos para la tabla `capturas`
 --
 
-INSERT INTO `capturas` (`Id`, `Nombre`, `Ruta`, `Fecha`) VALUES
-(1, 'Captura de Assassins Creed 1', 'ac1.jpg', '2015-06-09 15:28:38'),
-(2, 'Captura de Dragon Ball', 'dbx1.jpg', '2015-06-10 00:21:16'),
-(3, 'Captura de GTA V', 'gta5p.jpg', '2015-06-01 18:45:42'),
-(4, 'Captura de GTA V 2', 'GTAV.jpg', '2015-05-20 09:25:47'),
-(5, 'Captura de GTA V 3', 'gtav1.jpg', '2015-06-14 03:25:35'),
-(6, 'Captura de Rust', 'rust.jpg', '2015-01-06 13:21:00'),
-(7, 'Captura de Project Cars', 'project-cars.jpg', '2015-03-24 10:26:17');
+INSERT INTO `capturas` (`Id`, `IDUsuario`, `Nombre`, `Ruta`, `Fecha`) VALUES
+(1, 6, 'Captura de Assassins Creed 1', 'ac1.jpg', '2015-06-09 15:28:38'),
+(2, 6, 'Captura de Dragon Ball', 'dbx1.jpg', '2015-06-10 00:21:16'),
+(3, 7, 'Captura de GTA V', 'gta5p.jpg', '2015-06-01 18:45:42'),
+(4, 7, 'Captura de GTA V 2', 'GTAV.jpg', '2015-05-20 09:25:47'),
+(5, 13, 'Captura de GTA V 3', 'gtav1.jpg', '2015-06-14 03:25:35'),
+(6, 13, 'Captura de Rust', 'rust.jpg', '2015-01-06 13:21:00'),
+(7, 14, 'Captura de Project Cars', 'project-cars.jpg', '2015-03-24 10:26:17');
 
 -- --------------------------------------------------------
 
@@ -172,7 +173,7 @@ CREATE TABLE IF NOT EXISTS `juego` (
   `Idiomas` enum('Ingles','Espanyol','Ruso','Italiano','Chino','Japones','Frances','Portugues','Arabe') COLLATE utf8_bin NOT NULL,
   `Ventas` int(12) NOT NULL,
   `Fecha` date NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
 -- Volcado de datos para la tabla `juego`
@@ -188,7 +189,19 @@ INSERT INTO `juego` (`Id`, `Titulo`, `Portada`, `Precio`, `Edad`, `Descripcion`,
 (7, 'Project Cars', 'PortadaProjectCars.png', 39.99, 3, 'Simulador de velocidad', 'Project Cars es un simulador de velocidad desarrollado por Slightly Mad Studios, responsables de Need for Speed: Shift. El juego cuenta con gran variedad de tipos de vehículos, climatología variable y un sistema de control que apuesta por el realismo.', 'Slightly Mad Studios', 'Carreras', 'Conduccion, GT, Formula 1, Carreras, Simulador', '', 0, '2015-05-07'),
 (8, 'ARK: Survival Evolved', 'PortadaArk.png', 19.99, 18, 'Survival en una isla con dinosaurios', 'Tras despertar en una misteriosa isla que da nombre al juego, el jugador deberá cazar, recolectar alimentos y recursos, investigar nuevas tecnologías o construir su propio refugio en una nueva aventura de supervivencia. ¿Su punto diferenciador? La caza y domesticación de dinosaurios leviatán y otras criaturas primitivas.', 'Studio Wildcard', 'Acceso_Anticipado', 'Accion, Primera persona, aventura, fantasia, dinosaurios, ficcion, multijugador, online', '', 0, '0000-00-00'),
 (9, 'This War of Mine', 'PortadaThisWarOfMine.png', 14.99, 12, 'Sobrevive a las penurias de la guerra', 'Sobrevive a las penurias de la guerra en la piel de un civil, que por el día debe velar por la seguridad de su refugio, mientras que por las noches sale al exterior en busca de recursos para mantenerse con vida.', '11 bit Studios', 'Indie', 'Estrategia, Tiempo Real, Bélico, Guerra, Survival', '', 0, '2014-11-14'),
-(10, 'Fifa 15', 'PortadaFifa15.png', 54.99, 3, 'Videojuego de la serie FIFA', 'Videojuego de la serie FIFA para la temporada de fútbol 2014-2015. El título presenta licencias de más de 25 competiciones oficiales, y entre sus novedades destacan un comportamiento de los porteros mucho más reales, nuevas animaciones para los jugadores, cambios en el comportamiento del esférico y un ritmo de juego más rápido, entre otros tantos.', 'EA Sports', 'Deportes', 'Deportes, Futbol, 2015', '', 0, '2014-09-25');
+(10, 'Fifa 15', 'PortadaFifa15.png', 54.99, 3, 'Videojuego de la serie FIFA', 'Videojuego de la serie FIFA para la temporada de fútbol 2014-2015. El título presenta licencias de más de 25 competiciones oficiales, y entre sus novedades destacan un comportamiento de los porteros mucho más reales, nuevas animaciones para los jugadores, cambios en el comportamiento del esférico y un ritmo de juego más rápido, entre otros tantos.', 'EA Sports', 'Deportes', 'Deportes, Futbol, 2015', 'Espanyol', 0, '2014-09-25'),
+(11, 'Rocksmith® 2014', 'PortadaRockSmith.jpg', 11.99, 3, 'Rocksmith 2014 Edition is the fastest way to learn guitar.', 'Rocksmith 2014 Edition is the fastest way to learn guitar. Plug in any real guitar or bass and join over 1 million people who have learned with the award-winning Rocksmith method. This official sequel is bigger, better, and faster than ever.', 'Ubisoft', 'Casual', 'Musica, guitarra, canciones, tocar, new songs, otros', 'Espanyol', 0, '2013-10-24'),
+(12, 'The Forest', 'PortadaTheForest.jpg', 10.4, 18, 'Survival en una isla perdida con salvajes', 'El único superviviente tras un accidente de avión deberá buscar la forma de mantenerse con vida, en este Survival-Horror de corte abierto ambientado en un misterio bosque poblado por una terrible sociedad de mutantes caníbales.', 'Endnight Games', 'Acceso_Anticipado', 'Terror, miedo, supervivencia, accion, lucha', 'Ingles', 0, '0000-00-00'),
+(13, 'Grim Fandango Remastered', 'PortadaGrimFandango.jpg', 7.49, 3, 'One of the most acclaimed adventure games of all time is now back, better than ever. ', 'Grim Fandango Remastered has the all the beautiful art and engaging story fans remember, but has also been remastered to look, sound, and control even better than the award-winning original release.', 'Double Fine Productions ', 'Casual', 'Casual, raro, feo, no me gusta, fantasmas, aventura', 'Espanyol', 0, '2015-01-15'),
+(14, 'Don''t Starve Together', 'PortadaDontStarve.jpg', 10.04, 12, 'Expansión independiente de Dont Starve', 'Expansión independiente de carácter multijugador que lleva la salvaje supervivencia de Don''t Starve al terreno de la cooperación en partidas públicas o privadas.', 'Klei Entertainment', 'Indie', 'Survival, multijugador, varios jugadores, internet, dont starve', 'Ingles', 0, '2015-06-21'),
+(15, 'Counter-Strike: Global Offensive', 'PortadaCounterStrike.jpg', 5.49, 18, 'Counter-Strike: Global Offensive (CS: GO)', 'Counter-Strike: Global Offensive (CS: GO) ampliará la jugabilidad de acción por equipos que fue pionera en su lanzamiento hace 12 años. CS: GO incluirá nuevos mapas, personajes y armas y ofrecerá versiones actualizadas del contenido clásico de CS (de_dust, etc.).', 'Valve', 'Multijugador_Masivo', 'Accion, disparos, multijugador, Counter Strike,', 'Ingles', 0, '2012-08-21'),
+(16, 'Total War: ATTILA', 'PortadaTotalWarA.jpg', 26.79, 18, 'Otra entrega mas de la saga Total War', 'Against a darkening background of famine, disease and war, a new power is rising in the great steppes of the East. With a million horsemen at his back, the ultimate warrior king approaches, and his sights are set on Rome… The next instalment in the multi award-winning PC series that combines turn-based ', 'Creative Assembly ', 'Estrategia', 'Estrategia, turnos, dominar el mundo, atila, roma, historia, batallas', 'Espanyol', 0, '2015-02-17'),
+(17, 'Total War™: ROME II Emperor Edition', 'PortadaTotalWarRII.jpg', 13.74, 18, 'Emperor Edition es la edición definitiva de ROME II', 'Acerca de Total War: ROME II - Emperor Edition Emperor Edition es la edición definitiva de ROME II, y contiene un sistema político mejorado, cadenas de construcción renovadas, batallas reequilibradas y mejores gráficos tanto en campaña como en batalla.', 'Creative Assembly ', 'Estrategia', 'Estrategia, turnos, dominar el mundo, roma, historia, batallas', 'Espanyol', 0, '2013-09-02'),
+(18, 'World of Warcraft: Warlords of Draenor', 'PortadaWOD.jpg', 49.99, 18, 'Expansión del famoso juego de WoW', 'Tras sufrir una derrota frente a la Alianza, las fuerzas de la Horda preparan sus defensas en un nuevo territorio, el mundo de Draenor, en el que será vital dominar el arte de construir y gestionar grandes ciudadelas. Aparte de un lavado de cara a nivel gráfico, esta expansión de World of Warcraft también permite alcanzar el nivel 100 de habilidad.', 'Blizzard', 'Multijugador_Masivo', 'Wow, multijugador, 40 millones de jugadores, online, pvp, pve, mazmorras, raids', 'Espanyol', 0, '2014-11-13'),
+(19, 'Farm Expert 2016', 'PortadaFarmExpert.jpg', 16.99, 12, 'Farm Expert 2016 traslada al jugador al campo', 'Farm Expert 2016 traslada al jugador al campo y le otorga el control total de una granja desde la comodidad de su casa.', 'Silden', 'Simuladores', 'Granja, vaca, toooooro, bichos, tractores, camiones, simulator', 'Espanyol', 0, '2015-06-19'),
+(20, 'Euro Truck Simulator 2', 'PortadaEuroTrack.jpg', 3.99, 3, 'Travel across Europe as king of the road', 'Travel across Europe as king of the road, a trucker who delivers important cargo across impressive distances! With dozens of cities to explore from the UK, Belgium, Germany, Italy, the Netherlands, Poland, and many more, your endurance, skill and speed will all be pushed to their limits.', 'SCS Software ', 'Simuladores', 'Conduccion, camiones, accion, muerte y destruccion, explosiones y bombas', 'Espanyol', 0, '2013-01-16'),
+(21, 'NBA 2K15', 'PortadaNBA2k15.jpg', 12.49, 12, 'Por fin esposible disfrutar de la NBA', 'Por primera vez en la historia de la franquicia, será posible disfrutar de la versión para PC de NBA 2K15 con todas las características de la nueva generación. NBA 2K, que ha sido nominado para más de 70 premios al mejor juego del año, es el simulador de baloncesto definitivo.', '2K', 'Deportes', 'deportes, NBA, baloncesto, 2015, PC, canasta, cahcha', 'Espanyol', 0, '2014-10-06'),
+(22, 'F1 2015', 'PortadaF12015.jpg', 44.99, 3, 'Juego de F1 temporada 2015', 'Compite como un campeón en F1 2015. Un nuevo espectacular motor gráfico y su estilo televisivo te pondrán en el centro de la acción.', 'Codemasters ', 'Carreras', 'Carreras, velocidad, F1, Fernando Alonso es un paquete este año, lentorro', 'Espanyol', 0, '2015-06-10');
 
 -- --------------------------------------------------------
 
@@ -266,19 +279,44 @@ CREATE TABLE IF NOT EXISTS `usuario` (
   `Codigo Postal` int(7) NOT NULL,
   `Puntuacion` int(7) NOT NULL,
   `Rol` enum('Usuario Registrado','Administrador','Desarrollador','Gestor-Tienda','Gestor-Comunidad','') COLLATE utf8_bin NOT NULL,
-  `Imagen` varchar(150) COLLATE utf8_bin NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Tabla de información del usuario';
+  `Imagen` varchar(150) COLLATE utf8_bin NOT NULL,
+  `Companyia` varchar(150) COLLATE utf8_bin NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Tabla de información del usuario';
 
 --
 -- Volcado de datos para la tabla `usuario`
 --
 
-INSERT INTO `usuario` (`Id`, `Nick`, `Contrasenia`, `Nombre`, `Apellidos`, `Correo`, `Fecha de Nacimiento`, `Pais`, `Ciudad`, `Direccion`, `Codigo Postal`, `Puntuacion`, `Rol`, `Imagen`) VALUES
-(6, 'Drulas', '$2y$10$idews1ZgezwJur/oOqb26uBHaLdC2kNFiVy.iK2iCR6rAvDzzG59q', 'Javier', 'Drulas', 'duruleto@drulas.com', '2001-03-20', 'Drulon', 'Drulopia', 'Avenida', 28033, 0, 'Usuario Registrado', 'usuario.jpg'),
-(7, 'Javi', '$2y$10$mgBUFmgP3GIMlR.03tWeLeD141mPVKSHwk/s3OQ2W3ZORRdezUZbK', 'Javi', 'Druet Honrubia', 'javi@hotmail.com', '1993-03-20', 'España', 'Madrid', 'Avenida de ', 28033, 0, 'Usuario Registrado', 'misterT.jpg'),
-(13, 'Prueba', '$2y$10$.HsV3pKt63NAB4NApF0PL.rU3gOmBBfXgu.jY1j/ClbC9kCNokklG', '', '', 'prueba', '0000-00-00', '', '', '', 0, 0, 'Usuario Registrado', 'prueba.png'),
-(14, 'Usuario1', '$2y$10$bd/LlAjMkOy2aYOyb4ApRe2xYA0sFOPd5kcvNJWR54TPFA9MtIRYC', '', '', 'usuario1@user.com', '0000-00-00', '', '', '', 0, 0, 'Usuario Registrado', 'usuario.jpg'),
-(15, 'Admin', '$2y$10$UiwAJxd89sfcl5WW/6KHNOh/vYcSjLCupWxI13Y1Dc9aksEZhC5Tu', 'Admin', 'Admin admin', 'admin@admin.es', '0000-00-00', 'Admin', 'Admin', 'Admin', 28033, 0, 'Administrador', 'usuario.jpg');
+INSERT INTO `usuario` (`Id`, `Nick`, `Contrasenia`, `Nombre`, `Apellidos`, `Correo`, `Fecha de Nacimiento`, `Pais`, `Ciudad`, `Direccion`, `Codigo Postal`, `Puntuacion`, `Rol`, `Imagen`, `Companyia`) VALUES
+(6, 'Drulas', '$2y$10$idews1ZgezwJur/oOqb26uBHaLdC2kNFiVy.iK2iCR6rAvDzzG59q', 'Javier', 'Drulas', 'duruleto@drulas.com', '2001-03-20', 'Drulon', 'Drulopia', 'Avenida', 28033, 0, 'Usuario Registrado', 'usuario.jpg', ''),
+(7, 'Javi', '$2y$10$mgBUFmgP3GIMlR.03tWeLeD141mPVKSHwk/s3OQ2W3ZORRdezUZbK', 'Javi', 'Druet Honrubia', 'javi@hotmail.com', '1993-03-20', 'España', 'Madrid', 'Avenida de ', 28033, 0, 'Usuario Registrado', 'misterT.jpg', ''),
+(13, 'Prueba', '$2y$10$.HsV3pKt63NAB4NApF0PL.rU3gOmBBfXgu.jY1j/ClbC9kCNokklG', '', '', 'prueba', '0000-00-00', '', '', '', 0, 0, 'Usuario Registrado', 'prueba.png', ''),
+(14, 'Usuario1', '$2y$10$bd/LlAjMkOy2aYOyb4ApRe2xYA0sFOPd5kcvNJWR54TPFA9MtIRYC', '', '', 'usuario1@user.com', '0000-00-00', '', '', '', 0, 0, 'Usuario Registrado', 'usuario.jpg', ''),
+(15, 'Admin', '$2y$10$UiwAJxd89sfcl5WW/6KHNOh/vYcSjLCupWxI13Y1Dc9aksEZhC5Tu', 'Admin', 'Admin admin', 'admin@admin.es', '0000-00-00', 'Admin', 'Admin', 'Admin', 28033, 0, 'Administrador', 'usuario.jpg', '');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `videos`
+--
+
+CREATE TABLE IF NOT EXISTS `videos` (
+`Id` int(11) NOT NULL,
+  `IDUsuario` int(5) NOT NULL,
+  `Nombre` varchar(100) COLLATE utf8_bin NOT NULL,
+  `Enlace` varchar(150) COLLATE utf8_bin NOT NULL,
+  `Fecha` datetime NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- Volcado de datos para la tabla `videos`
+--
+
+INSERT INTO `videos` (`Id`, `IDUsuario`, `Nombre`, `Enlace`, `Fecha`) VALUES
+(1, 6, 'Video de la portada', 'https://youtu.be/Ob91E5DXIdY', '2015-06-04 10:13:13'),
+(2, 7, 'Trailer 1 GTA V', 'https://youtu.be/SC66xH7s-0M', '2015-05-12 16:31:41'),
+(3, 13, 'Video Rust', 'https://youtu.be/dzWQ1gjPcM0', '2015-06-14 08:35:40'),
+(4, 6, 'Video Project-Cars', 'https://youtu.be/TE6Chu7bMpY', '2015-04-15 00:17:16');
 
 --
 -- Índices para tablas volcadas
@@ -345,6 +383,12 @@ ALTER TABLE `usuario`
  ADD PRIMARY KEY (`Id`), ADD UNIQUE KEY `Nick` (`Nick`);
 
 --
+-- Indices de la tabla `videos`
+--
+ALTER TABLE `videos`
+ ADD PRIMARY KEY (`Id`);
+
+--
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
@@ -362,7 +406,7 @@ MODIFY `Id` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
 -- AUTO_INCREMENT de la tabla `juego`
 --
 ALTER TABLE `juego`
-MODIFY `Id` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=11;
+MODIFY `Id` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=23;
 --
 -- AUTO_INCREMENT de la tabla `logro`
 --
@@ -372,7 +416,12 @@ MODIFY `Id` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=13;
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-MODIFY `Id` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=16;
+MODIFY `Id` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=17;
+--
+-- AUTO_INCREMENT de la tabla `videos`
+--
+ALTER TABLE `videos`
+MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
