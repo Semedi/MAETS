@@ -45,8 +45,8 @@ function newUser($user, $pass, $mail){
 			$salt = strtr($salt, array('+' => '.')); 
 			$hash = crypt($passSal, '$2y$10$' . $salt);
 
-			$q = "INSERT INTO `usuario` (`Id`, `Nick`, `Contrasenia`, `Nombre`, `Apellidos`, `Correo`, `Fecha de Nacimiento`, `Pais`, `Ciudad`, `Direccion`, `Codigo Postal`, `Puntuacion`, `Rol`, `Imagen`)
-				VALUES (NULL, '$user' , '$hash', '', '', '$mail', '0000-00-00', '', '', '', 00000, 0 , 'Usuario Registrado', 'usuario.jpg')";
+			$q = "INSERT INTO `usuario` (`Id`, `Nick`, `Contrasenia`, `Nombre`, `Apellidos`, `Correo`, `Fecha de Nacimiento`, `Pais`, `Ciudad`, `Direccion`, `Codigo Postal`, `Puntuacion`, `Rol`, `Imagen` , `Companyia`)
+				VALUES (NULL, '$user' , '$hash', '', '', '$mail', '0000-00-00', '', '', '', 00000, 0 , 'Usuario Registrado', 'usuario.jpg', '')";
 			$connection->query($q) or die($connection->error. " en la linea".(_LINE_-1));
 		}
 
