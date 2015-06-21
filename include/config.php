@@ -20,6 +20,7 @@ define('USER', RAIZ_APP.'/Usuario/PagPpalUser.php');
 //carpetas
 define('IMAGENES', RAIZ_APP.'/images');
 define('COMUNIDAD', RAIZ_APP.'/community');
+define('USUARIOCARPETA', RAIZ_APP.'/Usuario');
 define('TIENDACARPETA', RAIZ_APP.'/tienda');
 define('INCLUDECARPETA', RAIZ_APP.'/include');
 
