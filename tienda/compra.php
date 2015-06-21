@@ -14,8 +14,8 @@
 		$( document ).ready(function() {
 			$('#comprar').click(
 			 	function(){
-
-					$.get("../AJAX/juegosGestor.php",{ functionName:"addGameToUser", juego:$($_GET['juego']).val(), usuario:$($_SESSION["Nick"]).val() },function(data){
+			 		var elemento = "<?php Print($_GET['juego']);?>"
+					$.get("../AJAX/juegosGestor.php",{ functionName:"addGameToUser", juego:$($_GET['juego']).val()},function(data){
 			 			trimmed_data = $.trim(data);
 						
 								alert(data);

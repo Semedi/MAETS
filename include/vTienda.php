@@ -2,8 +2,16 @@
 
 // gen -> desde dónde se llama
 
-function generarTabla($Companyia) {
+function generarTabla($idUser) {
 	require_once ('/../include/shopOp.php');
+	require_once ('/../include/usersBD.php');
+
+	$user = selectUserById($idUser);
+
+	if($user['Rol'] == 'Administrador')
+		$Companyia = '';
+	else
+		$Companyia = $user['Companyia'];		
 
 	$res = getLista($Companyia, 'Companyia', false, 'tienda');
 

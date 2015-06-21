@@ -36,7 +36,7 @@ require_once('shopBD.php');
 		$i = 0;
 		$Capturas = obtenerCapturas();
 		while ($i < sizeof($Capturas) - 1) {
-			echo '<img class="icono'.$i.'" src="../images/screens/'.$Capturas[$i]['Ruta'].'" \>';
+			echo '<img class="icono" src="../images/screens/'.$Capturas[$i]['Ruta'].'" \>';
 			$i++;
 		}
 	}
@@ -76,7 +76,7 @@ require_once('shopBD.php');
 			echo "<h4> Foros añadidos recientemente: </h4>";
 			foreach ($ultimosForos as $aux) {
 				if($aux != NULL)
-					echo "<p>" .$aux['Titulo']. "</p>";
+					echo "<a href='community/vthread.php?foro=" .$aux['Id']. "'><p>" .$aux['Titulo']. "</p></a>";
 			}
 		echo "</div>";
 	}
@@ -89,7 +89,7 @@ require_once('shopBD.php');
 			foreach ($ultimosAnalisis as $aux) {
 				if($aux != NULL) {
 					$nombreJuego = selectJuegoById($aux['IdJuego'], 'index')['Titulo'];
-					echo "<p>" .$nombreJuego. "</p>";
+					echo "<a href='community/analysis.php'><p>" .$nombreJuego. "</p></a>";
 				}
 			}
 		echo "</div>";
@@ -102,7 +102,7 @@ require_once('shopBD.php');
 			echo "<h4> Capturas añadidas recientemente: </h4>";
 			foreach ($ultimasCapturas as $aux) {
 				if($aux != NULL) 
-					echo "<p>" .$aux['Nombre']. "</p>";
+					echo "<a href='community/capturas.php'><p>" .$aux['Nombre']. "</p></a>";
 			}
 		echo "</div>";
 	}
@@ -143,14 +143,15 @@ require_once('shopBD.php');
 	
 function cargarVideos()
 {
-	
 	$videos = getVideosOP();
-		foreach($videos as $video)
-		{
-			$autor = findUserById($video['idusuario']);
-			echo "<h5>".$video['nombre']."</h5>";
-			echo "<iframe width=\"840\" height=\"560\" src=\"".$video['enlace']."\" frameborder=\"0\" allowfullscreen></iframe>";
-			echo "<p>Video subido por ".$autor['nick']." con fecha ".$video['fecha']."</p> \n\n";
+
+		foreach($videos as $video) {
+			if($video != NULL) {
+				$autor = findUserById($video['idusuario']);
+				echo "<h5>".$video['nombre']."</h5>";
+				echo "<iframe src='" .$video['enlace']. "' allowfullscreen></iframe>";
+				echo "<p>Video subido por ".$autor['nick']." con fecha ".$video['fecha']."</p> \n\n";
+			}
 		}
 }		
 

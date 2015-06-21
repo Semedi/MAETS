@@ -49,7 +49,7 @@
       <div id = "modificarAvatar">
           <h1> Modifica tu avatar</h1>
             <div>
-                <img id='imagen_Avatar'  src='/MAETS/images/userProfile.png'/>
+                <img id='imagen_Avatar'  src=<?php echo "'".IMAGENES."/usuarios/".$_SESSION["IMG"]."'" ?>/>
             </div>
             <div id= "updateInfoButton">
                <button type="button" id="updateButton2">Modificar</button>

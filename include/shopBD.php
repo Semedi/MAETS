@@ -70,7 +70,23 @@ function selectMas($num, $column) {
 
 }
 
+function insertGame($titulo, $precio, $edad, $etiquetas, $descripcion, $descripcionLarga, $tipoJuego, $idiomas, $portada) {
+	require_once('../include/config.php');
 
+	$connection=createConnection();
 
+	$sql = "SELECT * FROM juego WHERE Titulo = '$titulo'";
+	$result = $connection->query($result) or die ($connecion->error. " en la linea".(_LINE_-1));
+
+	if($row = $result->fetch_assoc())
+		echo "El juego ya existe.";
+	else {
+		$hoy = gmdate('Y-m-d');
+		$sql = "INSERT INTO 'juego' ('Id', 'Titulo', 'Portada', 'Precio', 'Edad', 'Descripcion', 'DescipcionLarga', 'Companyia', 'Tipo', 'Etiquetas', 'Idiomas', 'Ventas', 'Fecha')
+				VALUES (NULL, '$titulo', '$portada', '$precio', '$edad', '$descipcion', '$descripcionLarga', '$tipoJuego', '$idiomas', '$etiquetas', '0', '$hoy'";
+		$connection->query($sql) or die ($connecion->error. " en la linea".(_LINE_-1));
+	}	
+	closeConnection($connection);
+}
 
 ?>

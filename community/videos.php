@@ -17,17 +17,11 @@
 <?php  include ('../static/communityMenu.php'); ?>
 <?php  include ('../include/vComunidad.php'); ?>	
 				
-			<button name="newVideo" class="nuevoVideo" onclick="location.href ='insertarVideo.php';">Insertar video</button>
+			<div id="boton">
+				<button name="newVideo" class="nuevoVideo" onclick="location.href ='insertarVideo.php';">Insertar video</button>
+			</div>
 			<div id="videos">
 				<?php cargarVideos(); ?>
-				<!--
-				<p class="GTA"> GTA V: Trailer</p>
-				<iframe width="840" height="560" src="https://www.youtube.com/embed/SC66xH7s-0M" frameborder="0" allowfullscreen></iframe>
-				<p> RUST: Trailer</p>
-				<iframe width="840" height="560" src="https://www.youtube.com/embed/dzWQ1gjPcM0" frameborder="0" allowfullscreen></iframe>
-				<p> PROJECT CARS: Trailer</p>
-				<iframe width="840" height="560" src="https://www.youtube.com/embed/TE6Chu7bMpY" frameborder="0" allowfullscreen></iframe>
-				-->
 			</div>
 	    	
 <?php  include ('../static/mainBOT.php'); ?>	
