@@ -105,8 +105,35 @@ require_once('shopBD.php');
 
 	function generarThread($id) {
 		$thread = seleccionarThreadById($id);
-		print_r($thread);
+		$ans = seleccionarThreadAnsById($id);
+		$usuario = findUserById($thread['IdUsuario']);
+		$imagen = findImageUserById($thread['IdUsuario']);
+		$nombreForo = $thread['Titulo'];
+		// Primer hilo.
+		echo "<div id='cajaText'>";
+			echo "<img class='avatar' src='../images/usuarios/" .$imagen['Imagen']. "'>";
+			echo "<div id='info'>" .$usuario['nick']. "</div>";
+				echo "<h3>" .$nombreForo. "</h3>";
+			echo "<div id='textoMensaje'>";
+				echo $thread['Texto'];
+				echo "</div>";
+			echo "</div>";
+		echo "</div>";
+		// Respuestas
+		foreach ($ans as $aux) {
+			if($aux != NULL) {
+				$usuario = findUserById($aux['IDUsuario']);
+				$imagen = findImageUserById($aux['IDUsuario']);
+				echo "<div id='cajaText'>";
+					echo "<img class='avatar' src='../images/usuarios/" .$imagen['Imagen']. "'>";
+						echo "<div id='info'>" .$usuario['nick']. "</div>";
+							echo "<h3>" .$nombreForo. "</h3>";
+						echo "<div id='textoMensaje'>";
+							echo $aux['Mensaje'];
+						echo "</div>";
+					echo "</div>";
+				echo "</div>";
+			}
+		}
 	}
 ?>
-
-

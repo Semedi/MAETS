@@ -154,23 +154,27 @@ function selectThreadById($id) {
 
 	$res = $connection->query($sql) or die ($connection->error). " en la linea".(_LINE_-1);
 
-	if($ret = $res->fetch_assoc())
-		$hilo = $ret;
-	else
-		return (NULL);
-
-	$sql = "SELECT * FROM respuesta WHERE IDHilo = '$id'";
-
-	$res = $connection->query($sql) or die ($connection->error). " en la linea".(_LINE_-1);
-
-	while($respuestas[] = $res->fetch_assoc());
-
-	$ret[] = $hilo;
-	foreach ($respuestas as $aux) {
-		$respuestas[] = $aux;
+	if($ret = $res->fetch_assoc()) {
+		closeConnection($connection);
+		return ($ret);
 	}
 
 	closeConnection($connection);
+	return (NULL);
+}
+
+function selectThreadAnsById($id) {
+	require_once ('../include/config.php');
+
+	$connection = createConnection();
+
+	$sql = "SELECT * FROM respuesta WHERE IDHilo = '$id'";	
+
+	$res = $connection->query($sql) or die ($connection->error). " en la linea".(_LINE_-1);
+
+	while($ret[] = $res->fetch_assoc());
+
+	return $ret;
 }
 
 

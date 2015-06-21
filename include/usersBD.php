@@ -87,6 +87,23 @@ function findUserById($iduser){
 	}
 }
 
+function findImageUserById($iduser){
+	$con = createConnection();
+	$sql = "SELECT Imagen FROM usuario WHERE id = '$iduser'";
+	$rs = $con->query($sql) or die  ($con->error. " en la linea ".(_LINE_-1));
+	if($rs != NULL)
+	{
+		if($row = $rs->fetch_assoc())
+		{
+			closeConnection($con);
+			return ($row);
+		}
+		else
+			closeConnection($con);
+			return (NULL);
+	}
+}
+
 
 function insertFriend($friendNick, $userId){
 	$connection = createConnection();
