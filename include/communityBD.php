@@ -38,7 +38,6 @@ function nuevoHilo($contenido, $titulo, $idusuario)
 	{
 		require_once ('../include/config.php');
 		$hoy = getdate();
-		//$fecha = $hoy['year']."-".$hoy['mon']."-".$hoy['mday'];
 		$fecha = gmdate('Y-m-d');
 		$con = createConnection();
 		$sql = "INSERT INTO `hilo`(`Titulo`, `Texto`, `Fecha_de_creacion`, `IdUsuario`) VALUES ";
@@ -47,6 +46,17 @@ function nuevoHilo($contenido, $titulo, $idusuario)
 		closeConnection($con);
 	}
 
+function nuevoVideo($link, $titulo, $idusuario)
+{
+	require_once ('../include/config.php');
+	$hoy = getdate();
+	$fecha = gmdate('Y-m-d');
+	$con = createConnection();
+	$sql = "INSERT INTO `video`(`Titulo`, `Enlace`, `Fecha_de_creacion`, `IdUsuario`) VALUES ";
+	$sql.= "('".$titulo."', '".$contenido."', '".$fecha."', '".$idusuario."')";
+	$con->query($sql) or die ($con->error);
+	closeConnection($con);
+}
 
 
 function getLastAnalisis(){
