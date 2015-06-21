@@ -19,7 +19,7 @@
 	    	
         <div id ="friendsContent">
             <div id = "user_friends_header">
-              <img id="imagen_Avatar" src='/MAETS/images/userProfile.png'>
+              <img id="imagen_Avatar" src=<?php echo "'".IMAGENES."/usuarios/".$_SESSION["IMG"]."'" ?>>
                <div id = "texto_perfil" >
                   <h2><?php echo $_SESSION["Nick"]; ?> →  <div id = "letra_pequena">Amigos</div></h2>
                   <img id = "bandera_nacionalidad" src="../images/usuarios/SpainFlag.jpg">
