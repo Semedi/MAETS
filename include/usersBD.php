@@ -122,17 +122,13 @@ function findImageUserById($iduser){
 }
 
 
-function insertFriend($friendNick, $userId){
+function insertFriend($fid, $userId){
 	$connection = createConnection();
-	$result = "SELECT * FROM usuario WHERE nick = '$friendNick'";
-	$result = $connection->query($result) or die ($connection->error. "en la linea".(_LINE_-1));
-	if($row = $result->fetch_assoc()){
-		$friendId= row["Id"];
-		$sql= "INSERT INTO `maets`.`amigo` (`IDUsuario`, `IDAmigo`) VALUES ('$userId', '$friendId')";
-		$connection->query($sql) or die($connection->error. "en la linea".(_LINE_-1));
-	}else{
-		echo "El usuario buscado no existe";
-	}
+	
+
+	$sql= "INSERT INTO `maets`.`amigo` (`IDUsuario`, `IDAmigo`) VALUES ('$userId', '$fid')";
+	$res = $connection->query($sql) or die ($connection->error. " en la linea". (_LINE_-1));
+	
 	closeConnection($connection);
 	
 }
@@ -263,6 +259,23 @@ function selectUser($valor, $column, $like){
 	closeConnection($connection);
 
 	return($ret);
+}
+
+
+function selectAmigo($valor, $column){
+
+	$connection=createConnection();
+
+		$sql = "SELECT * FROM amigo WHERE " .$column. " = '$valor'";
+
+		$res = $connection->query($sql) or die ($connection->error. " en la linea". (_LINE_-1));
+		while($ret[] = $res->fetch_assoc());
+
+
+		closeConnection($connection);
+
+		return($ret);
+
 }
 
 

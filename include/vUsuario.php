@@ -40,7 +40,7 @@ function generarUsuario($user){
 		  echo "<div id = 'user_friends_header'>";
           echo "<img id='imagen_Avatar' src='../images/usuarios/".$res[0]['Imagen']."'>";
           echo "<div id = 'texto_perfil' >";
-          echo "<h2>".$user."</h2>";
+          echo "<h2 id='nickuser'>".$user."</h2>";
           echo "<img id = 'bandera_nacionalidad' src='../images/usuarios/SpainFlag.jpg'>";
           echo "</div>";
           echo "<div id = 'botonAniadir'>";
@@ -80,6 +80,40 @@ function generarUsuario($user){
 
               echo "</table>";
               echo "</div>";
+
+}
+
+function generarAmigos($user){
+  require_once('../include/usersOp.php');
+
+  $res = getListaAmigos($user,"IDUsuario");
+
+
+
+
+      echo "<tr>";
+    for($i=0; $i<sizeof($res)-1; $i++) {
+      
+        ;
+        if ($i%4==0){
+            echo "</tr>";
+            echo "<tr>";
+
+        }
+        echo "
+           <td id = 'celda'>".getUser($res[$i]['IDAmigo'])['nick']."
+                  <p>Desconectado</p>
+                 </td>
+
+        ";
+
+    }
+
+          echo"</tr>";
+                
+                 
+                
+
 
 }
 

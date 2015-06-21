@@ -15,7 +15,7 @@
 			$('#comprar').click(
 			 	function(){
 			 		var elemento = "<?php Print($_GET['juego']);?>"
-					$.get("../AJAX/juegosGestor.php",{ functionName:"addGameToUser", juego:$($_GET['juego']).val()},function(data){
+					$.get("../AJAX/juegosGestor.php",{ functionName:"addGameToUser", juego:elemento},function(data){
 			 			trimmed_data = $.trim(data);
 						
 								alert(data);

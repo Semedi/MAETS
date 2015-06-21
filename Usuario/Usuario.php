@@ -13,13 +13,20 @@
    <script type="text/javascript" src="../js/jquery-1.9.1.min.js"> </script>
 
 <script type="text/javascript">
+
+
+
+
+
+  
   $( document ).ready(function() {
 
-
+    
 
       $('#addFriendButton').click(
         function(){
-          $.get("../AJAX/usuariosGestor.php",{ functionName:"addFriend", friendNick:$('#nick').val()},function(data){
+       
+          $.get("../AJAX/usuariosGestor.php",{ functionName:"addFriend", friendNick:$('#nickuser').html()},function(data){
           trimmed_data = $.trim(data);
               if (trimmed_data == ""){
                 alert("Se han guardado los cambios");
