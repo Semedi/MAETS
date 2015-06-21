@@ -209,5 +209,28 @@ function puntosDeLogro(){
 	return($ret);
 }
 
+function select($valor, $column, $like){
+
+	$connection=createConnection();
+
+	if($valor == "")
+		$sql = "SELECT * FROM usuario";
+
+	else {
+		if($like)
+			$sql = "SELECT * FROM usuario WHERE UPPER(" .$column. ") LIKE UPPER('%$valor%')	";
+		else
+			$sql = "SELECT * FROM usuario WHERE " .$column. " = '$valor'";
+	}
+
+	$res = $connection->query($sql) or die ($connection->error. " en la linea". (_LINE_-1));
+
+	while($ret[] = $res->fetch_assoc());
+
+	closeConnection($connection);
+
+	return($ret);
+}
+
 
 ?>

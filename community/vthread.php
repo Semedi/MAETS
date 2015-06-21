@@ -12,27 +12,18 @@
 </head>
 
 
-<?php  include ('../static/mainTOP.php'); ?>	
-<?php  include ('../static/communityMenu.php'); ?>
-			
-						
-					
+<?php  require_once ('../static/mainTOP.php'); ?>	
+<?php  require_once ('../static/communityMenu.php'); ?>
 				<div id= "ContenidoCentral">
-					
-				
 						<center>
 							<div id="espacio"/>
-							
-								
-
-								
-								
-							
-								
 							</div>	
-							
+								<?php
+									require_once ('../include/vComunidad.php');
+									generarThread(0);
+								?>
+							<!--
 							<div id="cajaText">
-							
 								
 								<img class="avatar" src="../images/gta5A.jpg">	
 								<div id="info">Usuario</div>
@@ -95,7 +86,7 @@
 								
 								
 								</div>	
-							
+							-->
 
 
 							
@@ -106,7 +97,7 @@
 				</div>	
 			
 					
-<?php  include ('../static/mainBOT.php'); ?>	
+<?php  require_once ('../static/mainBOT.php'); ?>	
   	
 
 </html>

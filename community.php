@@ -11,15 +11,23 @@
 </head>
 
 
-<?php  include ('static/mainTOP.php'); ?>	
-<?php  include ('static/communityMenu.php'); ?>	
+<?php  require_once ('static/mainTOP.php'); ?>	
+<?php  require_once ('static/communityMenu.php'); ?>	
 			
 			
 			<div id="bienvenida">
 				<h1> Bienvenido a la Comunidad de MAETS </h1>
 			</div>
+
+			<?php
+				require_once ('include/vComunidad.php');
+				generarUltimosForos(3);
+				generarUltimosAnalisis(3);
+				generarUltimasCapturas(3);
+			?>
+
 			
-			<div id="juegos">
+			<!--<div id="juegos">
 				<h4> Juegos jugados recientemente: </h4>	
 				<p>Rust</p> 
 				<p>Dragon Age Inquisition</p>  
@@ -43,7 +51,7 @@
 				<img src="images/screens/dbx1.jpg">
 				<img src="images/screens/gtav1.jpg">
 				<img src="images/screens/ac1.jpg">
-			</div>
+			</div>-->
 			
-<?php  include ('static/mainBOT.php'); ?>	
+<?php  require_once ('static/mainBOT.php'); ?>	
 </html>

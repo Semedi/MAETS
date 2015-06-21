@@ -1,8 +1,8 @@
 <?php 
 	
-require_once ('../include/config.php');
 function getForoBD()
 	{
+		require_once ('../include/config.php');
 		$con = createConnection();
 		//$retorno = [];
 		$sql = "SELECT id, titulo, texto, fecha_de_creacion,  idusuario ";
@@ -20,6 +20,7 @@ function getForoBD()
 
 
 function getLastCaptures(){
+	require_once ('../include/config.php');
 	$connection = createConnection();
 
 	$sql = "SELECT Ruta FROM capturas ORDER BY fecha DESC LIMIT 4"; 
@@ -35,6 +36,7 @@ function getLastCaptures(){
 }
 function nuevoHilo($contenido, $titulo, $idusuario)
 	{
+		require_once ('../include/config.php');
 		$hoy = getdate();
 		//$fecha = $hoy['year']."-".$hoy['mon']."-".$hoy['mday'];
 		$fecha = gmdate('Y-m-d');
@@ -48,6 +50,7 @@ function nuevoHilo($contenido, $titulo, $idusuario)
 
 
 function getLastAnalisis(){
+	require_once ('../include/config.php');
 	$connection = createConnection();
 
 	$sql = "SELECT * FROM analisis ORDER BY fecha DESC LIMIT 4"; 
@@ -63,6 +66,7 @@ function getLastAnalisis(){
 
 //AUN SIN ACABAR
 function getLastRespuesta($hiloID){
+	require_once ('../include/config.php');
 	$con = createConnection();
 
 	$sql = "SELECT fecha, mensaje FROM respuesta JOIN hilo WHERE hilo.id = respuesta.IDHilo AND hilo.id = '$hiloID' ORDER BY Fecha DESC limit 1"; 
@@ -83,6 +87,7 @@ function getLastRespuesta($hiloID){
 }
 
 function getNumberOfRespuestas($hiloID){
+	require_once ('../include/config.php');
 	$con = createConnection();
 
 	$sql = "SELECT COUNT(mensaje) FROM respuesta JOIN hilo WHERE hilo.id = respuesta.IDHilo AND hilo.id = '$hiloID'"; 
@@ -97,16 +102,17 @@ function getNumberOfRespuestas($hiloID){
 		else
 			closeConnection($con);
 			return (NULL);
-	}
+		}
 
 	
 }
 
 // ret: idJuego, nombreJuego, idUsuario, nombreUsuario, recomendado, texto, portada
 function getAnalisis() {
+	require_once ('../include/config.php');
 	$con = createConnection();
 
-	$sql = "SELECT * FROM analisis;";
+	$sql = "SELECT * FROM analisis ORDER BY 'Fecha';";
 
 	$res = $con->query($sql) or die ($con->error. " en la linea ".(_LINE_-1));
 
@@ -122,6 +128,50 @@ function getAnalisis() {
 	return $ret;
 }
 
+function selectMasComunidad($num, $column, $table) {
+	require_once ('include/config.php');
+	
+	$connection = createConnection();
+
+ 	$sql = "SELECT * FROM " .$table. " ORDER BY " .$column. " Desc LIMIT " .$num;
+
+ 	$res = $connection->query($sql) or die ($connection->error). " en la linea".(_LINE_-1);
+
+	while($ret[] = $res->fetch_assoc());
+
+	closeConnection($connection);
+
+	return ($ret);
+}
+
+// Devuelve un array con el hilo principal y las respuestas.
+function selectThreadById($id) {
+	require_once ('../include/config.php');
+
+	$connection = createConnection();
+
+	$sql = "SELECT * FROM hilo WHERE id = '$id'";
+
+	$res = $connection->query($sql) or die ($connection->error). " en la linea".(_LINE_-1);
+
+	if($ret = $res->fetch_assoc())
+		$hilo = $ret;
+	else
+		return (NULL);
+
+	$sql = "SELECT * FROM respuesta WHERE IDHilo = '$id'";
+
+	$res = $connection->query($sql) or die ($connection->error). " en la linea".(_LINE_-1);
+
+	while($respuestas[] = $res->fetch_assoc());
+
+	$ret[] = $hilo;
+	foreach ($respuestas as $aux) {
+		$respuestas[] = $aux;
+	}
+
+	closeConnection($connection);
+}
 
 
 ?>
