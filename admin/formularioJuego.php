@@ -7,6 +7,25 @@
 	<link rel="icon" type="image/png" href="../images/MAETS.png"/>
 	<link rel="stylesheet" type="text/css" href="../css/main.css"/>
 	<link rel="stylesheet" type="text/css" href="../css/formularioJuego.css"/>
+
+	<script type="text/javascript" src="../js/jquery-1.9.1.min.js"> </script>
+
+	<script type="text/javascript">
+		$( document ).ready(function() {
+			$('#crearTema').click(
+			 	function(){
+					$.get("../AJAX/juegosGestor.php",{ functionName:"newTopic", content:$('#hilo').val(), title:$('#titulo_hilo').val() },function(data){
+			 			trimmed_data = $.trim(data);
+						
+								alert(data);
+				 				window.location.href = "foros.php";
+				 			
+				 			
+			 			}
+			 		);
+				});
+		});
+	 </script>
 </head>
 
 <?php include ('../static/mainTOP.php'); ?>
@@ -81,7 +100,7 @@
 						}
 						if($j == 0)
 							echo '<p>';
-						echo '<input type="checkbox" name="idiomas" value="'.$idiomas[$i].'">' . $idiomas[$i] . '    ';
+						echo '<input type="radio" name="idiomas" value="'.$idiomas[$i].'">' . $idiomas[$i] . '    ';
 						$j++;
 					}
 					echo '</br>';

@@ -3,7 +3,9 @@
 include ('session.php'); 
 include ('config.php');
 //añade un juego a la base de datos(faltan parametros)
-function addGame($juego){
+function addGame($titulo, $precio, $edad, $etiquetas, $descripcion, $descripcionLarga, $tipoJuego, $idiomas, $portada){
+	$connection = createConnection();
+
 	return (true);
 }
 
