@@ -22,4 +22,8 @@ function seleccionarThreadById($id) {
 	return (selectThreadById($id));
 }
 
+function seleccionarThreadAnsById($id) {
+	return (selectThreadAnsById($id));
+}
+
 ?>
