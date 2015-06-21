@@ -209,7 +209,7 @@ function puntosDeLogro(){
 	return($ret);
 }
 
-function select($valor, $column, $like){
+function selectUser($valor, $column, $like){
 
 	$connection=createConnection();
 
