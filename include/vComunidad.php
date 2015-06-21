@@ -138,7 +138,7 @@ require_once('shopBD.php');
 			}
 		}
 	}
-<<<<<<< HEAD
+
 	
 	
 function cargarVideos()
@@ -153,7 +153,6 @@ function cargarVideos()
 			echo "<p>Video subido por ".$autor['nick']." con fecha ".$video['fecha']."</p> \n\n";
 		}
 }		
-=======
 
 	function generarThreadAns($id) {
 		$thread = seleccionarThreadById($id);
@@ -170,5 +169,4 @@ function cargarVideos()
 				</div>
 			</div>";
 	}
->>>>>>> 015df543a176f19f71a3f0a6aeec28a06babdbd9
-?>
+
