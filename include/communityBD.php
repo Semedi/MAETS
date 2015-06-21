@@ -32,20 +32,20 @@ function getLastCaptures(){
 
 	return($ret);
 	
-
+}
 function nuevoHilo($contenido, $titulo, $idusuario)
 	{
 		$hoy = getdate();
 		//$fecha = $hoy['year']."-".$hoy['mon']."-".$hoy['mday'];
-		$fecha = gmdate('Y-m-d \G\M\T');
+		$fecha = gmdate('Y-m-d');
 		$con = createConnection();
-		$sql = "INSERT INTO `hilo`(`Titulo`, `Texto`, `Fecha_creacion`, `IdUsuario`) VALUES";
-		$sql.= "(".$titulo.", ".$contenido.", ".$fecha.", ".$idusuario.")";
-		$con->query($sql) or die ($con->error. "en la linea".(_LINE_-1));
-		$con.closeConnection();
+		$sql = "INSERT INTO `hilo`(`Titulo`, `Texto`, `Fecha_de_creacion`, `IdUsuario`) VALUES ";
+		$sql.= "('".$titulo."', '".$contenido."', '".$fecha."', '".$idusuario."')";
+		$con->query($sql) or die ($con->error);
+		closeConnection($con);
 	}
 
-}
+
 
 function getLastAnalisis(){
 	$connection = createConnection();

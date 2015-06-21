@@ -2,15 +2,15 @@
 <?php
 require_once __DIR__.'\..\include\config.php';
 
-//añade foro a la bdd
-function newTopic($contenido, $titulo, $idusuario){
-	require_once "../include/communityBD.php";
-	echo "MIRA: ".$contenido.", ".$titulo.", ".$idusuario;
-	nuevoHilo($contenido, $titulo, $idusuario);
+//añade hilo a la bdd
+function newTopic($contenido, $tit, $idusuario){
+	require_once '../include/communityBD.php';
+	nuevoHilo($contenido, $tit, $idusuario);
+	echo"Hilo nuevo creado con exito.";
 	return(true);
 }
 
-//elimina un foro de la bdd
+//elimina un hilo de la bdd
 function deleteForum(){
 	
 	return(true);
@@ -23,9 +23,23 @@ $functionName = filter_input(INPUT_GET, 'functionName');
 
 switch ($functionName) {
     case "newTopic":
-      newTopic($_GET['hilo'], $_GET["titulo"], $_SESSION_["ID"]); 
-        break;
- 
+	if (!isset($_SESSION))
+	{
+		echo "No puedes iniciar un tema sin haberte logeado primero.";
+	}
+	elseif (empty($_GET["title"]))
+	{
+		echo "No puedes crear un tema sin titulo.";
+	}
+	elseif (empty($_GET["content"]))
+	{
+		echo "No puedes crear un tema sin contenido.";
+	}
+	else
+	{
+		 newTopic($_GET["content"], $_GET["title"], $_SESSION["ID"]); 
+	}	
+    break;
 }
 
 
