@@ -14,15 +14,10 @@
 
 <?php  include ('../static/mainTOP.php'); ?>	
 <?php  include ('../static/communityMenu.php'); ?>	
-			
-			
+<?php require_once ('../include/vComunidad.php'); ?>		
 			
 			<div id="capturas">
-				<img class="icono2" src="../images/screens/gta5A.jpg" />
-				<img class="icono" src="../images/screens/gta5p.jpg" />
-				<img class="icono3" src="../images/screens/GTAV.jpg" />
-				<img class="icono4" src="../images/screens/rust.jpg" />
-				<img class="icono5" src="../images/screens/project-cars.jpg" />
+				<?php generarCapturas();?>
 				
 				
 			</div>	

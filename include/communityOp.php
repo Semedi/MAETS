@@ -26,4 +26,8 @@ function seleccionarThreadAnsById($id) {
 	return (selectThreadAnsById($id));
 }
 
+function obtenerCapturas() {
+	return getLastCaptures();
+}
+
 ?>

@@ -21,17 +21,18 @@ function getForoBD()
 
 function getLastCaptures(){
 	require_once ('../include/config.php');
-	$connection = createConnection();
+	$con = createConnection();
 
 	$sql = "SELECT Ruta FROM capturas ORDER BY fecha DESC LIMIT 4"; 
 
-    $res = $connection->query($sql) or die ($connection->error. " en la linea". (_LINE_-1));
-
-	while($ret[] = $res->fetch_assoc());
-
-	closeConnection($connection);
-
-	return($ret);
+    $rs = $con->query($sql) or die ($con->error. "en la linea".(_LINE_-1));
+		//$rs = mysql_query($sql, $mysqli);
+		if($rs != NULL)
+		{
+			while($row[] = $rs->fetch_assoc());
+			closeConnection($con);
+			return ($row);
+		}
 	
 }
 function nuevoHilo($contenido, $titulo, $idusuario)
