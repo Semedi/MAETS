@@ -32,17 +32,18 @@ function getVideosBD()
 
 function getLastCaptures(){
 	require_once ('../include/config.php');
-	$connection = createConnection();
+	$con = createConnection();
 
 	$sql = "SELECT Ruta FROM capturas ORDER BY fecha DESC LIMIT 4"; 
 
-    $res = $connection->query($sql) or die ($connection->error. " en la linea". (_LINE_-1));
-
-	while($ret[] = $res->fetch_assoc());
-
-	closeConnection($connection);
-
-	return($ret);
+    $rs = $con->query($sql) or die ($con->error. "en la linea".(_LINE_-1));
+		//$rs = mysql_query($sql, $mysqli);
+		if($rs != NULL)
+		{
+			while($row[] = $rs->fetch_assoc());
+			closeConnection($con);
+			return ($row);
+		}
 	
 }
 function nuevoHilo($contenido, $titulo, $idusuario)
@@ -198,5 +199,30 @@ function selectThreadAnsById($id) {
 	return $ret;
 }
 
+function selectIdThread($titulo) {
+	require_once ('../include/config.php');
+
+	$connection = createConnection();
+
+	$sql = "SELECT Id FROM hilo WHERE Titulo = '$titulo'";	
+
+	$res = $connection->query($sql) or die ($connection->error). " en la linea".(_LINE_-1);
+
+	while($ret[] = $res->fetch_assoc());
+
+	return $ret;	
+}
+
+function insertarRespuesta($idHilo, $idUsuario, $texto) {
+	require_once ('../include/config.php');
+	$hoy = getdate();
+	//$fecha = $hoy['year']."-".$hoy['mon']."-".$hoy['mday'];
+	$fecha = gmdate('Y-m-d');
+	$con = createConnection();
+	$sql = "INSERT INTO 'respuesta' ('IDHilo', 'IDUsuario', 'Fecha', 'Mensaje') VALUES ";
+	$sql.= "('".$idHilo."', '".$idUsuario."', '".$fecha."', '".$texto."')";
+	$con->query($sql) or die ($con->error);
+	closeConnection($con);
+}
 
 ?>

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 21-06-2015 a las 19:34:39
+-- Tiempo de generación: 21-06-2015 a las 20:43:39
 -- Versión del servidor: 5.6.21
 -- Versión de PHP: 5.6.3
 
@@ -58,7 +58,10 @@ CREATE TABLE IF NOT EXISTS `analisis` (
 --
 
 INSERT INTO `analisis` (`IdJuego`, `IdUsuario`, `Texto`, `Recomendado`, `Fecha`) VALUES
-(1, 6, 'La espera ha valido la pena. GTA V es el primer juego que he pre-comprado y realmente siento que ha sido una gran compra. Sin embargo me molestó un poco tener que esperar más de 1 hora y media para que se pudiese instalar. Dejando esto de lado, la optimización es realmente impresionante, me he sorprendido demasiado con lo tan bien optimizado que está, los gráficos son excelentes y me atrevo a decirlo porque no tengo una gráfica demasiado potente (tengo una GTX 650), así que no queda nada más que decir. Os invito a ver mis capturas de pantalla para que veáis como se ve. He estado jugando al modo multijugador, otro punto a favor, no tengo nada de lag. Además es muy variado y tiene muchas actividades, Me falta jugarlo aún más como para dar un análisis completo.', 1, '2015-06-01 13:26:29');
+(1, 6, 'La espera ha valido la pena. GTA V es el primer juego que he pre-comprado y realmente siento que ha sido una gran compra. Sin embargo me molestó un poco tener que esperar más de 1 hora y media para que se pudiese instalar. Dejando esto de lado, la optimización es realmente impresionante, me he sorprendido demasiado con lo tan bien optimizado que está, los gráficos son excelentes y me atrevo a decirlo porque no tengo una gráfica demasiado potente (tengo una GTX 650), así que no queda nada más que decir. Os invito a ver mis capturas de pantalla para que veáis como se ve. He estado jugando al modo multijugador, otro punto a favor, no tengo nada de lag. Además es muy variado y tiene muchas actividades, Me falta jugarlo aún más como para dar un análisis completo.', 1, '2015-06-01 13:26:29'),
+(4, 7, 'Heroes of the storm es el futuro de los MOBA, dispone de una barbaridad de personajes jugables de las diferentes sagas de Blizzard, desde Diablo y Starcraft hasta Warcraft, cada uno de estos personajes tiene una función y será vital cumplirla para conseguir ganar la batalla. Si deseas un juego de acción frenetica del estilo de Lol o de Smite, estoy seguro que este juego te gustará.', 1, '2015-06-15 12:19:48'),
+(13, 6, 'Pues compré este juego debido a diferentes recomendaciones que he recibido de varios amigos, y estoy bastante decepcionado, es un juego bastante extraño que triunfó hace una barbaridad, pero que ahora no termina de cuajar, no se, el estilo, los personajes y el modo de juego no son mis preferidos.\r\nEspero que a otra gente le guste, ya que yo no he salido contento con esta compra', 0, '2015-06-04 16:21:27'),
+(15, 13, 'Me compre el juego hace unas horas y ya me he gastado 1203.50€ en cajas con armas especiales y aun no me ha tocado mi cuchillo DORADO!! ESTE JUEGO ME ESTA QUITANDO LA VIDA, POR DIOS QUE ALGUIEN ME AYUDE A DESCONECTAR DE LA CORRIENTE MI ORDENADOR PARA NO SEGUIR GASTÁNDOME MÁS DINERO!!!', 1, '2015-06-21 20:45:34');
 
 -- --------------------------------------------------------
 
@@ -97,7 +100,7 @@ CREATE TABLE IF NOT EXISTS `compras` (
   `IDUsuario` int(10) NOT NULL,
   `IDJuego` int(10) NOT NULL,
   `Fecha de compra` datetime NOT NULL,
-  `Precio` int(5) NOT NULL
+  `Precio` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
@@ -106,7 +109,16 @@ CREATE TABLE IF NOT EXISTS `compras` (
 
 INSERT INTO `compras` (`IDUsuario`, `IDJuego`, `Fecha de compra`, `Precio`) VALUES
 (6, 1, '2015-06-01 12:43:00', 49),
-(6, 4, '2015-03-16 15:18:27', 30);
+(6, 4, '2015-03-16 15:18:27', 30),
+(6, 12, '2015-06-21 00:00:00', 10),
+(6, 13, '2015-06-21 00:00:00', 7),
+(6, 22, '2015-06-21 00:00:00', 45),
+(7, 3, '2015-06-21 00:00:00', 55),
+(7, 4, '2015-06-03 00:00:00', 0),
+(7, 9, '2015-06-21 00:00:00', 15),
+(13, 15, '2015-06-21 00:00:00', 5),
+(13, 18, '2015-06-21 00:00:00', 50),
+(13, 21, '2015-06-21 00:00:00', 13);
 
 -- --------------------------------------------------------
 
@@ -125,10 +137,23 @@ CREATE TABLE IF NOT EXISTS `consigue` (
 --
 
 INSERT INTO `consigue` (`IDLogro`, `IDUsuario`, `Fecha`) VALUES
+(0, 7, '2015-06-21'),
 (1, 6, '2015-06-18'),
+(2, 13, '2015-06-21'),
+(3, 7, '2015-06-21'),
 (4, 6, '2015-06-01'),
+(5, 14, '2015-06-21'),
+(7, 6, '2015-06-21'),
 (9, 7, '2015-05-11'),
-(12, 6, '2015-04-21');
+(10, 6, '2015-06-21'),
+(12, 6, '2015-04-21'),
+(12, 13, '2015-06-21'),
+(14, 14, '2015-06-21'),
+(17, 14, '2015-06-21'),
+(18, 14, '2015-06-21'),
+(19, 7, '2015-06-21'),
+(20, 6, '2015-06-21'),
+(22, 13, '2015-06-21');
 
 -- --------------------------------------------------------
 
@@ -165,8 +190,8 @@ CREATE TABLE IF NOT EXISTS `juego` (
   `Portada` varchar(100) COLLATE utf8_bin NOT NULL,
   `Precio` float NOT NULL,
   `Edad` int(3) NOT NULL,
-  `Descripcion` varchar(100) COLLATE utf8_bin NOT NULL,
-  `DescripcionLarga` longtext COLLATE utf8_bin NOT NULL,
+  `Descripcion` varchar(100) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
+  `DescripcionLarga` longtext CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
   `Companyia` varchar(100) COLLATE utf8_bin NOT NULL,
   `Tipo` enum('Free_to_Play','Acceso_Anticipado','Accion','Aventura','Carreras','Casual','Deportes','Estrategia','Indie','Multijugador_Masivo','Rol','Simuladores') COLLATE utf8_bin NOT NULL,
   `Etiquetas` varchar(200) COLLATE utf8_bin NOT NULL,
@@ -185,7 +210,7 @@ INSERT INTO `juego` (`Id`, `Titulo`, `Portada`, `Precio`, `Edad`, `Descripcion`,
 (3, 'The Witcher 3: Wild Hunt', 'PortadaTheWitcherIII.png', 54.99, 18, 'Tercera entrega de la serie de The Witcher', 'The Witcher 3: Wild Hunt es la tercera entrega de la serie The Witcher, que nos devuelve al conocido cazador de bestias Geralt de Rivia en una nueva aventura. Rol de la vieja escuela en un fascinante mundo de fantasía, cargado de grandes historias y con un gran acabado artístico y tecnológico.', 'CD Projekt RED', 'Rol', 'Rol, RPG, Accion RPG', '', 0, '2015-05-19'),
 (4, 'Heroes of the Storm', 'PortadaHeroesOfTheStorm.png', 0, 12, 'El futuro de los MOBA esta en Hots', 'Los héroes y villanos de Diablo, StarCraft y Warcraft se dan cita en este MOBA 5 vs. 5 desarrollado por Blizzard, que nos permite combatir en varios escenarios con sus propias particularidades. Obtén el poder de los dioses dominando sus templos, o invoca a un temible gólem de sangre recogiendo calaveras, en este juego de acción estratégica de corte free-to-play.', 'Blizzard', 'Free_to_Play', 'Estrategia, Tiempo Real, MOBA, Ciencia ficcion, Diablo, Starcraft, Warcraft, Cooperativo, Competiivo', '', 0, '2015-06-02'),
 (5, 'Pillars of Eternity', 'PortadaPillarsOfEternity.png', 29.99, 18, 'Juego RPG ambientado en mundo de fantasia', 'Pillars of Eternity es un juego RPG ambientado en un mundo de fantasía, que trata de recuperar la esencia de grandes clásicos del género rolero como Planescape: Torment, Baldur’s Gate o Icewind Dale', 'Obsidian', 'Rol', 'Combate por turnos, Rol, Fantasia', '', 0, '2015-03-26'),
-(6, 'La Tierra Media: Sombras de Mordor', 'PortadaSombrasDeMordor.png', 34.99, 18, 'AVentura ambientada en el universo de fantasia del Señor de los Anillos', 'Aventura ambientada en el universo de fantasía de El Señor de los Anillos que nos pone en la piel de un misterioso aventurero conocido como Talion, decidido a alcanzar las sombrías tierras de Mordor.', 'Monolith', 'Aventura', 'Accion, Aventura, Tercera Persona, Golum, Fantasia, Señor de los Anillo, LotR', '', 0, '2014-09-30'),
+(6, 'La Tierra Media: Sombras de Mordor', 'PortadaSombrasDeMordor.png', 34.99, 18, 'Aventura ambientada en el universo de fantasia del Señor de los Anillos', 'Aventura ambientada en el universo de fantasía de El Señor de los Anillos que nos pone en la piel de un misterioso aventurero conocido como Talion, decidido a alcanzar las sombrías tierras de Mordor.', 'Monolith', 'Aventura', 'Accion, Aventura, Tercera Persona, Golum, Fantasia, Señor de los Anillo, LotR', '', 0, '2014-09-30'),
 (7, 'Project Cars', 'PortadaProjectCars.png', 39.99, 3, 'Simulador de velocidad', 'Project Cars es un simulador de velocidad desarrollado por Slightly Mad Studios, responsables de Need for Speed: Shift. El juego cuenta con gran variedad de tipos de vehículos, climatología variable y un sistema de control que apuesta por el realismo.', 'Slightly Mad Studios', 'Carreras', 'Conduccion, GT, Formula 1, Carreras, Simulador', '', 0, '2015-05-07'),
 (8, 'ARK: Survival Evolved', 'PortadaArk.png', 19.99, 18, 'Survival en una isla con dinosaurios', 'Tras despertar en una misteriosa isla que da nombre al juego, el jugador deberá cazar, recolectar alimentos y recursos, investigar nuevas tecnologías o construir su propio refugio en una nueva aventura de supervivencia. ¿Su punto diferenciador? La caza y domesticación de dinosaurios leviatán y otras criaturas primitivas.', 'Studio Wildcard', 'Acceso_Anticipado', 'Accion, Primera persona, aventura, fantasia, dinosaurios, ficcion, multijugador, online', '', 0, '0000-00-00'),
 (9, 'This War of Mine', 'PortadaThisWarOfMine.png', 14.99, 12, 'Sobrevive a las penurias de la guerra', 'Sobrevive a las penurias de la guerra en la piel de un civil, que por el día debe velar por la seguridad de su refugio, mientras que por las noches sale al exterior en busca de recursos para mantenerse con vida.', '11 bit Studios', 'Indie', 'Estrategia, Tiempo Real, Bélico, Guerra, Survival', '', 0, '2014-11-14'),
@@ -215,27 +240,36 @@ CREATE TABLE IF NOT EXISTS `logro` (
   `Titulo` varchar(100) COLLATE utf8_bin NOT NULL,
   `Puntos` int(3) NOT NULL,
   `Tipo` enum('Bronce','Plata','Oro','Platino') CHARACTER SET utf16 COLLATE utf16_bin NOT NULL,
-  `Fecha` date NOT NULL,
   `Imagen` varchar(150) COLLATE utf8_bin NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
 -- Volcado de datos para la tabla `logro`
 --
 
-INSERT INTO `logro` (`Id`, `JuegoID`, `Titulo`, `Puntos`, `Tipo`, `Fecha`, `Imagen`) VALUES
-(1, 3, 'Lila y grosellas', 15, 'Bronce', '2015-06-18', 'logroTW3.png'),
-(2, 3, 'Un amigo en apuros', 15, 'Bronce', '2015-06-18', 'logroTW3.png'),
-(3, 3, 'Caida Libre', 15, 'Bronce', '2015-06-18', 'logroTW3.png'),
-(4, 3, 'Luchador', 30, 'Plata', '2015-06-18', 'logroTW3.png'),
-(5, 3, 'Control de plagas', 30, 'Plata', '2015-06-18', 'logroTW3.png'),
-(6, 3, 'Senda recorrida', 65, 'Oro', '2015-06-18', 'logroTW3.png'),
-(7, 3, 'Las fronteras de lo imposible', 65, 'Oro', '2015-06-18', 'logroTW3.png'),
-(8, 2, 'Deshonrado', 25, 'Bronce', '2015-06-18', 'logroDishonored.jpg'),
-(9, 2, 'Excomunión', 25, 'Bronce', '2015-06-18', 'logroDishonored.jpg'),
-(10, 2, 'Guardaespaldas', 25, 'Bronce', '2015-06-18', 'logroDishonored.jpg'),
-(11, 2, 'Manos limpias', 50, 'Plata', '2015-06-18', 'logroDishonored.jpg'),
-(12, 2, 'Negociador', 100, 'Platino', '2015-06-18', 'logroDishonored.jpg');
+INSERT INTO `logro` (`Id`, `JuegoID`, `Titulo`, `Puntos`, `Tipo`, `Imagen`) VALUES
+(1, 3, 'Lila y grosellas', 15, 'Bronce', 'logroTW3.png'),
+(2, 3, 'Un amigo en apuros', 15, 'Bronce', 'logroTW3.png'),
+(3, 3, 'Caida Libre', 15, 'Bronce', 'logroTW3.png'),
+(4, 3, 'Luchador', 30, 'Plata', 'logroTW3.png'),
+(5, 3, 'Control de plagas', 30, 'Plata', 'logroTW3.png'),
+(6, 3, 'Senda recorrida', 65, 'Oro', 'logroTW3.png'),
+(7, 3, 'Las fronteras de lo imposible', 65, 'Oro', 'logroTW3.png'),
+(8, 2, 'Deshonrado', 25, 'Bronce', 'logroDishonored.jpg'),
+(9, 2, 'Excomunión', 25, 'Bronce', 'logroDishonored.jpg'),
+(10, 2, 'Guardaespaldas', 25, 'Bronce', 'logroDishonored.jpg'),
+(11, 2, 'Manos limpias', 50, 'Plata', 'logroDishonored.jpg'),
+(12, 2, 'Negociador', 100, 'Platino', 'logroDishonored.jpg'),
+(13, 7, 'A tu Izquierda', 20, 'Bronce', 'logroProjectCars.jpg'),
+(14, 7, 'Mitad piloto, mitad demonio', 20, 'Bronce', 'logroProjectCars.jpg'),
+(15, 7, 'Embajador de la Comunidad', 20, 'Bronce', 'logroProjectCars.jpg'),
+(16, 7, 'Mago del Tiempo de Vuelta', 50, 'Plata', 'logroProjectCars.jpg'),
+(17, 7, 'De Cero a Héroe', 75, 'Oro', 'logroProjectCars.jpg'),
+(18, 5, 'Crea un aventurero', 25, 'Bronce', 'logroPOE.png'),
+(19, 5, 'Cinco mejoras de baluarte', 25, 'Bronce', 'logroPOE.png'),
+(20, 5, 'Encantador', 50, 'Plata', 'logroPOE.png'),
+(21, 5, 'Pacifismo relativo', 75, 'Oro', 'logroPOE.png'),
+(22, 5, 'Triple Corona', 100, 'Platino', 'logroPOE.png');
 
 -- --------------------------------------------------------
 
@@ -290,7 +324,7 @@ CREATE TABLE IF NOT EXISTS `usuario` (
 INSERT INTO `usuario` (`Id`, `Nick`, `Contrasenia`, `Nombre`, `Apellidos`, `Correo`, `Fecha de Nacimiento`, `Pais`, `Ciudad`, `Direccion`, `Codigo Postal`, `Puntuacion`, `Rol`, `Imagen`, `Companyia`) VALUES
 (6, 'Drulas', '$2y$10$idews1ZgezwJur/oOqb26uBHaLdC2kNFiVy.iK2iCR6rAvDzzG59q', 'Javier', 'Drulas', 'duruleto@drulas.com', '2001-03-20', 'Drulon', 'Drulopia', 'Avenida', 28033, 0, 'Usuario Registrado', 'usuario.jpg', ''),
 (7, 'Javi', '$2y$10$mgBUFmgP3GIMlR.03tWeLeD141mPVKSHwk/s3OQ2W3ZORRdezUZbK', 'Javi', 'Druet Honrubia', 'javi@hotmail.com', '1993-03-20', 'España', 'Madrid', 'Avenida de ', 28033, 0, 'Usuario Registrado', 'misterT.jpg', ''),
-(13, 'Prueba', '$2y$10$.HsV3pKt63NAB4NApF0PL.rU3gOmBBfXgu.jY1j/ClbC9kCNokklG', '', '', 'prueba', '0000-00-00', '', '', '', 0, 0, 'Usuario Registrado', 'prueba.png', ''),
+(13, 'Prueba', '$2y$10$.HsV3pKt63NAB4NApF0PL.rU3gOmBBfXgu.jY1j/ClbC9kCNokklG', '', '', 'prueba', '0000-00-00', '', '', '', 0, 0, 'Usuario Registrado', 'holi.jpg', ''),
 (14, 'Usuario1', '$2y$10$bd/LlAjMkOy2aYOyb4ApRe2xYA0sFOPd5kcvNJWR54TPFA9MtIRYC', '', '', 'usuario1@user.com', '0000-00-00', '', '', '', 0, 0, 'Usuario Registrado', 'usuario.jpg', ''),
 (15, 'Admin', '$2y$10$UiwAJxd89sfcl5WW/6KHNOh/vYcSjLCupWxI13Y1Dc9aksEZhC5Tu', 'Admin', 'Admin admin', 'admin@admin.es', '0000-00-00', 'Admin', 'Admin', 'Admin', 28033, 0, 'Administrador', 'usuario.jpg', '');
 
@@ -411,7 +445,7 @@ MODIFY `Id` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=23;
 -- AUTO_INCREMENT de la tabla `logro`
 --
 ALTER TABLE `logro`
-MODIFY `Id` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=13;
+MODIFY `Id` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=23;
 --
 -- AUTO_INCREMENT de la tabla `usuario`
 --

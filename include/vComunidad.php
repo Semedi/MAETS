@@ -32,7 +32,14 @@ require_once('shopBD.php');
 					}
 				}			
 	}
-
+	function generarCapturas() {
+		$i = 0;
+		$Capturas = obtenerCapturas();
+		while ($i < sizeof($Capturas) - 1) {
+			echo '<img class="icono'.$i.'" src="../images/screens/'.$Capturas[$i]['Ruta'].'" \>';
+			$i++;
+		}
+	}
 	function generarAnalisis() {
 		// Traer todos los análisis de la base de datos.
 		// IdJuego, NombreJuego, IdUsuario, NombreUsuario, recomendado, texto, portada
@@ -131,6 +138,7 @@ require_once('shopBD.php');
 			}
 		}
 	}
+<<<<<<< HEAD
 	
 	
 function cargarVideos()
@@ -145,4 +153,22 @@ function cargarVideos()
 			echo "<p>Video subido por ".$autor['nick']." con fecha ".$video['fecha']."</p> \n\n";
 		}
 }		
+=======
+
+	function generarThreadAns($id) {
+		$thread = seleccionarThreadById($id);
+		$nombreForo = $thread['Titulo'];
+		// idHilo, idUsuario, titulo
+		echo "<div id='cajaText'>
+				<p id='titulo'><b>$nombreForo</b></p>
+				<p><b>Contenido</b> </p>
+
+				<textarea  id='texto' name='texto' required='required'></textarea> 
+
+				<div id='botonThread'>
+					<button name='crearRespuesta' id='crearRespuesta'>Responder</button>
+				</div>
+			</div>";
+	}
+>>>>>>> 015df543a176f19f71a3f0a6aeec28a06babdbd9
 ?>

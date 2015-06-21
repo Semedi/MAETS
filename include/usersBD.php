@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 function modifyAccount($user,$mail, $ID){
 
@@ -213,10 +213,9 @@ function getMyFriends(){
 
 
 
-function puntosDeLogro(){
+function puntosDeLogro($user){
 	$connection = createConnection();
-	$id = $_SESSION['ID'];
-	$result = "SELECT SUM(Puntos) FROM logro JOIN consigue WHERE logro.ID = consigue.IDLogro and IDUsuario = $id";
+	$result = "SELECT SUM(Puntos) FROM logro JOIN consigue WHERE logro.ID = consigue.IDLogro and IDUsuario = $user";
 	$res = $connection->query($result) or die ($connection->error. " en la linea". (_LINE_-1));
 
 	while($ret[] = $res->fetch_assoc());

@@ -21,7 +21,7 @@ function cargaCabeceraAnon(){
 				  		<li><a href='".LOGOUT."'>Logout</a></li>
 					</div>
 				</div>
-				<li><a href='".USER."'><img id='imagenUsuario' src='".IMAGENES."/userProfile.png'></a></li>";
+				<li><a href='".USER."'><img id='imagenUsuario' src='".IMAGENES."/usuarios/".$_SESSION["IMG"]."'></a></li>";
 							
 						
 								

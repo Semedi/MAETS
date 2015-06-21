@@ -10,6 +10,15 @@ function newTopic($contenido, $tit, $idusuario){
 	return(true);
 }
 
+// añade una respuesta a un hilo en la base de datos
+function newAnswer($titulo, $idUsuario, $texto) {
+	require_once '../include/communityBD.php';
+	$idHilo = selectIdThread($titulo);
+	insertarRespuesta($idHilo, $idUsuario, $texto);
+	echo "Respuesta creada con éxito.";
+	return (true);
+}
+
 //elimina un hilo de la bdd
 function deleteForum(){
 	
@@ -47,6 +56,15 @@ switch ($functionName) {
 		{
 			 newTopic($_GET["content"], $_GET["title"], $_SESSION["ID"]); 
 		}	
+	 break;
+	case "newAnswer":
+		if(!isset($_SESSION))
+			echo "NO puedes responder un tema sin haberte logeado primero.";
+		else if(empty(($_GET['texto'])))
+			echo "No puedes resopnder un tema sin contenido.";
+		else {
+			newAnswer($_GET["titulo"], $_SESSION["ID"], $_GET["texto"]);
+		}
     break;
 	case "newVideo":
 		if (!$_SESSION)

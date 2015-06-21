@@ -22,14 +22,12 @@
       <h1> Resultados de la búsqueda</h1>
 
 		    		<div id="contenedor">
-		    			<div id="margen"/>
+		    			<div id="margen"> </div>
 
 			    		<?php 
-
 			    			require_once ('../include/vUsuario.php');
-			    			require_once('../include/usersOp.php');
-			    			require_once('../include/usersBD.php');	
-
+			    			
+			    			if (isset($_POST['busqueda']))
 							generarListaBusqueda($_POST['busqueda'], 'Nick', true);
 
 			    		?>
