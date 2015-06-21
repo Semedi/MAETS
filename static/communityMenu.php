@@ -30,7 +30,7 @@
 					   <div id="elementoMenu"><a href=<?php echo COMUNIDAD."/achievements.php"?> title="Enlace generico">   Logros    </a> </div>
 					   <div id="elementoMenu"><a href=<?php echo COMUNIDAD."/capturas.php"?> title="Enlace generico">   Capturas </a> </div>
 					   <div id="elementoMenu"><a href=<?php echo COMUNIDAD."/videos.php"?> title="Enlace generico">   Videos    </a> </div>
-					   <div id="elementoMenu"><a href=<?php echo COMUNIDAD."/analysis.php"?> title="Enlace generico">  Analysis  </a> </div>
+					   <div id="elementoMenu"><a href=<?php echo COMUNIDAD."/analysis.php"?> title="Enlace generico">  Analisis  </a> </div>
 					</div>
 	
 	
