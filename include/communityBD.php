@@ -208,7 +208,7 @@ function insertarRespuesta($idHilo, $idUsuario, $texto) {
 	//$fecha = $hoy['year']."-".$hoy['mon']."-".$hoy['mday'];
 	$fecha = gmdate('Y-m-d');
 	$con = createConnection();
-	$sql = "INSERT INTO `respuestas`(`IDHilo`, `IDUsuario`, `Fecha`, `Mensaje`) VALUES ";
+	$sql = "INSERT INTO 'respuesta' ('IDHilo', 'IDUsuario', 'Fecha', 'Mensaje') VALUES ";
 	$sql.= "('".$idHilo."', '".$idUsuario."', '".$fecha."', '".$texto."')";
 	$con->query($sql) or die ($con->error);
 	closeConnection($con);
