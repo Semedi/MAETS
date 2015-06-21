@@ -17,14 +17,20 @@ require_once('shopBD.php');
 						echo '<td id = "tema">';
 							//echo '<div id =\'hilo\'>';
 								echo "<h5>".$hilo['titulo']."</h5>";
-								//echo "<p class=\"creador\">".$autor['nick']."</p>";
-								//echo "<p id='ult_mens'>".$hilo['ultimo_mensaje']."</p>";
-								echo "<p id='ult_mens'>".$lastResp['fecha']."</p>";
-								echo "<p id='en_tema'>".$lastResp['mensaje']."</p>";
-								echo "<p id='creados'>".$numResp['COUNT(mensaje)']."</p>";
-								
-							//echo "</div>";	
 						echo "</td>";
+						echo '<td id = "tema">';
+								echo "<p id='creador'>".$autor['nick']."</p>";
+						echo "</td>";
+						echo '<td id = "tema">';
+								echo "<p id='creados'>".$numResp['COUNT(mensaje)']."</p>";
+						echo "</td>";
+						echo '<td id = "tema">';						
+								echo "<p id='ult_mens'>".$lastResp['fecha']."</p>";
+						echo "</td>";
+								//echo "<p id='ult_mens'>".$hilo['ultimo_mensaje']."</p>";
+								//echo "<p id='en_tema'>".$lastResp['mensaje']."</p>";
+							//echo "</div>";	
+	
 						echo "</tr>";	
 					}
 				}			
