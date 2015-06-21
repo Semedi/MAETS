@@ -31,6 +31,11 @@
 
       <h1> Tienda</h1>
 
+      <?php
+        require_once('include/vTienda.php');
+        mostrarMasVendidos(2);
+      ?>
+
       <table>
         <tr><h2> Juegos más vendidos </h2></tr>
         <tr>

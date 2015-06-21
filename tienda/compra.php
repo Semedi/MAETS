@@ -1,4 +1,4 @@
-﻿<?php require_once __DIR__.'\..\include\config.php'; ?>
+<?php require_once __DIR__.'\..\include\config.php'; ?>
 <!DOCTYPE html>
 
 <html>
@@ -12,19 +12,21 @@
 	<script type="text/javascript">
 
 		$( document ).ready(function() {
-			$('#crearTema').click(
+			$('#comprar').click(
 			 	function(){
-					$.get("../AJAX/comunidadGestor.php",{ functionName:"newTopic", content:$('#hilo').val(), title:$('#titulo').val() },function(data){
+
+					$.get("../AJAX/juegosGestor.php",{ functionName:"addGameToUser", juego:$($_GET['juego']).val(), usuario:$($_SESSION["Nick"]).val() },function(data){
 			 			trimmed_data = $.trim(data);
 						
 								alert(data);
-				 				window.location.href = "foros.php";
+				 				window.location.href = "tienda.php";
 				 			
 				 			
 			 			}
 			 		);
 				});
 		});
+	</script>
 </head>
 
 <?php  include ('../static/mainTOP.php'); ?>
@@ -52,7 +54,8 @@
 				<input type="text" id="apellidos" name="apellidos" value="" placeholder="Apellidos del titular de la tarjeta" required="required" autofocus="autofocus" />  
 				</p>
 
-				<button name="newtopic" id="crearTema">crear tema</button>
+				<button name="comprar" id="comprar">Comprar</button>
+				</br>
 			</form>
 
 

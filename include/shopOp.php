@@ -1,6 +1,6 @@
 <?php
 
-require_once '../include/shopBD.php';
+require_once (RAIZ_APP.'/include/shopBD.php');
 
 
 
@@ -10,6 +10,10 @@ function getLista($tipo) {
 
 function getJuegoById($id) {
 	return (selectJuegoById($id));
+}
+
+function seleccionarMasVendidos($num) {
+	return (selectMasVendidos($num));
 }
 
 ?>

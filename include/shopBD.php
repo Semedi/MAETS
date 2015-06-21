@@ -1,7 +1,7 @@
 <?php
 
 
-require_once '../include/config.php';
+require_once RAIZ_APP.'/include/config.php';
 function selectGenero($tipo){
 
 	$connection=createConnection();
@@ -33,7 +33,20 @@ function selectJuegoById($id) {
 	return (NULL);
 }
 
+function selectMasVendidos($num) {
+	$connection=createConnection();
 
+ 	$sql = "SELECT TOP " .$num. "Titulo, Companya, Precio ORDER BY Ventas Desc";
+
+ 	$res = $connection->query($sql) or die ($connection->error). " en la linea".(_LINE_-1));
+
+	while($res[] = $fecch_assoc());
+
+	closeConectoin($connection);
+
+	return ($ret);
+
+}
 
 
 

@@ -1,6 +1,6 @@
 <?php
 
-require_once '../include/shopOp.php';
+require_once (RAIZ_APP."/include/shopOp.php");
 
 function generarLista($tipo){
 
@@ -27,8 +27,6 @@ function generarLista($tipo){
 function generarArticulo($id) {
 	$res = getJuegoById($id);
 
-	//var_dump($res);
-
 	echo "<div id='left-side'>";
 		echo "<h1 class='upper-bar-name'>" .$res['Titulo']. "</h1>";
 	echo "</div>";
@@ -50,9 +48,10 @@ function generarArticulo($id) {
 	    mostrarIdioma($res['Idiomas']);
 	    echo "</p>"; 
 	    echo "</br>";
-	    echo "<a href='compra.php?juego=" .$res['Id']. "'><img src='../images/boton-comprar.png'</a>";
-
-
+	    if(isset($_SESSION["Nick"]))
+	    	echo "<a href='compra.php?juego=" .$res['Id']. "'><img src='../images/boton-comprar.png'</a>";
+	    else
+	    	echo "<p class='details'> Registrate para comprar </p>";
 }
 
 function mostrarIdioma($idioma) {
@@ -62,5 +61,10 @@ function mostrarIdioma($idioma) {
 		echo "Español";
 	else
 		echo $idioma;
+}
+
+function mostrarMasVendidos($num) {
+	$res = selectMasVendidos($num);
+	print_r($res);
 }
 ?>

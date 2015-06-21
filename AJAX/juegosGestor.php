@@ -58,20 +58,33 @@ function getNameOfGame($juego){
 }
 
 function addGameToUser($juego, $user) {
+
+if($ret = $res->fetch_assoc()) {
+		closeConnection($connection);
+		return ($ret);
+	}
+
+	closeConnection($connection);
+	return (NULL);
+
 	$connection = createConnection();
+
+	$sql = "SELECT Id FROM usuario WHERE Nick = '$user'";
+	$result = $connection->query($sql) or die ($connection->error. " en la linea".(_LINE_-1));
+
+	$idUser = $res->fetch_assoc();
 	
-	$result = "SELECT * FROM compras WHERE IDUsuario = '$user' AND IDJuego = '$juego'";
-	$result = $connection->query($result) or die ($connection->error. " en la linea".(_LINE_-1));
+	$sql = "SELECT * FROM compras WHERE IDUsuario = '$idUser' AND IDJuego = '$juego'";
+	$result = $connection->query($sql) or die ($connection->error. " en la linea".(_LINE_-1));
 
 
-	if($row = $result->fetch_assoc())
-		{     
-			echo "Ya tienes este juego en tu biblioteca.";
-		}
+	if($row = $result->fetch_assoc()) {     
+		echo "Ya tienes este juego en tu biblioteca.";
+	}
 	else {
-		$q = "INSERT INTO compras ('IDUsuario', 'IDJuego')
-			VALUES ('$user', '$juego')";
+		$q = "INSERT INTO compras ('IDUsuario', 'IDJuego') VALUES ('$idUser', '$juego')";
 		$connection->query($q) or die($connection->error. " en la linea".(_LINE_-1));
+		echo "Compra realizad con éxito.";
 	}
 
 	closeConnection($connection);
@@ -91,6 +104,8 @@ switch ($functionName) {
     	return getGameByCompanyia($_GET["companyia"]);
     case "getNameOfGame":
     	echo getNameOfGame($_GET["juego"]);
+    case "addGameToUser":
+    	echo addGameToUser($_GET["juego", "usuario"]);
 
 }
 
