@@ -28,6 +28,8 @@ function deleteForum(){
 // sube un video a la bdd
 function newVideo($link, $tit, $idusuario){
 	require_once '../include/communityBD.php';
+	$linkCorto = explode("=", $link)[1];
+	$link = "https://www.youtube.com/embed/" .$linkCorto;
 	nuevoVideo($link, $tit, $idusuario);
 	echo"Video insertado con exito.";
 	return(true);
