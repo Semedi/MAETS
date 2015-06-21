@@ -83,4 +83,38 @@ function generarUsuario($user){
 
 }
 
+function generarAmigos($user){
+  require_once('../include/usersOp.php');
+
+  $res = getListaAmigos($user,"IDUsuario");
+
+
+
+
+      echo "<tr>";
+    for($i=0; $i<sizeof($res)-1; $i++) {
+      
+        ;
+        if ($i%4==0){
+            echo "</tr>";
+            echo "<tr>";
+
+        }
+        echo "
+           <td id = 'celda'>".getUser($res[$i]['IDAmigo'])['nick']."
+                  <p>Desconectado</p>
+                 </td>
+
+        ";
+
+    }
+
+          echo"</tr>";
+                
+                 
+                
+
+
+}
+
 ?>

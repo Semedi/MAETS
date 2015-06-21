@@ -262,4 +262,21 @@ function selectUser($valor, $column, $like){
 }
 
 
+function selectAmigo($valor, $column){
+
+	$connection=createConnection();
+
+		$sql = "SELECT * FROM amigo WHERE " .$column. " = '$valor'";
+
+		$res = $connection->query($sql) or die ($connection->error. " en la linea". (_LINE_-1));
+		while($ret[] = $res->fetch_assoc());
+
+
+		closeConnection($connection);
+
+		return($ret);
+
+}
+
+
 ?>
