@@ -1,3 +1,8 @@
+#boton {
+	height: 100px;
+	margin-left: 120px;
+}
+
 
 button.nuevoVideo {
     background-color: lightblue;
@@ -5,4 +10,10 @@ button.nuevoVideo {
     margin-left: 50px;
     padding: 20px;
     margin-bottom: 20px;
+}
+
+iframe {
+	width: 840px;
+	height: 560px;
+	border: 0px;
 }
