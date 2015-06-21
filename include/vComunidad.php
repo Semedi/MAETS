@@ -36,7 +36,7 @@ require_once('shopBD.php');
 		$i = 0;
 		$Capturas = obtenerCapturas();
 		while ($i < sizeof($Capturas) - 1) {
-			echo '<img class="icono'.$i.'" src="../images/screens/'.$Capturas[$i]['Ruta'].'" \>';
+			echo '<img class="icono" src="../images/screens/'.$Capturas[$i]['Ruta'].'" \>';
 			$i++;
 		}
 	}

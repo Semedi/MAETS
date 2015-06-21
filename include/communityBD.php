@@ -19,7 +19,7 @@ function getVideosBD()
 		require_once ('../include/config.php');
 		$con = createConnection();
 		$sql = "SELECT id, idusuario, nombre, enlace, fecha ";
-		$sql.= "FROM videos";
+		$sql.= "FROM videos ORDER BY fecha Desc";
 		$rs = $con->query($sql) or die ($con->error);
 		if($rs != NULL)
 		{
@@ -34,7 +34,7 @@ function getLastCaptures(){
 	require_once ('../include/config.php');
 	$con = createConnection();
 
-	$sql = "SELECT Ruta FROM capturas ORDER BY fecha DESC LIMIT 4"; 
+	$sql = "SELECT Ruta FROM capturas ORDER BY fecha"; 
 
     $rs = $con->query($sql) or die ($con->error. "en la linea".(_LINE_-1));
 		//$rs = mysql_query($sql, $mysqli);
