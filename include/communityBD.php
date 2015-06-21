@@ -102,7 +102,7 @@ function getNumberOfRespuestas($hiloID){
 	
 }
 
-// ret: idJuego, nombreJuego, idUsuario, nombreUsuario, recomendado, texto 
+// ret: idJuego, nombreJuego, idUsuario, nombreUsuario, recomendado, texto, portada
 function getAnalisis() {
 	$con = createConnection();
 
@@ -113,7 +113,8 @@ function getAnalisis() {
 	while($analisis[] = $res->fetch_assoc());
 
 	for($i=0; $i<sizeof($analisis)-1; $i++) {
-		$ret[] = [$analisis[$i]['IdJuego'], selectJuegoById($analisis[$i]['IdJuego'],'tienda')['Titulo'], $analisis[$i]['IdUsuario'], findUserById($analisis[$i]['IdUsuario'])['nick'], $analisis[$i]['Recomendado'], $analisis[$i]['Texto']];
+		$juego = selectJuegoById($analisis[$i]['IdJuego'],'tienda');
+		$ret[] = [$analisis[$i]['IdJuego'], $juego['Titulo'], $analisis[$i]['IdUsuario'], findUserById($analisis[$i]['IdUsuario'])['nick'], $analisis[$i]['Recomendado'], $analisis[$i]['Texto'], $juego['Portada']];
 	}
 
 	closeConnection($con);

@@ -30,19 +30,33 @@ require_once('shopBD.php');
 				}			
 	}
 
-	function generarAnalisis() {	// SIN TERMINAR
+	function generarAnalisis() {
 		// Traer todos los análisis de la base de datos.
-		// Imagen juego, nombre juego, reomendado, texto
+		// IdJuego, NombreJuego, IdUsuario, NombreUsuario, recomendado, texto, portada
 
 		$res = getAnalisisOP();
 
-		print_r($res);
+		foreach ($res as $aux) {
+			echo "<div id = 'cajaAnalisis'>";
+				echo "<div id = 'portada'>";
+					echo "<a href'#'><img class='icono_A' src='../images/Portadas/" .$aux[6]. "'></a>";
+					echo "<p>";
+					if($aux[4])
+						echo "<img class='icono_B' src='../images/LIKE.png'>";
+					else
+						echo "<img class='icono_B' src='../images/DISLIKE.png'>";
+				echo "</div>";
 
-		/*foreach ($res as $aux) {
-			echo "<div id = 'portada'>";
-				echo "<div id = 'portada¡>";
-					echo "<a href'#'><img class='iconoA' src='../images/Portadas/" .. "'></a>";
-		}*/
+				echo "<div id='contenidoAnalisis'>";
+					echo $aux[5];
+				echo "</div>";
+
+				echo "<div id='pieAnalisis'>";
+					echo "<center><p>" .$aux[1]. "</p>";
+					echo "<center><p>" .$aux[3]. "</p>";	
+				echo "</div>";
+			echo "</div>";
+		}
 	}
 
 
