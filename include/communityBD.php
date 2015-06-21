@@ -5,7 +5,7 @@ function getForoBD()
 	{
 		$con = createConnection();
 		//$retorno = [];
-		$sql = "SELECT id, titulo, texto, fecha_de_creacion, ultimo_mensaje, idusuario ";
+		$sql = "SELECT id, titulo, texto, fecha_de_creacion,  idusuario ";
 		$sql.= "FROM hilo";
 		$rs = $con->query($sql) or die ($con->error. "en la linea".(_LINE_-1));
 		//$rs = mysql_query($sql, $mysqli);
@@ -39,8 +39,8 @@ function nuevoHilo($contenido, $titulo, $idusuario)
 		//$fecha = $hoy['year']."-".$hoy['mon']."-".$hoy['mday'];
 		$fecha = gmdate('Y-m-d \G\M\T');
 		$con = createConnection();
-		$sql = "INSERT INTO `hilo`(`Titulo`, `Texto`, `Fecha_creacion`, `Ultimo_mensaje`, `IdUsuario`) VALUES";
-		$sql.= "(".$titulo.", ".$contenido.", ".$fecha.", ".$fecha.", ".$idusuario.")";
+		$sql = "INSERT INTO `hilo`(`Titulo`, `Texto`, `Fecha_creacion`, `IdUsuario`) VALUES";
+		$sql.= "(".$titulo.", ".$contenido.", ".$fecha.", ".$idusuario.")";
 		$con->query($sql) or die ($con->error. "en la linea".(_LINE_-1));
 		$con.closeConnection();
 	}
@@ -63,20 +63,46 @@ function getLastAnalisis(){
 
 //AUN SIN ACABAR
 function getLastRespuesta($hiloID){
-	$connection = createConnection();
+	$con = createConnection();
 
-	$sql = "SELECT mensaje FROM respuesta JOIN hilo WHERE hilo.id = respuesta.IDHilo AND hilo.id = '$hiloID' ORDER BY Fecha_de_creacion DESC limit 1"; 
-
-    $res = $connection->query($sql) or die ($connection->error. " en la linea". (_LINE_-1));
-
-	while($ret[] = $res->fetch_assoc());
-
-	closeConnection($connection);
-
-	return($ret);
+	$sql = "SELECT fecha, mensaje FROM respuesta JOIN hilo WHERE hilo.id = respuesta.IDHilo AND hilo.id = '$hiloID' ORDER BY Fecha DESC limit 1"; 
+    $rs = $con->query($sql) or die  ($con->error. " en la linea ".(_LINE_-1));
+	if($rs != NULL)
+	{
+		if($row = $rs->fetch_assoc())
+		{
+			closeConnection($con);
+			return ($row);
+		}
+		else
+			closeConnection($con);
+			return (NULL);
+	}
 
 	
 }
+
+function getNumberOfRespuestas($hiloID){
+	$con = createConnection();
+
+	$sql = "SELECT COUNT(mensaje) FROM respuesta JOIN hilo WHERE hilo.id = respuesta.IDHilo AND hilo.id = '$hiloID'"; 
+    $rs = $con->query($sql) or die  ($con->error. " en la linea ".(_LINE_-1));
+	if($rs != NULL)
+	{
+		if($row = $rs->fetch_assoc())
+		{
+			closeConnection($con);
+			return ($row);
+		}
+		else
+			closeConnection($con);
+			return (NULL);
+	}
+
+	
+}
+
+
 
 
 

@@ -49,55 +49,6 @@
 							<p id="creados">50</p>
 						   </td>
 						</tr>
-						
-						<tr>
-						   <td id = "tema"> 
-							<h5>Nuevo en MAETS</h5>
-							<p id="ult_mens">Hace 2 minutos</p>
-							<p id="en_tema">Me presento</p>
-							<p id="creados">12</p>
-						   </td>
-						</tr>
-						<tr>
-						   <td id = "tema"> 
-							<h5>Intercambios</h5>
-							<p id="ult_mens">Hace 45 minutos</p>
-							<p id="en_tema">Busco FIFA15</p>
-							<p id="creados">22</p>
-						   </td>
-						</tr>
-						<tr>
-						   <td id = "tema"> 
-							<h5>Desarrolladores</h5>
-							<p id="ult_mens">Hace 4 minuto</p>
-							<p id="en_tema">Recomendados</p>
-							<p id="creados">42</p>
-						   </td>
-						</tr>
-						<tr>
-						   <td id = "tema"> 
-							<h5>Zona PeCeros</h5>
-							<p id="ult_mens">Hace 1 minuto</p>
-							<p id="en_tema">Al fin GTAV!</p>
-							<p id="creados">61</p>
-						   </td>
-						</tr>
-						<tr>
-						   <td id = "tema"> 
-							<h5>Zona Consolas</h5>
-							<p id="ult_mens">Hace 20 minutos</p>
-							<p id="en_tema">PS4 >>> XBOXone</p>
-							<p id="creados">22</p>
-						   </td>
-						</tr>
-						<tr>
-						   <td id = "tema"> 
-							<h5>Zona Off Topic</h5>
-							<p id="ult_mens">Hace 45 minutos</p>
-							<p id="en_tema">Hay tormenta...</p>
-							<p id="creados">14</p>
-						   </td>
-						</tr>
 						-->
 
 					</table>		

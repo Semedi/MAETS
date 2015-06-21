@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 21-06-2015 a las 03:47:35
+-- Tiempo de generación: 21-06-2015 a las 05:10:29
 -- Versión del servidor: 5.6.21
 -- Versión de PHP: 5.6.3
 
@@ -140,17 +140,17 @@ CREATE TABLE IF NOT EXISTS `hilo` (
   `Titulo` varchar(200) COLLATE utf8_bin NOT NULL,
   `Texto` longtext COLLATE utf8_bin NOT NULL,
   `Fecha_de_creacion` date NOT NULL,
-  `Ultimo_mensaje` date NOT NULL,
   `IdUsuario` int(10) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
 -- Volcado de datos para la tabla `hilo`
 --
 
-INSERT INTO `hilo` (`Id`, `Titulo`, `Texto`, `Fecha_de_creacion`, `Ultimo_mensaje`, `IdUsuario`) VALUES
-(1, 'Bienvenidos a GTA Online', 'Buenas tardes, creo este foro para ir añadiendo información sobre el progreso que voy consiguiendo en el GTA V, en el modo multijugador, espero que ayudeis con vuestros consejos!!', '2015-06-18', '2015-06-19', 6),
-(3, 'Instalando Dishonored', 'Estoy teniendo problemas al instalar el juego, ¿Alguien me puede ayudar a arreglarlo?\r\nEl error que me da es 404 tu no sabes instalar juegos aqui.\r\n\r\nGracias de antemano', '2015-06-13', '0000-00-00', 13);
+INSERT INTO `hilo` (`Id`, `Titulo`, `Texto`, `Fecha_de_creacion`, `IdUsuario`) VALUES
+(1, 'Bienvenidos a GTA Online', 'Buenas tardes, creo este foro para ir añadiendo información sobre el progreso que voy consiguiendo en el GTA V, en el modo multijugador, espero que ayudeis con vuestros consejos!!', '2015-06-18', 6),
+(3, 'Instalando Dishonored', 'Estoy teniendo problemas al instalar el juego, ¿Alguien me puede ayudar a arreglarlo?\r\nEl error que me da es 404 tu no sabes instalar juegos aqui.\r\n\r\nGracias de antemano', '2015-06-13', 13),
+(5, 'Project cars es un simulador', 'Creo este tema para que deis vuestras configuraciones de pc para este juego, diciendo como jugáis y con que periféricos aprovecháis este pedazo de juego!  \r\n', '2015-06-07', 7);
 
 -- --------------------------------------------------------
 
@@ -242,7 +242,9 @@ CREATE TABLE IF NOT EXISTS `respuesta` (
 --
 
 INSERT INTO `respuesta` (`IDHilo`, `IDUsuario`, `Fecha`, `Mensaje`) VALUES
-(1, 7, '2015-06-18 00:00:00', 'Buenas, aquí otro jugador que cuando juegue un par de horas os empezará a dar sus consejos!');
+(1, 7, '2015-06-18 00:00:00', 'Buenas, aquí otro jugador que cuando juegue un par de horas os empezará a dar sus consejos!'),
+(1, 13, '2015-06-21 00:11:11', 'Hola'),
+(5, 13, '2015-06-09 00:00:00', 'Yo utilizo una silla con un motor que va moviendose a medida que vas girando en el juego, ademas tengo el oculus rift para reventar en la experiencia de realidad virtual!!');
 
 -- --------------------------------------------------------
 
@@ -355,7 +357,7 @@ MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
 -- AUTO_INCREMENT de la tabla `hilo`
 --
 ALTER TABLE `hilo`
-MODIFY `Id` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
+MODIFY `Id` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT de la tabla `juego`
 --
