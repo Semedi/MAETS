@@ -22,6 +22,7 @@ table {
 	border-radius: 4px;
 
 	padding: 10px;
+
 }
 
 th {
@@ -33,3 +34,8 @@ th {
 td {
 	color: white;
 }	
+
+img.portada {
+  width: 100px;
+  height: 100px;
+}

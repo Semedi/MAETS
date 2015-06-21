@@ -1,3 +1,4 @@
+<?php require_once __DIR__.'\..\include\config.php'; ?>
 <!DOCTYPE html>
 
 <html>
@@ -8,40 +9,17 @@
 	<link rel="stylesheet" type="text/css" href="../css/gestorJuegos.css"/>
 </head>
 
-<?php include ('../static/mainTOP.php'); ?>
-
-	<?php
-		$filas = 10;	/* Coger filas de la base de datos */
-		$columnas = 12;
-		$texto = "texto";	/* Coger datos de la base de datos */
-	?>
+<?php require_once ('../static/mainTOP.php'); ?>
 
 	<body>
 		<button name="anadirJuegos" id="anadirJuegos" onclick="location.href ='formularioJuego.php';">Añadir nuevo juego</button>
-		<table>
-			<th> Título </th>
-			<th> Precio </th>
-			<th> Edad </th>
-			<th> Descripción </th>
-			<th> Descripción completa </th>
-			<th> Compañía </th>
-			<th> Tipo </th> 
-			<th> Etiquetas </th>
-			<th> Idioma </th> 
-			<th> Ventas </th> 
-			<th> Fecha </th>
-			<th> Portada </th>
-			<?php
-				for($i=0; $i<$filas; $i++) {
-					echo "<tr>";
-					for($j=0; $j<$columnas; $j++)
-						echo "<td>" .$texto. "</td>" ;
-					echo "</tr>";
-				}
-			?>
-		</table>
+		
+		<?php
+			require_once ('/../include/vTienda.php');
+			generarTabla('');
+		?>
 	</body>
 
-<?php include ('../static/mainBOT.php'); ?>
+<?php require_once ('../static/mainBOT.php'); ?>
 
 </html>

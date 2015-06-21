@@ -2,7 +2,7 @@
 
 // gen -> desde donde se llama
 
-function select($tipo, $column, $like, $gen){
+function select($valor, $column, $like, $gen){
 
 	if($gen == 'index')
 		require_once ('/include/config.php');
@@ -11,10 +11,15 @@ function select($tipo, $column, $like, $gen){
 
 	$connection=createConnection();
 
-	if($like)
-		$sql = "SELECT * FROM juego WHERE UPPER(" .$column. ") LIKE UPPER('%$tipo%')";
-	else
-		$sql = "SELECT * FROM juego WHERE " .$column. " = '$tipo'";
+	if($valor == "")
+		$sql = "SELECT * FROM juego";
+
+	else {
+		if($like)
+			$sql = "SELECT * FROM juego WHERE UPPER(" .$column. ") LIKE UPPER('%$valor%')	";
+		else
+			$sql = "SELECT * FROM juego WHERE " .$column. " = '$valor'";
+	}
 
 	$res = $connection->query($sql) or die ($connection->error. " en la linea". (_LINE_-1));
 

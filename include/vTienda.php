@@ -2,14 +2,80 @@
 
 // gen -> desde dónde se llama
 
-function generarLista($tipo, $column, $like, $gen){
+function generarTabla($Companyia) {
+	require_once ('/../include/shopOp.php');
+
+	$res = getLista($Companyia, 'Companyia', false, 'tienda');
+
+	$columnas = array("Titulo", "Precio", "Edad", "Descripcion", "DescripcionLarga", "Companyia", "Tipo", "Etiquetas", "Idiomas", "Ventas", "Fecha", "Portada");
+
+	echo "<table>
+			<th> Título </th>
+			<th> Precio </th>
+			<th> Edad </th>
+			<th> Descripción </th>
+			<th> Descripción completa </th>
+			<th> Compañía </th>
+			<th> Tipo </th> 
+			<th> Etiquetas </th>
+			<th> Idioma </th> 
+			<th> Ventas </th> 
+			<th> Fecha </th>
+			<th> Portada </th>";
+ 			for($i=0; $i<sizeof($res)-1; $i++) {				// filas
+ 				echo "<tr>";
+ 				for($j=0; $j<sizeof($columnas); $j++) {			// columnas
+ 					echo "<td><a href='editarJuego.php?juego=" .$res[$i]['Id']. "''>";
+ 					if($columnas[$j] == "DescripcionLarga") {	// Tratamiento descripción larga
+	 					if(strlen($res[$i][$columnas[$j]])>62)
+	 						echo substr($res[$i][$columnas[$j]], 0, 62). " ...";
+	 					else
+	 						echo $res[$i][$columnas[$j]];
+	 				}
+	 				else if($columnas[$j] == "Etiquetas") {		// Tratamiento etiquetas
+	 					$arrayEtiquetas = explode(", ", $res[$i][$columnas[$j]], 4);
+	 					$numEtiquetas = 3;
+	 					if(sizeof($arrayEtiquetas) > $numEtiquetas) {
+		 					for($k=0; $k<$numEtiquetas-1; $k++) {
+		 						echo $arrayEtiquetas[$k];
+		 						if($k!=$numEtiquetas-2)
+		 							echo ", ";
+		 					}
+		 					echo " ...";
+		 				}
+		 				else {
+		 					for($k=0; $k<sizeof($arrayEtiquetas)-1; $k++) {
+		 						echo $arrayEtiquetas[$k];
+		 						if($k!=sizeof($arrayEtiquetas)-2)
+		 							echo ", ";
+		 					}
+		 				}
+	 				}
+	 				else if($columnas[$j] == "Idiomas") {		// Tratamiento idiomas
+	 					if($res[$i][$columnas[$j]] == "Espanyol")
+	 						echo "Español";
+	 					else
+	 						echo $res[$i][$columnas[$j]];
+	 				}
+	 				else if($columnas[$j] == "Portada")			// Tratamiento idiomas
+	 					echo "<img class='portada' src='../images/Portadas/" .$res[$i][$columnas[$j]]. "'>";
+					else
+						echo $res[$i][$columnas[$j]];
+					echo "</td>";
+ 				}
+ 				echo "</a></tr>";
+ 			}
+	echo "</table>";
+}
+
+function generarLista($valor, $column, $like, $gen){
 	if($gen == 'index')
 		require_once ('/include/shopOp.php');
 	else if($gen == 'tienda')
 		require_once ('/../include/shopOp.php');
 	//llamar a getLista()
 
-		$res = getLista($tipo, $column, $like, $gen);
+		$res = getLista($valor, $column, $like, $gen);
 
 			for($i=0; $i<sizeof($res)-1; $i++) {
 
