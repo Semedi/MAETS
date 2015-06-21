@@ -49,17 +49,6 @@
 							<?php generarForo();?>
 						</div>
 
-						<!--
-						<tr>
-						   <td id = "tema"> 
-							<h5>Normas y ayuda</h5>
-							<p id="ult_mens">Hace 5 minutos</p>
-							<p id="en_tema">Ayuda DBX!!</p>
-							<p id="creados">50</p>
-						   </td>
-						</tr>
-						-->
-
 					</table>		
 	    	</div>
 
