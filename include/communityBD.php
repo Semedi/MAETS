@@ -61,7 +61,6 @@ function nuevoHilo($contenido, $titulo, $idusuario)
 function nuevoVideo($link, $titulo, $idusuario)
 {
 	require_once ('../include/config.php');
-	$hoy = getdate();
 	$fecha = gmdate('Y-m-d');
 	$con = createConnection();
 	$sql = "INSERT INTO `videos`(`IDUsuario`, `Nombre`, `Enlace`, `Fecha`) VALUES ";
@@ -190,7 +189,7 @@ function selectThreadAnsById($id) {
 
 	$connection = createConnection();
 
-	$sql = "SELECT * FROM respuesta WHERE IDHilo = '$id'";	
+	$sql = "SELECT * FROM respuesta WHERE IDHilo = '$id' ORDER BY fecha ASC";	
 
 	$res = $connection->query($sql) or die ($connection->error). " en la linea".(_LINE_-1);
 
@@ -215,11 +214,9 @@ function selectIdThread($titulo) {
 
 function insertarRespuesta($idHilo, $idUsuario, $texto) {
 	require_once ('../include/config.php');
-	$hoy = getdate();
-	//$fecha = $hoy['year']."-".$hoy['mon']."-".$hoy['mday'];
-	$fecha = gmdate('Y-m-d');
+	$fecha = gmdate('Y-m-d h-i-s');
 	$con = createConnection();
-	$sql = "INSERT INTO 'respuesta' ('IDHilo', 'IDUsuario', 'Fecha', 'Mensaje') VALUES ";
+	$sql = "INSERT INTO `respuesta`(`IDHilo`, `IDUsuario`, `Fecha`, `Mensaje`) VALUES ";
 	$sql.= "('".$idHilo."', '".$idUsuario."', '".$fecha."', '".$texto."')";
 	$con->query($sql) or die ($con->error);
 	closeConnection($con);

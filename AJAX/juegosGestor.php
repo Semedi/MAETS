@@ -61,22 +61,8 @@ function getNameOfGame($juego){
 
 function addGameToUser($juego, $user) {
 
-	if($ret = $res->fetch_assoc()) {
-		closeConnection($connection);
-		return ($ret);
-	}
-
-	closeConnection($connection);
-	return (NULL);
-
 	$connection = createConnection();
-
-	$sql = "SELECT Id FROM usuario WHERE Nick = '$user'";
-	$result = $connection->query($sql) or die ($connection->error. " en la linea".(_LINE_-1));
-
-	$idUser = $res->fetch_assoc();
-	
-	$sql = "SELECT * FROM compras WHERE IDUsuario = '$idUser' AND IDJuego = '$juego'";
+	$sql = "SELECT * FROM compras WHERE IDUsuario = '$user' AND IDJuego = '$juego'";
 	$result = $connection->query($sql) or die ($connection->error. " en la linea".(_LINE_-1));
 
 
@@ -84,15 +70,23 @@ function addGameToUser($juego, $user) {
 		echo "Ya tienes este juego en tu biblioteca.";
 	}
 	else {
-		// Insertar en compras
-		$q = "INSERT INTO compras ('IDUsuario', 'IDJuego') VALUES ('$idUser', '$juego')";
-		$connection->query($q) or die($connection->error. " en la linea".(_LINE_-1));
 		// Ventas + 1
-		$q = ""
+		$q = "SELECT * FROM juego WHERE id = '$juego'";
+		$game = connection->query($q) or die ($connection->error. " en la linea".(_LINE_-1));
+		if($row = $result->fetch_assoc()) {
+			$ventas = $row['Ventas']+1;
+			$sql = "UPDATE `maets`.`juego` SET `Ventas` ='$ventas' WHERE `juego`.`Id` ='$juego'"; 
+
+    		$connection ->query($sql) or die ($connection->error. " en la linea". ('_LINE_-1'));
+		}
+		// Insertar en compras
+		$q = "INSERT INTO compras ('IDUsuario', 'IDJuego') VALUES ('$user', '$juego')";
+		$connection->query($q) or die($connection->error. " en la linea".(_LINE_-1));
 		echo "Compra realizad con éxito.";
 	}
 
 	closeConnection($connection);
+	return (true);
 }
 
 $functionName = filter_input(INPUT_GET, 'functionName');
@@ -110,7 +104,7 @@ switch ($functionName) {
     case "getNameOfGame":
     	echo getNameOfGame($_GET["juego"]);
     case "addGameToUser":
-    	echo addGameToUser($_GET["juego", "usuario"]);
+    	echo addGameToUser($_GET["juego"], $_SESSION["ID"]);
 
 }
 
