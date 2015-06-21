@@ -76,7 +76,7 @@ require_once('shopBD.php');
 			echo "<h4> Foros añadidos recientemente: </h4>";
 			foreach ($ultimosForos as $aux) {
 				if($aux != NULL)
-					echo "<p>" .$aux['Titulo']. "</p>";
+					echo "<a href='community/vthread.php?foro=" .$aux['Id']. "'><p>" .$aux['Titulo']. "</p></a>";
 			}
 		echo "</div>";
 	}
@@ -89,7 +89,7 @@ require_once('shopBD.php');
 			foreach ($ultimosAnalisis as $aux) {
 				if($aux != NULL) {
 					$nombreJuego = selectJuegoById($aux['IdJuego'], 'index')['Titulo'];
-					echo "<p>" .$nombreJuego. "</p>";
+					echo "<a href='community/analysis.php'><p>" .$nombreJuego. "</p></a>";
 				}
 			}
 		echo "</div>";
@@ -102,7 +102,7 @@ require_once('shopBD.php');
 			echo "<h4> Capturas añadidas recientemente: </h4>";
 			foreach ($ultimasCapturas as $aux) {
 				if($aux != NULL) 
-					echo "<p>" .$aux['Nombre']. "</p>";
+					echo "<a href='community/capturas.php'><p>" .$aux['Nombre']. "</p></a>";
 			}
 		echo "</div>";
 	}

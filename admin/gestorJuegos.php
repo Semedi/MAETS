@@ -16,7 +16,7 @@
 		
 		<?php
 			require_once ('/../include/vTienda.php');
-			generarTabla('');
+			generarTabla($_SESSION['ID']);
 		?>
 	</body>
 
