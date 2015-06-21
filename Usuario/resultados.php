@@ -27,6 +27,7 @@
 			    		<?php 
 			    			require_once ('../include/vUsuario.php');
 			    			
+			    			if (isset($_POST['busqueda']))
 							generarListaBusqueda($_POST['busqueda'], 'Nick', true);
 
 			    		?>
