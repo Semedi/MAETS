@@ -18,19 +18,11 @@
 
       $('#updatePersonalInfo').click(
         function(){
-          alert("ante de la funcion");
           $.get("../AJAX/usuariosGestor.php",{ functionName:"updatePersonalInfo", nombre:$('#nombre').val(),apellidos:$('#apellidos').val(), mail:$('#mail').val(), pais:$('#pais').val(), ciudad:$('#ciudad').val(), direccion:$('#direccion').val(), CP:$('#CP').val()},function(data){
            trimmed_data = $.trim(data); 
 
-              if (trimmed_data == ""){
-                alert("Tus datos se ha actualizado");
-                window.location.href = "infoPersonalUser.php";
+              alert(data);
                 
-              }
-              else {
-                alert (data);
-              };
-        
             }
           );
         });

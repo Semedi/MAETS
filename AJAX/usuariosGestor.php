@@ -24,15 +24,36 @@ function addUser($user, $pass, $mail){
 function modifyUserAccount($user,$mail, $ID){
 
 	include '../include/usersBD.php';
-	modifyAccount($user,$mail, $ID);
+	
+	if (modifyAccount($user,$mail, $ID)){
+		echo "Cambios guardados";
+
+		$_SESSION['Nick'] = $user;
+		$_SESSION['Email']= $mail;
+
+
+
+	}
 
 }
 //actualiza la informacion personal del usuario
 function updatePersonalInfo($nombre, $apellidos, $mail, $pais, $ciudad, $direccion, $CP, $ID){
 	
 	include '../include/usersBD.php';
-	updateInfo($nombre, $apellidos, $mail, $pais, $ciudad, $direccion, $CP, $ID);
-
+	if(updateInfo($nombre, $apellidos, $mail, $pais, $ciudad, $direccion, $CP, $ID)){
+		echo "Cambios guardados";
+		$_SESSION['Nombre'] = $nombre;
+		$_SESSION['Apellidos'] = $apellidos;
+		$_SESSION['Email'] = $mail;
+		$_SESSION['Pais'] = $pais;
+		$_SESSION['Direccion'] = $direccion;
+		$_SESSION['Ciudad'] = $ciudad;
+		$_SESSION['CP'] = $CP;
+	}
+}
+function updateSession(){
+	include '../include/usersBD.php';
+	updateSesion();
 }
 
 
@@ -105,7 +126,6 @@ switch ($functionName) {
     case "searchUser":
     	searchUser($_GET["userNick"]);
     	break;
-
 
 }
 
