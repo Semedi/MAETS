@@ -60,7 +60,7 @@
 					<input id = "puntuacionSi" type="radio" name="puntuacionSi" value="recomendado">Recomendado 
 					<input id = "puntuacionNo" type="radio" name="puntuacionNo" value="no_recomendado">No recomendado
 				</p>
-				<button name="crearAnalisis" id="crearAnalisis">Crear análisis<button/>
+				<button name="crearAnalisis" id="crearAnalisis">Crear análisis</button>
 		</div>	
 
 <?php include ('../static/mainBOT.php'); ?>
