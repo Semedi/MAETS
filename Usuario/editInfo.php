@@ -22,17 +22,14 @@
         function(){
           $.get("../AJAX/usuariosGestor.php",{ functionName:"modifyUserAccount", user:$('#nick').val(), mail:$('#mail').val()},function(data){
           trimmed_data = $.trim(data);
-              if (trimmed_data == ""){
-                alert("Se han guardado los cambios");
-                window.location.href = "editInfo.php";
-              }
-              else {
-                alert (data);
-              };
+             
+             alert(data);
         
             }
           );
         });
+
+  
 
 
 

@@ -6,8 +6,15 @@ function modifyAccount($user,$mail, $ID){
 
 	$sql = "UPDATE `maets`.`usuario` SET `Nick` ='$user',`Correo`= '$mail' WHERE `usuario`.`Id` ='$ID'"; 
 
+
+
     $connection ->query($sql) or die ($connection->error. " en la linea". ('_LINE_-1'));
+
+
+
 	closeConnection($connection);
+
+	return (true);
 
 }
 //actualiza la informacion personal del usuario
@@ -19,6 +26,7 @@ function updateInfo($nombre, $apellidos, $mail, $pais, $ciudad, $direccion, $CP,
 
     $connection ->query($sql) or die ($connection->error. " en la linea". ('_LINE_-1'));
 	closeConnection($connection);
+	return (true);
 
 }
 
@@ -136,6 +144,33 @@ function insertFriend($fid, $userId){
 
 function auth_encripta($pass, $salt) {
 	 password_hash($pass."miApp");
+}
+
+//funcion para recuperar los datos de la sesión de la base de datos en caso de fallo
+function updateSesion(){
+	$id = $_SESSION['ID'];
+	$connection = createConnection();
+	$result = "SELECT * FROM usuario WHERE Id = '$id'";
+
+	if($row = $result->fetch_assoc()){
+		//session_destroy();
+		//session_start();
+		$_SESSION['Nick'] = $user;
+		$_SESSION['Logueado'] = true;
+		$_SESSION['Rol'] = $row["Rol"];
+		$_SESSION['Nombre'] = $row["Nombre"];
+		$_SESSION['Apellidos'] = $row["Apellidos"];
+		$_SESSION['Email'] = $row["Correo"];
+		$_SESSION['Pais'] = $row["Pais"];
+		$_SESSION['Direccion'] = $row["Direccion"];
+		$_SESSION['Ciudad'] = $row["Ciudad"];
+		$_SESSION['CP'] = $row["Codigo Postal"];
+		$_SESSION['IMG'] = $row["Imagen"];
+
+
+	}
+	closeConnection($connection);
+
 }
 
 function compruebaLogin($user, $pass){
