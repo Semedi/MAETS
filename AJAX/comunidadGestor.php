@@ -19,8 +19,10 @@ function newAnswer($idHilo, $texto, $idUsuario) {
 }
 
 //elimina un hilo de la bdd
-function deleteForum(){
-	
+function deleteForum($id){
+	require_once ('../include/communityBD.php');
+	eliminarForo($id);
+	echo "Foro eliminado correctamente.";
 	return(true);
 }
 
@@ -106,6 +108,9 @@ switch ($functionName) {
 			echo "No puedes realizar un analisis sin haberte logueado primero.";
 		else
 			newAnalisis($_GET['juego'], $_SESSION['ID'], $_GET['texto'], $_GET['puntuacion']);
+	break;
+	case "deleteForum":
+		deleteForum($_GET['idHilo']);
 	break;
 	
     

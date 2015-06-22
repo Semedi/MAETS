@@ -28,6 +28,19 @@
 			 			}
 			 		);
 				});
+			$('#eliminarForo').click(
+				function(){
+					var elemento = "<?php Print($_GET['foro']); ?>";
+					$.get("../AJAX/comunidadGestor.php",{ functionName:"deleteForum", idHilo: elemento},function(data){
+			 			trimmed_data = $.trim(data);
+						
+								alert(data);
+				 				window.location.href = "foros.php";
+				 			
+				 			
+			 			}
+			 		);
+				});
 		});
 	 </script>
 
@@ -38,6 +51,10 @@
 <?php  require_once ('../static/communityMenu.php'); ?>
 				<div id="ContenidoCentral">
 						<center>
+							<?php
+							if($_SESSION["Rol"]=='Administrador' or $_SESSION["Rol"]=='Gestor-Comunidad')
+								echo "<button name='eliminarForo' id='eliminarForo'>Eliminar foro</button>";
+							?>
 							<div id="espacio">
 							</div>
 									<?php

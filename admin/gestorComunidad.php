@@ -16,7 +16,7 @@
 	<body>
 		<h1> Foros </h1>
 		<button name="anadirForos" id="anadirForos" onclick="location.href ='../community/thread.php';">Añadir nuevo foro</button>
-		<?php //generarTablaForos(); ?>
+		<?php generarListaForos(); ?>
 
 		<h1> Usuarios </h1>
 		<button name="anadirUsuarios" id="anadirUsuarios" onclick="location.href ='../signUp.php';">Añadir nuevo usuario</button>

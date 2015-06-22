@@ -342,4 +342,12 @@ function insertCaptura($idUsuario, $imagen, $index) {
 	$con->query($sql) or die ($con->error);
 	closeConnection($con);
 }
+
+function eliminarForo($id) {
+	require_once('../include/config.php');
+	$connection = createConnection();
+	$sql = "DELETE FROM hilo WHERE Id = '$id'";
+	$connection->query($sql) or die ($connection->error);
+	closeConnection($connection);
+}
 ?>

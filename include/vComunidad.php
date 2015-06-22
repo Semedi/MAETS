@@ -34,6 +34,36 @@ require_once('shopBD.php');
 					}
 				}			
 	}
+
+	function generarListaForos() {
+		$hilos = getForoOP();
+		echo "<table>
+				<th> Tema </th>
+				<th> Creador </th>
+				<th> Número mensajes </th>";
+		foreach ($hilos as $hilo) {
+			if($hilo['id'] != '') {
+				$autor = findUserById($hilo['idusuario']);
+				$numMensajes = getNumberOfRespuestas($hilo['id']);
+				echo "<tr>";
+					echo "<td>";
+						echo "<a href='../community/vthread.php?foro=" .$hilo['id']. "'>";
+							echo "<p>" .$hilo['titulo']. "</p>";
+						echo "</a>";
+					echo "</td>";
+					echo '<td>';
+						echo '<a href="../Usuario/Usuario.php?user=' .$autor['nick']. '">';
+							echo "<p>".$autor['nick']."</p>";
+						echo '</a>';
+					echo "</td>";
+					echo '<td>';
+						echo "<p>".$numMensajes['COUNT(mensaje)']."</p>";
+					echo "</td>";
+			}
+		}
+		echo "</table>";
+	}
+
 	function generarCapturas() {
 		$i = 0;
 		$Capturas = obtenerCapturas();
