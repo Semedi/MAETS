@@ -222,4 +222,110 @@ function insertarRespuesta($idHilo, $idUsuario, $texto) {
 	closeConnection($con);
 }
 
+function getTopUsers() {
+	require_once ('../include/config.php');
+
+	$connection = createConnection();
+
+	$sql = "SELECT Nick, Imagen, Puntuacion FROM usuario ORDER BY Puntuacion DESC LIMIT 3";
+
+	$res = $connection->query($sql) or die ($connection->error). " en la linea".(_LINE_-1);
+
+	while($ret[] = $res->fetch_assoc());
+
+	return $ret;
+}
+
+function getTopLogros() {
+	require_once ('../include/config.php');
+
+	$connection = createConnection();
+
+	$sql = "SELECT IDUsuario, COUNT(IDUsuario) FROM consigue
+			GROUP BY IdUsuario
+			ORDER BY COUNT(IDUsuario) DESC LIMIT 3";
+
+	$res = $connection->query($sql) or die ($connection->error). " en la linea".(_LINE_-1);
+
+	while($ret[] = $res->fetch_assoc());
+
+	return $ret;
+}
+
+function getUsuariosNuevos() {
+	require_once ('../include/config.php');
+
+	$connection = createConnection();
+
+	$sql = "SELECT Nick, Imagen FROM usuario ORDER BY Id DESC LIMIT 3";
+
+	$res = $connection->query($sql) or die ($connection->error). " en la linea".(_LINE_-1);
+
+	while($ret[] = $res->fetch_assoc());
+
+	return $ret;	
+}
+
+function getUltimosPost() {
+	require_once ('../include/config.php');
+
+	$connection = createConnection();
+
+	$sql = "SELECT IdUsuario FROM hilo ORDER BY Fecha_de_creacion DESC LIMIT 3";
+
+	$res = $connection->query($sql) or die ($connection->error). " en la linea".(_LINE_-1);
+
+	while($ret[] = $res->fetch_assoc());
+
+	return $ret;		
+}
+
+function getLogro($idLogro) {
+	
+	require_once ('../include/config.php');
+
+	$connection = createConnection();
+
+	$id = $idLogro['IDLogro'];
+
+	$sql = "SELECT * FROM logro WHERE Id = '$id'";
+
+	$res = $connection->query($sql) or die ($connection->error). " en la linea".(_LINE_-1);
+
+	if($ret = $res->fetch_assoc()) {
+		closeConnection($connection);
+		return $ret;
+	}
+
+	closeConnection($connection);
+	return NULL;			
+}
+
+function selectLogrosJuego($juego) {
+	
+	require_once ('../include/config.php');
+
+	$connection = createConnection();
+
+	$sql = "SELECT * FROM logro WHERE JuegoID = '$juego'";
+
+	$res = $connection->query($sql) or die ($connection->error). " en la linea".(_LINE_-1);
+
+	while($ret[] = $res->fetch_assoc());
+
+	closeConnection($connection);
+
+	return ($ret);	
+}
+
+function insertAnalisis($juego, $usuario, $texto, $puntuacion) {
+	require_once ('../include/config.php');
+	$hoy = getdate();
+	$fecha = gmdate('Y-m-d');
+	$con = createConnection();
+	$sql = "INSERT INTO `analisis`(`IdJuego`, `IdUsuario`, `Texto`, `Recomendado`, `Fecha`) VALUES ";
+	$sql.= "('".$juego."', '".$usuario."', '".$texto."', '".$puntuacion."', '".$fecha."')";
+	$con->query($sql) or die ($con->error);
+	closeConnection($con);
+}
 ?>

@@ -102,10 +102,13 @@ function generarLista($valor, $column, $like, $gen){
 }
 
 function generarArticulo($id, $gen) {
-	if($gen == 'index')
+	if($gen == 'index') {
 		require_once ('/include/shopOp.php');
-	else if($gen == 'tienda')
+		require_once ('/include/usersOp.php');
+	}
+	else if($gen == 'tienda') {
 		require_once ('/../include/shopOp.php');
+	}
 	$res = getJuegoById($id, $gen);
 
 	echo "<div id='left-side'>";
@@ -129,8 +132,9 @@ function generarArticulo($id, $gen) {
 	    mostrarIdioma($res['Idiomas']);
 	    echo "</p>"; 
 	    echo "</br>";
-	    if(isset($_SESSION["Nick"]))
+	    if(isset($_SESSION["Nick"])) {
 	    	echo "<a href='compra.php?juego=" .$res['Id']. "'><img src='../images/boton-comprar.png'</a>";
+	    }
 	    else
 	    	echo "<p class='details'> Registrate para comprar </p>";
 }

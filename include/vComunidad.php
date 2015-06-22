@@ -1,4 +1,4 @@
-
+	
 <?php
 require_once('communityOp.php');
 require_once('usersBD.php');
@@ -19,7 +19,9 @@ require_once('shopBD.php');
 								echo "</a>";
 							echo "</td>";
 							echo '<td id = "tema">';
+								echo '<a href="../Usuario/Usuario.php?user=' .$autor['nick']. '">';
 									echo "<p id='creador'>".$autor['nick']."</p>";
+								echo '</a>';
 							echo "</td>";
 							echo '<td id = "tema">';
 									echo "<p id='creados'>".$numResp['COUNT(mensaje)']."</p>";
@@ -171,3 +173,66 @@ function cargarVideos()
 			</div>";
 	}
 
+	function generarTopUsuarios() {
+		$usuarios = obtenerTopUsers();
+
+		foreach ($usuarios as $user) {
+			if($user!=NULL)
+				echo " <p><img class='imageUser' src='../images/usuarios/" .$user['Imagen']. "'>" .$user['Nick']. "..." .$user['Puntuacion']. " puntos</p>";
+		}
+	}
+
+	function generarTopLogros() {
+		$idUsuarios = obtenerTopLogros();
+
+		foreach ($idUsuarios as $user) {
+			if($user!=NULL){
+				$usuario = selectUserById($user['IDUsuario']);
+				echo " <p><img class='imageUser' src='../images/usuarios/" .$usuario['Imagen']. "'>" .$usuario['Nick']. "..." .$user['COUNT(IDUsuario)']. " logros</p>";
+			}
+		}
+	}
+
+	function generarNuevosUsuarios() {
+		$usuarios = obtenerUsuariosNuevos();
+		foreach ($usuarios as $user) {
+			if($user!=NULL)
+				echo " <p><img class='imageUser' src='../images/usuarios/" .$user['Imagen']. "'>" .$user['Nick']. "</p>";
+		}	
+	}
+
+	function generarUltimosPost() {
+		$usuarios = obtenerUltimosPost();
+		foreach ($usuarios as $user) {
+			if($user!=NULL) {
+				$usuario = selectUserById($user['IdUsuario']);
+				echo " <p><img class='imageUser' src='../images/usuarios/" .$usuario['Imagen']. "'>" .$usuario['Nick']. "</p>";
+			}
+		}
+	}
+
+	function generarLogros($user) {
+		require_once('../include/usersOp.php');
+		$juegos = getJuegosComprados($user);
+
+		foreach ($juegos as $juego) {
+			if($juego != NULL) {
+				$numLogros = sizeof(getLogrosJuego($juego['Id']))-1;
+				$logros = getLogros($user, $juego['Id']);
+				echo "<div class='logro'>";
+					echo "<div id='titulo'>" .$juego['Titulo']. "</div>";
+					echo "<img class='icono_logro' src='../images/Portadas/" .$juego['Portada']. "'>";
+					echo "<div class='Lsuperior'>";
+						echo "<p class='avance'>Avance en los logros: " .sizeof($logros). " de " .$numLogros. "</p>";
+						for($i=0; $i<4; $i++) {
+							if($i<sizeof($logros))
+								echo "<img class='miniLogro' src='../images/logros/" .$logros[$i]['Imagen']. "'>";
+						}
+					echo "</div>";
+				echo "</div>";
+			}
+		}
+
+	}
+
+?>

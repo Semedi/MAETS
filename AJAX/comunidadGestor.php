@@ -34,6 +34,22 @@ function newVideo($link, $tit, $idusuario){
 	return(true);
 }
 
+function newAnalisis($juego, $usuario, $texto, $puntuacion) {
+	require_once ('../include/shopBD.php');
+	$juego = select($juego, 'Titulo', false, 'tienda');
+	if($juego[0] == NULL) {
+		echo "El juego no se encuentra en el sistema.";
+		return (false);
+	}
+	require_once ('../include/communityBD.php');
+	if($puntuacion == "si")
+		insertAnalisis($juego[0]['Id'], $usuario, $texto, 1);
+	else
+		insertAnalisis($juego[0]['Id'], $usuario, $texto, 0);
+	echo "Análisis añadido correctamente.";
+	return (true);
+}
+
 
 
 
@@ -85,7 +101,12 @@ switch ($functionName) {
 			 newVideo($_GET["link"], $_GET["title"], $_SESSION["ID"]); 
 		}	
     break;
-	case:"newAnalisis"
+	case "newAnalisis":
+		if(!$_SESSION)
+			echo "No puedes realizar un analisis sin haberte logueado primero.";
+		else
+			newAnalisis($_GET['juego'], $_SESSION['ID'], $_GET['texto'], $_GET['puntuacion']);
+	break;
 	
     
 }

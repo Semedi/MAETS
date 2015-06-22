@@ -9,7 +9,5 @@
         <?php
         	include("menuAdministracion.php");
         ?>
-        
-     	<p>Cerrar sesión </p>
        
      </div>

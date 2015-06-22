@@ -89,4 +89,15 @@ function insertGame($titulo, $precio, $edad, $etiquetas, $descripcion, $descripc
 	closeConnection($connection);
 }
 
+function eliminarJuego($juego) {
+	require_once('../include/config.php');
+
+	$connection=createConnection();
+
+	$sql = "DELETE FROM juego WHERE Id = '$juego'";
+	$connection->query($sql) or die ($connecion->error. " en la linea".(_LINE_-1));	
+
+	closeConnection($connection);
+}
+
 ?>

@@ -73,8 +73,7 @@ function generarUsuario($user){
               
               echo "</tr>";
               echo "<tr>";
-              echo "<td>Puntos de logro: </a></td>";
-              echo "<td>52</td>";
+              echo "<td>Puntos de logro: " .$res[0]['Puntuacion']. "</a></td>";
               echo "</tr>";
 
 
@@ -110,11 +109,60 @@ function generarAmigos($user){
     }
 
           echo"</tr>";
-                
-                 
-                
-
-
 }
+
+function generarPerfilPrincipal($user) {
+  require_once('../include/usersOp.php');
+
+  $usuario = getUserInfo($user);
+  $puntosDeLogro = getPuntosLogros($user);
+  $juegosComprados = sizeOf(getJuegosComprados($user));
+
+  echo "<tr>";
+    echo "<td>Nick:</td>";
+    echo "<td>" .$usuario['Nick']. "</td>";
+  echo "</tr>";
+  
+  echo "<tr>";
+    echo "<td>Nombre:</td>";
+    echo "<td>" .$usuario['Nombre']. "</td>";
+  echo "</tr>";
+ 
+  echo "<tr>";
+    echo "<td>Apellidos:</td>";
+    echo "<td>" .$usuario['Apellidos']. "</td>";
+  echo "</tr>";
+
+  echo "<tr>";
+    echo "<td>Correo:</td>";
+    echo "<td>" .$usuario['Correo']. "</td>";
+  echo "</tr>";
+
+  echo "<tr>";
+    echo "<td>Juegos comprados:</td>";
+    echo "<td>" .$juegosComprados. "</td>";
+  echo "</tr>";
+
+  echo "<tr>";
+    echo "<td>Puntos de logro: </a></td>";
+    if($puntosDeLogro['SUM(Puntos)'] != NULL)
+      echo "<td>" .$puntosDeLogro['SUM(Puntos)'].  "</td>";
+    else
+      echo "<td>0</td>";
+  echo "</tr>";
+}
+
+function generarListaDeJuegos($user) {
+  require_once('../include/usersOp.php');
+
+  $juegos = getJuegosComprados($user);
+
+    foreach ($juegos as $juego) {
+      if($juego != NULL)
+        echo "<a href='../tienda/articulo-tienda.php?juego=" .$juego['Id']. "'><li>" .$juego['Titulo']. "</li></a>";
+    } 
+}
+ 
+        
 
 ?>

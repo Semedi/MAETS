@@ -231,11 +231,14 @@ function puntosDeLogro($user){
 	$result = "SELECT SUM(Puntos) FROM logro JOIN consigue WHERE logro.ID = consigue.IDLogro and IDUsuario = $user";
 	$res = $connection->query($result) or die ($connection->error. " en la linea". (_LINE_-1));
 
-	while($ret[] = $res->fetch_assoc());
+	if($ret = $res->fetch_assoc()){
+		closeConnection($connection);
+		return $ret;
+	}
 
 	closeConnection($connection);
 
-	return($ret);
+	return(NULL);
 }
 
 function selectUser($valor, $column, $like){
@@ -266,16 +269,64 @@ function selectAmigo($valor, $column){
 
 	$connection=createConnection();
 
-		$sql = "SELECT * FROM amigo WHERE " .$column. " = '$valor'";
+	$sql = "SELECT * FROM amigo WHERE " .$column. " = '$valor'";
 
-		$res = $connection->query($sql) or die ($connection->error. " en la linea". (_LINE_-1));
-		while($ret[] = $res->fetch_assoc());
+	$res = $connection->query($sql) or die ($connection->error. " en la linea". (_LINE_-1));
+	while($ret[] = $res->fetch_assoc());
 
 
-		closeConnection($connection);
+	closeConnection($connection);
 
-		return($ret);
+	return($ret);
 
+}
+
+function getLogrosUser($user, $juego) {
+	require_once('communityBd.php');
+	$connection=createConnection();
+	
+	$sql = "SELECT IDLogro FROM consigue WHERE IDUsuario = '$user' ORDER BY Fecha DESC";
+
+	$res = $connection->query($sql) or die ($connection->error);
+	while($logrosId[] = $res->fetch_assoc());
+
+	$ret = NULL;
+	foreach ($logrosId as $id) {
+		if($id!=NULL) {
+			$logro = getLogro($id);
+			if($juego != "") {
+				if($logro['JuegoID'] == $juego)
+					$ret[] = $logro;
+			}
+			else
+				$ret[] = $logro;
+		}
+	}
+
+	closeConnection($connection);
+
+	return($ret);
+}
+
+function getJuegosUser($user) {
+	require_once('shopBd.php');
+	$connection = createConnection();
+
+	$sql = "SELECT IDJuego FROM compras WHERE IDUsuario = '$user'";
+
+	$res = $connection->query($sql) or die ($connection-error. " en la linea".(_LINE_-1));
+	while($idJuegos[] = $res->fetch_assoc());
+
+	$ret = NULL;
+	foreach ($idJuegos as $id) {
+		if($id != NULL) {
+			$ret[] = selectJuegoById($id['IDJuego'], 'tienda');
+		}
+	}
+
+	closeConnection($connection);
+
+	return ($ret);
 }
 
 
