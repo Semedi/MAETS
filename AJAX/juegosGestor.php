@@ -12,11 +12,11 @@ function addGame($titulo, $precio, $edad, $etiquetas, $descripcion, $descripcion
 function deleteGame($id){
 	require_once ('../include/shopBD.php');
 	eliminarJuego($id);
-	echo "Juego eliminado con éxito.";	
+	echo "Juego eliminado con exito.";	
 	return(true);
 }
 //modifica juego en la bdd
-function modifyGame($id, $titulo, $precio, $edad, $etiquetas, $descipcion, $descripcionLarga, $tipoJuego, $idiomas/*, $portada*/) {
+function modifyGame($id, $titulo, $precio, $edad, $etiquetas, $descripcion, $descripcionLarga, $tipoJuego, $idioma/*, $portada*/) {
 	// Tratar descipción.
 	if(strlen($descripcion) > 100) {
 		echo "Descrcipción demasiado larga: " .strlen($descripcion). " (máximo 100 caracteres).";
@@ -33,7 +33,7 @@ function modifyGame($id, $titulo, $precio, $edad, $etiquetas, $descipcion, $desc
 		$otrosTipos = array('Accion', 'Aventura', 'Carreras', 'Casual', 'Deportes', 'Estrategia', 'Indie', 'Rol', 'Simuladores');
 		$valido = false;
 		foreach ($otrosTipos as $t) {
-			if($t == $tipo) {
+			if($t == $tipoJuego) {
 				$valido = true;
 				break;
 			}
@@ -56,9 +56,9 @@ function modifyGame($id, $titulo, $precio, $edad, $etiquetas, $descipcion, $desc
 		if(!$valido)
 			$idioma = "";
 	}
-	require_once('--/include/shopBD');
-	updateJuego($id, $titulo, $precio, $edad, $etiquetas, $descipcion, $descripcionLarga, $tipoJuego, $idiomas, "");
-	echo "Cambios realizados con éxito.";
+	require_once ('../include/shopBD.php');
+	updateJuego($id, $titulo, $precio, $edad, $etiquetas, $descripcion, $descripcionLarga, $tipoJuego, $idioma, "");
+	echo "Cambios realizados con exito.";
 	return (true);
 }
 
@@ -99,7 +99,7 @@ switch ($functionName) {
     	deleteGame($_GET['juego']);
         break;
     case "modifyGame":
-    	modifyGame($_GET['id'], $_GET['titulo'], $_GET['precio'], $_GET['edad'], $_GET['etiquetas'], $_GET['descipcion'], $_GET['descripcionLarga'], $_GET['tipo'], $_GET['idiomas']/*, $_GET['portada']*/);
+    	modifyGame($_GET['id'], $_GET['titulo'], $_GET['precio'], $_GET['edad'], $_GET['etiquetas'], $_GET['descripcion'], $_GET['descripcionLarga'], $_GET['tipoJuego'], $_GET['idiomas']/*, $_GET['portada']*/);
         break;
     case "getGame":
     	return getGame($_GET["juego"]);

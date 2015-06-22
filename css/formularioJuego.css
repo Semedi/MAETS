@@ -41,6 +41,7 @@
    padding: 5px;  
 } 
 
+
 #failure, #success {
    color: #6EA070;
    display:none;  
