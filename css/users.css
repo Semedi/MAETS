@@ -257,3 +257,13 @@ p{
 	text-align: center;
 	color: #9898A6;
 }
+
+#noJuegos p{
+	color: white;
+}
+#irTienda{
+    background-color: lightblue;
+    margin-left: 50px;
+    padding:20px;
+    margin-bottom: 20px;
+}

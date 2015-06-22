@@ -422,25 +422,31 @@ function cargarVideos()
 	function generarLogros($user) {
 		require_once('../include/usersOp.php');
 		$juegos = getJuegosComprados($user);
-
-		foreach ($juegos as $juego) {
-			if($juego != NULL) {
-				$numLogros = sizeof(getLogrosJuego($juego['Id']))-1;
-				$logros = getLogros($user, $juego['Id']);
-				echo "<div class='logro'>";
-					echo "<div id='titulo'>" .$juego['Titulo']. "</div>";
-					echo "<img class='icono_logro' src='../images/Portadas/" .$juego['Portada']. "'>";
-					echo "<div class='Lsuperior'>";
-						echo "<p class='avance'>Avance en los logros: " .sizeof($logros). " de " .$numLogros. "</p>";
-						for($i=0; $i<4; $i++) {
-							if($i<sizeof($logros))
-								echo "<img class='miniLogro' src='../images/logros/" .$logros[$i]['Imagen']. "'>";
-						}
+		if($juegos != NULL){
+			foreach ($juegos as $juego) {
+				if($juego != NULL) {
+					$numLogros = sizeof(getLogrosJuego($juego['Id']))-1;
+					$logros = getLogros($user, $juego['Id']);
+					echo "<div class='logro'>";
+						echo "<div id='titulo'>" .$juego['Titulo']. "</div>";
+						echo "<img class='icono_logro' src='../images/Portadas/" .$juego['Portada']. "'>";
+						echo "<div class='Lsuperior'>";
+							echo "<p class='avance'>Avance en los logros: " .sizeof($logros). " de " .$numLogros. "</p>";
+							for($i=0; $i<4; $i++) {
+								if($i<sizeof($logros))
+									echo "<img class='miniLogro' src='../images/logros/" .$logros[$i]['Imagen']. "'>";
+							}
+						echo "</div>";
 					echo "</div>";
-				echo "</div>";
+				}
 			}
+		}else{
+			echo "<div id =\"noLogros\">";
+				echo "<p>Para conseguir logros tienes que haber comprado algún juego antes.</p>";
+				echo "<br /> <br />";
+				echo "<button name=\"irTienda\" id=\"irTienda\" onclick=\"location.href ='../tienda.php';\">Ir a la tienda</button>";
+			echo "</div>";
 		}
-
 	}
 
 ?>

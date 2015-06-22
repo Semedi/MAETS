@@ -52,8 +52,12 @@
 				<div id="ContenidoCentral">
 						<center>
 							<?php
-							if($_SESSION["Rol"]=='Administrador' or $_SESSION["Rol"]=='Gestor-Comunidad')
+							if($_SESSION)
+							{
+								if($_SESSION["Rol"]=='Administrador' or $_SESSION["Rol"]=='Gestor-Comunidad')
 								echo "<button name='eliminarForo' id='eliminarForo'>Eliminar foro</button>";
+							}
+							
 							?>
 							<div id="espacio">
 							</div>
