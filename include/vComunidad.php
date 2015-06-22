@@ -448,5 +448,15 @@ function cargarVideos()
 			echo "</div>";
 		}
 	}
+	
+	function generarListaJuegos()
+	{
+		$juegos = select("", 'Titulo', null, 'comunidad');
+		foreach($juegos as $juego)
+		{
+			if ($juego != NULL)
+				echo "<option>".$juego['Titulo']."</option>";
+		}
+	}
 
 ?>
