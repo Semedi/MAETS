@@ -51,6 +51,15 @@ function updatePersonalInfo($nombre, $apellidos, $mail, $pais, $ciudad, $direcci
 		$_SESSION['CP'] = $CP;
 	}
 }
+//cambia la contraseña
+function changePassw($passw,$newPassw,$id){
+	include '../include/usersBD.php';
+	if(updatePassw($passw,$newPassw,$id)){
+		echo "La contraseña se ha cambiado con exito";
+	}else echo "Comprueba los datos que has introducido";
+
+}
+//no la usamos
 function updateSession(){
 	include '../include/usersBD.php';
 	updateSesion();
@@ -126,6 +135,10 @@ switch ($functionName) {
     case "searchUser":
     	searchUser($_GET["userNick"]);
     	break;
+    case "changePassw":
+    	changePassw($_GET["passw"], $_GET["newPassw"],$_SESSION["ID"]);
+    	break;
+
 
 }
 

@@ -115,15 +115,15 @@ function insertGame($titulo, $precio, $edad, $etiquetas, $descripcion, $descripc
 	$connection=createConnection();
 
 	$sql = "SELECT * FROM juego WHERE Titulo = '$titulo'";
-	$result = $connection->query($result) or die ($connecion->error. " en la linea".(_LINE_-1));
+	$result = $connection->query($sql) or die ($connecion->error);
 
 	if($row = $result->fetch_assoc())
 		echo "El juego ya existe.";
 	else {
 		$hoy = gmdate('Y-m-d');
-		$sql = "INSERT INTO 'juego' ('Id', 'Titulo', 'Portada', 'Precio', 'Edad', 'Descripcion', 'DescipcionLarga', 'Companyia', 'Tipo', 'Etiquetas', 'Idiomas', 'Ventas', 'Fecha')
-				VALUES (NULL, '$titulo', '$portada', '$precio', '$edad', '$descipcion', '$descripcionLarga', '$tipoJuego', '$idiomas', '$etiquetas', '0', '$hoy'";
-		$connection->query($sql) or die ($connecion->error. " en la linea".(_LINE_-1));
+		$sql = "INSERT INTO 'juego' ('Titulo', 'Portada', 'Precio', 'Edad', 'Descripcion', 'DescripcionLarga', 'Companyia', 'Tipo', 'Etiquetas', 'Idiomas', 'Ventas', 'Fecha')
+				VALUES ('".$titulo."', '".$portada."', '".$precio."', '".$edad."', '".$descripcion."', '".$descripcionLarga."', '".$tipoJuego."', '".$idiomas."', '".$etiquetas."', '0', '".$hoy."'";
+		$connection->query($sql) or die ($connection->error);
 	}	
 	closeConnection($connection);
 }

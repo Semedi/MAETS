@@ -12,13 +12,15 @@
 
 	<script type="text/javascript">
 		$( document ).ready(function() {
-			$('#crearTema').click(
+			$('#add').click(
 			 	function(){
-					$.get("../AJAX/juegosGestor.php",{ functionName:"newTopic", content:$('#hilo').val(), title:$('#titulo_hilo').val() },function(data){
+					$.get("../AJAX/juegosGestor.php",{ functionName:"addGame", titulo:$('#nombre').val(), precio:$('#precio').val(),
+														edad:$('#edad').val(), etiquetas:$('#etiquetas').val(), descripcion: $("#descripcion").val(), 
+														descripcionLarga:$('#descripcionLarga').val(), tipoJuego:$('#tipoJuego').val(), idiomas:$('#idiomas').val()}, function(data){
 			 			trimmed_data = $.trim(data);
 						
 								alert(data);
-				 				window.location.href = "foros.php";
+				 				window.location.href = "gestorJuegos.php";
 				 			
 				 			
 			 			}
@@ -62,8 +64,8 @@
 				<p><b><label for="descripcion">Descripción: <span class="required">*</span></label></b></p>
 				<textarea type="descripcion" id="descripcion" name="descripcion" value="" placeholder="Descripción corta del juego (100 caracteres)" required="required"></textarea>
 
-				<p><b><label for="descripcion">Descripción completa: <span class="required">*</span></label></b></label> </p>
-				<textarea type="descripcion" id="descripcion" name="descripcion" value="" placeholder="Descripción completa del juego" required="required"></textarea>
+				<p><b><label for="descripcionLarga">Descripción completa: <span class="required">*</span></label></b></label> </p>
+				<textarea type="descripcionLarga" id="descripcionLarga" name="descripcionLarga" value="" placeholder="Descripción completa del juego" required="required"></textarea>
 				
 				<p><b><label for="tipoJuego">Tipo de juego: </label></b></p>
 
@@ -85,11 +87,9 @@
 				<p><b><label for="portada">Portada: </label></b></p>				
 				</br>
 				 
-				<form action="">  
-					<p><input type=checkbox value='a' name=checked checked> Marque esta casilla para verificar que ha leído nuestros términos y condiciones del servicio.</p>
-				</form>
+			
 
-				<p>  <input type="submit" value="Añadir" /></p>
+				<p>  <input type="submit" value="Añadir" name="add" id ="add" /></p>
 		   </form>   
 		</div>	
 

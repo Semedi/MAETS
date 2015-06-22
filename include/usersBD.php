@@ -146,7 +146,8 @@ function auth_encripta($pass, $salt) {
 	 password_hash($pass."miApp");
 }
 
-//funcion para recuperar los datos de la sesión de la base de datos en caso de fallo
+//NO LA USAMOS SE PUEDE BORRAR
+//funcion para recuperar los datos de la sesión de la base de datos en caso de fallo 
 function updateSesion(){
 	$id = $_SESSION['ID'];
 	$connection = createConnection();
@@ -170,6 +171,32 @@ function updateSesion(){
 
 	}
 	closeConnection($connection);
+
+}
+function updatePassw($passw,$newPassw,$id){
+	$connection = createConnection();
+	$sql = "SELECT * FROM usuario WHERE Id = '$id'";
+	$result = $connection->query($sql) or die ($connection->error. " en la linea".(_LINE_-1));
+	// si la contraseña introducida es correcta insertamos la nueva la nueva contraseña
+	if($row = $result->fetch_assoc()){
+		$dbHash = $row["Contrasenia"];
+		if (crypt($passw, $dbHash) == $dbHash){
+				$passSal = $newPassw;
+			
+				$salt = substr(base64_encode(openssl_random_pseudo_bytes('30')), 0, 22);
+				$salt = strtr($salt, array('+' => '.')); 
+				$hash = crypt($passSal, '$2y$10$' . $salt);
+
+			$sql2 = "UPDATE `maets`.`usuario` SET `Contrasenia` ='$hash' WHERE `usuario`.`Id` ='$id'"; 
+
+		    $connection ->query($sql2) or die ($connection->error. " en la linea". ('_LINE_-1'));
+		    return(true);
+		}
+
+	}else return (false);
+
+	closeConnection($connection);
+
 
 }
 

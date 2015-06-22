@@ -29,6 +29,22 @@
           );
         });
 
+      $('#updatePassw').click(
+          function(){
+          $('#changePassw').show();
+        });
+      $('#updatePasswButton').click(
+         function(){
+          $.get("../AJAX/usuariosGestor.php",{ functionName:"changePassw", passw:$('#passw').val(), newPassw:$('#newPassw').val()},function(data){
+          trimmed_data = $.trim(data);
+             
+             alert(data);
+              window.location.href = "editInfo.php";
+        
+            }
+          );
+        });
+
   
 
 
@@ -83,6 +99,33 @@
              <button type="button" id="modifyButton">Modificar</button>
              <button type="button" id="updatePassw">Cambiar contraseña </button>
             </div>
+         <div id = "changePassw", style="display:none;">
+               <h2> Nueva contraseña</h2>
+
+              <table>
+
+                  <tr>
+                  
+                   <td>Contraseña actual:</td>
+                   <td><input type="text" name="passw" id="passw" class="texto" /></td>
+                  
+                  </tr>
+
+                  <tr>
+                   <td>Nueva contraseña:</td>
+                   <td><input type="text" name="newPassw" id="newPassw" class="texto"/></td>
+
+                  </tr>
+
+                  <tr>
+                      <td>Repite contraseña:</td>
+                      <td><input type="text" name="newPassw2" id="newPassw2" class="texto"/></td>
+                  </tr>
+        
+              </table>
+               <button type="button" id="updatePasswButton">Cambiar</button>
+            </div>
+
       </div> 
 
 <?php  include ('../static/mainBOT.php'); ?>
