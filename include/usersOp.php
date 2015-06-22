@@ -28,6 +28,19 @@ function getListaUsuarios($valor, $column, $like) {
 }
 
 
+function getListaAmigos($valor, $column){
+	require_once('../include/usersBD.php');
+
+
+	return (selectAmigo($valor, $column));
+}
+
+function getUser($id){
+	require_once('../include/usersBD.php');
+
+	return (findUserById($id));
+}
+
 
 
 

@@ -44,7 +44,16 @@ function deleteUSer(){
 
 function addFriend($friendNick, $userId){
 	include '../include/usersBD.php';
-	insertFriend($friendNick, $userId);
+
+    if ($friendNick != $_SESSION["Nick"]){
+
+
+        
+        $fid= selectUser($friendNick,"Nick",false)[0]['Id'];
+
+
+	   insertFriend($fid, $userId);
+    }
 }
 function searchUser($userNick){
 	include'../include/usersBD.php';
