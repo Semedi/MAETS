@@ -33,4 +33,20 @@ function obtenerCapturas() {
 	return getLastCaptures();
 }
 
+function obtenerTopUsers() {
+	return getTopUsers();
+}
+
+function obtenerTopLogros() {
+	return getTopLogros();
+}
+
+function obtenerUsuariosNuevos() {
+	return getUsuariosNuevos();
+}
+
+function obtenerUltimosPost() {
+	return getUltimosPost();
+}
+
 ?>

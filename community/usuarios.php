@@ -12,50 +12,37 @@
 </head>
 
 
-<?php  include ('../static/mainTOP.php'); ?>	
-<?php  include ('../static/communityMenu.php'); ?>	
+<?php  require_once ('../static/mainTOP.php'); ?>	
+<?php  require_once ('../static/communityMenu.php'); ?>	
+<?php  require_once ('../include/vComunidad.php'); ?>
+<?php  require_once('../include/communityOp.php'); ?>
 
 			
 			<div id="usuarios">
 				<h1> Usuarios </h1>
 			</div>
 			<div id="top">
-				<h4> Usuarios TOP: </h4>	
-				<p><img src="../images/usuarios/usuario.jpg" width=30px height=30px> Drulas</p> 
-				<p><img src="../images/usuarios/sheldon.jpg" width=30px height=30px> Sheldon Cooper</p>  
-				<p><img src="../images/usuarios/montero.jpg" width=30px height=30px> Montero</p> 
+
+				
 			</div>
-			<div id="top_actividad">
-				<h4> TOP Usuarios Activos: </h4>	
-				<p><img src="../images/usuarios/usuario.jpg" width=30px height=30px> Drulas.....100 posts</p> 
-				<p><img src="../images/usuarios/sheldon.jpg" width=30px height=30px> Sheldon Cooper.....68 posts</p>  
-				<p><img src="../images/usuarios/holi.jpg" width=30px height=30px> MissHoli.....44 posts</p> 
+			<div id="top_usuarios">
+				<h4> TOP Usuarios: </h4>	
+				<?php generarTopUsuarios(); ?>
 			</div>
 			<div id="top_logros">
 				<h4> TOP Logros de Usuarios: </h4>
-				<p><img src="../images/usuarios/usuario.jpg" width=30px height=30px> Drulas.....100 logros</p>  
-				<p><img src="../images/usuarios/sheldon.jpg" width=30px height=30px> Sheldon Cooper.....99 logros</p>  
-				<p><img src="../images/usuarios/montero.jpg" width=30px height=30px> Montero.....60 logros</p> 
+				<?php generarTopLogros(); ?> 
 			</div>
 			<div id="ultimos_registrados">
 				<h4> Nuevos en MAETS: </h4>
-				<p><img src="../images/usuarios/misterT.jpg" width=30px height=30px> Mr. T</p>  
-				<p><img src="../images/usuarios/montero.jpg" width=30px height=30px> Montero</p>  
-				<p><img src="../images/usuarios/holi.jpg" width=30px height=30px> MissHoli</p> 
+				<?php generarNuevosUsuarios(); ?>
 			</div>
-			<div id="ultimos_conectados">
+			<div id="espacio"></div>
+			<div id="ultima_actividad">
 				<h4> Actividad reciente: </h4>
-				<p><img src="../images/usuarios/usuario.jpg" width=30px height=30px> Drulas</p>  
-				<p><img src="../images/usuarios/montero.jpg" width=30px height=30px> Montero</p>  
-				<p><img src="../images/usuarios/holi.jpg" width=30px height=30px> MissHoli</p> 
-			</div>
-			<div id="ultimos_logros">
-				<h4> Últimos logros: </h4>
-				<p><img src="../images/usuarios/misterT.jpg" width=30px height=30px> Mr. T</p>  
-				<p><img src="../images/usuarios/montero.jpg" width=30px height=30px> Montero</p>  
-				<p><img src="../images/usuarios/usuario.jpg" width=30px height=30px> Drulas</p> 
+				<?php generarUltimosPost(); ?>
 			</div>
 			
 			
-<?php  include ('../static/mainBOT.php'); ?>		
+<?php  require_once ('../static/mainBOT.php'); ?>		
 </html>

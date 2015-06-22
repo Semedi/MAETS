@@ -5,23 +5,23 @@
 	text-align: left;
 	margin-left: 100px;
 }
-#top,#top_actividad,#top_logros,#ultimos_conectados, #ultimos_registrados, #ultimos_logros h4{
+#top,#top_usuarios,#top_logros,#ultima_actividad, #ultimos_registrados, #ultimos_logros h4{
 	color: white;
 	text-align: center;
 }
 
-#top,#top_actividad,#top_logros {
+#top,#top_usuarios,#top_logros {
 	float: left;
 	margin-left: 120px;
 	margin-top: 35px;
 }
-#ultimos_conectados, #ultimos_registrados, #ultimos_logros{
+#ultima_actividad, #ultimos_registrados, #ultimos_logros{
 	float: left;
 	margin-left: 170px;
 	margin-top: 35px;
 }
 
-#top p,#top_actividad p,#top_logros p,#ultimos_conectados p, #ultimos_registrados p, #ultimos_logros p {
+#top p,#top_usuarios p,#top_logros p,#ultima_actividad p, #ultimos_registrados p, #ultimos_logros p {
 	color: black;
 	padding: 7px;
 	border-radius: 100px;
@@ -32,3 +32,13 @@
 	text-align: center;
 }
 
+img.imageUser {
+	width: 30px;
+	height: 30px;
+}
+
+#espacio {
+	float: left;
+	width: 400px;
+	height: 100px;
+}

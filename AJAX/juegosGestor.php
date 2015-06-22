@@ -70,18 +70,19 @@ function addGameToUser($juego, $user) {
 		echo "Ya tienes este juego en tu biblioteca.";
 	}
 	else {
+		// Insertar en compras
+		$fecha = gmdate('Y-m-d');
+		$q = "INSERT INTO compras ('IDUsuario', 'IDJuego', 'Fecha_de_compra') VALUES ('$user', '$juego', '$fecha')";
+		$connection->query($q) or die($connection->error. " en la linea".(_LINE_-1));
 		// Ventas + 1
 		$q = "SELECT * FROM juego WHERE id = '$juego'";
-		$game = connection->query($q) or die ($connection->error. " en la linea".(_LINE_-1));
+		$result = connection->query($q) or die ($connection->error. " en la linea".(_LINE_-1));
 		if($row = $result->fetch_assoc()) {
 			$ventas = $row['Ventas']+1;
 			$sql = "UPDATE `maets`.`juego` SET `Ventas` ='$ventas' WHERE `juego`.`Id` ='$juego'"; 
 
     		$connection ->query($sql) or die ($connection->error. " en la linea". ('_LINE_-1'));
 		}
-		// Insertar en compras
-		$q = "INSERT INTO compras ('IDUsuario', 'IDJuego') VALUES ('$user', '$juego')";
-		$connection->query($q) or die($connection->error. " en la linea".(_LINE_-1));
 		echo "Compra realizad con éxito.";
 	}
 
@@ -107,5 +108,4 @@ switch ($functionName) {
     	echo addGameToUser($_GET["juego"], $_SESSION["ID"]);
 
 }
-
 ?>

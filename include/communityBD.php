@@ -222,4 +222,62 @@ function insertarRespuesta($idHilo, $idUsuario, $texto) {
 	closeConnection($con);
 }
 
+function getTopUsers() {
+	require_once ('../include/config.php');
+
+	$connection = createConnection();
+
+	$sql = "SELECT Nick, Imagen, Puntuacion FROM usuario ORDER BY Puntuacion DESC LIMIT 3";
+
+	$res = $connection->query($sql) or die ($connection->error). " en la linea".(_LINE_-1);
+
+	while($ret[] = $res->fetch_assoc());
+
+	return $ret;
+}
+
+function getTopLogros() {
+	require_once ('../include/config.php');
+
+	$connection = createConnection();
+
+	$sql = "SELECT IDUsuario, COUNT(IDUsuario) FROM consigue
+			GROUP BY IdUsuario
+			ORDER BY COUNT(IDUsuario) DESC LIMIT 3";
+
+	$res = $connection->query($sql) or die ($connection->error). " en la linea".(_LINE_-1);
+
+	while($ret[] = $res->fetch_assoc());
+
+	return $ret;
+}
+
+function getUsuariosNuevos() {
+	require_once ('../include/config.php');
+
+	$connection = createConnection();
+
+	$sql = "SELECT Nick, Imagen FROM usuario ORDER BY Id DESC LIMIT 3";
+
+	$res = $connection->query($sql) or die ($connection->error). " en la linea".(_LINE_-1);
+
+	while($ret[] = $res->fetch_assoc());
+
+	return $ret;	
+}
+
+function getUltimosPost() {
+	require_once ('../include/config.php');
+
+	$connection = createConnection();
+
+	$sql = "SELECT IdUsuario FROM hilo ORDER BY Fecha_de_creacion DESC LIMIT 3";
+
+	$res = $connection->query($sql) or die ($connection->error). " en la linea".(_LINE_-1);
+
+	while($ret[] = $res->fetch_assoc());
+
+	return $ret;		
+}
+
 ?>

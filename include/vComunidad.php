@@ -171,3 +171,42 @@ function cargarVideos()
 			</div>";
 	}
 
+	function generarTopUsuarios() {
+		$usuarios = obtenerTopUsers();
+
+		foreach ($usuarios as $user) {
+			if($user!=NULL)
+				echo " <p><img class='imageUser' src='../images/usuarios/" .$user['Imagen']. "'>" .$user['Nick']. "..." .$user['Puntuacion']. " puntos</p>";
+		}
+	}
+
+	function generarTopLogros() {
+		$idUsuarios = obtenerTopLogros();
+
+		foreach ($idUsuarios as $user) {
+			if($user!=NULL){
+				$usuario = selectUserById($user['IDUsuario']);
+				echo " <p><img class='imageUser' src='../images/usuarios/" .$usuario['Imagen']. "'>" .$usuario['Nick']. "..." .$user['COUNT(IDUsuario)']. " logros</p>";
+			}
+		}
+	}
+
+	function generarNuevosUsuarios() {
+		$usuarios = obtenerUsuariosNuevos();
+		foreach ($usuarios as $user) {
+			if($user!=NULL)
+				echo " <p><img class='imageUser' src='../images/usuarios/" .$user['Imagen']. "'>" .$user['Nick']. "</p>";
+		}	
+	}
+
+	function generarUltimosPost() {
+		$usuarios = obtenerUltimosPost();
+		foreach ($usuarios as $user) {
+			if($user!=NULL) {
+				$usuario = selectUserById($user['IdUsuario']);
+				echo " <p><img class='imageUser' src='../images/usuarios/" .$usuario['Imagen']. "'>" .$usuario['Nick']. "</p>";
+			}
+		}
+	}
+
+?>
