@@ -165,21 +165,22 @@ function insertGameToUser($juego, $user){
 
     		$connection ->query($sql) or die ($connection->error);
 		}
-		echo "Compra realizad con éxito.";
+		echo "Compra realizada con exito.";
 	}
-
 	closeConnection($connection);
 	return (true);
 
 
 }
 
-function updateJuego($id, $titulo, $precio, $edad, $etiquetas, $descipcion, $descripcionLarga, $tipoJuego, $idiomas, $portada) {
+function updateJuego($id, $titulo, $precio, $edad, $etiquetas, $descripcion, $descripcionLarga, $tipoJuego, $idiomas, $portada) {
 	require_once('../include/config.php');
-
 	$connection = createConnection();
-
-	$sql = "UPDATE `juego` SET `Titulo` ='$titulo',`Precio`='$precio', `Edad`= '$edad', `Etiquetas`= '$etiquetas', `Descripcion`='$descripcion', `DescripcionLarga`='$descripcionLarga', `Tipo`='$tipoJuego', `Idiomas`='$idiomas', `Portada`='$portada'  WHERE `Id` ='$id'"; 
-}
+	$sql = "UPDATE `juego` SET `Titulo` ='$titulo',`Precio`='$precio', `Edad`= '$edad', `Etiquetas`= '$etiquetas', `Descripcion`='$descripcion', `DescripcionLarga`='$descripcionLarga', `Tipo`='$tipoJuego', `Idiomas`='$idiomas'  WHERE `Id` ='$id'"; 
+	$connection ->query($sql) or die ($connection->error);
+	closeConnection($connection);
+	return (true);
+	
+	}
 
 ?>
