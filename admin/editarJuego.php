@@ -40,36 +40,36 @@
 		   
 		   <p id="failure">Algo esta mal.</p>  
 		   <p id="success">Juego añadido correctamente.</p>
-
-				<p>
-					<b><label for="nombre"¨>Título: <span class="required">*</span></label></b>
-					<input type="text" id="nombre" name="nombre" value="" placeholder="Nombre del juego" required="required" autofocus="autofocus" />  
-				</p>
+		   <?php
+				echo "<p>";
+					echo "<b><label for='nombre'¨>Título: <span class='required'>*</span></label></b>";
+					echo "<input type='text' id='nombre' name='nombre' value='' placeholder='Nombre del juego' required='required' autofocus='autofocus' /> ";
+				echo "</p>";
 					
-				<p>
-					<b><label for="precio">Precio: <span class="required">*</span></label></b>
-					<input type="precio" id="precio" name="precio" value="" placeholder="Precio del juego" required="required" />  
-				</p>
+				echo "<p>";
+					echo "<b><label for='precio'>Precio: <span class='required'>*</span></label></b>";
+					echo "<input type='precio' id='precio' name='precio' value='' placeholder='Precio del juego' required='required' />";  
+				echo "</p>";
 
-				<p>
-					<b><label for="edad">Edad: <span class="required">*</span></label></b>
-					<input type="edad" id="edad" name="edad" value="" placeholder="Edad mínima necesaria" required="required" />  
-				</p>
+				echo "<p>";
+					echo "<b><label for='edad'>Edad: <span class='required'>*</span></label></b>";
+					echo "<input type='edad' id='edad' name='edad' value='' placeholder='Edad mínima necesaria' required='required' />";
+				echo "</p>";
 
-				<p>
-					<b><label for="etiquetas">Etiquetas: <span class="required">*</span></label></b>
-					<input type="etiquetas" id="etiquetas" name="etiquetas" value="" placeholder="Etiquetas" required="required" />  
-				</p>
+				echo "<p>";
+				echo "<b><label for='etiquetas'>Etiquetas: <span class='required'>*</span></label></b>";
+					echo "<input type='etiquetas' id='etiquetas' name='etiquetas' value='' placeholder='Etiquetas' required='required' />";
+				echo "</p>";
 
-				<p><b><label for="descripcion">Descripción: <span class="required">*</span></label></b></p>
-				<textarea type="descripcion" id="descripcion" name="descripcion" value="" placeholder="Descripción corta del juego (100 caracteres)" required="required"></textarea>
+				echo "<p><b><label for='descripcion'>Descripción: <span class='required'>*</span></label></b></p>";
+				echo "<textarea type='descripcion' id='descripcion' name='descripcion' value='' placeholder='Descripción corta del juego (100 caracteres)' required='required'></textarea>";
 
-				<p><b><label for="descripcion">Descripción completa: <span class="required">*</span></label></b></label> </p>
-				<textarea type="descripcion" id="descripcion" name="descripcion" value="" placeholder="Descripción completa del juego" required="required"></textarea>
+				echo "<p><b><label for='descripcion'>Descripción completa: <span class='required'>*</span></label></b></label> </p>"
+				echo "<textarea type='descripcion' id='descripcion' name='descripcion' value="" placeholder='Descripción completa del juego' required='required'></textarea>"
 				
-				<p><b><label for="tipoJuego">Tipo de juego: </label></b></p>
+				echo "<p><b><label for='tipoJuego'>Tipo de juego: </label></b></p>";
 
-				<?php
+				
 					/*$tipos = ['Free to Play','Acesso Anticipado','Acción','Aventura','Carreras','Casual','Deportes','Estrategia','Indie','Multijugador Masivo','Rol','Simuladores'];
 					$numTipos = 12;
 					$j = 0;
@@ -103,11 +103,12 @@
 						$j++;
 					}
 					echo '</br>';*/
+				
+
+				echo "<p><b><label for='portada'>Portada: </label></b></p>";
+				echo "</br>";
+
 				?>
-
-				<p><b><label for="portada">Portada: </label></b></p>				
-				</br>
-
 				<p>  <button name="anadir" id="anadir" >Editar</button>
 				     <button name="eliminar" id="eliminar" >Eliminar</button></p>
 		</div>	
