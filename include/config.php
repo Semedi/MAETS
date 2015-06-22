@@ -10,7 +10,7 @@ define('CONTACT', RAIZ_APP.'/contact.php');
 define('SIGNUP', RAIZ_APP.'/signUp.php');
 define('TIENDA', RAIZ_APP.'/tienda.php');
 define('LOGIN', RAIZ_APP.'/login.php');
-define('LOGOUT', RAIZ_APP.'/include/logout.php');
+define('LOGOUT', RAIZ_APP.'/scripts/logout.php');
 define('COMMUNITY', RAIZ_APP.'/community.php');
 define('USER', RAIZ_APP.'/Usuario/PagPpalUser.php');
 
