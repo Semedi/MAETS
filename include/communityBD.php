@@ -328,4 +328,18 @@ function insertAnalisis($juego, $usuario, $texto, $puntuacion) {
 	$con->query($sql) or die ($con->error);
 	closeConnection($con);
 }
+
+function insertCaptura($idUsuario, $imagen, $index) {
+	if($index)
+		require_once ('include/config.php');
+	else
+		require_once ('../include/config.php');
+	$hoy = getdate();
+	$fecha = gmdate('Y-m-d');
+	$con = createConnection();
+	$sql = "INSERT INTO `capturas`(`IDUsuario`, `Nombre`, `Ruta`, `Fecha`) VALUES ";
+	$sql.= "('".$idUsuario."', '".$imagen."', '".$imagen."', '".$fecha."')";
+	$con->query($sql) or die ($con->error);
+	closeConnection($con);
+}
 ?>

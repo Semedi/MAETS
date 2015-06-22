@@ -18,6 +18,8 @@
 			
 			<div id="capturas">
 				<?php generarCapturas();?>
+				</br>
+				</br>
 				<form enctype="multipart/form-data" action="../uploader.php" method="POST">
 				<input id="archivo" name="uploadedfile" type="file" />
 				<input type="submit" value="Subir archivo" />

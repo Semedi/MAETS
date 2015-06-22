@@ -16,9 +16,50 @@ function deleteGame($id){
 	return(true);
 }
 //modifica juego en la bdd
-function modifyGame(){
-	
-	return(true);
+function modifyGame($id, $titulo, $precio, $edad, $etiquetas, $descipcion, $descripcionLarga, $tipoJuego, $idiomas/*, $portada*/) {
+	// Tratar descipción.
+	if(strlen($descripcion) > 100) {
+		echo "Descrcipción demasiado larga: " .strlen($descripcion). " (máximo 100 caracteres).";
+		return (false);
+	}
+	// Tratar tipoJuego
+	if($tipoJuego == "Free to Play")
+		$tipoJuego = 'Free_to_play';
+	else if($tipoJuego == "Acceso Anticipado")
+		$tipoJuego = 'Acceso Anticipado';
+	else if($tipoJuego == "Multijugador Masivo")
+		$tipoJuego = 'Multijugador_Masivo';
+	else {
+		$otrosTipos = array('Accion', 'Aventura', 'Carreras', 'Casual', 'Deportes', 'Estrategia', 'Indie', 'Rol', 'Simuladores');
+		$valido = false;
+		foreach ($otrosTipos as $t) {
+			if($t == $tipo) {
+				$valido = true;
+				break;
+			}
+		}
+		if(!$valido)
+			$tipo = "";
+	}
+	// Tratar idioma
+	if($idioma == "Español")
+		$idioma = "Espanyol";
+	else{
+		$idiomas = array('Ingles', 'Ruso', 'Italiano', 'Chino', 'Japones', 'Frances', 'Portugues', 'Arabe');
+		$valido = false;
+		foreach ($idiomas as $i) {
+			if($i == $idioma) {
+				$valido = true;
+				break;
+			}
+		}
+		if(!$valido)
+			$idioma = "";
+	}
+	require_once('--/include/shopBD');
+	updateJuego($id, $titulo, $precio, $edad, $etiquetas, $descipcion, $descripcionLarga, $tipoJuego, $idiomas, "");
+	echo "Cambios realizados con éxito.";
+	return (true);
 }
 
 //TRAE UNA FILA ENTERA DE UN JUEGO CON EL NOMBRE QUE LE PASES, ESTE ES EL METODO QUE FUNCIONA BIEN
@@ -100,6 +141,7 @@ switch ($functionName) {
     	deleteGame($_GET['juego']);
         break;
     case "modifyGame":
+    	modifyGame($_GET['id'], $_GET['titulo'], $_GET['precio'], $_GET['edad'], $_GET['etiquetas'], $_GET['descipcion'], $_GET['descripcionLarga'], $_GET['tipo'], $_GET['idiomas']/*, $_GET['portada']*/);
         break;
     case "getGame":
     	return getGame($_GET["juego"]);

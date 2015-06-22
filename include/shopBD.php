@@ -100,4 +100,12 @@ function eliminarJuego($juego) {
 	closeConnection($connection);
 }
 
+function updateJuego($id, $titulo, $precio, $edad, $etiquetas, $descipcion, $descripcionLarga, $tipoJuego, $idiomas, $portada) {
+	require_once('../include/config.php');
+
+	$connection = createConnection();
+
+	$sql = "UPDATE `juego` SET `Titulo` ='$titulo',`Precio`='$precio', `Edad`= '$edad', `Etiquetas`= '$etiquetas', `Descripcion`='$descripcion', `DescripcionLarga`='$descripcionLarga', `Tipo`='$tipoJuego', `Idiomas`='$idiomas', `Portada`='$portada'  WHERE `Id` ='$id'"; 
+}
+
 ?>

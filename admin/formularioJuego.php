@@ -39,8 +39,6 @@
 		   <p id="failure">Algo esta mal.</p>  
 		   <p id="success">Juego añadido correctamente.</p>
 
-		   <form method="post" action=""> 
-
 				<p>
 					<b><label for="nombre"¨>Título: <span class="required">*</span></label></b>
 					<input type="text" id="nombre" name="nombre" value="" placeholder="Nombre del juego" required="required" autofocus="autofocus" />  
@@ -69,43 +67,21 @@
 				
 				<p><b><label for="tipoJuego">Tipo de juego: </label></b></p>
 
-				<?php
-					$tipos = ['Free to Play','Acesso Anticipado','Acción','Aventura','Carreras','Casual','Deportes','Estrategia','Indie','Multijugador Masivo','Rol','Simuladores'];
-					$numTipos = 12;
-					$j = 0;
-					for($i=0; $i<$numTipos; $i++) {
-						if($j == 4) {
-							echo '</p>';
-							$j = 0;
-						}
-						if($j == 0) 
-							echo '<p>';
-						echo '<input type="radio" name="idiomas" value="'.$tipos[$i].'">'. $tipos[$i] . '    ';
-						$j++;
-					}
-					echo '</br>';
-				?>
+				
 
+
+
+				<p>
+					<b><label for='tipoJuego'>Tipo de juego: <span class='required'>* </span></label></b>
+					<input type='tipoJuego' id='tipoJuego' name='tipoJuego' value='' placeholder='Etiquetas' required='required' /></p>
+					<p><em> Free to Play, Acesso Anticipado, Acción, Aventura, Carreras, Casual, Deportes, Estrategia, Indie, Multijugador Masivo, Rol, Simuladores</em></p>
 
 				<p><b><label for="idiomas">Idiomas: </label></b></p>
 
-				<?php
-					$idiomas = ['Inglés','Español','Ruso','Italiano','Chino','Japones','Francés','Portugués','Árabe'];
-					$numIdiomas = 9;
-					$j=0;
-					for($i=0; $i<$numIdiomas; $i++) {
-						if($j == 3) {
-							echo '</p>';
-							$j = 0;
-						}
-						if($j == 0)
-							echo '<p>';
-						echo '<input type="radio" name="idiomas" value="'.$idiomas[$i].'">' . $idiomas[$i] . '    ';
-						$j++;
-					}
-					echo '</br>';
-				?>
-
+				<p>;
+					<b><label for='idiomas'>Idiomas: </label></b>
+					<input type='idiomas' id='idiomas' name='idiomas' value='', placeholder='Idiomas' required='required'/></p>
+					<p><em> Inglés, Español, Ruso, Italiano, Chino, Japones, Francés, Portugués, Árabe</em></p>
 				<p><b><label for="portada">Portada: </label></b></p>				
 				</br>
 				 
