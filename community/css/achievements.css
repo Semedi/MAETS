@@ -94,3 +94,13 @@ border-radius: 200px 200px 200px 200px;
 	margin-left: 160px;
 }
 
+#noLogros p{
+	color: white;
+}
+#irTienda{
+    background-color: lightblue;
+    margin-left: 50px;
+    padding:20px;
+    margin-bottom: 20px;
+}
+

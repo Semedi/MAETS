@@ -48,7 +48,7 @@ function newAnalisis($juego, $usuario, $texto, $puntuacion) {
 		insertAnalisis($juego[0]['Id'], $usuario, $texto, 1);
 	else
 		insertAnalisis($juego[0]['Id'], $usuario, $texto, 0);
-	echo "Análisis añadido correctamente.";
+	echo "Analisis agregado correctamente.";
 	return (true);
 }
 
@@ -131,6 +131,18 @@ switch ($functionName) {
 	case "newAnalisis":
 		if(!$_SESSION)
 			echo "No puedes realizar un analisis sin haberte logueado primero.";
+		elseif (empty($_GET["juego"]))
+		{
+			echo "No puedes realizar un analisis sin especificar el juego.";
+		}
+		elseif (empty($_GET["texto"]))
+		{
+			echo "No puedes subir un analisis vacio.";
+		}
+		elseif ($_GET["puntuacion"] == NULL)
+		{
+			echo "No puedes realizar un analisis sin tu recomendacion.";
+		}
 		else
 			newAnalisis($_GET['juego'], $_SESSION['ID'], $_GET['texto'], $_GET['puntuacion']);
 	break;

@@ -64,36 +64,17 @@ function modifyGame($id, $titulo, $precio, $edad, $etiquetas, $descipcion, $desc
 
 //TRAE UNA FILA ENTERA DE UN JUEGO CON EL NOMBRE QUE LE PASES, ESTE ES EL METODO QUE FUNCIONA BIEN
 function getGame($juego){
-	$connection = createConnection();
-	$result = "SELECT * FROM juego WHERE titulo = '$juego'";
-	$result = $connection->query($result) or die ($connection->error_log(message));
-	if($row = $result->fetch_assoc())
-		{     
-			closeConnection($connection);
-			return $row;
-		}
-		else
-		{
-			echo "NO EXISTE ESE JUEGO";
-		}
-closeConnection($connection);
+	require_once ('../include/shopBD.php');
+	
+	return (selectGame($juego));
 }
 
 // Método que recupera un juego según su compañía.
 function getGameByCompanyia($companyia){
-	$connection = createConnection();
-	$result = "SELECT * FROM juego WHERE Companyia = '$companyia'";
-	$result = $connection->query($result) or die ($connection->error);
-	if($row = $result->fetch_assoc())
-		{     
-			closeConnection($connection);
-			return $row;
-		}
-		else
-		{
-			echo "NO EXISTE ESE JUEGO";
-		}
-closeConnection($connection);
+	require_once ('../include/shopBD.php');
+
+	return (selectGameByCompany($companyia));
+	
 }
 
 function getNameOfGame($juego){
@@ -102,35 +83,12 @@ function getNameOfGame($juego){
 }
 
 function addGameToUser($juego, $user) {
-	$connection = createConnection();
-	$sql = "SELECT * FROM compras WHERE IDUsuario = '$user' AND IDJuego = '$juego'";
-	$result = $connection->query($sql) or die ($connection->error);
 
+	require_once ('../include/shopBD.php');
 
-	if($row = $result->fetch_assoc()) {     
-		echo "Ya tienes este juego en tu biblioteca.";
-	}
-	else {
-	$connection->query($sql) or die ($connection->error);
-		// Insertar en compras
-		$fecha = gmdate('Y-m-d h-i-s');
-		$sql = "INSERT INTO `compras`(`IDUsuario`, `IDJuego`, `Fecha_de_compra`) VALUES ";
-		$sql.= "('".$user."', '".$juego."', '".$fecha."')";
-		$connection->query($sql) or die ($connection->error);
-		// Ventas + 1
-		$sql = "SELECT * FROM juego WHERE id = '$juego'";
-		$result = $connection->query($sql) or die ($connection->error);
-		if($row = $result->fetch_assoc()) {
-			$ventas = $row['Ventas']+1;
-			$sql = "UPDATE `juego` SET `Ventas` ='$ventas' WHERE `Id` ='$juego'"; 
+	insertGameToUser($juego, $user);
 
-    		$connection ->query($sql) or die ($connection->error);
-		}
-		echo "Compra realizad con éxito.";
-	}
-
-	closeConnection($connection);
-	return (true);
+	
 }
 
 $functionName = filter_input(INPUT_GET, 'functionName');

@@ -157,10 +157,18 @@ function generarListaDeJuegos($user) {
 
   $juegos = getJuegosComprados($user);
 
-    foreach ($juegos as $juego) {
-      if($juego != NULL)
-        echo "<a href='../tienda/articulo-tienda.php?juego=" .$juego['Id']. "'><li>" .$juego['Titulo']. "</li></a>";
-    } 
+  if($juegos != NULL){
+		foreach ($juegos as $juego) {
+		  if($juego != NULL)
+			echo "<a href='../tienda/articulo-tienda.php?juego=" .$juego['Id']. "'><li>" .$juego['Titulo']. "</li></a>";
+		} 
+	}else{
+		echo "<div id =\"noJuegos\">";
+		echo "<p>No tienes ningún juego todavía.</p>";
+		echo "<br /> <br />";
+		echo "<button name=\"irTienda\" id=\"irTienda\" onclick=\"location.href ='../tienda.php';\">Ir a la tienda</button>";
+		echo "</div>";
+		}
 }
  
         

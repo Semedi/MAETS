@@ -17,7 +17,7 @@ function generarTabla($idUser) {
 
 	$columnas = array("Titulo", "Precio", "Edad", "Descripcion", "DescripcionLarga", "Companyia", "Tipo", "Etiquetas", "Idiomas", "Ventas", "Fecha", "Portada");
 
-	echo "<table>
+	echo "<table border='1'>
 			<th> Título </th>
 			<th> Precio </th>
 			<th> Edad </th>

@@ -16,11 +16,12 @@
 			$('#crearAnalisis').click(
 		 	function(){
 		 		var elemento;
-		 			if(!$("#recomendadoSi").is(':checked')) {  
+		 			if($("#puntuacionSi").is(':checked')) {  
             			elemento = "si";
-        			} else {  	
+        			} else if($("#puntuacionNo").is(':checked')) {  	
             			elemento = "no";
-        			}  
+        			}  else
+						elemento = null;
 					$.get("../AJAX/comunidadGestor.php",{ functionName:"newAnalisis", juego:$('#juego').val(), texto:$('#texto').val(), puntuacion: elemento },function(data){
 			 			trimmed_data = $.trim(data);
 						
@@ -48,7 +49,16 @@
 			
 				<p>
 					<b><label for="nombre"¨>Juego: <span class="required">*</span></label></b>
+					<select name="juego" id ="juego">
+					<?php
+						require_once ('../include/vComunidad.php');
+						generarListaJuegos();
+					?>
+					</select>
+					
+					<!--
 					<input type="text" id="juego" name="juego" value="" placeholder="Nombre del juego" required="required" autofocus="autofocus" />  
+					-->
 				</p>
 
 				<p><b>
@@ -57,8 +67,8 @@
 				<textarea type="texto" id="texto" name="texto" value="" placeholder="Análisis del juego" required="required"></textarea>
 
 				<p>
-					<input id = "puntuacionSi" type="radio" name="puntuacionSi" value="recomendado">Recomendado 
-					<input id = "puntuacionNo" type="radio" name="puntuacionNo" value="no_recomendado">No recomendado
+					<input id = "puntuacionSi" type="radio" name="puntuacion" value="recomendado">Recomendado 
+					<input id = "puntuacionNo" type="radio" name="puntuacion" value="no_recomendado">No recomendado
 				</p>
 				<button name="crearAnalisis" id="crearAnalisis">Crear análisis</button>
 		</div>	
