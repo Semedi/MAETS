@@ -13,9 +13,15 @@
 	<script type="text/javascript">
 
 		$( document ).ready(function() {
-			$('#enviarFormulario').click(
-			 	function(){
-					$.get("../AJAX/comunidadGestor.php",{ functionName:"newAnalisis", nombreJuego:$('#nombre').val(), analisis:$('#analisis').val(), rec: $(#recomendacion) },function(data){
+			$('#crearAnalisis').click(
+		 	function(){
+		 		var elemento;
+		 			if(!$("#recomendadoSi").is(':checked')) {  
+            			elemento = "si";
+        			} else {  	
+            			elemento = "no";
+        			}  
+					$.get("../AJAX/comunidadGestor.php",{ functionName:"newAnalisis", juego:$('#juego').val(), texto:$('#texto').val(), puntuacion: elemento },function(data){
 			 			trimmed_data = $.trim(data);
 						
 								alert(data);
@@ -39,34 +45,22 @@
 		   
 		   <p id="failure">Algo esta mal.</p>
 		   <p id="success">Juego añadido correctamente.</p>
-
-		   <form method="post" action=""> 
-
+			
 				<p>
-					<b>
-					<label for="nombre"¨>Juego: 
-						<span class="required">*</span>
-					</label>
-					</b>
-					<input type="text" id="nombre" name="nombre" value="" placeholder="Nombre del juego" required="required" autofocus="autofocus" />  
+					<b><label for="nombre"¨>Juego: <span class="required">*</span></label></b>
+					<input type="text" id="juego" name="juego" value="" placeholder="Nombre del juego" required="required" autofocus="autofocus" />  
 				</p>
 
-				<p>
-				<b>
-					<label for="analisis">Análisis: <span class="required">*</span></label>
-				</b>
-				</label> </p>
-				<textarea type="analisis" id="analisis" name="analisis" value="" placeholder="Análisis del juego" required="required"></textarea>
+				<p><b>
+					<label for="texto">Análisis: <span class="required">*</span></label>
+				</b></p>
+				<textarea type="texto" id="texto" name="texto" value="" placeholder="Análisis del juego" required="required"></textarea>
 
 				<p>
-				<input id = "recomendado" type="radio" name="recomendacion" value="recomendado">Recomendado 
-				<input id = "no_recomendado" type="radio" name="recomendacion" value="no_recomendado">No recomendado
-				</p>	
-
-				<p>  
-					<input id="enviarFormulario" type="submit" value="Enviar" />
+					<input id = "puntuacionSi" type="radio" name="puntuacionSi" value="recomendado">Recomendado 
+					<input id = "puntuacionNo" type="radio" name="puntuacionNo" value="no_recomendado">No recomendado
 				</p>
-		   </form>   
+				<button name="crearAnalisis" id="crearAnalisis">Crear análisis<button/>
 		</div>	
 
 <?php include ('../static/mainBOT.php'); ?>

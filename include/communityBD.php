@@ -318,4 +318,14 @@ function selectLogrosJuego($juego) {
 	return ($ret);	
 }
 
+function insertAnalisis($juego, $usuario, $texto, $puntuacion) {
+	require_once ('../include/config.php');
+	$hoy = getdate();
+	$fecha = gmdate('Y-m-d');
+	$con = createConnection();
+	$sql = "INSERT INTO `analisis`(`IdJuego`, `IdUsuario`, `Texto`, `Recomendado`, `Fecha`) VALUES ";
+	$sql.= "('".$juego."', '".$usuario."', '".$texto."', '".$puntuacion."', '".$fecha."')";
+	$con->query($sql) or die ($con->error);
+	closeConnection($con);
+}
 ?>

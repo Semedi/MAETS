@@ -9,7 +9,7 @@
 	padding-left:70px;
 	float: left;
 	width: 500px;
-	height: 400px;
+	min-height: 400px;
 	margin: 5px;
 }
 
@@ -48,6 +48,7 @@
 	border-bottom-style: solid;   
 	border-bottom-color: white;
 	border-bottom-width:1px;
+	min-height: 170px;
 }
 
 #contenidoAnalisis H3{
