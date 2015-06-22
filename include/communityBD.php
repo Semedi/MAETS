@@ -350,4 +350,64 @@ function eliminarForo($id) {
 	$connection->query($sql) or die ($connection->error);
 	closeConnection($connection);
 }
+
+function getUsuarios() {
+	require_once('../include/config.php');
+	$connection = createConnection();
+	$sql = "SELECT * FROM usuario";
+	$res = $connection->query($sql) or die ($connection->error);
+	while($ret[] = $res->fetch_assoc());
+	closeConnection($connection);	
+	return $ret;
+}
+
+function eliminarUsuario($nick) {
+	require_once('../include/config.php');
+	$connection = createConnection();
+	$sql = "DELETE FROM usuario WHERE Nick = '$nick'";
+	$connection->query($sql) or die ($connection->error);
+	closeConnection($connection);	
+}
+
+
+
+function getAllLogros() {
+	require_once('../include/config.php');
+	$connection = createConnection();
+	$sql = "SELECT * FROM logro";
+	$res = $connection->query($sql) or die ($connection->error);
+	while($ret[] = $res->fetch_assoc());
+	closeConnection($connection);	
+	return $ret;	
+}
+
+function getAllCaptures() {
+	require_once('../include/config.php');
+	$connection = createConnection();
+	$sql = "SELECT * FROM capturas";
+	$res = $connection->query($sql) or die ($connection->error);
+	while($ret[] = $res->fetch_assoc());
+	closeConnection($connection);	
+	return $ret;		
+}
+
+function getAllVideos() {
+	require_once('../include/config.php');
+	$connection = createConnection();
+	$sql = "SELECT * FROM videos";
+	$res = $connection->query($sql) or die ($connection->error);
+	while($ret[] = $res->fetch_assoc());
+	closeConnection($connection);	
+	return $ret;
+}
+
+function getAllAnalisis() {
+	require_once('../include/config.php');
+	$connection = createConnection();
+	$sql = "SELECT * FROM analisis";
+	$res = $connection->query($sql) or die ($connection->error);
+	while($ret[] = $res->fetch_assoc());
+	closeConnection($connection);	
+	return $ret;	
+}
 ?>

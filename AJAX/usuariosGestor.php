@@ -37,7 +37,10 @@ function updatePersonalInfo($nombre, $apellidos, $mail, $pais, $ciudad, $direcci
 
 
 //elimina user de la bd
-function deleteUSer(){
+function deleteUser($nick){
+    include ('../include/communityBD.php');
+    eliminarUsuario($nick);
+    echo "Usuario eliminado correctamente.";
 	return(true);
 }
 //añade relacion de amigos a la bdd
@@ -83,7 +86,7 @@ switch ($functionName) {
         
         break;
     case "deleteUser":
-        
+        deleteUser($_GET['user']);
         break;
     case "addUser":
     	addUser($_GET["user"], $_GET["pass"], $_GET["mail"]);

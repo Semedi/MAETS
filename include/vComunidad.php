@@ -64,6 +64,184 @@ require_once('shopBD.php');
 		echo "</table>";
 	}
 
+	function generarListaUsuarios() {
+		$usuarios = obtenerUsuarios();
+		echo "<table>
+				<th> Nick </th>
+				<th> Nombre </th>
+				<th> Apellidos </th>
+				<th Correo </th>
+				<th> Pais </th>
+				<th> Ciudad </th>
+				<th> Dirección </th>
+				<th> Código postal </th>";
+		foreach ($usuarios as $usuario) {
+			if($usuario['Id'] != '') {
+				echo "<tr>";
+					echo "<td>";
+						echo "<a href='../Usuario/Usuario.php?user=" .$usuario['Nick']. "'>";
+							echo "<p>" .$usuario['Nick']. "</p>";
+						echo "</a>";
+					echo "</td>";
+					echo '<td>';
+						echo "<p>".$usuario['Nombre']."</p>";
+					echo "</td>";
+					echo '<td>';
+						echo "<p>".$usuario['Apellidos']."</p>";
+					echo "</td>";
+					echo '<td>';
+						echo "<p>".$usuario['Correo']."</p>";
+					echo "</td>";
+					echo '<td>';
+						echo "<p>".$usuario['Pais']."</p>";
+					echo "</td>";
+					echo '<td>';
+						echo "<p>".$usuario['Ciudad']."</p>";
+					echo "</td>";
+					echo '<td>';
+						echo "<p>".$usuario['Direccion']."</p>";
+					echo "</td>";
+					echo '<td>';
+						echo "<p>".$usuario['Codigo Postal']."</p>";
+					echo "</td>";	
+			}
+		}
+		echo "</table>";
+	}
+
+	function generarListaLogros() {
+		require_once ('shopOp.php');
+		$logros = obtenerLogros();
+		echo "<table>
+				<th> Juego </th>
+				<th> Título </th>
+				<th> Puntos </th>
+				<th Tipo </th>
+				<th> imagen </th>";
+		foreach ($logros as $logro) {
+			if($logro['Id'] != '') {
+				$juego = getJuegoById($logro['JuegoID'],'tienda');
+				echo "<tr>";
+					echo "<td>";
+						echo "<p>" .$juego['Titulo']. "</p>";
+					echo "</td>";
+					echo '<td>';
+						echo "<p>".$logro['Titulo']."</p>";
+					echo "</td>";
+					echo '<td>';
+						echo "<p>".$logro['Puntos']."</p>";
+					echo "</td>";
+					echo '<td>';
+						echo "<p>".$logro['Tipo']."</p>";
+					echo "</td>";
+					echo '<td>';
+						echo "<img class='logro' src='../images/logros/" .$logro['Imagen']. "'>";
+					echo "</td>";
+			}
+		}
+		echo "</table>";	
+	}
+
+	function generarListaCapturas() {
+		require_once('../include/usersOp.php');
+		$capturas = obtenerInfoCapturas();
+		echo "<table>
+				<th> Imagen </th>
+				<th> Usuario </th>
+				<th> Nombre </th>
+				<th> Fecha </th>";
+		foreach ($capturas as $captura) {
+			if($captura['Id'] != '') {
+				$usuario = getUser($captura['IDUsuario']);
+				echo "<tr>";
+					echo "<td>";
+						echo "<img class='portada' src='../images/screens/" .$captura['Ruta']. "'>";
+					echo "</td>";
+					echo '<td>';
+						echo "<p>".$usuario['nick']."</p>";
+					echo "</td>";
+					echo '<td>';
+						echo "<p>".$captura['Nombre']."</p>";
+					echo "</td>";
+					echo '<td>';
+						echo "<p>".$captura['Fecha']."</p>";
+					echo "</td>";
+			}
+		}
+		echo "</table>";		
+	}
+
+	function generarListaVideos() {
+		require_once('../include/usersOp.php');
+		$videos = obtenerInfoVideos();
+		echo "<table>
+				<th> Enlace </th>
+				<th> Usuario </th>
+				<th> Nombre </th>
+				<th> Fecha </th>";
+		foreach ($videos as $video) {
+			if($video['Id'] != '') {
+				$usuario = getUser($video['IDUsuario']);
+				echo "<tr>";
+					echo "<td>";
+						echo "<a href='" .$video['Enlace']. "''><p>" .$video['Enlace']. "</p></a>";
+					echo "</td>";
+					echo '<td>';
+						echo "<p>".$usuario['nick']."</p>";
+					echo "</td>";
+					echo '<td>';
+						echo "<p>".$video['Nombre']."</p>";
+					echo "</td>";
+					echo '<td>';
+						echo "<p>".$video['Fecha']."</p>";
+					echo "</td>";
+			}
+		}
+		echo "</table>";			
+	}
+
+	function generarListaAnalisis() {
+		require_once('../include/usersOp.php');
+		require_once('../include/shopOp.php');
+		$analisis = obtenerInfoAnalisis();
+		echo "<table>
+				<th> Juego </th>
+				<th> Usuario </th>
+				<th> Texto </th>
+				<th> Recomendación </th>
+				<th> Fecha </th>";
+		foreach ($analisis as $a) {
+			if($a != NULL) {
+				$usuario = getUser($a['IdUsuario']);
+				$juego = selectJuegoById($a['IdJuego'], 'tienda');
+				echo "<tr>";
+					echo "<td>";
+						echo "<p>" .$juego['Titulo']. "</p>";
+					echo "</td>";
+					echo '<td>';
+						echo "<p>".$usuario['nick']."</p>";
+					echo "</td>";
+
+					echo "<td><p>";
+						if(strlen($a['Texto']) > 177)		// Tratamiento texto
+	 						echo substr($a['Texto'], 0, 177). " ...";
+	 					else
+	 						echo $a['Texto'];
+					echo "</p></td>";
+					echo "<td>";
+						if($a['Recomendado'])
+							echo "<img class='logro' src='../images/LIKE.png'>";
+						else
+							echo "<img class='logro' src='../images/DISLIKE.png'>";
+					echo "</td>";
+					echo '<td>';
+						echo "<p>".$a['Fecha']."</p>";
+					echo "</td>";
+			}
+		}
+		echo "</table>";	
+	}
+
 	function generarCapturas() {
 		$i = 0;
 		$Capturas = obtenerCapturas();

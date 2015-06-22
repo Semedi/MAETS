@@ -10,7 +10,8 @@
   <link rel="stylesheet" type="text/css" href="../css/main.css" />
   <link rel="stylesheet" type="text/css" href="../css/users.css" />
   <link rel="stylesheet" type="text/css" href="../css/pcomunidad.css" />
-   <script type="text/javascript" src="../js/jquery-1.9.1.min.js"> </script>
+  
+<script type="text/javascript" src="../js/jquery-1.9.1.min.js"> </script>
 
 <script type="text/javascript">
 
@@ -39,12 +40,25 @@
             }
           );
         });
-
-
-
-
     });
    </script>
+
+<script type="text/javascript">
+  $( document ).ready(function() {
+   $('#eliminarUsuario').click(
+        function(){
+          $.get("../AJAX/usuariosGestor.php",{ functionName:"deleteUser", user:$('#nickuser').html()},function(data){
+            trimmed_data = $.trim(data);
+            
+                alert(data);
+                window.location.href = "../admin/gestorComunidad.php";
+              
+              
+            }
+          );
+        });
+      });
+    </script>
 	
 </head>
 
@@ -56,10 +70,13 @@
 	    	  
         <div id ="friendsContent">
 
-               <?php 
+            <?php 
+                if($_SESSION["Rol"]=='Administrador' or $_SESSION["Rol"]=='Gestor-Comunidad')
+                  echo "<button name='eliminarUsuario' id='eliminarUsuario'>Eliminar usuario</button>";
 
             require_once ('../include/vUsuario.php');
             generarUsuario($_GET['user']);
+
 
             ?>
        

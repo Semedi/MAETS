@@ -29,6 +29,10 @@ function seleccionarThreadAnsById($id) {
 	return (selectThreadAnsById($id));
 }
 
+function obtenerInfoCapturas() {
+	return getAllCaptures();
+}
+
 function obtenerCapturas() {
 	return getLastCaptures();
 }
@@ -53,4 +57,19 @@ function getLogrosJuego($juego) {
 	return selectLogrosJUego($juego);
 }
 
+function obtenerUsuarios() {
+	return getUsuarios();
+}
+
+function obtenerLogros() {
+	return getAllLogros();
+}
+
+function obtenerInfoVideos() {
+	return getAllVideos();
+}
+
+function obtenerInfoAnalisis() {
+	return getAllAnalisis();
+}
 ?>

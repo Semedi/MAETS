@@ -20,23 +20,23 @@
 
 		<h1> Usuarios </h1>
 		<button name="anadirUsuarios" id="anadirUsuarios" onclick="location.href ='../signUp.php';">Añadir nuevo usuario</button>
-		<?php //generarTablaUsuarios(); ?>
+		<?php generarListaUsuarios(); ?>
 
 		<h1> Logros </h1>
 		<button name="anadirLogros" id="anadirLogros" onclick="location.href ='';">Añadir nuevo logro</button>
-		<?php //generarTablaLogros(); ?>
+		<?php generarListaLogros(); ?>
 
 		<h1> Capturas </h1>
 		<button name="anadirCapturas" id="anadirCapturas" onclick="location.href ='../community/nuevaCaptura.php';">Añadir nueva captura</button>
-		<?php //generarTablaCapturas(); ?>
+		<?php generarListaCapturas(); ?>
 
 		<h1> Vídeos </h1>
 		<button name="anadirVideos" id="anadirVideos" onclick="location.href ='../community/insertarVideo.php';">Añadir nuevo vídeo</button>
-		<?php //generarTablaVideos(); ?>
+		<?php generarListaVideos(); ?>
 
 		<h1> Análisis </h1>
 		<button name="anadirAnalisis" id="anadirAnalisis" onclick="location.href ='../community/formularioAnalisis.php';">Añadir nuevo análisis</button>
-		<?php //generarTablaAnalisis(); ?>
+		<?php generarListaAnalisis(); ?>
 
 	</body>
 
