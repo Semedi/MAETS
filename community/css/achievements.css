@@ -24,6 +24,8 @@ height: 100px;
 margin: auto;
 margin-top: 10px;
 
+padding: 5px;
+
 background-color: rgb(20,20,20);
 
 border-radius: 49px 49px 49px 49px;
@@ -44,7 +46,7 @@ width: 50%;
 height: 45px;
 
 float: right;
-margin-top: 30px;
+margin-top: 15px;
 margin-right:320px;
 
 background-color: rgb(40,40,40);
@@ -55,8 +57,12 @@ color: #FFFFFF;
 
 }
 
+p.avance {
+	margin-left: 10px;
+}
+
 .Lsuperior p{
-float: left;
+	float: left;
 }
 
 .miniLogro{
@@ -71,7 +77,7 @@ height: 57px;
 width: 147px;
 margin: auto;
 margin-left: 20px;
-margin-top: 20px;
+margin-top: 0px;
 float: left;
 
 
@@ -83,6 +89,7 @@ border-radius: 200px 200px 200px 200px;
 }
 
 #titulo{
+	margin-top: 10px;
 	color: #FFFFFF;
 	margin-left: 160px;
 }

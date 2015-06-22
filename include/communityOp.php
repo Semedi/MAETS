@@ -49,4 +49,8 @@ function obtenerUltimosPost() {
 	return getUltimosPost();
 }
 
+function getLogrosJuego($juego) {
+	return selectLogrosJUego($juego);
+}
+
 ?>

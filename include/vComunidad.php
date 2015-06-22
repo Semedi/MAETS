@@ -211,4 +211,28 @@ function cargarVideos()
 		}
 	}
 
+	function generarLogros($user) {
+		require_once('../include/usersOp.php');
+		$juegos = getJuegosComprados($user);
+
+		foreach ($juegos as $juego) {
+			if($juego != NULL) {
+				$numLogros = sizeof(getLogrosJuego($juego['Id']))-1;
+				$logros = getLogros($user, $juego['Id']);
+				echo "<div class='logro'>";
+					echo "<div id='titulo'>" .$juego['Titulo']. "</div>";
+					echo "<img class='icono_logro' src='../images/Portadas/" .$juego['Portada']. "'>";
+					echo "<div class='Lsuperior'>";
+						echo "<p class='avance'>Avance en los logros: " .sizeof($logros). " de " .$numLogros. "</p>";
+						for($i=0; $i<4; $i++) {
+							if($i<sizeof($logros))
+								echo "<img class='miniLogro' src='../images/logros/" .$logros[$i]['Imagen']. "'>";
+						}
+					echo "</div>";
+				echo "</div>";
+			}
+		}
+
+	}
+
 ?>

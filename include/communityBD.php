@@ -286,7 +286,9 @@ function getLogro($idLogro) {
 
 	$connection = createConnection();
 
-	$sql = "SELECT * FROM logro WHERE Id = ''$idLogro";
+	$id = $idLogro['IDLogro'];
+
+	$sql = "SELECT * FROM logro WHERE Id = '$id'";
 
 	$res = $connection->query($sql) or die ($connection->error). " en la linea".(_LINE_-1);
 
@@ -297,6 +299,23 @@ function getLogro($idLogro) {
 
 	closeConnection($connection);
 	return NULL;			
+}
+
+function selectLogrosJuego($juego) {
+	
+	require_once ('../include/config.php');
+
+	$connection = createConnection();
+
+	$sql = "SELECT * FROM logro WHERE JuegoID = '$juego'";
+
+	$res = $connection->query($sql) or die ($connection->error). " en la linea".(_LINE_-1);
+
+	while($ret[] = $res->fetch_assoc());
+
+	closeConnection($connection);
+
+	return ($ret);	
 }
 
 ?>

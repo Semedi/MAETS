@@ -281,19 +281,25 @@ function selectAmigo($valor, $column){
 
 }
 
-function getLogrosUser($user) {
+function getLogrosUser($user, $juego) {
 	require_once('communityBd.php');
 	$connection=createConnection();
+	
+	$sql = "SELECT IDLogro FROM consigue WHERE IDUsuario = '$user' ORDER BY Fecha DESC";
 
-	$sql = "SELECT IDLogro FROM consigue WHERE IDUsuario = '$user'";
-
-	$res = $connection->query($sql) or die ($connection->error. " en la linea". (_LINE_-1));
+	$res = $connection->query($sql) or die ($connection->error);
 	while($logrosId[] = $res->fetch_assoc());
 
 	$ret = NULL;
 	foreach ($logrosId as $id) {
 		if($id!=NULL) {
-			$ret[] = getLogro($id);
+			$logro = getLogro($id);
+			if($juego != "") {
+				if($logro['JuegoID'] == $juego)
+					$ret[] = $logro;
+			}
+			else
+				$ret[] = $logro;
 		}
 	}
 

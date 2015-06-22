@@ -48,10 +48,10 @@ function getUserInfo($id) {
 	return (selectUserById($id));
 }
 
-function getLogros($user) {
+function getLogros($user, $juego) {
 	require_once('../include/usersBD.php');
 
-	return (getLogrosUser($user));	
+	return (getLogrosUser($user, $juego));	
 }
 
 function getPuntosLogros($user) {
