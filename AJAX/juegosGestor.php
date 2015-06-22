@@ -1,4 +1,5 @@
 <?php
+require_once('../include/config.php');
 
 //añade un juego a la base de datos(faltan parametros)
 function addGame($titulo, $precio, $edad, $etiquetas, $descripcion, $descripcionLarga, $tipoJuego, $idiomas, $portada){
@@ -60,7 +61,6 @@ function getNameOfGame($juego){
 }
 
 function addGameToUser($juego, $user) {
-
 	$connection = createConnection();
 	$sql = "SELECT * FROM compras WHERE IDUsuario = '$user' AND IDJuego = '$juego'";
 	$result = $connection->query($sql) or die ($connection->error);
@@ -70,16 +70,18 @@ function addGameToUser($juego, $user) {
 		echo "Ya tienes este juego en tu biblioteca.";
 	}
 	else {
+	$connection->query($sql) or die ($connection->error);
 		// Insertar en compras
-		$fecha = gmdate('Y-m-d');
-		$q = "INSERT INTO compras ('IDUsuario', 'IDJuego', 'Fecha_de_compra') VALUES ('$user', '$juego', '$fecha')";
-		$connection->query($q) or die($connection->error. " en la linea".(_LINE_-1));
+		$fecha = gmdate('Y-m-d h-i-s');
+		$sql = "INSERT INTO `compras`(`IDUsuario`, `IDJuego`, `Fecha_de_compra`) VALUES ";
+		$sql.= "('".$user."', '".$juego."', '".$fecha."')";
+		$connection->query($sql) or die ($connection->error);
 		// Ventas + 1
-		$q = "SELECT * FROM juego WHERE id = '$juego'";
-		$result = $connection->query($q) or die ($connection->error);
+		$sql = "SELECT * FROM juego WHERE id = '$juego'";
+		$result = $connection->query($sql) or die ($connection->error);
 		if($row = $result->fetch_assoc()) {
 			$ventas = $row['Ventas']+1;
-			$sql = "UPDATE `maets`.`juego` SET `Ventas` ='$ventas' WHERE `juego`.`Id` ='$juego'"; 
+			$sql = "UPDATE `juego` SET `Ventas` ='$ventas' WHERE `Id` ='$juego'"; 
 
     		$connection ->query($sql) or die ($connection->error);
 		}
@@ -109,7 +111,7 @@ switch ($functionName) {
     	echo getNameOfGame($_GET["juego"]);
     	break;	
     case "addGameToUser":
-    	echo addGameToUser($_GET["juego"], $_SESSION["ID"]);
+    	addGameToUser($_GET["juego"], $_GET["usuario"]);
     	break;
 
 }

@@ -9,17 +9,20 @@
 	<link rel="stylesheet" type="text/css" href="../css/main.css" />
 	<link rel="stylesheet" type="text/css" href="../css/compra.css" />
 
+	<script type="text/javascript" src="../js/jquery-1.9.1.min.js"> </script>
+
 	<script type="text/javascript">
 
 		$( document ).ready(function() {
 			$('#comprar').click(
 			 	function(){
-			 		var elemento = "<?php Print($_GET['juego']);?>"
-					$.get("../AJAX/juegosGestor.php",{ functionName:"addGameToUser", juego:elemento},function(data){
+			 		var game = "<?php Print($_GET['juego']);?>";
+			 		var user = "<?php Print($_SESSION['ID']);?>";
+					$.get("../AJAX/juegosGestor.php",{ functionName:"addGameToUser", juego:game, usuario:user},function(data){
 			 			trimmed_data = $.trim(data);
 						
 								alert(data);
-				 				window.location.href = "tienda.php";
+				 				window.location.href = "../tienda.php";
 				 			
 				 			
 			 			}
@@ -32,7 +35,7 @@
 <?php  include ('../static/mainTOP.php'); ?>
 	
 
-	    	<form>
+	    	
 	    		</br>
 		    	<label for="name">Número de tarjeta    <span class="required">*</span></label>  
 				<input type="text" id="numTarjeta" name="numTarjeta" value="" placeholder="xxxx xxxx xxxx xxxx" required="required" autofocus="autofocus" />  
@@ -56,7 +59,7 @@
 
 				<button name="comprar" id="comprar">Comprar</button>
 				</br>
-			</form>
+			
 
 
 <?php  include ('../static/mainBOT.php'); ?>
