@@ -52,8 +52,33 @@ function newAnalisis($juego, $usuario, $texto, $puntuacion) {
 	return (true);
 }
 
+function deleteLogro($logro) {
+	require_once ('../include/communityBD.php');
+	eliminarLogro($logro);
+	echo "Logro eliminado correctamente.";
+	return (true);
+}
 
+function deleteCaptura($captura) {
+	require_once ('../include/communityBD.php');
+	eliminarCaptura($captura);
+	echo "Captura eliminado correctamente.";
+	return (true);
+}
 
+function deleteVideo($video) {
+	require_once ('../include/communityBD.php');
+	eliminarVideo($video);
+	echo "Video eliminado correctamente.";
+	return (true);
+}
+
+function deleteAnalisis($juego, $usuario) {
+	require_once ('../include/communityBD.php');
+	eliminarAnalisis($juego, $usuario);
+	echo "Analisis eliminado correctamente.";
+	return (true);
+}
 
 $functionName = filter_input(INPUT_GET, 'functionName');
 
@@ -112,8 +137,18 @@ switch ($functionName) {
 	case "deleteForum":
 		deleteForum($_GET['idHilo']);
 	break;
-	
-    
+	case "deleteLogro":
+		deleteLogro($_GET['logro']);
+	break;
+	case "deleteCaptura":
+		deleteCaptura($_GET['captura']);
+	break;
+    case "deleteVideo":
+		deleteVideo($_GET['video']);
+	break;
+	case "deleteAnalisis":
+		deleteAnalisis($_GET['juego'], $_GET['usuario']);
+	break;
 }
 
 

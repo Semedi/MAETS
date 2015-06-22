@@ -351,6 +351,47 @@ function eliminarForo($id) {
 	closeConnection($connection);
 }
 
+function eliminarLogro($logro) {
+	require_once('../include/config.php');
+	$connection = createConnection();
+	$sql = "DELETE FROM logro WHERE Titulo = '$logro'";
+	$connection->query($sql) or die ($connection->error);
+	closeConnection($connection);
+}
+
+function eliminarCaptura($captura) {
+	require_once('../include/config.php');
+	$connection = createConnection();
+	$sql = "DELETE FROM capturas WHERE Nombre = '$captura'";
+	$connection->query($sql) or die ($connection->error);
+	closeConnection($connection);
+}
+
+function eliminarVideo($video) {
+	require_once('../include/config.php');
+	$connection = createConnection();
+	$sql = "DELETE FROM videos WHERE Nombre = '$video'";
+	$connection->query($sql) or die ($connection->error);
+	closeConnection($connection);
+}
+
+function eliminarAnalisis($juego, $usuario) {
+	require_once('../include/config.php');
+	$connection = createConnection();
+
+	$sql = "SELECT Id FROM juego WHERE Titulo = '$juego'";
+	$res = $connection->query($sql) or die ($connection->error);
+	$idJuego = $res->fetch_assoc();
+
+	$sql = "SELECT Id FROM usuario WHERE Nick = '$usuario'";
+	$res = $connection->query($sql) or die ($connection->error);
+	$idUsuario = $res->fetch_assoc();
+
+	$sql = "DELETE FROM analisis WHERE IdJuego = '". $idJuego['Id']. "' AND IdUsuario = '". $idUsuario['Id']. "'";
+	$connection->query($sql) or die ($connection->error);
+	closeConnection($connection);
+}
+
 function getUsuarios() {
 	require_once('../include/config.php');
 	$connection = createConnection();

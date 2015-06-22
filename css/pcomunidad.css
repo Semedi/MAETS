@@ -81,3 +81,8 @@ padding-right: 60px;
     border-width: 1px;
     border-color: black;
 }
+
+p.eliminar {
+	color: white;
+	font-style: bold;
+}

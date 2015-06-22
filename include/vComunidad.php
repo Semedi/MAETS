@@ -37,7 +37,7 @@ require_once('shopBD.php');
 
 	function generarListaForos() {
 		$hilos = getForoOP();
-		echo "<table>
+		echo "<table class='comunidad'>
 				<th> Tema </th>
 				<th> Creador </th>
 				<th> Número mensajes </th>";
@@ -66,7 +66,7 @@ require_once('shopBD.php');
 
 	function generarListaUsuarios() {
 		$usuarios = obtenerUsuarios();
-		echo "<table>
+		echo "<table class='comunidad'>
 				<th> Nick </th>
 				<th> Nombre </th>
 				<th> Apellidos </th>
@@ -112,7 +112,7 @@ require_once('shopBD.php');
 	function generarListaLogros() {
 		require_once ('shopOp.php');
 		$logros = obtenerLogros();
-		echo "<table>
+		echo "<table class='comunidad'>
 				<th> Juego </th>
 				<th> Título </th>
 				<th> Puntos </th>
@@ -145,7 +145,7 @@ require_once('shopBD.php');
 	function generarListaCapturas() {
 		require_once('../include/usersOp.php');
 		$capturas = obtenerInfoCapturas();
-		echo "<table>
+		echo "<table class='comunidad'>
 				<th> Imagen </th>
 				<th> Usuario </th>
 				<th> Nombre </th>
@@ -174,7 +174,7 @@ require_once('shopBD.php');
 	function generarListaVideos() {
 		require_once('../include/usersOp.php');
 		$videos = obtenerInfoVideos();
-		echo "<table>
+		echo "<table class='comunidad'>
 				<th> Enlace </th>
 				<th> Usuario </th>
 				<th> Nombre </th>
@@ -204,7 +204,7 @@ require_once('shopBD.php');
 		require_once('../include/usersOp.php');
 		require_once('../include/shopOp.php');
 		$analisis = obtenerInfoAnalisis();
-		echo "<table>
+		echo "<table class='comunidad'>
 				<th> Juego </th>
 				<th> Usuario </th>
 				<th> Texto </th>

@@ -42,23 +42,6 @@
         });
     });
    </script>
-
-<script type="text/javascript">
-  $( document ).ready(function() {
-   $('#eliminarUsuario').click(
-        function(){
-          $.get("../AJAX/usuariosGestor.php",{ functionName:"deleteUser", user:$('#nickuser').html()},function(data){
-            trimmed_data = $.trim(data);
-            
-                alert(data);
-                window.location.href = "../admin/gestorComunidad.php";
-              
-              
-            }
-          );
-        });
-      });
-    </script>
 	
 </head>
 
@@ -71,9 +54,6 @@
         <div id ="friendsContent">
 
             <?php 
-                if($_SESSION["Rol"]=='Administrador' or $_SESSION["Rol"]=='Gestor-Comunidad')
-                  echo "<button name='eliminarUsuario' id='eliminarUsuario'>Eliminar usuario</button>";
-
             require_once ('../include/vUsuario.php');
             generarUsuario($_GET['user']);
 
