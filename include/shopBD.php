@@ -115,15 +115,15 @@ function insertGame($titulo, $precio, $edad, $etiquetas, $descripcion, $descripc
 	$connection=createConnection();
 
 	$sql = "SELECT * FROM juego WHERE Titulo = '$titulo'";
-	$result = $connection->query($result) or die ($connecion->error. " en la linea".(_LINE_-1));
+	$result = $connection->query($sql) or die ($connecion->error);
 
 	if($row = $result->fetch_assoc())
 		echo "El juego ya existe.";
 	else {
 		$hoy = gmdate('Y-m-d');
-		$sql = "INSERT INTO 'juego' ('Id', 'Titulo', 'Portada', 'Precio', 'Edad', 'Descripcion', 'DescipcionLarga', 'Companyia', 'Tipo', 'Etiquetas', 'Idiomas', 'Ventas', 'Fecha')
-				VALUES (NULL, '$titulo', '$portada', '$precio', '$edad', '$descipcion', '$descripcionLarga', '$tipoJuego', '$idiomas', '$etiquetas', '0', '$hoy'";
-		$connection->query($sql) or die ($connecion->error. " en la linea".(_LINE_-1));
+		$sql = "INSERT INTO 'juego' ('Titulo', 'Portada', 'Precio', 'Edad', 'Descripcion', 'DescripcionLarga', 'Companyia', 'Tipo', 'Etiquetas', 'Idiomas', 'Ventas', 'Fecha')
+				VALUES ('".$titulo."', '".$portada."', '".$precio."', '".$edad."', '".$descripcion."', '".$descripcionLarga."', '".$tipoJuego."', '".$idiomas."', '".$etiquetas."', '0', '".$hoy."'";
+		$connection->query($sql) or die ($connection->error);
 	}	
 	closeConnection($connection);
 }
@@ -165,21 +165,22 @@ function insertGameToUser($juego, $user){
 
     		$connection ->query($sql) or die ($connection->error);
 		}
-		echo "Compra realizad con éxito.";
+		echo "Compra realizada con exito.";
 	}
-
 	closeConnection($connection);
 	return (true);
 
 
 }
 
-function updateJuego($id, $titulo, $precio, $edad, $etiquetas, $descipcion, $descripcionLarga, $tipoJuego, $idiomas, $portada) {
+function updateJuego($id, $titulo, $precio, $edad, $etiquetas, $descripcion, $descripcionLarga, $tipoJuego, $idiomas, $portada) {
 	require_once('../include/config.php');
-
 	$connection = createConnection();
-
-	$sql = "UPDATE `juego` SET `Titulo` ='$titulo',`Precio`='$precio', `Edad`= '$edad', `Etiquetas`= '$etiquetas', `Descripcion`='$descripcion', `DescripcionLarga`='$descripcionLarga', `Tipo`='$tipoJuego', `Idiomas`='$idiomas', `Portada`='$portada'  WHERE `Id` ='$id'"; 
-}
+	$sql = "UPDATE `juego` SET `Titulo` ='$titulo',`Precio`='$precio', `Edad`= '$edad', `Etiquetas`= '$etiquetas', `Descripcion`='$descripcion', `DescripcionLarga`='$descripcionLarga', `Tipo`='$tipoJuego', `Idiomas`='$idiomas'  WHERE `Id` ='$id'"; 
+	$connection ->query($sql) or die ($connection->error);
+	closeConnection($connection);
+	return (true);
+	
+	}
 
 ?>

@@ -331,7 +331,7 @@ function insertAnalisis($juego, $usuario, $texto, $puntuacion) {
 
 function insertCaptura($idUsuario, $imagen, $index) {
 	if($index)
-		require_once ('include/config.php');
+		require_once ('../include/config.php');
 	else
 		require_once ('../include/config.php');
 	$hoy = getdate();
