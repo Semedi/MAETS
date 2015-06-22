@@ -2,9 +2,10 @@
 require_once('../include/config.php');
 
 //añade un juego a la base de datos(faltan parametros)
-function addGame($titulo, $precio, $edad, $etiquetas, $descripcion, $descripcionLarga, $tipoJuego, $idiomas, $portada){
-	$connection = createConnection();
-
+function addGame($titulo, $precio, $edad, $etiquetas, $descripcion, $descripcionLarga, $tipoJuego, $idiomas/*, $portada*/){
+	require_once ('../include/shopBD.php');
+	insertGame($titulo, $precio, $edad, $etiquetas, $descripcion, $descripcionLarga, $tipoJuego, $idiomas, "");
+	echo "Juego insertado con exito.";	
 	return (true);
 }
 
@@ -94,6 +95,7 @@ function addGameToUser($juego, $user) {
 $functionName = filter_input(INPUT_GET, 'functionName');
 switch ($functionName) {
     case "addGame":
+		addGame($_GET['titulo'], $_GET['precio'], $_GET['edad'], $_GET['etiquetas'], $_GET['descripcion'], $_GET['descripcionLarga'], $_GET['tipoJuego'], $_GET['idiomas']/*, $_GET['portada']*/);
         break;
     case "deleteGame":
     	deleteGame($_GET['juego']);
