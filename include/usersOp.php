@@ -35,13 +35,35 @@ function getListaAmigos($valor, $column){
 	return (selectAmigo($valor, $column));
 }
 
+// ret nick
 function getUser($id){
 	require_once('../include/usersBD.php');
 
 	return (findUserById($id));
 }
 
+function getUserInfo($id) {
+	require_once('../include/usersBD.php');
 
+	return (selectUserById($id));
+}
 
+function getLogros($user) {
+	require_once('../include/usersBD.php');
+
+	return (getLogrosUser($user));	
+}
+
+function getPuntosLogros($user) {
+	require_once('../include/usersBD.php');
+
+	return (puntosDeLogro($user));
+}
+
+function getJuegosComprados($user) {
+	require_once('../include/usersBD.php');
+
+	return (getJuegosUser($user));
+}
 
 ?>

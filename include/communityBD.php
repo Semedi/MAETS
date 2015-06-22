@@ -280,4 +280,23 @@ function getUltimosPost() {
 	return $ret;		
 }
 
+function getLogro($idLogro) {
+	
+	require_once ('../include/config.php');
+
+	$connection = createConnection();
+
+	$sql = "SELECT * FROM logro WHERE Id = ''$idLogro";
+
+	$res = $connection->query($sql) or die ($connection->error). " en la linea".(_LINE_-1);
+
+	if($ret = $res->fetch_assoc()) {
+		closeConnection($connection);
+		return $ret;
+	}
+
+	closeConnection($connection);
+	return NULL;			
+}
+
 ?>

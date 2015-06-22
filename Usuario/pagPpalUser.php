@@ -21,37 +21,10 @@
 
       <table>
         <tr><h2> Resumen </h2></tr>
-        
-
-        <tr>
-            <td>Nick:</td>
-            <td><?php echo $_SESSION["Nick"]; ?></td>
-        </tr>
- 
-        <tr>
-            <td>Nombre: </a></td>
-            <td><?php echo $_SESSION['Nombre']; ?></td>
-        </tr>
- 
-         <tr>
-            <td>Apellidos: </a></td>
-            <td><?php echo $_SESSION['Apellidos']; ?></td>
-        </tr>
-
-                <tr>
-            <td>Correo: </a></td>
-            <td><?php echo $_SESSION["Email"]; ?></td>
-        </tr>
-
-                 <tr>
-            <td>Juegos comprados: </a></td>
-            <td>5</td>
-        </tr>
-
-               <tr>
-            <td>Puntos de logro: </a></td>
-            <td>52</td>
-        </tr>
+        <?php
+          require_once('../include/vUsuario.php');
+          generarPerfilPrincipal($_SESSION['ID']);
+        ?>
       </table>
 </div>
 
