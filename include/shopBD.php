@@ -89,6 +89,26 @@ function selectMas($num, $column) {
 
 }
 
+
+function selectGame($juego){
+
+	$connection = createConnection();
+	$result = "SELECT * FROM juego WHERE titulo = '$juego'";
+	$result = $connection->query($result) or die ($connection->error_log(message));
+	if($row = $result->fetch_assoc())
+		{     
+			closeConnection($connection);
+			return $row;
+		}
+		else
+		{
+			echo "NO EXISTE ESE JUEGO";
+		}
+	closeConnection($connection);
+
+
+}
+
 function insertGame($titulo, $precio, $edad, $etiquetas, $descripcion, $descripcionLarga, $tipoJuego, $idiomas, $portada) {
 	require_once('../include/config.php');
 
