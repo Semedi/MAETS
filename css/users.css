@@ -85,13 +85,15 @@ td{
 #imagen_Avatar{
 	margin-top: 10px;
 	margin-left: 10px;
+	margin-right: 10px;
 	float: center;
-	width: 150px;
-	height: 150px;
+	width: 140px;
+	height: 140px;
 }
 #modificarAvatar{
 	float: right;
 	margin: 5px;
+	margin-right:40px;
 	width: 250px;
 	height: 250px;
 }

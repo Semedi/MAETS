@@ -65,7 +65,12 @@
                 <img id='imagen_Avatar'  src=<?php echo "'".IMAGENES."/usuarios/".$_SESSION["IMG"]."'" ?>/>
             </div>
             <div id= "updateInfoButton">
-               <button type="button" id="updateButton2">Modificar</button>
+
+               <?php echo"<form enctype='multipart/form-data' action='../scripts/uploader.php?user=" .$_SESSION['ID']."&modo=modificar' method='POST'>"; ?>
+              <input id="archivo" name="uploadedfile" type="file" />
+              <input type="submit" value="modificar" />
+
+              </form>
             </div>
 
      </div>

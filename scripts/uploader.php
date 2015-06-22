@@ -1,4 +1,6 @@
 <?php
+require_once __DIR__.'\..\include\config.php';
+
 	$uploadedfileload="true";
 	$uploadedfile_size=$_FILES['uploadedfile']['size'];
 	$msg = "";
@@ -18,9 +20,16 @@
 
 		include('../include/communityBD.php');
 
+
 		if ($_GET['modo'] == "modificar"){
 
+			include('../include/usersBD.php');
 			$add="../images/usuarios/$file_name";
+			updateFoto($_SESSION['ID'], $file_name);
+
+			$_SESSION['IMG'] =$file_name;
+
+
 			
 
 		}
@@ -35,5 +44,15 @@
 	}else{
 		echo "<script type='text/javascript'>alert('$msg');</script>";
 	}
-	print("<script>window.location.replace('../community/capturas.php');</script>"); 
+
+	if ($_GET['modo'] == "modificar"){
+
+			
+			print("<script>window.location.replace('../Usuario/pagPpalUser.php');</script>"); 
+	}
+	else{
+			print("<script>window.location.replace('../community/capturas.php');</script>"); 
+
+		}
+	
 ?>

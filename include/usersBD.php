@@ -31,6 +31,19 @@ function updateInfo($nombre, $apellidos, $mail, $pais, $ciudad, $direccion, $CP,
 }
 
 
+function updateFoto($id, $foto){
+	
+	$connection = createConnection();
+
+	$sql = "UPDATE `maets`.`usuario` SET `Imagen`='$foto' WHERE `usuario`.`Id` ='$id'"; 
+
+    $connection ->query($sql) or die ($connection->error. " en la linea". ('_LINE_-1'));
+	closeConnection($connection);
+	return (true);
+
+}
+
+
 function newUser($user, $pass, $mail){
 	
 
