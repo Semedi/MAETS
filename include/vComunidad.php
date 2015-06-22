@@ -386,7 +386,7 @@ function cargarVideos()
 
 		foreach ($usuarios as $user) {
 			if($user!=NULL)
-				echo " <p><img class='imageUser' src='../images/usuarios/" .$user['Imagen']. "'>" .$user['Nick']. "..." .$user['Puntuacion']. " puntos</p>";
+				echo " <p><a href='../Usuario/Usuario.php?user=" .$user['Nick']. "'><img class='imageUser' src='../images/usuarios/" .$user['Imagen']. "'> </a>" .$user['Nick']. "..." .$user['Puntuacion']. " puntos</p>";
 		}
 	}
 
@@ -396,7 +396,7 @@ function cargarVideos()
 		foreach ($idUsuarios as $user) {
 			if($user!=NULL){
 				$usuario = selectUserById($user['IDUsuario']);
-				echo " <p><img class='imageUser' src='../images/usuarios/" .$usuario['Imagen']. "'>" .$usuario['Nick']. "..." .$user['COUNT(IDUsuario)']. " logros</p>";
+				echo " <p><a href='../Usuario/Usuario.php?user=" .$usuario['Nick']. "'><img class='imageUser' src='../images/usuarios/" .$usuario['Imagen']. "'> </a>" .$usuario['Nick']. "..." .$user['COUNT(IDUsuario)']. " logros</p>";
 			}
 		}
 	}
@@ -405,7 +405,7 @@ function cargarVideos()
 		$usuarios = obtenerUsuariosNuevos();
 		foreach ($usuarios as $user) {
 			if($user!=NULL)
-				echo " <p><img class='imageUser' src='../images/usuarios/" .$user['Imagen']. "'>" .$user['Nick']. "</p>";
+				echo " <p><a href='../Usuario/Usuario.php?user=" .$user['Nick']. "'><img class='imageUser' src='../images/usuarios/" .$user['Imagen']. "'> </a>" .$user['Nick']. "</p>";
 		}	
 	}
 
@@ -414,7 +414,7 @@ function cargarVideos()
 		foreach ($usuarios as $user) {
 			if($user!=NULL) {
 				$usuario = selectUserById($user['IdUsuario']);
-				echo " <p><img class='imageUser' src='../images/usuarios/" .$usuario['Imagen']. "'>" .$usuario['Nick']. "</p>";
+				echo " <p><a href='../Usuario/Usuario.php?user=" .$usuario['Nick']. "'><img class='imageUser' src='../images/usuarios/" .$usuario['Imagen']. "'> </a>" .$usuario['Nick']. "</p>";
 			}
 		}
 	}
