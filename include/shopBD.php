@@ -53,6 +53,25 @@ function selectJuegoById($id, $gen) {
 	return (NULL);
 }
 
+
+function selectGameByCompany($companyia){
+
+	$connection = createConnection();
+	$result = "SELECT * FROM juego WHERE Companyia = '$companyia'";
+	$result = $connection->query($result) or die ($connection->error);
+	if($row = $result->fetch_assoc())
+		{     
+			closeConnection($connection);
+			return $row;
+		}
+		else
+		{
+			echo "NO EXISTE ESE JUEGO";
+		}
+closeConnection($connection);
+
+}
+
 function selectMas($num, $column) {
 	require_once('/include/config.php');
 
@@ -98,6 +117,41 @@ function eliminarJuego($juego) {
 	$connection->query($sql) or die ($connecion->error. " en la linea".(_LINE_-1));	
 
 	closeConnection($connection);
+}
+
+function insertGameToUser($juego, $user){
+
+	$connection = createConnection();
+	$sql = "SELECT * FROM compras WHERE IDUsuario = '$user' AND IDJuego = '$juego'";
+	$result = $connection->query($sql) or die ($connection->error);
+
+
+	if($row = $result->fetch_assoc()) {     
+		echo "Ya tienes este juego en tu biblioteca.";
+	}
+	else {
+	$connection->query($sql) or die ($connection->error);
+		// Insertar en compras
+		$fecha = gmdate('Y-m-d h-i-s');
+		$sql = "INSERT INTO `compras`(`IDUsuario`, `IDJuego`, `Fecha_de_compra`) VALUES ";
+		$sql.= "('".$user."', '".$juego."', '".$fecha."')";
+		$connection->query($sql) or die ($connection->error);
+		// Ventas + 1
+		$sql = "SELECT * FROM juego WHERE id = '$juego'";
+		$result = $connection->query($sql) or die ($connection->error);
+		if($row = $result->fetch_assoc()) {
+			$ventas = $row['Ventas']+1;
+			$sql = "UPDATE `juego` SET `Ventas` ='$ventas' WHERE `Id` ='$juego'"; 
+
+    		$connection ->query($sql) or die ($connection->error);
+		}
+		echo "Compra realizad con éxito.";
+	}
+
+	closeConnection($connection);
+	return (true);
+
+
 }
 
 function updateJuego($id, $titulo, $precio, $edad, $etiquetas, $descipcion, $descripcionLarga, $tipoJuego, $idiomas, $portada) {
