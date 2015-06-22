@@ -20,7 +20,7 @@
 				<?php generarCapturas();?>
 				</br>
 				</br>
-				<?php echo"<form enctype='multipart/form-data' action='../scripts/uploader.php?user=" .$_SESSION['ID']. "' method='POST'>"; ?>
+				<?php echo"<form enctype='multipart/form-data' action='../scripts/uploader.php?user=" .$_SESSION['ID']."&modo=insertar' method='POST'>"; ?>
 				<input id="archivo" name="uploadedfile" type="file" />
 				<input type="submit" value="Subir archivo" />
 				</form>

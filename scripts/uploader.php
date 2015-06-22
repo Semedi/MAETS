@@ -18,6 +18,14 @@
 
 		include('../include/communityBD.php');
 
+		if ($_GET['modo'] == "modificar"){
+
+			$add="../images/usuarios/$file_name";
+			
+
+		}
+
+
 		insertCaptura($_GET['user'], $_FILES['uploadedfile']['name'], true);
 		if(move_uploaded_file ($_FILES['uploadedfile']['tmp_name'], $add)){
 			echo "<script type='text/javascript'>alert('Ha sido subido satisfactoriamente');</script>";
