@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 23-06-2015 a las 00:14:11
+-- Tiempo de generación: 23-06-2015 a las 18:22:17
 -- Versión del servidor: 5.6.21
 -- Versión de PHP: 5.6.3
 
@@ -298,11 +298,11 @@ INSERT INTO `logro` (`Id`, `JuegoID`, `Titulo`, `Puntos`, `Tipo`, `Imagen`) VALU
 (10, 2, 'Guardaespaldas', 25, 'Bronce', 'logroDishonored.jpg'),
 (11, 2, 'Manos limpias', 50, 'Plata', 'logroDishonored.jpg'),
 (12, 2, 'Negociador', 100, 'Platino', 'logroDishonored.jpg'),
-(13, 7, 'A tu Izquierda', 20, 'Bronce', 'logroProjectCars.jpg'),
-(14, 7, 'Mitad piloto, mitad demonio', 20, 'Bronce', 'logroProjectCars.jpg'),
-(15, 7, 'Embajador de la Comunidad', 20, 'Bronce', 'logroProjectCars.jpg'),
-(16, 7, 'Mago del Tiempo de Vuelta', 50, 'Plata', 'logroProjectCars.jpg'),
-(17, 7, 'De Cero a Héroe', 75, 'Oro', 'logroProjectCars.jpg'),
+(13, 7, 'A tu Izquierda', 20, 'Bronce', 'logroProjectCars.png'),
+(14, 7, 'Mitad piloto, mitad demonio', 20, 'Bronce', 'logroProjectCars.png'),
+(15, 7, 'Embajador de la Comunidad', 20, 'Bronce', 'logroProjectCars.png'),
+(16, 7, 'Mago del Tiempo de Vuelta', 50, 'Plata', 'logroProjectCars.png'),
+(17, 7, 'De Cero a Héroe', 75, 'Oro', 'logroProjectCars.png'),
 (18, 5, 'Crea un aventurero', 25, 'Bronce', 'logroPOE.png'),
 (19, 5, 'Cinco mejoras de baluarte', 25, 'Bronce', 'logroPOE.png'),
 (20, 5, 'Encantador', 50, 'Plata', 'logroPOE.png'),
@@ -378,10 +378,10 @@ INSERT INTO `usuario` (`Id`, `Nick`, `Contrasenia`, `Nombre`, `Apellidos`, `Corr
 (7, 'Javi', '$2y$10$mgBUFmgP3GIMlR.03tWeLeD141mPVKSHwk/s3OQ2W3ZORRdezUZbK', 'Javi', 'Druet Honrubia', 'javi@hotmail.com', '1993-03-20', 'España', 'Madrid', 'Avenida de ', 28033, 0, 'Usuario Registrado', 'misterT.jpg', ''),
 (13, 'Prueba', '$2y$10$.HsV3pKt63NAB4NApF0PL.rU3gOmBBfXgu.jY1j/ClbC9kCNokklG', 'Prueba', 'Pruebas Pruebos', 'prueba@prueba.com', '1990-01-01', 'Pruebas', 'Prueba', 'Prueba de prueba s/n', 28039, 0, 'Usuario Registrado', 'holi.jpg', ''),
 (14, 'Usuario1', '$2y$10$bd/LlAjMkOy2aYOyb4ApRe2xYA0sFOPd5kcvNJWR54TPFA9MtIRYC', 'Usuario1', 'Usuario User', 'usuario1@user.com', '1989-06-28', 'Prueba', 'Prueba', 'Prueba 29', 28040, 0, 'Usuario Registrado', 'usuario.jpg', ''),
-(15, 'Admin', '$2y$10$UiwAJxd89sfcl5WW/6KHNOh/vYcSjLCupWxI13Y1Dc9aksEZhC5Tu', 'Admin', 'Admin admin', 'admin@admin.es', '0000-00-00', 'Admin', 'Admin', 'Admin', 28033, 0, 'Administrador', 'usuario.jpg', ''),
+(15, 'Admin', '$2y$10$UiwAJxd89sfcl5WW/6KHNOh/vYcSjLCupWxI13Y1Dc9aksEZhC5Tu', 'Admin', 'Admin admin', 'admin@admin.es', '0000-00-00', 'Admin', 'Admin', 'Admin', 28033, 0, 'Administrador', 'admin.jpg', ''),
 (16, 'Desarrollador', '$2y$10$zaA02CyAOzyrTpbLqLuDTeOigUiNDKLS4S7AGwDZ3r1zrLtpDeCNW', 'Adri', 'Desarrollador Bethesda', 'desar@desar.com', '1990-07-19', 'Bethesda', 'Bethesdilla', 'Avenida de Bethesda 24', 28030, 0, 'Desarrollador', 'usuario.jpg', 'Bethesda'),
-(17, 'GestorT', '$2y$10$yB2.NPQ6XFghluHxbDWqJeUzS/RHkDfSH8aRX8c.FAOwooLPA3y0i', 'Adolfo', 'Gestor Tienda', 'gestor@tienda.com', '1993-01-20', 'Tiendas', 'Tienda', 'Tienda de las Tiendas 83', 28031, 0, 'Gestor-Tienda', 'usuario.jpg', ''),
-(19, 'GestorC', '$2y$10$rlgGou1FaOz7nVGqPOOFcOcOT3N5YO8P81UVCkGTjci1L8DJvOsZa', 'Alba', 'Gestora Comunidad', 'gestor@comunidad.com', '1991-07-14', 'Comunidad', 'Comunnity', 'Avenida de la comunidad s/n', 28012, 0, 'Gestor-Comunidad', 'usuario.jpg', '');
+(17, 'GestorT', '$2y$10$yB2.NPQ6XFghluHxbDWqJeUzS/RHkDfSH8aRX8c.FAOwooLPA3y0i', 'Adolfo', 'Gestor Tienda', 'gestor@tienda.com', '1993-01-20', 'Tiendas', 'Tienda', 'Tienda de las Tiendas 83', 28031, 0, 'Gestor-Tienda', 'GestorT.jpg', ''),
+(19, 'GestorC', '$2y$10$rlgGou1FaOz7nVGqPOOFcOcOT3N5YO8P81UVCkGTjci1L8DJvOsZa', 'Alba', 'Gestora Comunidad', 'gestor@comunidad.com', '1991-07-14', 'Comunidad', 'Comunnity', 'Avenida de la comunidad s/n', 28012, 0, 'Gestor-Comunidad', 'GestorC.jpg', '');
 
 -- --------------------------------------------------------
 
