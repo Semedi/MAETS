@@ -90,11 +90,7 @@
 					<input type='idiomas' id='idiomas' name='idiomas' value='', placeholder='Idiomas' required='required'/></p>
 					<p><em> Inglés, Español, Ruso, Italiano, Chino, Japones, Francés, Portugués, Árabe</em></p>
 				
-				<p><b><label for="portada">Portada: </label></b></p>
-				</br>
-				<?php echo"<form enctype='multipart/form-data' action='../scripts/uploader.php?user=" .$_SESSION['ID']."&modo=nuevoJuego' method='POST'>"; ?>
-				<input id="archivo" name="uploadedfile" type="file" />
-				<input type="submit" value="Añadir portada" />
+
 
               </form>				
 				
