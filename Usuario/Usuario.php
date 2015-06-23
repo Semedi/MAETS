@@ -55,8 +55,14 @@
 
             <?php 
             require_once ('../include/vUsuario.php');
-            generarUsuario($_GET['user']);
+            if(isset($_SESSION["Logueado"]) && $_SESSION["Logueado"] = true ){
 
+            generarUsuario($_GET['user']);
+            }
+            else{
+              echo "<h1> ¡Create una cuenta para poder ver la informacion de otros perfiles! </h1>";
+
+            }
 
             ?>
        
