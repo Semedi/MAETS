@@ -7,7 +7,7 @@
 	<link rel="icon" type="image/png" href="../images/MAETS.png"/>
 	<link rel="stylesheet" type="text/css" href="../css/main.css"/>
 	<link rel="stylesheet" type="text/css" href="../css/formularioJuego.css"/>
-
+	<meta charset="UTF-8">
 	<script type="text/javascript" src="../js/jquery-1.9.1.min.js"> </script>
 
 	<script type="text/javascript">
@@ -16,7 +16,7 @@
 			 	function(){
 					$.get("../AJAX/juegosGestor.php",{ functionName:"addGame", titulo:$('#nombre').val(), precio:$('#precio').val(),
 														edad:$('#edad').val(), etiquetas:$('#etiquetas').val(), descripcion: $("#descripcion").val(), 
-														descripcionLarga:$('#descripcionLarga').val(), tipoJuego:$('#tipoJuego').val(), idiomas:$('#idiomas').val()}, function(data){
+														descripcionLarga:$('#descripcionLarga').val(), tipoJuego:$('#tipoJuego').val(), idiomas:$('#idiomas').val(), compania: $('#companyia').val()}, function(data){
 			 			trimmed_data = $.trim(data);
 						
 								alert(data);
@@ -44,6 +44,11 @@
 				<p>
 					<b><label for="nombre"¨>Título: <span class="required">*</span></label></b>
 					<input type="text" id="nombre" name="nombre" value="" placeholder="Nombre del juego" required="required" autofocus="autofocus" />  
+				</p>
+				
+				<p>
+					<b><label for="companyia"¨>Compañía: <span class="required">*</span></label></b>
+					<input type="text" id="companyia" name="companyia" value="" placeholder="Empresa desarrolladora del juego" required="required" autofocus="autofocus" />  
 				</p>
 					
 				<p>
@@ -84,8 +89,15 @@
 					<b><label for='idiomas'>Idiomas: </label></b>
 					<input type='idiomas' id='idiomas' name='idiomas' value='', placeholder='Idiomas' required='required'/></p>
 					<p><em> Inglés, Español, Ruso, Italiano, Chino, Japones, Francés, Portugués, Árabe</em></p>
-				<p><b><label for="portada">Portada: </label></b></p>				
+				
+				<p><b><label for="portada">Portada: </label></b></p>
 				</br>
+				<?php echo"<form enctype='multipart/form-data' action='../scripts/uploader.php?user=" .$_SESSION['ID']."&modo=nuevoJuego' method='POST'>"; ?>
+				<input id="archivo" name="uploadedfile" type="file" />
+				<input type="submit" value="Añadir portada" />
+
+              </form>				
+				
 				 
 			
 

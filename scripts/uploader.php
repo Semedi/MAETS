@@ -29,10 +29,15 @@ require_once __DIR__.'\..\include\config.php';
 
 			$_SESSION['IMG'] =$file_name;
 
-
-			
-
 		}
+		
+		if ($_GET['modo'] == "nuevoJuego"){
+			
+			$add="../images/Portadas/$file_name";
+	
+		}
+		
+		
 
 
 		insertCaptura($_GET['user'], $_FILES['uploadedfile']['name'], true);
@@ -50,9 +55,10 @@ require_once __DIR__.'\..\include\config.php';
 			
 			print("<script>window.location.replace('../Usuario/pagPpalUser.php');</script>"); 
 	}
-	else{
+	else if($_GET['modo'] == "insertar"){
 			print("<script>window.location.replace('../community/capturas.php');</script>"); 
 
 		}
+	
 	
 ?>

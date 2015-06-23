@@ -109,7 +109,7 @@ function selectGame($juego){
 
 }
 
-function insertGame($titulo, $precio, $edad, $etiquetas, $descripcion, $descripcionLarga, $tipoJuego, $idiomas, $portada) {
+function insertGame($titulo, $precio, $edad, $etiquetas, $descripcion, $descripcionLarga, $tipoJuego, $idiomas, $companyia, $portada) {
 	require_once('../include/config.php');
 
 	$connection=createConnection();
@@ -121,8 +121,9 @@ function insertGame($titulo, $precio, $edad, $etiquetas, $descripcion, $descripc
 		echo "El juego ya existe.";
 	else {
 		$hoy = gmdate('Y-m-d');
-		$sql = "INSERT INTO 'juego' ('Titulo', 'Portada', 'Precio', 'Edad', 'Descripcion', 'DescripcionLarga', 'Companyia', 'Tipo', 'Etiquetas', 'Idiomas', 'Ventas', 'Fecha')
-				VALUES ('".$titulo."', '".$portada."', '".$precio."', '".$edad."', '".$descripcion."', '".$descripcionLarga."', '".$tipoJuego."', '".$idiomas."', '".$etiquetas."', '0', '".$hoy."'";
+		$sql = "INSERT INTO `juego`(`Titulo`, `Portada`, `Precio`, `Edad`, `Descripcion`, `DescripcionLarga`, `Companyia`, `Tipo`, `Etiquetas`, `Idiomas`, `Ventas`, `Fecha`) VALUES ('$titulo', '$portada', '$precio', '$edad', '$descripcion', '$descripcionLarga', '$companyia', '$tipoJuego', '$etiquetas', '$idiomas', '0', '$hoy')";
+		
+		
 		$connection->query($sql) or die ($connection->error);
 	}	
 	closeConnection($connection);
