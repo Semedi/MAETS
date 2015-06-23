@@ -20,6 +20,14 @@ function addUser($user, $pass, $mail){
 }
 
 
+
+function addUserAdmin($user, $pass, $mail, $rol) {
+	include '../include/usersBD.php';
+
+	newUserAdmin($user, $pass, $mail, $rol);
+}
+
+
 //modifica la informacion de la cuenta un usuario
 function modifyUserAccount($user,$mail, $ID){
 
@@ -138,6 +146,9 @@ switch ($functionName) {
     case "changePassw":
     	changePassw($_GET["passw"], $_GET["newPassw"],$_SESSION["ID"]);
     	break;
+    case "addUserAdmin":
+    	addUserAdmin($_GET["user"], $_GET["pass"], $_GET["mail"], $_GET["rol"]);
+    	break;	
 
 
 }
