@@ -52,7 +52,11 @@
 		   <p id="success">Juego añadido correctamente.</p>
 		   <?php
 		   		require_once ('../include/vTienda.php');
+
+		   		if(isset($_SESSION["Rol"]) && ($_SESSION["Rol"]='Administrador' or $_SESSION["Rol"]=='Desarrollador' or $_SESSION["Rol"]=='Gestor-Tienda') ){
 				vistaEditarJuego();
+			}
+			else echo "<h1> Vista no autorizada </h1>";
 		   	?>
 				<p>  <button name="editar" id="editar" >Editar</button>
 				     <button name="eliminar" id="eliminar" >Eliminar</button></p>
