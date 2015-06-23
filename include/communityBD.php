@@ -453,7 +453,7 @@ function nuevoLogro($game, $name, $puntos, $img, $tipe) {
 	require_once ('../include/config.php');
 	$con = createConnection();
 	$sql = "INSERT INTO `logro`(`JuegoID`, `Titulo`, `Puntos`, `Tipo`, `Imagen`) VALUES ";
-	$sql.= "('".$game."', '".$name."', '".$puntos."', '".$tipo."', '".$img."')";
+	$sql.= "('".$game."', '".$name."', '".$puntos."', '".$tipe."', '".$img."')";
 	$con->query($sql) or die ($con->error);
 	closeConnection($con);
 }

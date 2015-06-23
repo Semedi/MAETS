@@ -43,7 +43,9 @@ require_once __DIR__.'\..\include\config.php';
 			insertCaptura($_GET['user'], $_FILES['uploadedfile']['name'], true);
 	
 		}
-
+		if ($_GET['modo'] == "logro") {
+			$add = "../images/logros";
+		}
 		
 
 		if(move_uploaded_file ($_FILES['uploadedfile']['tmp_name'], $add)){

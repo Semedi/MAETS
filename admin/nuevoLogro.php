@@ -8,14 +8,14 @@
 	<link rel="icon" type="image/png" href="../images/MAETS.png" />
 	<link rel="stylesheet" type="text/css" href="../css/singup.css" />
 	<link rel="stylesheet" type="text/css" href="../css/main.css" />
-	<script type="text/javascript" src="js\jquery-1.9.1.min.js"> </script>
+	<script type="text/javascript" src="..\js\jquery-1.9.1.min.js"> </script>
 
 	<script type="text/javascript">
 
 		$( document ).ready(function() {
 			$('#signUp').click(
 		 		function(){
-		 			$.get("AJAX/comunidadGestor.php",{ functionName:"newAchievement", user:$('#name').val(), pass:$('#passw').val(), mail: $('#mail').val(), rol: $('#rol').val() },function(data){
+		 			$.get("../AJAX/comunidadGestor.php",{ functionName:"newAchievement", game: $('#juego').val(), name: $('#name').val(), puntos: $('#puntos').val(), img: "../images/logros/logroETS.jpg", tipe: $('#tipo').val()},function(data){
 		 				trimmed_data = $.trim(data);
 		 					if (trimmed_data == ""){
 		 						window.location.href = "index.php";
@@ -51,7 +51,7 @@
 			
 				<p>Puntos que se pueden conseguir: </p>
 				<p> 
-				<input type="text" id="puntos" name="puntos" value="" placeholder="Puntos" required="required" />  
+				<input type="number" id="puntos" name="puntos" value="" placeholder="Puntos" required="required" />  
 				</p>
 				<p>Tipo de logro: </p>
 				<p>
@@ -64,8 +64,9 @@
 				</p>
 				
 				
+				
 				<div id= "signUpButton">
-				<button type="button" id="signUp">Crear cuenta</button>
+				<button type="button" id="signUp">Crear logro</button>
 				</div>
 			
 		</div>	
