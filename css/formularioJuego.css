@@ -46,3 +46,8 @@
    color: #6EA070;
    display:none;  
 }
+
+#portada{
+	max-height: 150px;
+	max-width: auto;
+}

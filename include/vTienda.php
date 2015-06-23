@@ -204,12 +204,16 @@ function vistaEditarJuego()
 					echo "<input type='idiomas' id='idiomas' name='idiomas' value='" .$juego['Idiomas']. "', placeholder='Idiomas' required='required'/></p>";
 					echo "<p><em> Inglés, Español, Ruso, Italiano, Chino, Japones, Francés, Portugués, Árabe</em></p>";
 				
-				echo "";
-				
-				echo "<p><b><label for='portada'>Portada: </label></b></p>";
-				echo "<img src=\"../images/Portadas/".$juego['Portada']."\">";
-				echo "</br>";
 				
 }
-
+function vistaEditarPortadaJuego()
+{
+	require_once ('/../include/shopOp.php');
+	$juego = getJuegoById($_GET['juego'], 'tienda');
+	echo "</br>";
+	echo "</br>";
+	echo "<p><b><label for='portada'>Portada: </label></b></p>";
+	echo "<img id=\"portada\" src=\"../images/Portadas/".$juego['Portada']."\" >";
+	echo "</br>";
+}
 ?>
