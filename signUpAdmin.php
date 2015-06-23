@@ -15,7 +15,7 @@
 		$( document ).ready(function() {
 			$('#signUp').click(
 		 		function(){
-		 			$.get("AJAX/usuariosGestor.php",{ functionName:"addUser", user:$('#name').val(), pass:$('#passw').val(), mail: $('#mail').val() },function(data){
+		 			$.get("AJAX/usuariosGestor.php",{ functionName:"addUserAdmin", user:$('#name').val(), pass:$('#passw').val(), mail: $('#mail').val(), rol: $('#rol').val() },function(data){
 		 				trimmed_data = $.trim(data);
 		 					if (trimmed_data == ""){
 		 						window.location.href = "index.php";
@@ -61,7 +61,7 @@
 				<input type="text" id="mail" name="mail" value="" placeholder="tu email" required="required" />  
 				</p>
 				<p>Rol del usuario:</p>
-				<p><select name="juego" id ="juego">
+				<p><select name="rol" id ="rol">
 					<option>Administrador</option>
 					<option>Desarrollador</option>
 					<option>Gestor-Tienda</option>

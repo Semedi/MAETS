@@ -75,6 +75,35 @@ function newUser($user, $pass, $mail){
 }
 
 
+function newUserAdmin($user, $pass, $mail, $rol) {
+	$connection = createConnection();
+	
+	$result = "SELECT * FROM usuario WHERE nick = '$user'";
+	$result = $connection->query($result) or die ($connection->error. " en la linea".(_LINE_-1));
+
+
+	if($row = $result->fetch_assoc())
+		{     
+			echo "Ya existe este usuario";
+		}
+	else
+		{
+			$nombreSal = $user;
+			$passSal = $pass;
+			
+			$salt = substr(base64_encode(openssl_random_pseudo_bytes('30')), 0, 22);
+			$salt = strtr($salt, array('+' => '.')); 
+			$hash = crypt($passSal, '$2y$10$' . $salt);
+
+			$q = "INSERT INTO `usuario` (`Id`, `Nick`, `Contrasenia`, `Nombre`, `Apellidos`, `Correo`, `Fecha de Nacimiento`, `Pais`, `Ciudad`, `Direccion`, `Codigo Postal`, `Puntuacion`, `Rol`, `Imagen` , `Companyia`)
+				VALUES (NULL, '$user' , '$hash', '', '', '$mail', '0000-00-00', '', '', '', 00000, 0 , '$rol', 'usuario.jpg', '')";
+			$connection->query($q) or die($connection->error. " en la linea".(_LINE_-1));
+		}
+
+	closeConnection($connection);
+}
+
+
 function findUser($userNick){
 	$connection = createConnection();
 	//$num=0;
