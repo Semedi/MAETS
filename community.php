@@ -1,7 +1,7 @@
 <?php require_once __DIR__.'\include\config.php'; ?>
 <!DOCTYPE html>
 
-</html>
+
 <head>
 	<title> MAETS </title>
 	<link rel="icon" type="image/png" href="images/MAETS.png" />

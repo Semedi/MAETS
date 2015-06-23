@@ -138,14 +138,15 @@ function getAnalisis() {
 	$res = $con->query($sql) or die ($con->error. " en la linea ".(_LINE_-1));
 
 	while($analisis[] = $res->fetch_assoc());
-
 	for($i=0; $i<sizeof($analisis)-1; $i++) {
 		$juego = selectJuegoById($analisis[$i]['IdJuego'],'tienda');
 		$ret[] = [$analisis[$i]['IdJuego'], $juego['Titulo'], $analisis[$i]['IdUsuario'], findUserById($analisis[$i]['IdUsuario'])['nick'], $analisis[$i]['Recomendado'], $analisis[$i]['Texto'], $juego['Portada']];
 	}
-
+	if((sizeof($analisis) - 1) == 0) {
+		$ret[] = "vacio";
+	}
 	closeConnection($con);
-
+	
 	return $ret;
 }
 
@@ -161,7 +162,6 @@ function selectMasComunidad($num, $column, $table) {
 	while($ret[] = $res->fetch_assoc());
 
 	closeConnection($connection);
-
 	return ($ret);
 }
 

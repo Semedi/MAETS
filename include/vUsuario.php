@@ -44,6 +44,8 @@ function generarUsuario($user){
           echo "<img id = 'bandera_nacionalidad' src='../images/usuarios/SpainFlag.jpg'>";
           echo "</div>";
           echo "<div id = 'botonAniadir'>";
+
+          
           echo "<button type='button' id='addFriendButton'>Añadir a mis amigos</button>";
           echo "</div>";
           echo "</div>";
