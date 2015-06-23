@@ -60,6 +60,16 @@
 				<p> 
 				<input type="text" id="mail" name="mail" value="" placeholder="tu email" required="required" />  
 				</p>
+				<p>Rol del usuario:</p>
+				<p><select name="juego" id ="juego">
+					<option>Administrador</option>
+					<option>Desarrollador</option>
+					<option>Gestor-Tienda</option>
+					<option>Gestor-Comunidad</option>
+					<option>Usuario Registrado</option>
+				</select>
+				</p>
+				
 				<div id= "signUpButton">
 				<button type="button" id="signUp">Crear cuenta</button>
 				</div>
