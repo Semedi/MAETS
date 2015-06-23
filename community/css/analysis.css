@@ -20,6 +20,7 @@
 	margin-top: 300px;
 	background-color: red;
 	text-align:center.
+	width: 40px;
 }
 
 #pe{
@@ -39,16 +40,17 @@
 }
 
 #contenidoAnalisis{
-	font-size: 12px;
-	float: left;
+	font-size: 12px;	
 	padding: 5px;
 	padding-left:0px;
-	padding-right:10px;
+	padding-right:0px;
 	margin: 20px;
 	border-bottom-style: solid;   
 	border-bottom-color: white;
 	border-bottom-width:1px;
 	min-height: 170px;
+	width: 460px;
+	margin-left: -20px;
 }
 
 #contenidoAnalisis H3{

@@ -265,6 +265,7 @@ require_once('shopBD.php');
 						echo "<img class='icono_B' src='../images/LIKE.png'>";
 					else
 						echo "<img class='icono_B' src='../images/DISLIKE.png'>";
+					echo "<center><p>" .$aux[1]. "</p>";
 				echo "</div>";
 
 				echo "<div id='contenidoAnalisis'>";
@@ -272,7 +273,6 @@ require_once('shopBD.php');
 				echo "</div>";
 
 				echo "<div id='pieAnalisis'>";
-					echo "<center><p>" .$aux[1]. "</p>";
 					echo "<center><p>" .$aux[3]. "</p>";	
 				echo "</div>";
 			echo "</div>";
