@@ -48,7 +48,7 @@
       <div id="content-container">
           <br></br>
           <br></br>
-          <a href="tienda/articulo-tienda.php?juego=1"><img class="image" src="images/screens/GTAV.jpg"></a>
+          <img class="image" src="images/screens/GTAV.jpg">
         </div>
 
 <?php  include ('static/mainBOT.php'); ?>
