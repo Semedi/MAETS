@@ -254,9 +254,12 @@ require_once('shopBD.php');
 		// Traer todos los análisis de la base de datos.
 		// IdJuego, NombreJuego, IdUsuario, NombreUsuario, recomendado, texto, portada
 
-		$res = getAnalisisOP();
 
-		foreach ($res as $aux) {
+		$res = getAnalisisOP();
+		if ($res[0] == "vacio") {
+
+		} else {
+			foreach ($res as $aux) {
 			echo "<div id = 'cajaAnalisis'>";
 				echo "<div id = 'portada'>";
 					echo "<a href'#'><img class='icono_A' src='../images/Portadas/" .$aux[6]. "'></a>";
@@ -277,6 +280,8 @@ require_once('shopBD.php');
 				echo "</div>";
 			echo "</div>";
 		}
+		}
+		
 	}
 
 	function generarUltimosForos($num) {
