@@ -80,6 +80,12 @@ function deleteAnalisis($juego, $usuario) {
 	return (true);
 }
 
+function newAchievement($game, $name, $puntuation, $img, $tipe) {
+	require_once('../include/communityBD.php');
+	nuevoLogro($game, $name, $puntuation, $img, $tipe);
+	echo "Nuevo logro añadido correctamente";
+	return (true);
+}
 $functionName = filter_input(INPUT_GET, 'functionName');
 
 switch ($functionName) {
@@ -161,6 +167,9 @@ switch ($functionName) {
 	case "deleteAnalisis":
 		deleteAnalisis($_GET['juego'], $_GET['usuario']);
 	break;
+	case "newAchievement":
+		newAchievement($_GET["game"], $_GET["name"], $_GET["puntos"], $_GET["img"], $_GET[]"tipe");
+		break;
 }
 
 

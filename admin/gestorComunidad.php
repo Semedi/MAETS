@@ -19,12 +19,12 @@
 		<?php generarListaForos(); ?>
 
 		<h1> Usuarios </h1>
-		<button name="anadirUsuarios" id="anadirUsuarios" onclick="location.href ='../signUpAdmin.php';">Añadir nuevo usuario</button>
+		<button name="anadirUsuarios" id="anadirUsuarios" onclick="location.href ='signUpAdmin.php';">Añadir nuevo usuario</button>
 		<button name="eliminarUsuario" id="eliminarUsuario" onclick="location.href ='eliminarUsuario.php';">Eliminar usuario</button>
 		<?php generarListaUsuarios(); ?>
 
 		<h1> Logros </h1>
-		<button name="anadirLogros" id="anadirLogros" onclick="location.href ='';">Añadir nuevo logro</button>
+		<button name="anadirLogros" id="anadirLogros" onclick="location.href ='nuevoLogro.php';">Añadir nuevo logro</button>
 		<button name="eliminarLogro" id="eliminarLogro" onclick="location.href ='eliminarLogro.php';">Eliminar logro</button>
 		<?php generarListaLogros(); ?>
 

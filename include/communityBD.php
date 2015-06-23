@@ -330,10 +330,7 @@ function insertAnalisis($juego, $usuario, $texto, $puntuacion) {
 }
 
 function insertCaptura($idUsuario, $imagen, $index) {
-	if($index)
-		require_once ('../include/config.php');
-	else
-		require_once ('../include/config.php');
+	require_once ('../include/config.php');
 	$hoy = getdate();
 	$fecha = gmdate('Y-m-d');
 	$con = createConnection();
@@ -450,5 +447,14 @@ function getAllAnalisis() {
 	while($ret[] = $res->fetch_assoc());
 	closeConnection($connection);	
 	return $ret;	
+}
+
+function nuevoLogro($game, $name, $puntos, $img, $tipe) {
+	require_once ('../include/config.php');
+	$con = createConnection();
+	$sql = "INSERT INTO `logro`(`JuegoID`, `Titulo`, `Puntos`, `Tipo`, `Imagen`) VALUES ";
+	$sql.= "('".$game."', '".$name."', '".$puntos."', '".$tipo."', '".$img."')";
+	$con->query($sql) or die ($con->error);
+	closeConnection($con);
 }
 ?>
