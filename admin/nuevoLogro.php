@@ -13,7 +13,7 @@
 	<script type="text/javascript">
 
 		$( document ).ready(function() {
-			$('#signUp').click(
+			$('#crear').click(
 		 		function(){
 		 			$.get("../AJAX/comunidadGestor.php",{ functionName:"newAchievement", game: $('#juego').val(), name: $('#name').val(), puntos: $('#puntos').val(), img: "../images/logros/logroETS.jpg", tipe: $('#tipo').val()},function(data){
 		 				trimmed_data = $.trim(data);
@@ -65,8 +65,8 @@
 				
 				
 				
-				<div id= "signUpButton">
-				<button type="button" id="signUp">Crear logro</button>
+				<div id= "Button">
+				<button type="button" id="crear">Crear logro</button>
 				</div>
 			
 		</div>	
