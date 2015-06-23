@@ -1,24 +1,24 @@
-﻿<?php require_once __DIR__.'\include\config.php'; ?>
+﻿<?php require_once __DIR__.'\..\include\config.php'; ?>
 <!DOCTYPE html>
 
 <html>
 
 <head>
 	<title> Sing Up Administrador</title>
-	<link rel="icon" type="image/png" href="images/MAETS.png" />
-	<link rel="stylesheet" type="text/css" href="css/singup.css" />
-	<link rel="stylesheet" type="text/css" href="css/main.css" />
-	<script type="text/javascript" src="js\jquery-1.9.1.min.js"> </script>
+	<link rel="icon" type="image/png" href="../images/MAETS.png" />
+	<link rel="stylesheet" type="text/css" href="../css/singup.css" />
+	<link rel="stylesheet" type="text/css" href="../css/main.css" />
+	<script type="text/javascript" src="..\js\jquery-1.9.1.min.js"> </script>
 
 	<script type="text/javascript">
 
 		$( document ).ready(function() {
 			$('#signUp').click(
 		 		function(){
-		 			$.get("AJAX/usuariosGestor.php",{ functionName:"addUserAdmin", user:$('#name').val(), pass:$('#passw').val(), mail: $('#mail').val(), rol: $('#rol').val() },function(data){
+		 			$.get("../AJAX/usuariosGestor.php",{ functionName:"addUserAdmin", user:$('#name').val(), pass:$('#passw').val(), mail: $('#mail').val(), rol: $('#rol').val() },function(data){
 		 				trimmed_data = $.trim(data);
 		 					if (trimmed_data == ""){
-		 						window.location.href = "index.php";
+		 						window.location.href = "../index.php";
 		 					}
 		 					else {
 		 						alert (data);
@@ -33,7 +33,7 @@
 
 </head>
 
-<?php  include ('static/mainTOP.php'); ?>
+<?php  include ('../static/mainTOP.php'); ?>
 
 			<h1>Crear una cuenta</h1>
 		<div id="formulario">
@@ -84,6 +84,6 @@
 				</t1>
 		</div>
 
-<?php  include ('static/mainBOT.php'); ?>
+<?php  include ('../static/mainBOT.php'); ?>
 	
 </html>
