@@ -17,7 +17,13 @@
 					
 	<div id= "ContenidoCentral">
 	
-		<button name="nuevoAnalisis" id="nuevoAnalisis" onclick="location.href ='formularioAnalisis.php';">Nuevo análisis</button>
+		<?php
+			if (isset($_SESSION['ID'])) {
+			echo"<div id=\"boton\">";
+			echo"<button name=\"nuevoAnalisis\" id=\"nuevoAnalisis\" onclick=\"location.href ='formularioAnalisis.php';\">Nuevo análisis</button>";
+			echo "</div>";
+			} ?>
+		
 	
 		<div id="contenedorAnalisis">
 			<?php

@@ -16,10 +16,12 @@
 <?php  include ('../static/mainTOP.php'); ?>	
 <?php  include ('../static/communityMenu.php'); ?>
 <?php  include ('../include/vComunidad.php'); ?>	
-				
-			<div id="boton">
-				<button name="newVideo" class="nuevoVideo" onclick="location.href ='insertarVideo.php';">Insertar video</button>
-			</div>
+			<?php
+			if (isset($_SESSION['ID'])) {
+			echo"<div id=\"boton\">";
+			echo"<button name=\"newVideo\" class=\"nuevoVideo\" onclick=\"location.href ='insertarVideo.php';\">Insertar video</button>";
+			echo "</div>";
+			} ?>
 			<div id="videos">
 				<?php cargarVideos(); ?>
 			</div>
