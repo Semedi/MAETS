@@ -17,12 +17,12 @@
 		 		function(){
 		 			$.get("../AJAX/comunidadGestor.php",{ functionName:"newAchievement", game: $('#juego').val(), name: $('#name').val(), puntos: $('#puntos').val(), img: "../images/logros/logroETS.jpg", tipe: $('#tipo').val()},function(data){
 		 				trimmed_data = $.trim(data);
-		 					if (trimmed_data == ""){
-		 						window.location.href = "index.php";
-		 					}
-		 					else {
-		 						alert (data);
-		 					}
+		 					alert (data);
+		 					window.location.href = "../admin/gestorComunidad.php";
+		 					
+		 				
+		 						
+		 					
 		 				}
 				 	);
 				});
