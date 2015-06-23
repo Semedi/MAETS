@@ -31,7 +31,7 @@
           trimmed_data = $.trim(data);
               if (trimmed_data == ""){
                 alert("Se han guardado los cambios");
-                window.location.href = "editInfo.php";
+                window.location.href = "amigos.php";
               }
               else {
                 alert (data);

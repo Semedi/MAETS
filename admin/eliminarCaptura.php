@@ -37,10 +37,17 @@
 			
 			
 			<div id="cajaThread">
+
+			<?php   
+			if(isset($_SESSION["Rol"]) && ($_SESSION["Rol"]='Administrador' or $_SESSION["Rol"]=='Gestor-Comunidad') ){
+
+				echo '
 				<h1>Eliminar captura</h1>
-				<p class="eliminar">Nombre captura: <input id="captura" name="captura" type="text"/><button name='eliminarBoton' id='eliminarBoton'>Eliminar</button></p>
+				<p class="eliminar">Nombre captura: <input id="captura" name="captura" type="text"/><button name="eliminarBoton" id="eliminarBoton">Eliminar</button></p>';
+			}
+			else echo "<h1> Vista no autorizada </h1>";
 				
-				
+				?>
 			</div>	
 	    	
 <?php  include ('../static/mainBOT.php'); ?>	
