@@ -20,10 +20,15 @@
 				<?php generarCapturas();?>
 				</br>
 				</br>
-				<?php echo"<form enctype='multipart/form-data' action='../scripts/uploader.php?user=" .$_SESSION['ID']."&modo=insertar' method='POST'>"; ?>
-				<input id="archivo" name="uploadedfile" type="file" />
-				<input type="submit" value="Subir archivo" />
-				</form>
+				<?php
+					if (isset($_SESSION['ID'])) {
+				 		echo"<form enctype='multipart/form-data' action='../scripts/uploader.php?user=" .$_SESSION['ID']."&modo=insertar' method='POST'>"; 
+				 		echo '<input id="archivo" name="uploadedfile" type="file" />
+								<input type="submit" value="Subir archivo" />
+								</form>';
+					}
+				?>	
+				
 				
 			</div>	
 	    	
