@@ -183,5 +183,15 @@ function updateJuego($id, $titulo, $precio, $edad, $etiquetas, $descripcion, $de
 	return (true);
 	
 	}
+function updatePortadaJuego($name, $juego)
+{
+	require_once('../include/config.php');
+	$connection = createConnection();
+	$sql = "UPDATE `juego` SET `Portada` = '$name' WHERE `Id` = '$juego'";
+	
+	$connection ->query($sql) or die ($connection->error);
+	closeConnection($connection);
+	return (true);
+}
 
 ?>

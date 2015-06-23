@@ -4,7 +4,7 @@ require_once __DIR__.'\..\include\config.php';
 	$uploadedfileload="true";
 	$uploadedfile_size=$_FILES['uploadedfile']['size'];
 	$msg = "";
-	if ($_FILES['uploadedfile']['size']>200000)	{
+	if ($_FILES['uploadedfile']['size']>2000000)	{
 		$msg.="El archivo es mayor que 200KB, debes reduzcirlo antes de subirlo<BR>";
 		$uploadedfileload="false";
 	}
@@ -31,10 +31,11 @@ require_once __DIR__.'\..\include\config.php';
 
 		}
 		
-		if ($_GET['modo'] == "nuevoJuego"){
+		if ($_GET['modo'] == "cambiarPortada"){
 			
+			include('../include/shopBD.php');
 			$add="../images/Portadas/$file_name";
-	
+			updatePortadaJuego($file_name, $_GET['juego']);
 		}
 
 		if ($_GET['modo'] == "insertar"){
@@ -42,10 +43,9 @@ require_once __DIR__.'\..\include\config.php';
 			insertCaptura($_GET['user'], $_FILES['uploadedfile']['name'], true);
 	
 		}
-		
-
 
 		
+
 		if(move_uploaded_file ($_FILES['uploadedfile']['tmp_name'], $add)){
 			echo "<script type='text/javascript'>alert('Ha sido subido satisfactoriamente');</script>";
 		}else{
@@ -64,6 +64,8 @@ require_once __DIR__.'\..\include\config.php';
 			print("<script>window.location.replace('../community/capturas.php');</script>"); 
 
 		}
-	
+	else if($_GET['modo'] == "cambiarPortada"){
+			print("<script>window.location.replace('../admin/gestorJuegos.php');</script>"); 
+	}
 	
 ?>
