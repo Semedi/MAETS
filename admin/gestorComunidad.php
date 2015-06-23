@@ -29,7 +29,7 @@
 		<?php generarListaLogros(); ?>
 
 		<h1> Capturas </h1>
-		<button name="anadirCapturas" id="anadirCapturas" onclick="location.href ='../community/nuevaCaptura.php';">Añadir nueva captura</button>
+		<!--<button name="anadirCapturas" id="anadirCapturas" onclick="location.href ='../community/nuevaCaptura.php';">Añadir nueva captura</button>-->
 		<button name="eliminarCaptura" id="eliminarCaptura" onclick="location.href ='eliminarCaptura.php';">Eliminar captura</button>
 		<?php generarListaCapturas(); ?>
 
