@@ -58,13 +58,19 @@
 		   	?>
 				<p>  <button name="editar" id="editar" >Editar</button>
 				     <button name="eliminar" id="eliminar" >Eliminar</button></p>
-		</div>
-         <div id="cambiarPortada">
-		 <?php echo"<form enctype='multipart/form-data' action='../scripts/uploader.php?juego=".$_GET['juego']."&modo=cambiarPortada' method='POST'>"; ?>
+					  <div id="cambiarPortada">
+					 <?php vistaEditarPortadaJuego();
+				echo"<form enctype='multipart/form-data' action='../scripts/uploader.php?juego=".$_GET['juego']."&modo=cambiarPortada' method='POST'>";
+				?>
               <input id="archivo" name="uploadedfile" type="file" />
               <input type="submit" value="Cambiar portada" />
 			  </form>
+			  	</div>
 		</div>
+        
+			
+			
+	
 
 <?php require_once ('../static/mainBOT.php'); ?>
 
