@@ -5,6 +5,7 @@
 
 <head>
 	<title> MAETS </title>
+	<link rel="icon" type="image/png" href="../images/MAETS.png" />
 	<link rel="stylesheet" type="text/css" href="css/achievements.css" />
 	<link rel="stylesheet" type="text/css" href="../css/main.css" />
 	<link rel="stylesheet" type="text/css" href="../css/pcomunidad.css" />
