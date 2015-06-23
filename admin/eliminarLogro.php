@@ -37,8 +37,15 @@
 			
 			
 			<div id="cajaThread">
+			<?php   
+			if(isset($_SESSION["Rol"]) && ($_SESSION["Rol"]='Administrador' or $_SESSION["Rol"]=='Gestor-Comunidad') ){
+				echo '
 				<h1>Eliminar logro</h1>
-				<p class="eliminar">Nombre logro: <input id="logro" name="logro" type="text"/><button name='eliminarBoton' id='eliminarBoton'>Eliminar</button></p>
+				<p class="eliminar">Nombre logro: <input id="logro" name="logro" type="text"/><button name="eliminarBoton" id="eliminarBoton">Eliminar</button></p>';
+			}
+
+			else echo "<h1>Vista no autorizada</h1>";
+			?>
 				
 				
 			</div>	

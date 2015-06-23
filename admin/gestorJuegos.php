@@ -16,7 +16,12 @@
 		
 		<?php
 			require_once ('/../include/vTienda.php');
+
+			if(isset($_SESSION["Rol"]) && ($_SESSION["Rol"]='Administrador' or $_SESSION["Rol"]=='Gestor-Tienda') ){
 			generarTabla($_SESSION['ID']);
+			}else{
+				echo "<h1>Vista no autorizada</h1>";
+			}
 		?>
 	</body>
 

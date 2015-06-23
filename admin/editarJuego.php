@@ -46,17 +46,29 @@
 <?php require_once ('../static/mainTOP.php'); ?>
 
 	<body>
+			
+		
 		<div id="game-form">  
 		   
 		   <p id="failure">Algo esta mal.</p>  
 		   <p id="success">Juego añadido correctamente.</p>
 		   <?php
 		   		require_once ('../include/vTienda.php');
+
+		   		if(isset($_SESSION["Rol"]) && ($_SESSION["Rol"]='Administrador' or $_SESSION["Rol"]=='Desarrollador' or $_SESSION["Rol"]=='Gestor-Tienda') ){
 				vistaEditarJuego();
+			}
+			else echo "<h1> Vista no autorizada </h1>";
 		   	?>
 				<p>  <button name="editar" id="editar" >Editar</button>
 				     <button name="eliminar" id="eliminar" >Eliminar</button></p>
-		</div>	
+		</div>
+         <div id="cambiarPortada">
+		 <?php echo"<form enctype='multipart/form-data' action='../scripts/uploader.php?juego=".$_GET['juego']."&modo=cambiarPortada' method='POST'>"; ?>
+              <input id="archivo" name="uploadedfile" type="file" />
+              <input type="submit" value="Cambiar portada" />
+			  </form>
+		</div>
 
 <?php require_once ('../static/mainBOT.php'); ?>
 

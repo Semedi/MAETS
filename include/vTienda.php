@@ -203,9 +203,13 @@ function vistaEditarJuego()
 					echo "<b><label for='idiomas'>Idiomas: </label></b>";
 					echo "<input type='idiomas' id='idiomas' name='idiomas' value='" .$juego['Idiomas']. "', placeholder='Idiomas' required='required'/></p>";
 					echo "<p><em> Inglés, Español, Ruso, Italiano, Chino, Japones, Francés, Portugués, Árabe</em></p>";
-
+				
+				echo "";
+				
 				echo "<p><b><label for='portada'>Portada: </label></b></p>";
+				echo "<img src=\"../images/Portadas/".$juego['Portada']."\">";
 				echo "</br>";
+				
 }
 
 ?>
