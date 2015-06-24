@@ -8,8 +8,6 @@
 Ejemplos super utiles de ivan:
 https://bitbucket.org/imartinezortiz
 
-Proyecto de ejemplo que es una puta mierda pero al menos esta terminado y depurado: (meeze entrega)
-https://drive.google.com/drive/u/1/folders/0B3cM4Ey__NsaWE9xSHB6c18tZ3M
 
 **MINIGUIA DE USO:**
 
